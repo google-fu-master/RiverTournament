@@ -19,6 +19,7 @@
     font-family: Arial, sans-serif;
     background-color: var(--darkest);
     color: var(--white);
+    overflow-x: hidden;
   }
 
   nav {
@@ -55,7 +56,7 @@
     position: absolute;
     right: 1rem;
     top: 0.5rem;
-    z-index: 1000;
+    z-index: 1001;
   }
 
   #menu-toggle {
@@ -114,15 +115,29 @@
 
     .menu {
       flex-direction: column;
-      width: 100%;
-      text-align: center;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+      align-items: flex-start;
+      position: absolute;
+      top: 0;
+      right: -200px; /* start hidden off screen */
+      width: 200px;
+      height: 100%;
+      background-color: var(--dark-navy);
+      text-align: left;
+      padding-top: 4rem;
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+      z-index: 1000;
     }
 
     #menu-toggle:checked + .menu {
-      max-height: 500px; /* Enough to show all menu links */
+      transform: translateX(-200px); /* slide into view */
+    }
+
+    nav a {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
     }
 
     header h1 {
