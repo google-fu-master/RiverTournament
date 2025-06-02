@@ -90,7 +90,8 @@ title: Sign Up
 })
     .then(response => response.text())
     .then(text => {
-      statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+      console.log('Response from Apps Script:', text); // testing line
+	  statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
       form.reset();
     })
     .catch(error => {
