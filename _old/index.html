@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>River Tournament</title>
+<style>
+  :root {
+    --darkest: #141414;
+    --dark-navy: #0D1B2A;
+    --mid-navy: #002B3A;
+    --accent-blue: #0071a4;
+    --slate: #151D23;
+    --white: #f5f5f5;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--darkest);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: relative;
+    background-color: var(--dark-navy);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  nav a:hover {
+    background-color: var(--accent-blue);
+    color: var(--darkest);
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1001;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  header {
+    text-align: center;
+    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
+    padding: 3rem 1rem;
+    position: relative;
+  }
+
+  header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--accent-blue);
+  }
+
+  header p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 1rem auto 0;
+    color: var(--white);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--slate);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  main p {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--dark-navy);
+    color: var(--white);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+    margin-top: 2rem;
+  }
+
+  /* Mobile styles for screens 1024px and below */
+  @media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; /* ensures items start at top */
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    text-align: left;
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu {
+    transform: translateX(-200px);
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  main {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <input type="checkbox" id="menu-toggle" />
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="faq.html">FAQ</a>
+    <a href="stats.html">Stats</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>River Tournament</h1>
+  <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
+</header>
+
+<main>
+  <p>Each tournament has a small buy-in, big payouts, and a chance to show off your skills—no matter your Fargo rating. Whether you’re here for the fun, the cash, or the bragging rights, there’s a place for you at the River!</p>
+  <p>Check back each week for updated standings, tournament photos, and to see who’s on top of the leaderboard!</p>
+</main>
+
+<footer>
+  &copy; 2025 Brittany Posey - All Rights Reserved
+</footer>
+
+</body>
+</html>
