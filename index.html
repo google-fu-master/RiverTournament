@@ -109,50 +109,51 @@
 
   /* Mobile styles for screens 1024px and below */
   @media (max-width: 1024px) {
-    .hamburger {
-      display: block;
-    }
-
-    .menu {
-      flex-direction: column;
-      align-items: flex-start;
-      position: absolute;
-      top: 0;
-      right: -200px;
-      width: 200px;
-      height: 100vh; /* ensures full height on mobile */
-      background-color: var(--dark-navy);
-      text-align: left;
-      padding-top: 4rem;
-      transition: transform 0.3s ease;
-      transform: translateX(0);
-      z-index: 1000;
-    }
-
-    #menu-toggle:checked + .menu {
-      transform: translateX(-200px); /* slide in from the right */
-    }
-
-    nav a {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-
-    header h1 {
-      font-size: 2rem;
-    }
-
-    header p {
-      font-size: 0.9rem;
-    }
-
-    main {
-      margin: 0.5rem;
-      padding: 1rem;
-    }
+  .hamburger {
+    display: block;
   }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; /* ensures items start at top */
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    text-align: left;
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu {
+    transform: translateX(-200px);
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  main {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
 </style>
 </head>
 <body>
