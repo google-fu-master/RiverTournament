@@ -1,176 +1,62 @@
 ---
 layout: default
-title: Home
+title: Tournament Rules
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tournament Rules - River Tournament</title>
-<style>
-  :root {
-    --darkest: #141414;
-    --dark-navy: #0D1B2A;
-    --mid-navy: #002B3A;
-    --accent-blue: #0071a4;
-    --slate: #151D23;
-    --white: #f5f5f5;
-  }
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--darkest);
-    color: var(--white);
-    overflow-x: hidden;
-  }
+<input type="text" id="search" placeholder="Search rules...">
 
-  nav {
-    position: relative;
-    background-color: var(--dark-navy);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
+<section id="player-eligibility">
+  <h2>Player Eligibility & Registration</h2>
+  <ul>
+    <li>Fargo ratings 445 and below accepted for 8, 9, and 10-ball tournaments.</li>
+    <li>All players must present a Fargo account and valid photo ID at registration.</li>
+    <li>First-time players must create a Fargo account at registration.</li>
+    <li>If multiple Fargo accounts exist for a player, the highest rated account will be used. Players over 445 will be disqualified. Submit a request to Fargo to merge accounts if needed.</li>
+    <li>Submit a screenshot of your Fargo rating to reserve your spot in the tournament.</li>
+    <li>Ranking at the time of registration on tournament night determines eligibility and race lengths.</li>
+  </ul>
+</section>
 
-  .menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+<section id="match-format">
+  <h2>Match Format & Races</h2>
+  <ul>
+    <li>8–12 players: race to 3 wins.</li>
+    <li>13–16 players: race to 2 wins.</li>
+    <li>75+ Fargo rate gap: higher-rated player must win 1 additional game.</li>
+    <li>Games follow BCA rules with modifications as needed by the tournament director.</li>
+  </ul>
+</section>
 
-  nav a {
-    color: var(--white);
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-  }
+<section id="equipment">
+  <h2>Equipment & Gameplay</h2>
+  <ul>
+    <li>Racks will be Fargo Reported.</li>
+    <li>Players lag or flip a coin for the break, then alternate breaks. If no agreement, lag by default.</li>
+    <li>Magic Racks approved if available. Players must agree on rack style before the match. Triangle used by default if no agreement.</li>
+    <li>Jump shots are not allowed at River.</li>
+    <li>No timeouts. Rule questions welcomed—ask the tournament director if unsure.</li>
+    <li>If you need a shot watched, ask the tournament director.</li>
+  </ul>
+</section>
 
-  nav a:hover {
-    background-color: var(--accent-blue);
-    color: var(--darkest);
-  }
+<section id="conduct">
+  <h2>Conduct & House Rules</h2>
+  <ul>
+    <li>No drinks on or near pool tables. Spills or damage result in permanent disqualification.</li>
+    <li>Tournament director reserves the right to adjust rules as needed.</li>
+    <li>House does not promise to always donate to the pot.</li>
+    <li>Entry fees are cash only and may change.</li>
+  </ul>
+</section>
 
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: var(--white);
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    z-index: 1001;
-  }
-
-  #menu-toggle {
-    display: none;
-  }
-
-  header {
-    text-align: center;
-    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
-    padding: 3rem 1rem;
-    position: relative;
-  }
-
-  header h1 {
-    font-family: Georgia, serif;
-    font-size: 2.5rem;
-    margin: 0;
-    color: var(--accent-blue);
-  }
-
-  main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: var(--slate);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--dark-navy);
-    color: var(--white);
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
-    margin-top: 2rem;
-  }
-
-  /* Mobile styles for screens 1024px and below */
-  @media (max-width: 1024px) {
-    .hamburger {
-      display: block;
-    }
-
-    .menu {
-      flex-direction: column;
-      align-items: flex-start;
-      position: absolute;
-      top: 0;
-      right: -200px;
-      width: 200px;
-      height: 100vh; /* ensures full height coverage */
-      background-color: var(--dark-navy);
-      text-align: left;
-      padding-top: 4rem;
-      transition: transform 0.3s ease;
-      transform: translateX(0);
-      z-index: 1000;
-    }
-
-    #menu-toggle:checked + .menu {
-      transform: translateX(-200px); /* slide in from the right */
-    }
-
-    nav a {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-
-    header h1 {
-      font-size: 2rem;
-    }
-
-    main {
-      margin: 0.5rem;
-      padding: 1rem;
-    }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
-  <input type="checkbox" id="menu-toggle" />
-  <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="rules.html">Rules</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="faq.html">FAQ</a>
-    <a href="stats.html">Stats</a>
-    <a href="photos.html">Photos</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-
-<header>
-  <h1>Tournament Rules</h1>
-</header>
-
-<main>
-  <!-- Ready to add rules content later! -->
-</main>
-
-<footer>
-  &copy; 2025 Brittany Posey - All Rights Reserved
-</footer>
-
-</body>
-</html>
+<script>
+  // Basic search functionality
+  const searchBox = document.getElementById('search');
+  searchBox.addEventListener('input', function() {
+    const term = searchBox.value.toLowerCase();
+    document.querySelectorAll('section').forEach(section => {
+      const text = section.textContent.toLowerCase();
+      section.style.display = text.includes(term) ? 'block' : 'none';
+    });
+  });
+</script>
