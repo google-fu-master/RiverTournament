@@ -4,5 +4,67 @@ title: Home
 ---
 
 <p>Each tournament has a small buy-in, big payouts, and a chance to show off your skills—no matter your Fargo rating. Whether you’re here for the fun, the cash, or the bragging rights, there’s a place for you at the River!</p>
-
 <p>Check back each week for updated standings, tournament photos, and to see who’s on top of the leaderboard!</p>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem; margin-top: 2rem;">
+  <div id="bracket" style="flex: 1; min-width: 250px;">
+    <h2 style="text-align: center; color: var(--accent-blue);">Bracket</h2>
+    <table id="bracket-table" style="width: 100%; border-collapse: collapse; background-color: var(--slate); border-radius: 8px; overflow: hidden;">
+      <thead>
+        <tr style="background-color: var(--mid-navy); color: var(--white);">
+          <th style="padding: 0.5rem;">Name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="waitlist" style="flex: 1; min-width: 250px;">
+    <h2 style="text-align: center; color: var(--accent-blue);">Waitlist</h2>
+    <table id="waitlist-table" style="width: 100%; border-collapse: collapse; background-color: var(--slate); border-radius: 8px; overflow: hidden;">
+      <thead>
+        <tr style="background-color: var(--mid-navy); color: var(--white);">
+          <th style="padding: 0.5rem;">Name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const sheetID = "1F8aadBmX_Le4Ays8qitasjVlTzotU89d5hN-eRzyXAc";
+  const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
+
+  fetch(url)
+    .then(response => response.text())
+    .then(data => {
+      const json = JSON.parse(data.substr(47).slice(0, -2)); // clean Google JSON
+      const rows = json.table.rows;
+
+      const bracketTable = document.querySelector("#bracket-table tbody");
+      const waitlistTable = document.querySelector("#waitlist-table tbody");
+
+      let bracketCount = 0;
+
+      rows.forEach(row => {
+        const firstName = row.c[0] ? row.c[0].v : "";
+        const lastName = row.c[1] ? row.c[1].v : "";
+        const preferredName = row.c[2] ? row.c[2].v : "";
+        const approved = row.c[6] && row.c[6].v === "TRUE";
+
+        const name = preferredName ? preferredName : `${firstName} ${lastName.charAt(0)}.`;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td style="padding: 0.5rem; border-bottom: 1px solid #333;">${name}</td>`;
+
+        if (approved && bracketCount < 16) {
+          bracketTable.appendChild(tr);
+          bracketCount++;
+        } else {
+          waitlistTable.appendChild(tr);
+        }
+      });
+    })
+    .catch(error => console.error("Error fetching data:", error));
+</script>
