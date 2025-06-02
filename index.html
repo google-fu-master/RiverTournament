@@ -1,73 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>River Tournament</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0D1B2A;
-      color: #E0E1DD;
-    }
-    header {
-      background: linear-gradient(135deg, #1B263B, #415A77);
-      padding: 2rem;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>River Tournament</title>
+<style>
+  :root {
+    --darkest: #141414;
+    --dark-navy: #0D1B2A;
+    --mid-navy: #002B3A;
+    --accent-blue: #0071a4;
+    --slate: #151D23;
+    --white: #f5f5f5;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--darkest);
+    color: var(--white);
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--accent-blue);
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-top: 1rem;
+    color: var(--white);
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-navy);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  nav a:hover {
+    background-color: var(--accent-blue);
+    color: var(--darkest);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--slate);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  main p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--dark-navy);
+    color: var(--white);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+    margin-top: 3rem;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #E0E1DD;
+      font-size: 2rem;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #1B263B;
-      padding: 1rem;
+    header p {
+      font-size: 1rem;
     }
-    nav a {
-      color: #E0E1DD;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #778DA9;
-    }
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #1B263B;
-      color: #E0E1DD;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to the River Tournament</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="rules.html">Rules</a>
-    <a href="photos.html">Photos</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="stats.html">Stats</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <main>
-    <p>We’re thrilled to host weekly pool tournaments at River Pool and Sports Bar! Grab your cue, enjoy the competition, and see who comes out on top each week.</p>
-    <p>Each tournament has a small buy-in, big payouts, and a chance to show off your skills—no matter your Fargo rating. Whether you’re here for the fun, the cash, or the bragging rights, there’s a place for you at the River!</p>
-    <p>Check back here for updates, photos, and weekly highlights. Let’s play some pool!</p>
-  </main>
-  <footer>
-    &copy; 2025 River Tournament - All Rights Reserved
-  </footer>
+
+<header>
+  <h1>River Tournament</h1>
+  <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="rules.html">Rules</a>
+  <a href="photos.html">Photos</a>
+  <a href="signup.html">Sign Up</a>
+  <a href="stats.html">Stats</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <p>Each tournament has a small buy-in, big payouts, and a chance to show off your skills—no matter your Fargo rating. Whether you’re here for the fun, the cash, or the bragging rights, there’s a place for you at the River!</p>
+  <p>Check back each week for updated standings, tournament photos, and to see who’s on top of the leaderboard!</p>
+</main>
+
+<footer>
+  &copy; 2025 River Tournament - All Rights Reserved
+</footer>
+
 </body>
 </html>
