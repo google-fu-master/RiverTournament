@@ -28,16 +28,50 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
 
+  .hamburger {
+    display: block; /* Always visible */
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    position: absolute;
+    left: 1rem; /* Move to left */
+    top: 0.5rem;
+    z-index: 1001;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
   .menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: -200px; /* Slide from the left */
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    text-align: left;
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu {
+    transform: translateX(200px); /* Slide in from the left */
   }
 
   nav a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
     color: var(--white);
     text-decoration: none;
-    padding: 1rem 1.5rem;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
   }
@@ -45,22 +79,6 @@
   nav a:hover {
     background-color: var(--accent-blue);
     color: var(--darkest);
-  }
-
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: var(--white);
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    z-index: 1001;
-  }
-
-  #menu-toggle {
-    display: none;
   }
 
   header {
@@ -107,51 +125,17 @@
     margin-top: 2rem;
   }
 
-  @media (max-width: 1024px) {
-    .hamburger {
-      display: block;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
 
-    .menu {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: absolute;
-      top: 0;
-      right: -200px;
-      width: 200px;
-      height: 100vh;
-      background-color: var(--dark-navy);
-      text-align: left;
-      padding-top: 4rem;
-      transition: transform 0.3s ease;
-      transform: translateX(0);
-      z-index: 1000;
-    }
+  header p {
+    font-size: 0.9rem;
+  }
 
-    #menu-toggle:checked + .menu {
-      transform: translateX(-200px);
-    }
-
-    nav a {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-
-    header h1 {
-      font-size: 2rem;
-    }
-
-    header p {
-      font-size: 0.9rem;
-    }
-
-    main {
-      margin: 0.5rem;
-      padding: 1rem;
-    }
+  main {
+    margin: 0.5rem;
+    padding: 1rem;
   }
 </style>
 </head>
