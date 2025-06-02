@@ -1,148 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{ page.title }} - River Tournament</title>
-<style>
-  :root {
-    --darkest: #141414;
-    --dark-navy: #0D1B2A;
-    --mid-navy: #002B3A;
-    --accent-blue: #0071a4;
-    --slate: #151D23;
-    --white: #f5f5f5;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <style>
+    :root {
+      --darkest: #141414;
+      --dark-navy: #0D1B2A;
+      --mid-navy: #002B3A;
+      --accent-blue: #0071a4;
+      --slate: #151D23;
+      --white: #f5f5f5;
+    }
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--darkest);
-    color: var(--white);
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--darkest);
+      color: var(--white);
+      overflow-x: hidden;
+    }
 
-  nav {
-    position: relative;
-    background-color: var(--dark-navy);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
+    nav {
+      position: relative;
+      background-color: var(--dark-navy);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
 
-  .hamburger {
-    display: block; /* Always visible */
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: var(--white);
-    position: absolute;
-    left: 1rem; /* Move to left */
-    top: 0.5rem;
-    z-index: 1001;
-  }
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-  #menu-toggle {
-    display: none;
-  }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    top: 0;
-    left: -200px; /* Slide from the left */
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    text-align: left;
-    padding-top: 4rem;
-    transition: transform 0.3s ease;
-    transform: translateX(0);
-    z-index: 1000;
-  }
+    nav a:hover {
+      background-color: var(--accent-blue);
+      color: var(--darkest);
+    }
 
-  #menu-toggle:checked + .menu {
-    transform: translateX(200px); /* Slide in from the left */
-  }
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: var(--white);
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      z-index: 1001;
+    }
 
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-  }
+    #menu-toggle {
+      display: none;
+    }
 
-  nav a:hover {
-    background-color: var(--accent-blue);
-    color: var(--darkest);
-  }
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
+      padding: 3rem 1rem;
+      position: relative;
+    }
 
-  header {
-    text-align: center;
-    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
-    padding: 3rem 1rem;
-    position: relative;
-  }
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: 3rem; /* Bigger title font */
+      margin: 0;
+      color: var(--accent-blue);
+    }
 
-  header h1 {
-    font-family: Georgia, serif;
-    font-size: 2.5rem;
-    margin: 0;
-    color: var(--accent-blue);
-  }
+    header p {
+      font-size: 1.2rem; /* Bigger tagline font */
+      max-width: 90%;
+      margin: 1rem auto 0;
+      color: var(--white);
+    }
 
-  header p {
-    font-size: 1rem;
-    max-width: 90%;
-    margin: 1rem auto 0;
-    color: var(--white);
-  }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--slate);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
 
-  main {
-    flex: 1;
-    max-width: 800px;
-    margin: 2rem auto; /* center horizontally */
-    padding: 2rem;
-    background-color: var(--slate);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    text-align: left; /* text inside stays left-aligned */
-  }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--dark-navy);
+      color: var(--white);
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+      margin-top: 2rem;
+    }
 
-  main p {
-    line-height: 1.6;
-    font-size: 1rem;
-  }
+    /* Mobile styles */
+    @media (max-width: 1024px) {
+      .hamburger {
+        display: block;
+      }
 
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--dark-navy);
-    color: var(--white);
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
-    margin-top: 2rem;
-  }
+      .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: var(--dark-navy);
+        text-align: left;
+        padding-top: 4rem;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+        z-index: 1000;
+      }
 
-  header h1 {
-    font-size: 2rem;
-  }
+      #menu-toggle:checked + .menu {
+        transform: translateX(200px);
+      }
 
-  header p {
-    font-size: 0.9rem;
-  }
+      nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
 
-  main {
-    margin: 0.5rem auto;
-    padding: 1rem;
-  }
-</style>
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      main {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -150,19 +156,21 @@
   <label for="menu-toggle" class="hamburger">&#9776;</label>
   <input type="checkbox" id="menu-toggle" />
   <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="rules.html">Rules</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="faq.html">FAQ</a>
-    <a href="stats.html">Stats</a>
-    <a href="photos.html">Photos</a>
-    <a href="contact.html">Contact</a>
+    <a href="/index.html">Home</a>
+    <a href="/rules.html">Rules</a>
+    <a href="/signup.html">Sign Up</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/stats.html">Stats</a>
+    <a href="/photos.html">Photos</a>
+    <a href="/contact.html">Contact</a>
   </div>
 </nav>
 
 <header>
   <h1>{{ page.title }}</h1>
-  <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
+  {% if page.title == "River Tournament" %}
+    <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
+  {% endif %}
 </header>
 
 <main>
