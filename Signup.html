@@ -5,7 +5,7 @@ title: Sign Up
 
 <p>Please ensure that your name matches your ID and Fargo account. All information will be verified at tournament registration.</p>
 
-<form action="https://script.google.com/macros/s/AKfycbzWnyxc1D7JPGf2nJUlyJ9N1pX5rDrd98cMl9AMiZ4i7wO1bsGSmFsx4Yzj_WryHgNG6w/exec" method="post" enctype="application/x-www-form-urlencoded" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
+<form id="signup-form" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
   <label for="first-name">First Name:</label>
   <input type="text" id="first-name" name="First Name" required style="margin-bottom: 1rem;">
 
@@ -27,3 +27,55 @@ title: Sign Up
   <button type="submit" style="padding: 0.5rem; background-color: var(--accent-blue); color: var(--white); border: none; border-radius: 4px; cursor: pointer;">Submit</button>
 </form>
 
+<p id="status-message" style="text-align: center; margin-top: 1rem;"></p>
+
+<script>
+  const form = document.getElementById('signup-form');
+  const statusMessage = document.getElementById('status-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const fileInput = document.getElementById('fargo-screenshot');
+    const file = fileInput.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const base64String = e.target.result;
+
+        // Build data to send
+        const data = new URLSearchParams();
+        data.append('First Name', formData.get('First Name'));
+        data.append('Last Name', formData.get('Last Name'));
+        data.append('Preferred Name', formData.get('Preferred Name'));
+        data.append('Phone Number', formData.get('Phone Number'));
+        data.append('Email', formData.get('Email'));
+        data.append('Fargo Screenshot', base64String);
+
+        // Send to Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbwc1SDJbJUahmks4Hcq_IitfxTqoK0hk0ihS1r1VsQB4YK-ZNkCVRdYW9mEG1Y6rfqY/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: data.toString()
+        })
+        .then(response => response.text())
+        .then(text => {
+          statusMessage.textContent = 'Your sign-up was successfully submitted!';
+          form.reset();
+        })
+        .catch(error => {
+          statusMessage.textContent = 'There was an error submitting your sign-up. Please try again.';
+          console.error('Error:', error);
+        });
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      statusMessage.textContent = 'Please select a screenshot file.';
+    }
+  });
+</script>
