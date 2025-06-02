@@ -1,62 +1,72 @@
 ---
 layout: default
-title: Home
+title: River Tournament
 ---
 
-<h2 style="text-align: center;">This Week's Bracket</h2>
-<table id="bracket" style="margin: 1rem auto; border-collapse: collapse; width: 100%; max-width: 400px;">
-  <thead>
-    <tr>
-      <th style="background-color: var(--accent-blue); color: var(--white); padding: 0.5rem; text-align: left;">Player</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+<h1 id="tournament-date" style="text-align: center; font-size: 2rem; margin: 1rem 0;">Loading Bracket...</h1>
 
-<h2 style="text-align: center;">Waitlist</h2>
-<table id="waitlist" style="margin: 1rem auto; border-collapse: collapse; width: 100%; max-width: 400px;">
-  <thead>
-    <tr>
-      <th style="background-color: var(--accent-blue); color: var(--white); padding: 0.5rem; text-align: left;">Player</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+  <div style="flex: 1; min-width: 300px; max-width: 500px;">
+    <h2 style="text-align: center;">Bracket</h2>
+    <table id="bracket" style="width: 100%; border-collapse: collapse; background-color: var(--slate);">
+      <thead>
+        <tr style="background-color: var(--dark-navy); color: var(--white);">
+          <th>First Name</th>
+          <th>Last Initial</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div style="flex: 1; min-width: 300px; max-width: 500px;">
+    <h2 style="text-align: center;">Waitlist</h2>
+    <table id="waitlist" style="width: 100%; border-collapse: collapse; background-color: var(--slate);">
+      <thead>
+        <tr style="background-color: var(--dark-navy); color: var(--white);">
+          <th>First Name</th>
+          <th>Last Initial</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
 
 <script>
-  // Google Sheets JSON feed URL
-  const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5ck-1B7HvfNdb83vap3DeZJNT4PBWdLeNoGIm5WM7BbxVw-8nIa0VAVEfo3iv3G5Zs8W5vHt-Wjnr/pub?output=csv';
+  // Format date for header
+  function getNextThursday() {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const daysUntilThursday = (4 - dayOfWeek + 7) % 7 || 7;
+    const nextThursday = new Date(today.getTime() + daysUntilThursday * 24 * 60 * 60 * 1000);
+    const options = { month: 'short', day: 'numeric' };
+    return nextThursday.toLocaleDateString('en-US', options);
+  }
 
-  fetch(sheetUrl)
+  document.getElementById('tournament-date').textContent = `${getNextThursday()} Bracket`;
+
+  // Load player data
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT5ck-1B7HvfNdb83vap3DeZJNT4PBWdLeNoGIm5WM7BbxVw-8nIa0VAVEfo3iv3G5Zs8W5vHt-Wjnr/pub?output=csv')
     .then(response => response.text())
-    .then(csvText => {
-      const rows = csvText.split('\n').map(row => row.split(','));
-      const headers = rows[0];
-      const data = rows.slice(1).filter(row => row[0]); // skip empty rows
-
+    .then(data => {
+      const rows = data.trim().split('\n').slice(1).map(row => row.split(','));
       const bracketBody = document.querySelector('#bracket tbody');
       const waitlistBody = document.querySelector('#waitlist tbody');
 
       let bracketCount = 0;
       let waitlistCount = 0;
 
-      data.forEach(row => {
-        const firstName = row[0].trim();
-        const lastName = row[1].trim();
-        const approved = row[7] ? row[7].trim().toUpperCase() === 'TRUE' : false;
-
-        const playerDisplay = `${firstName} ${lastName.charAt(0)}.`;
+      rows.forEach(row => {
+        const [firstName, lastName, , , , , , approved] = row;
+        const lastInitial = lastName ? lastName.charAt(0) : '';
 
         const tr = document.createElement('tr');
-        const td = document.createElement('td');
-        td.textContent = playerDisplay;
-        td.style.padding = '0.5rem';
-        tr.appendChild(td);
+        tr.innerHTML = `<td>${firstName}</td><td>${lastInitial}</td>`;
 
-        if (approved && bracketCount < 16) {
+        if (approved === 'TRUE' && bracketCount < 16) {
           bracketBody.appendChild(tr);
           bracketCount++;
-        } else if (!approved && waitlistCount < 16) {
+        } else if (waitlistCount < 16) {
           waitlistBody.appendChild(tr);
           waitlistCount++;
         }
