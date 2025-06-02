@@ -21,30 +21,6 @@
     color: var(--white);
   }
 
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  header h1 {
-    font-family: Georgia, serif;
-    font-size: 3rem;
-    margin: 0;
-    color: var(--accent-blue);
-  }
-
-  header p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-top: 1rem;
-    color: var(--white);
-  }
-
   nav {
     display: flex;
     justify-content: center;
@@ -63,6 +39,26 @@
   nav a:hover {
     background-color: var(--accent-blue);
     color: var(--darkest);
+  }
+
+  header {
+    text-align: center;
+    background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
+    padding: 4rem 2rem;
+  }
+
+  header h1 {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--accent-blue);
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    color: var(--white);
   }
 
   main {
@@ -88,7 +84,6 @@
     margin-top: 3rem;
   }
 
-  /* Responsive tweaks */
   @media (max-width: 600px) {
     header h1 {
       font-size: 2rem;
@@ -101,11 +96,6 @@
 </head>
 <body>
 
-<header>
-  <h1>River Tournament</h1>
-  <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
-</header>
-
 <nav>
   <a href="index.html">Home</a>
   <a href="rules.html">Rules</a>
@@ -114,6 +104,11 @@
   <a href="stats.html">Stats</a>
   <a href="contact.html">Contact</a>
 </nav>
+
+<header>
+  <h1>River Tournament</h1>
+  <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
+</header>
 
 <main>
   <p>Each tournament has a small buy-in, big payouts, and a chance to show off your skills—no matter your Fargo rating. Whether you’re here for the fun, the cash, or the bragging rights, there’s a place for you at the River!</p>
