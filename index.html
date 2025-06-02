@@ -8,66 +8,69 @@ title: River Tournament
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
   <div style="flex: 1; min-width: 300px; max-width: 500px;">
     <h2 style="text-align: center;">Bracket</h2>
-    <table id="bracket" style="width: 100%; border-collapse: collapse; background-color: var(--slate);">
-      <thead>
-        <tr style="background-color: var(--dark-navy); color: var(--white);">
-          <th>First Name</th>
-          <th>Last Initial</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <ul id="bracket" style="list-style: none; padding: 0; margin: 0; background-color: var(--slate); border-radius: 4px;"></ul>
   </div>
   <div style="flex: 1; min-width: 300px; max-width: 500px;">
     <h2 style="text-align: center;">Waitlist</h2>
-    <table id="waitlist" style="width: 100%; border-collapse: collapse; background-color: var(--slate);">
-      <thead>
-        <tr style="background-color: var(--dark-navy); color: var(--white);">
-          <th>First Name</th>
-          <th>Last Initial</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <ul id="waitlist" style="list-style: none; padding: 0; margin: 0; background-color: var(--slate); border-radius: 4px;"></ul>
   </div>
 </div>
 
 <script>
-  // Format date for header
-  function getNextThursday() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
+  // Calculate this week's tournament date based on 7:31pm Thursday cutoff
+  function getTournamentDate() {
+    const now = new Date();
+    const cutoffHour = 19;
+    const cutoffMinute = 31;
+    const dayOfWeek = now.getDay();
     const daysUntilThursday = (4 - dayOfWeek + 7) % 7 || 7;
-    const nextThursday = new Date(today.getTime() + daysUntilThursday * 24 * 60 * 60 * 1000);
+    const thisThursday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysUntilThursday - (dayOfWeek <= 4 ? 0 : 7));
+    thisThursday.setHours(cutoffHour);
+    thisThursday.setMinutes(cutoffMinute);
+    thisThursday.setSeconds(0);
+
+    let tournamentDate;
+    if (now < thisThursday) {
+      const tournamentThisThursday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + (4 - dayOfWeek));
+      tournamentDate = tournamentThisThursday;
+    } else {
+      const tournamentNextThursday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + ((4 - dayOfWeek + 7) % 7 || 7));
+      tournamentDate = tournamentNextThursday;
+    }
     const options = { month: 'short', day: 'numeric' };
-    return nextThursday.toLocaleDateString('en-US', options);
+    document.getElementById('tournament-date').textContent = `${tournamentDate.toLocaleDateString('en-US', options)} Bracket`;
+    return tournamentDate.toISOString().split('T')[0];
   }
 
-  document.getElementById('tournament-date').textContent = `${getNextThursday()} Bracket`;
+  const tournamentDate = getTournamentDate();
 
-  // Load player data
+  // Fetch and filter data
   fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT5ck-1B7HvfNdb83vap3DeZJNT4PBWdLeNoGIm5WM7BbxVw-8nIa0VAVEfo3iv3G5Zs8W5vHt-Wjnr/pub?output=csv')
     .then(response => response.text())
     .then(data => {
       const rows = data.trim().split('\n').slice(1).map(row => row.split(','));
-      const bracketBody = document.querySelector('#bracket tbody');
-      const waitlistBody = document.querySelector('#waitlist tbody');
+      const bracketList = document.getElementById('bracket');
+      const waitlistList = document.getElementById('waitlist');
 
       let bracketCount = 0;
       let waitlistCount = 0;
 
       rows.forEach(row => {
-        const [firstName, lastName, , , , , , approved] = row;
-        const lastInitial = lastName ? lastName.charAt(0) : '';
+        const [signUpTime, firstName, lastName, , , , , newPlayer, tournamentDateField, approved] = row.map(cell => cell.trim());
+        if (tournamentDateField !== tournamentDate) return;
 
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${firstName}</td><td>${lastInitial}</td>`;
+        const lastInitial = lastName ? lastName.charAt(0) + '.' : '';
+        const displayName = `${firstName} ${lastInitial}`;
+
+        const li = document.createElement('li');
+        li.textContent = displayName;
+        li.style.padding = '0.5rem';
 
         if (approved === 'TRUE' && bracketCount < 16) {
-          bracketBody.appendChild(tr);
+          bracketList.appendChild(li);
           bracketCount++;
-        } else if (waitlistCount < 16) {
-          waitlistBody.appendChild(tr);
+        } else if (approved !== 'TRUE' && waitlistCount < 16) {
+          waitlistList.appendChild(li);
           waitlistCount++;
         }
       });
