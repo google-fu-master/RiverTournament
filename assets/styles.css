@@ -134,6 +134,7 @@ nav {
 
 header {
   margin-left: 200px;
+  width: calc(100% - 200px);
   text-align: center;
   background-color: var(--mid-navy);
   padding-top: 1rem;
