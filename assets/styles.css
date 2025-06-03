@@ -101,7 +101,7 @@ nav {
 }
 
 /* Main content alignment */
-* Contact form styling (specific to Contact page) */
+/* Contact form styling (specific to Contact page) */
 #contactForm {
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@ nav {
 }
 
 /* Index page specific styling */
-$1
+
 
 /* Page Header Styling */
 header {
