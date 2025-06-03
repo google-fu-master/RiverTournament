@@ -101,43 +101,7 @@ nav {
 }
 
 /* Main content alignment */
-main {
-  padding: 1rem;
-  background-color: var(--darkest);
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-
-
-
-  /* When menu is closed, remove offset */
-  #menu-toggle:not(:checked) ~ header + main {
-    margin-left: 0;
-  }
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: var(--white);
-  text-align: center;
-}
-
-@media (min-width: 1025px) {
-  /* Offset header when menu is open */
-  #menu-toggle:checked ~ header h1 {
-    margin-left: 200px;
-  }
-}
-
-main {
-  margin-left: 200px;
-  padding: 1rem;
-  background-color: var(--darkest);
-}
-
-/* Contact form styling (specific to Contact page) */
+* Contact form styling (specific to Contact page) */
 #contactForm {
   display: flex;
   flex-direction: column;
