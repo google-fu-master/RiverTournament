@@ -3,6 +3,7 @@
   --dark-navy: #0D1B2A;
   --mid-navy: #002B3A;
   --accent-blue: #0071a4;
+  --link-yellow: #d4af37;
   --link-gold: #a47f00;
   --slate: #151D23;
   --white: #f5f5f5;
@@ -127,12 +128,17 @@ footer {
   flex-shrink: 0;
 }
 
-/* Universal link styling for all links, including in-page anchors */
+/* Universal link styling for all links, including visited links and in-page anchors */
 a {
-  color: var(--link-gold);
+  color: var(--link-yellow);
   text-decoration: underline;
 }
 
-a:hover {
+a:visited {
   color: var(--link-gold);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-yellow);
 }
