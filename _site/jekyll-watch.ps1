@@ -4,6 +4,11 @@ $projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\River
 # Command to run Jekyll serve
 $jekyllCommand = "bundle exec jekyll serve"
 
+# Run bundle install silently
+Write-Host "Running bundle install..."
+Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$projectDir'; bundle install" -Wait
+Write-Host "bundle install completed."
+
 # Global variable to hold the Jekyll process object
 $global:jekyllProcess = Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$projectDir'; $jekyllCommand" -PassThru
 
@@ -34,5 +39,5 @@ Register-ObjectEvent $watcher "Changed" -Action $action
 # Start watching
 $watcher.EnableRaisingEvents = $true
 
-Write-Host "Watcher started (hidden Jekyll). Press Ctrl+C to stop."
+Write-Host "Watcher started (hidden Jekyll & silent bundle install). Press Ctrl+C to stop."
 while ($true) { Start-Sleep -Seconds 1 }
