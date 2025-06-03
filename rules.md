@@ -95,7 +95,6 @@ permalink: /rules/
     <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues.</li>
     <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
     <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
-    <li>9-ball is called when it’s the game-winning shot. Other shots do not need to be called.</li>
     <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
     <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
     <li>Timeouts: None allowed.</li>
@@ -120,10 +119,26 @@ permalink: /rules/
   </ul>
 </section>
 
-<!-- Back to Top button -->
-<p style="text-align:center; margin-top: 2rem;">
-  <a href="#top" class="back-to-top">⬆ Back to Top</a>
-</p>
+<!-- Floating Back to Top button -->
+<a href="#top" class="back-to-top" aria-label="Back to Top">
+  <img src="/assets/images/appbuttons/backtotop.png" alt="Back to Top">
+</a>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: block;
+  }
+  .back-to-top img {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
 
 <script>
   // Smooth scrolling
@@ -136,5 +151,11 @@ permalink: /rules/
       const text = section.textContent.toLowerCase();
       section.style.display = text.includes(term) ? 'block' : 'none';
     });
+  });
+
+  // Back to Top click behavior
+  document.querySelector('.back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
