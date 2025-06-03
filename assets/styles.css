@@ -117,30 +117,27 @@ footer {
 
 /* Mobile styles for screens 1024px and below */
 @media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-  }
-
   .menu {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
     top: 0;
-    right: -200px;
+    right: 0;
     width: 200px;
     height: 100vh;
     background-color: var(--dark-navy);
     text-align: left;
     padding-top: 4rem;
     transition: transform 0.3s ease;
-    transform: translateX(0);
+    transform: translateX(200px); /* Start off-screen to the right */
     z-index: 1000;
   }
 
-  #menu-toggle:checked + .menu {
-    transform: translateX(-200px);
+  #menu-toggle:checked ~ .menu {
+    transform: translateX(0); /* Slide into view */
   }
+}
 
   nav a {
     display: block;
