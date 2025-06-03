@@ -34,33 +34,25 @@ nav {
   background-color: var(--dark-navy);
   color: var(--white);
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   position: relative;
-  height: auto;
   width: 100%;
 }
 
 .menu {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: var(--dark-navy);
-  transform: translateX(-200px);
-  transition: transform 0.3s ease;
-  z-index: 1000;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu a {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
 }
 
 .menu a:hover {
@@ -68,10 +60,13 @@ nav {
 }
 
 .hamburger {
-  display: block;
+  display: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--white);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
   z-index: 1001;
 }
 
@@ -84,61 +79,43 @@ nav {
     justify-content: space-between;
   }
   .menu {
-    transform: translateX(-200px);
-  }
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-}
-
-  nav {
-    flex-direction: row;
-    align-items: center;
-    height: auto;
-    width: 100%;
-    min-height: auto;
-    position: relative;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .menu {
     flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
+    gap: 1rem;
+    position: fixed;
     top: 0;
-    right: -200px;
+    left: -200px;
     width: 200px;
     height: 100vh;
     background-color: var(--dark-navy);
-    text-align: left;
     padding-top: 4rem;
     transition: transform 0.3s ease;
-    transform: translateX(0);
+    transform: translateX(-200px);
     z-index: 1000;
   }
-
   #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(-200px);
+    transform: translateX(0);
   }
-
-  nav a {
+  .hamburger {
     display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
   }
 }
 
-header {
-  margin-left: 200px;
-  width: calc(100% - 200px);
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+/* Main content alignment */
+main {
+  padding: 1rem;
+  background-color: var(--darkest);
+  margin-left: 0;
+}
+
+@media (min-width: 1025px) {
+  /* On desktop, offset when menu is open */
+  main {
+    margin-left: 200px;
+  }
+  /* When menu is closed, remove offset */
+  #menu-toggle:not(:checked) ~ header + main {
+    margin-left: 0;
+  }
 }
 
 header h1 {
