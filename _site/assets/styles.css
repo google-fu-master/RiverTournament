@@ -19,19 +19,17 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--darkest);
-  color: var(--white);
 }
 
 footer {
   margin-top: auto;
-  background-color: var(--slate);
-  color: var(--white);
+  background-color: #151D23;
+  color: #f5f5f5;
   text-align: center;
   padding: 1rem 0;
 }
 
-/* Navbar and layout */
+/* Navigation styling */
 nav {
   background-color: var(--dark-navy);
   color: var(--white);
@@ -39,6 +37,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
 .menu {
@@ -64,6 +63,39 @@ nav {
 
 #menu-toggle {
   display: none;
+}
+
+/* Responsive menu toggle */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 }
 
 header {
@@ -112,13 +144,13 @@ main {
 
 #contactForm .hint {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
   text-align: center;
 }
 
 #contactForm button {
   padding: 0.5rem 1rem;
-  background: var(--accent-blue);
+  background: #0071a4;
   color: #fff;
   border: none;
   border-radius: 0.25rem;
@@ -170,7 +202,6 @@ main {
 #bracket li,
 #waitlist li {
   padding: 0.5rem;
-  border-bottom: 1px solid var(--dark-navy);
 }
 
 .note {
@@ -178,48 +209,4 @@ main {
   max-width: 600px;
   margin: 1rem auto;
   font-size: 0.9rem;
-  color: var(--white);
-}
-
-/* Responsive menu toggle */
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    text-align: left;
-    padding-top: 4rem;
-    transition: transform 0.3s ease;
-    transform: translateX(0);
-    z-index: 1000;
-  }
-
-  #menu-toggle:checked + .menu {
-    transform: translateX(-200px);
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  main {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
 }
