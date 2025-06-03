@@ -249,5 +249,34 @@ footer {
   &copy; 2025 Brittany Posey - All Rights Reserved
 </footer>
 
+<script>
+(function() {
+  const toggle = document.getElementById('menu-toggle');
+  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+
+  if (isDesktop) {
+    // On desktop, open by default (saved state from localStorage)
+    if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      localStorage.setItem('menuOpen', toggle.checked);
+    });
+  } else {
+    // On mobile, closed by default
+    toggle.checked = false;
+
+    // Automatically close on new page load
+    const links = document.querySelectorAll('.menu a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+      });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
