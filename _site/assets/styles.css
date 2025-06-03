@@ -23,6 +23,13 @@ body {
   color: var(--white);
 }
 
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 footer {
   margin-top: auto;
   background-color: var(--slate);
@@ -74,6 +81,10 @@ nav {
 }
 
 @media (max-width: 1024px) {
+  body {
+    flex-direction: column;
+  }
+
   nav {
     flex-direction: row;
     align-items: center;
