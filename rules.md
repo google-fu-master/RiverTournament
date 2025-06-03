@@ -1,3 +1,4 @@
+<!--this is the rule.md file-->
 ---
 layout: default
 title: Tournament Rules

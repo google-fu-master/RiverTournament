@@ -1,3 +1,4 @@
+#this is the jekyll-watch.ps1 file
 # Set your project directory
 $projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\RiverTournament"
 
