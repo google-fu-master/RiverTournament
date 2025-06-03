@@ -142,3 +142,16 @@ a:hover,
 a:focus {
   color: var(--link-yellow);
 }
+html body a {
+  color: #d4af37 !important;
+  text-decoration: underline !important;
+}
+
+html body a:visited {
+  color: #a47f00 !important;
+}
+
+html body a:hover,
+html body a:focus {
+  color: #d4af37 !important;
+}
