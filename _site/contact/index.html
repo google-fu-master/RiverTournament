@@ -1,9 +1,35 @@
-<!--this is the contact.html file-->
----
-layout: default
-title: Contact Us
-permalink: /contact/
----
+<!DOCTYPE html>
+<!--this is the default.html file that lives in the _layout folder-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - River Tournament</title>
+  <link rel="stylesheet" href="/RiverTournament/assets/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="menu">
+      <a href="/RiverTournament/">Home</a>
+      <a href="/RiverTournament/rules/">Rules</a>
+      <a href="/RiverTournament/signup/">Sign Up</a>
+      <a href="/RiverTournament/faq/">FAQ</a>
+      <a href="/RiverTournament/stats/">Stats</a>
+      <a href="/RiverTournament/photos/">Photos</a>
+      <a href="/RiverTournament/contact/">Contact</a>
+    </div>
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+  </nav>
+
+  <header>
+    <h1>Contact Us</h1>
+    
+  </header>
+
+  <main>
+    <!--this is the contact.html file-->
 
 <h1 style="text-align: center;">Contact Us</h1>
 
@@ -65,3 +91,35 @@ permalink: /contact/
     alert('Form submitted (reCAPTCHA logic needed)');
   });
 </script>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Brittany Posey - All Rights Reserved
+  </footer>
+
+  <script>
+  (function() {
+    const toggle = document.getElementById('menu-toggle');
+    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+
+    if (isDesktop) {
+      if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
+        toggle.checked = true;
+      }
+      toggle.addEventListener('change', () => {
+        localStorage.setItem('menuOpen', toggle.checked);
+      });
+    } else {
+      toggle.checked = false;
+      const links = document.querySelectorAll('.menu a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.checked = false;
+        });
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

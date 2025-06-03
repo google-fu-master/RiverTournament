@@ -1,7 +1,6 @@
-#this is the _config.yml file
 title: River Tournament
 description: Official site for River Tournament hosted by Brittany Posey
 markdown: kramdown
 permalink: pretty
 baseurl: "/RiverTournament"
-
+#this is the _config.yml file

@@ -1,9 +1,10 @@
-<!--this is the rule.md file-->
 ---
 layout: default
 title: Tournament Rules
 permalink: /rules/
 ---
+
+<!--this is the rule.md file-->
 
 <input type="text" id="search" placeholder="Search rules...">
 

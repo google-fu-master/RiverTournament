@@ -1,14 +1,40 @@
-<!--this is the faq.html file-->
----
-layout: default
-title: FAQ
-permalink: /faq/
----
+<!DOCTYPE html>
+<!--this is the default.html file that lives in the _layout folder-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - River Tournament</title>
+  <link rel="stylesheet" href="/RiverTournament/assets/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="menu">
+      <a href="/RiverTournament/">Home</a>
+      <a href="/RiverTournament/rules/">Rules</a>
+      <a href="/RiverTournament/signup/">Sign Up</a>
+      <a href="/RiverTournament/faq/">FAQ</a>
+      <a href="/RiverTournament/stats/">Stats</a>
+      <a href="/RiverTournament/photos/">Photos</a>
+      <a href="/RiverTournament/contact/">Contact</a>
+    </div>
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+  </nav>
+
+  <header>
+    <h1>FAQ</h1>
+    
+  </header>
+
+  <main>
+    <!--this is the faq.html file-->
 
 <h2>Frequently Asked Questions</h2>
 
 <p style="margin-bottom: 2rem;">
-  This tournament is always a work in progress! If you have a question that isn’t answered here, please let us know so we can add it. Visit the <a href="{{ site.baseurl }}/contact.html">Contact page</a> to submit your question.
+  This tournament is always a work in progress! If you have a question that isn’t answered here, please let us know so we can add it. Visit the <a href="/RiverTournament/contact.html">Contact page</a> to submit your question.
 </p>
 
 <div class="faq">
@@ -106,3 +132,35 @@ permalink: /faq/
   <h4>What other transportation options are available?</h4>
   <p>Other transportation options include Lime scooters, Uber, and Lyft, all of which are readily available in the area.</p>
 </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Brittany Posey - All Rights Reserved
+  </footer>
+
+  <script>
+  (function() {
+    const toggle = document.getElementById('menu-toggle');
+    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+
+    if (isDesktop) {
+      if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
+        toggle.checked = true;
+      }
+      toggle.addEventListener('change', () => {
+        localStorage.setItem('menuOpen', toggle.checked);
+      });
+    } else {
+      toggle.checked = false;
+      const links = document.querySelectorAll('.menu a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.checked = false;
+        });
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
