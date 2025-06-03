@@ -72,13 +72,13 @@
 
     header h1 {
       font-family: Georgia, serif;
-      font-size: 3rem; /* Bigger title font */
+      font-size: 3rem;
       margin: 0;
       color: var(--accent-blue);
     }
 
     header p {
-      font-size: 1.2rem; /* Bigger tagline font */
+      font-size: 1.2rem;
       max-width: 90%;
       margin: 1rem auto 0;
       color: var(--white);
@@ -102,7 +102,6 @@
       margin-top: 2rem;
     }
 
-    /* Mobile styles */
     @media (max-width: 1024px) {
       .hamburger {
         display: block;
@@ -153,16 +152,16 @@
 <body>
 
 <nav>
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
   <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
   <div class="menu">
-    <a href="{{ site.baseurl }}/index.html">Home</a>
-    <a href="{{ site.baseurl }}/rules.html">Rules</a>
-    <a href="{{ site.baseurl }}/signup.html">Sign Up</a>
-    <a href="{{ site.baseurl }}/faq.html">FAQ</a>
-    <a href="{{ site.baseurl }}/stats.html">Stats</a>
-    <a href="{{ site.baseurl }}/photos.html">Photos</a>
-    <a href="{{ site.baseurl }}/contact.html">Contact</a>
+    <a href="{{ site.baseurl }}/">Home</a>
+    <a href="{{ site.baseurl }}/rules/">Rules</a>
+    <a href="{{ site.baseurl }}/signup/">Sign Up</a>
+    <a href="{{ site.baseurl }}/faq/">FAQ</a>
+    <a href="{{ site.baseurl }}/stats/">Stats</a>
+    <a href="{{ site.baseurl }}/photos/">Photos</a>
+    <a href="{{ site.baseurl }}/contact/">Contact</a>
   </div>
 </nav>
 
