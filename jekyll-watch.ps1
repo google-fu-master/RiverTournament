@@ -5,7 +5,7 @@ $projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\River
 $jekyllCommand = "bundle exec jekyll serve"
 
 # Global variable to hold the Jekyll process object
-$global:jekyllProcess = Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectDir'; $jekyllCommand" -PassThru
+$global:jekyllProcess = Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$projectDir'; $jekyllCommand" -PassThru
 
 # Watch for changes in key files
 $watcher = New-Object System.IO.FileSystemWatcher
@@ -24,8 +24,8 @@ $action = {
   # Wait briefly to ensure it's stopped
   Start-Sleep -Seconds 2
 
-  # Restart Jekyll
-  $global:jekyllProcess = Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$global:projectDir'; $global:jekyllCommand" -PassThru
+  # Restart Jekyll hidden
+  $global:jekyllProcess = Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$global:projectDir'; $global:jekyllCommand" -PassThru
 }
 
 # Register event
@@ -34,5 +34,5 @@ Register-ObjectEvent $watcher "Changed" -Action $action
 # Start watching
 $watcher.EnableRaisingEvents = $true
 
-Write-Host "Watcher started. Press Ctrl+C to stop."
+Write-Host "Watcher started (hidden Jekyll). Press Ctrl+C to stop."
 while ($true) { Start-Sleep -Seconds 1 }
