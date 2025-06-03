@@ -133,7 +133,7 @@ nav {
 }
 
 header {
-  padding-left: 200px;
+  margin-left: 200px;
   text-align: center;
   background-color: var(--mid-navy);
   padding-top: 1rem;
