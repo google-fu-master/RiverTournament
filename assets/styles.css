@@ -32,16 +32,11 @@ nav {
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 nav a {
   color: var(--white);
   text-decoration: none;
-  padding: 1rem 1.5rem;
+  display: block;
+  padding: 1rem;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -52,7 +47,7 @@ nav a:hover {
 }
 
 .hamburger {
-  display: none;
+  display: block;
   cursor: pointer;
   padding: 1rem;
   font-size: 1.5rem;
@@ -65,6 +60,24 @@ nav a:hover {
 
 #menu-toggle {
   display: none;
+}
+
+.menu {
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--dark-navy);
+  width: 200px;
+  height: 100vh;
+  padding-top: 4rem;
+  transform: translateX(-200px);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+#menu-toggle:checked ~ .menu {
+  transform: translateX(0);
 }
 
 header {
@@ -115,72 +128,12 @@ footer {
   flex-shrink: 0;
 }
 
-/* Mobile styles for screens 1024px and below */
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    text-align: left;
-    padding-top: 4rem;
-    transition: transform 0.3s ease;
-    transform: translateX(-200px); /* Start off-screen to the left */
-    z-index: 1000;
-  }
-
-  #menu-toggle:checked ~ .menu {
-    transform: translateX(0); /* Slide into view from the left */
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header p {
-    font-size: 0.9rem;
-  }
-
-  main {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
+/* Custom link styling in pool-ball-list (like modified BCA rules) */
+.pool-ball-list a {
+  color: var(--white);
+  text-decoration: underline;
 }
 
-/* Custom list style for pool ball numbered list items */
-.pool-ball-list {
-  list-style: none;
-  padding-left: 2.5em;
-}
-
-.pool-ball-list li {
-  position: relative;
-  margin-bottom: 0.5em;
-}
-
-.pool-ball-list li.numbered-1::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.1em;
-  width: 24px;
-  height: 24px;
-  background-image: url('{{ site.baseurl }}/assets/images/balls/yellow1ball.png');
-  background-size: cover;
+.pool-ball-list a:hover {
+  color: var(--accent-blue);
 }
