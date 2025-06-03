@@ -14,7 +14,7 @@
 /* Global styling */
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -127,8 +127,8 @@ header h1 {
 }
 
 main {
-  padding: 1rem;
   flex: 1;
+  padding: 1rem;
   background-color: var(--darkest);
 }
 
