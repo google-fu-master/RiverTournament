@@ -23,13 +23,6 @@ body {
   color: var(--white);
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 footer {
   margin-top: auto;
   background-color: var(--slate);
@@ -43,13 +36,13 @@ nav {
   background-color: var(--dark-navy);
   color: var(--white);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0.5rem 1rem;
-  position: relative;
   flex-direction: column;
-  min-height: 100vh;
+  align-items: flex-start;
+  padding: 1rem;
   width: 200px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .menu {
@@ -91,6 +84,7 @@ nav {
     height: auto;
     width: 100%;
     min-height: auto;
+    position: relative;
   }
 
   .hamburger {
