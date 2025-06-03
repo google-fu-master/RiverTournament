@@ -62,3 +62,32 @@ title: River Tournament
 
   loadBracket();
 </script>
+
+<script>
+  (function () {
+    const toggle = document.getElementById('menu-toggle');
+    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+    const savedState = localStorage.getItem('menuOpen');
+
+    // Apply saved state or default
+    if (savedState === null) {
+      toggle.checked = isDesktop;
+    } else {
+      toggle.checked = savedState === 'true';
+    }
+
+    toggle.addEventListener('change', () => {
+      localStorage.setItem('menuOpen', toggle.checked);
+    });
+
+    // On mobile, always close the menu after a nav click
+    if (!isDesktop) {
+      const links = document.querySelectorAll('.menu a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          localStorage.setItem('menuOpen', false);
+        });
+      });
+    }
+  })();
+</script>
