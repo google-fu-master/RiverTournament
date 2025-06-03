@@ -127,14 +127,12 @@ footer {
   flex-shrink: 0;
 }
 
-/* All links site-wide (hyperlinks, in-page anchors, any clickable link) */
-a,
-a[href^="#"] {
+/* Universal link styling for all links, including in-page anchors */
+a {
   color: var(--link-gold);
   text-decoration: underline;
 }
 
-a:hover,
-a[href^="#"]:hover {
-  color: var(--accent-blue);
+a:hover {
+  color: var(--link-gold);
 }
