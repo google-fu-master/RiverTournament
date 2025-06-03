@@ -7,12 +7,20 @@
   --white: #f5f5f5;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--darkest);
   color: var(--white);
   overflow-x: hidden;
+
+  /* Flex layout for sticky footer */
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -84,6 +92,9 @@ main {
   background-color: var(--slate);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+  /* Allow main content to grow and push footer down */
+  flex: 1 0 auto;
 }
 
 main p {
@@ -98,6 +109,9 @@ footer {
   color: var(--white);
   box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
   margin-top: 2rem;
+
+  /* Prevent shrinking of footer */
+  flex-shrink: 0;
 }
 
 /* Mobile styles for screens 1024px and below */
@@ -146,4 +160,26 @@ footer {
     margin: 0.5rem;
     padding: 1rem;
   }
+}
+
+/* Custom list style for pool ball numbered list items */
+.pool-ball-list {
+  list-style: none;
+  padding-left: 2.5em;
+}
+
+.pool-ball-list li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.pool-ball-list li.numbered-1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 24px;
+  height: 24px;
+  background-image: url('/assets/images/balls/yellow1ball.png');
+  background-size: cover;
 }

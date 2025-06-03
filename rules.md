@@ -3,27 +3,6 @@ layout: default
 title: Tournament Rules
 ---
 
-<style>
-  .pool-ball-list {
-    list-style: none;
-    padding-left: 2.5em;
-  }
-  .pool-ball-list li {
-    position: relative;
-    margin-bottom: 0.5em;
-  }
-  .pool-ball-list li.numbered-1::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-    width: 24px;
-    height: 24px;
-    background-image: url('/assets/images/balls/yellow1ball.png');
-    background-size: cover;
-  }
-</style>
-
 <input type="text" id="search" placeholder="Search rules...">
 
 <section id="player-eligibility">
@@ -87,7 +66,7 @@ title: Tournament Rules
 
 <section id="bca-modified-rules">
   <h2>BCA Modified Rules</h2>
-  <!-- The full BCA Modified Rules section can go here, using <ul> or <ol> as needed -->
+  <!-- Full BCA Modified Rules section goes here as needed -->
 </section>
 
 <script>
