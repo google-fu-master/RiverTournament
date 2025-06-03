@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up - River Tournament</title>
-  <link rel="stylesheet" href="/RiverTournament/assets/styles.css" />
-</head>
-<body>
+<!--- this is the signup.html file --->
+---
+layout: default
+title: Sign Up
+---
 
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <div class="menu">
-      <a href="/RiverTournament/">Home</a>
-      <a href="/RiverTournament/rules/">Rules</a>
-      <a href="/RiverTournament/signup/">Sign Up</a>
-      <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
-      <a href="/RiverTournament/contact/">Contact</a>
-    </div>
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-  </nav>
-
-  <header>
-    <h1>Sign Up</h1>
-    
-  </header>
-
-  <main>
-    <p>Please ensure that your name matches your photo ID and the name on your Fargo account. All information will be verified at tournament registration.</p>
+<p>Please ensure that your name matches your photo ID and the name on your Fargo account. All information will be verified at tournament registration.</p>
 
 <form id="signup-form" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
   <label for="first-name">First Name:</label>
@@ -126,34 +102,3 @@
   }
 </script>
 
-  </main>
-
-  <footer>
-    &copy; 2025 Brittany Posey - All Rights Reserved
-  </footer>
-
-  <script>
-  (function() {
-    const toggle = document.getElementById('menu-toggle');
-    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-
-    if (isDesktop) {
-      if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
-        toggle.checked = true;
-      }
-      toggle.addEventListener('change', () => {
-        localStorage.setItem('menuOpen', toggle.checked);
-      });
-    } else {
-      toggle.checked = false;
-      const links = document.querySelectorAll('.menu a');
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-        });
-      });
-    }
-  })();
-  </script>
-</body>
-</html>

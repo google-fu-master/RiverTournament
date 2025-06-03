@@ -1,36 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>River Tournament - River Tournament</title>
-  <link rel="stylesheet" href="/RiverTournament/assets/styles.css" />
-</head>
-<body>
+<!--this is the index.html file -->
+---
+layout: default
+title: River Tournament
+---
 
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <div class="menu">
-      <a href="/RiverTournament/">Home</a>
-      <a href="/RiverTournament/rules/">Rules</a>
-      <a href="/RiverTournament/signup/">Sign Up</a>
-      <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
-      <a href="/RiverTournament/contact/">Contact</a>
-    </div>
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-  </nav>
-
-  <header>
-    <h1>River Tournament</h1>
-    
-      <p>Weekly pool tournaments at River Pool and Sports Bar. Cash prizes, bragging rights, and unforgettable nights!</p>
-    
-  </header>
-
-  <main>
-    <h1 id="tournament-date">Loading Bracket...</h1>
+<h1 id="tournament-date">Loading Bracket...</h1>
 
 <p class="intro-text">
   Want to join this week's tournament? 
@@ -57,35 +31,3 @@
 <script>
   // (JavaScript unchanged)
 </script>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Brittany Posey - All Rights Reserved
-  </footer>
-
-  <script>
-  (function() {
-    const toggle = document.getElementById('menu-toggle');
-    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-
-    if (isDesktop) {
-      if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
-        toggle.checked = true;
-      }
-      toggle.addEventListener('change', () => {
-        localStorage.setItem('menuOpen', toggle.checked);
-      });
-    } else {
-      toggle.checked = false;
-      const links = document.querySelectorAll('.menu a');
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-        });
-      });
-    }
-  })();
-  </script>
-</body>
-</html>

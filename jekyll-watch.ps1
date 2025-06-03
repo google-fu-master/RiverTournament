@@ -1,21 +1,21 @@
 #this is the jekyll-watch.ps1 file
 # Set your project directory
-$projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\RiverTournament"
+$global:projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\RiverTournament"
 
 # Command to run Jekyll serve
-$jekyllCommand = "bundle exec jekyll serve"
+$global:jekyllCommand = "bundle exec jekyll serve"
 
 # Run bundle install silently
 Write-Host "Running bundle install..."
-Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$projectDir'; bundle install" -Wait
+Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$global:projectDir'; bundle install" -Wait
 Write-Host "bundle install completed."
 
 # Global variable to hold the Jekyll process object
-$global:jekyllProcess = Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$projectDir'; $jekyllCommand" -PassThru
+$global:jekyllProcess = Start-Process powershell -WindowStyle Hidden -ArgumentList "-Command", "cd '$global:projectDir'; $global:jekyllCommand" -PassThru
 
 # Watch for changes in key files
 $watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = $projectDir
+$watcher.Path = $global:projectDir
 $watcher.IncludeSubdirectories = $true
 $watcher.Filter = "*.*"
 $watcher.NotifyFilter = [System.IO.NotifyFilters]'LastWrite'

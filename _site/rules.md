@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tournament Rules - River Tournament</title>
-  <link rel="stylesheet" href="/RiverTournament/assets/styles.css" />
-</head>
-<body>
+<!--this is the rule.md file-->
+---
+layout: default
+title: Tournament Rules
+permalink: /rules/
+---
 
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <div class="menu">
-      <a href="/RiverTournament/">Home</a>
-      <a href="/RiverTournament/rules/">Rules</a>
-      <a href="/RiverTournament/signup/">Sign Up</a>
-      <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
-      <a href="/RiverTournament/contact/">Contact</a>
-    </div>
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-  </nav>
-
-  <header>
-    <h1>Tournament Rules</h1>
-    
-  </header>
-
-  <main>
-    <p><input type="text" id="search" placeholder="Search rules..." /></p>
+<input type="text" id="search" placeholder="Search rules...">
 
 <section id="player-eligibility">
-  <h2>Player Eligibility &amp; Registration</h2>
+  <h2>Player Eligibility & Registration</h2>
   <ul class="pool-ball-list">
     <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
     <li>You’ll need to show a Fargo account and a photo ID at registration.</li>
@@ -48,7 +25,7 @@
 </section>
 
 <section id="match-format">
-  <h2>Match Format &amp; Races</h2>
+  <h2>Match Format & Races</h2>
   <ul class="pool-ball-list">
     <li class="numbered-1">8–12 players: race to 3 wins.</li>
     <li>13–16 players: race to 2 wins.</li>
@@ -58,7 +35,7 @@
 </section>
 
 <section id="equipment">
-  <h2>Equipment &amp; Gameplay</h2>
+  <h2>Equipment & Gameplay</h2>
   <ul class="pool-ball-list">
     <li class="numbered-1">Racks are Fargo Reported.</li>
     <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
@@ -70,7 +47,7 @@
 </section>
 
 <section id="conduct">
-  <h2>Conduct &amp; House Rules</h2>
+  <h2>Conduct & House Rules</h2>
   <ul class="pool-ball-list">
     <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
@@ -99,9 +76,9 @@
 </section>
 
 <!-- Floating Back to Top button -->
-<p><a href="#top" class="back-to-top" aria-label="Back to Top">
-  <img src="/assets/images/appbuttons/backtotop.png" alt="Back to Top" />
-</a></p>
+<a href="#top" class="back-to-top" aria-label="Back to Top">
+  <img src="/assets/images/appbuttons/backtotop.png" alt="Back to Top">
+</a>
 
 <style>
   .back-to-top {
@@ -156,36 +133,3 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
-
-
-  </main>
-
-  <footer>
-    &copy; 2025 Brittany Posey - All Rights Reserved
-  </footer>
-
-  <script>
-  (function() {
-    const toggle = document.getElementById('menu-toggle');
-    const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-
-    if (isDesktop) {
-      if (localStorage.getItem('menuOpen') === 'true' || !localStorage.getItem('menuOpen')) {
-        toggle.checked = true;
-      }
-      toggle.addEventListener('change', () => {
-        localStorage.setItem('menuOpen', toggle.checked);
-      });
-    } else {
-      toggle.checked = false;
-      const links = document.querySelectorAll('.menu a');
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-        });
-      });
-    }
-  })();
-  </script>
-</body>
-</html>
