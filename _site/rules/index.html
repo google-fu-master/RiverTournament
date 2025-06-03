@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tournament Rules - River Tournament</title>
+  <style>
+    :root {
+      --darkest: #141414;
+      --dark-navy: #0D1B2A;
+      --mid-navy: #002B3A;
+      --accent-blue: #0071a4;
+      --slate: #151D23;
+      --white: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--darkest);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: relative;
+      background-color: var(--dark-navy);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: var(--accent-blue);
+      color: var(--darkest);
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: var(--white);
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      z-index: 1001;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark-navy), var(--mid-navy));
+      padding: 3rem 1rem;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: 3rem; /* Bigger title font */
+      margin: 0;
+      color: var(--accent-blue);
+    }
+
+    header p {
+      font-size: 1.2rem; /* Bigger tagline font */
+      max-width: 90%;
+      margin: 1rem auto 0;
+      color: var(--white);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--slate);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--dark-navy);
+      color: var(--white);
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+      margin-top: 2rem;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 1024px) {
+      .hamburger {
+        display: block;
+      }
+
+      .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: var(--dark-navy);
+        text-align: left;
+        padding-top: 4rem;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+        z-index: 1000;
+      }
+
+      #menu-toggle:checked + .menu {
+        transform: translateX(200px);
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      main {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <input type="checkbox" id="menu-toggle" />
+  <div class="menu">
+    <a href="/RiverTournament/index.html">Home</a>
+    <a href="/RiverTournament/rules.html">Rules</a>
+    <a href="/RiverTournament/signup.html">Sign Up</a>
+    <a href="/RiverTournament/faq.html">FAQ</a>
+    <a href="/RiverTournament/stats.html">Stats</a>
+    <a href="/RiverTournament/photos.html">Photos</a>
+    <a href="/RiverTournament/contact.html">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Tournament Rules</h1>
+  
+</header>
+
+<main>
+  <p><input type="text" id="search" placeholder="Search rules..." /></p>
+
+<section id="player-eligibility">
+  <h2>Player Eligibility &amp; Registration</h2>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
+    <li>You’ll need to show a Fargo account and a photo ID at registration.</li>
+    <li>First-timers can create a Fargo account using the mobile app (links coming soon in the FAQ).</li>
+    <li>If you have more than one Fargo account, we’ll use the highest rating. If it’s over 445, you won’t be eligible—please get your accounts merged ahead of time.</li>
+    <li>A screenshot of your Fargo rating can be uploaded in the Sign Up sheet, but your rating will be confirmed live in the Fargo app at registration.</li>
+    <li>Entry fees must be paid at time of registration.</li>
+    <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
+    <li><strong>You do not have a spot in the bracket until your fee is paid, your Fargo rating has been verified, and your match requirements are confirmed.</strong></li>
+  </ul>
+</section>
+
+<section id="match-format">
+  <h2>Match Format &amp; Races</h2>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">8–12 players: race to 3 wins.</li>
+    <li>13–16 players: race to 2 wins.</li>
+    <li>If there’s a 75+ Fargo gap, the higher-rated player has to win 1 extra game.</li>
+    <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion to encourage fair gameplay at any time.</li>
+  </ul>
+</section>
+
+<section id="equipment">
+  <h2>Equipment &amp; Gameplay</h2>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">Racks are Fargo Reported.</li>
+    <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
+    <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
+    <li>Jump shots are not allowed at River, and performing jump shots may result in being banned from future River Tournaments.</li>
+    <li>No timeouts. If you’re unsure about a rule, ask the tournament director.</li>
+    <li>If you need a shot watched, ask the tournament director.</li>
+  </ul>
+</section>
+
+<section id="conduct">
+  <h2>Conduct &amp; House Rules</h2>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
+      <ul type="a">
+        <li>Unsportsmanlike behavior of any kind at River or other pool tournaments in the Oregon community (APA, BCA, APL, etc.).</li>
+        <li>Signs of substance impairment.</li>
+        <li>Ineligible Fargo rating.</li>
+        <li>Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
+        <li>Repeated intentional distraction of opponents (sharking).</li>
+        <li>Verbal abuse or threats.</li>
+        <li>Repeated failure to follow tournament rules or etiquette.</li>
+        <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
+      </ul>
+    </li>
+    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament (not the bar itself).</li>
+    <li>House contributions to the pot aren’t guaranteed.</li>
+    <li>Entry fees are cash only and may change.</li>
+    <li><strong>The tournament director has the final say on all tournament matters.</strong></li>
+    <li><strong>Remember to tip your bartenders!</strong></li>
+  </ul>
+</section>
+
+<section id="bca-modified-rules">
+  <h2>BCA Modified Rules</h2>
+  <!-- The full BCA Modified Rules section goes here as needed -->
+</section>
+
+<script>
+  const searchBox = document.getElementById('search');
+  searchBox.addEventListener('input', function() {
+    const term = searchBox.value.toLowerCase();
+    document.querySelectorAll('section').forEach(section => {
+      const text = section.textContent.toLowerCase();
+      section.style.display = text.includes(term) ? 'block' : 'none';
+    });
+  });
+</script>
+
+
+</main>
+
+<footer>
+  &copy; 2025 Brittany Posey - All Rights Reserved
+</footer>
+
+</body>
+</html>
