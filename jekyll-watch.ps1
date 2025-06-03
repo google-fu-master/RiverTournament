@@ -1,0 +1,38 @@
+# Set your project directory
+$projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\RiverTournament"
+
+# Command to run Jekyll serve
+$jekyllCommand = "bundle exec jekyll serve"
+
+# Global variable to hold the Jekyll process object
+$global:jekyllProcess = Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectDir'; $jekyllCommand" -PassThru
+
+# Watch for changes in key files
+$watcher = New-Object System.IO.FileSystemWatcher
+$watcher.Path = $projectDir
+$watcher.IncludeSubdirectories = $true
+$watcher.Filter = "*.*"
+$watcher.NotifyFilter = [System.IO.NotifyFilters]'LastWrite'
+
+# Action on change
+$action = {
+  Write-Host "Change detected. Restarting Jekyll..."
+
+  # Stop the current Jekyll process
+  Stop-Process -Id $global:jekyllProcess.Id -Force
+
+  # Wait briefly to ensure it's stopped
+  Start-Sleep -Seconds 2
+
+  # Restart Jekyll
+  $global:jekyllProcess = Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$global:projectDir'; $global:jekyllCommand" -PassThru
+}
+
+# Register event
+Register-ObjectEvent $watcher "Changed" -Action $action
+
+# Start watching
+$watcher.EnableRaisingEvents = $true
+
+Write-Host "Watcher started. Press Ctrl+C to stop."
+while ($true) { Start-Sleep -Seconds 1 }
