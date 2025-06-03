@@ -3,54 +3,94 @@ layout: default
 title: Tournament Rules
 ---
 
+<style>
+  .pool-ball-list {
+    list-style: none;
+    padding-left: 2.5em;
+  }
+  .pool-ball-list li {
+    position: relative;
+    margin-bottom: 0.5em;
+  }
+  .pool-ball-list li.numbered-1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/images/balls/yellow1ball.png');
+    background-size: cover;
+  }
+</style>
+
 <input type="text" id="search" placeholder="Search rules...">
 
 <section id="player-eligibility">
   <h2>Player Eligibility & Registration</h2>
-  <ul>
-    <li>Fargo ratings 445 and below accepted for 8, 9, and 10-ball tournaments.</li>
-    <li>All players must present a Fargo account and valid photo ID at registration.</li>
-    <li>First-time players must create a Fargo account at registration.</li>
-    <li>If multiple Fargo accounts exist for a player, the highest rated account will be used. Players over 445 will be disqualified. Submit a request to Fargo to merge accounts if needed.</li>
-    <li>Submit a screenshot of your Fargo rating to reserve your spot in the tournament.</li>
-    <li>Ranking at the time of registration on tournament night determines eligibility and race lengths.</li>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
+    <li>You’ll need to show a Fargo account and a photo ID at registration.</li>
+    <li>First-timers can create a Fargo account using the mobile app (links coming soon in the FAQ).</li>
+    <li>If you have more than one Fargo account, we’ll use the highest rating. If it’s over 445, you won’t be eligible—please get your accounts merged ahead of time.</li>
+    <li>A screenshot of your Fargo rating can be uploaded in the Sign Up sheet, but your rating will be confirmed live in the Fargo app at registration.</li>
+    <li>Entry fees must be paid at time of registration.</li>
+    <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
+    <li><strong>You do not have a spot in the bracket until your fee is paid, your Fargo rating has been verified, and your match requirements are confirmed.</strong></li>
   </ul>
 </section>
 
 <section id="match-format">
   <h2>Match Format & Races</h2>
-  <ul>
-    <li>8–12 players: race to 3 wins.</li>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">8–12 players: race to 3 wins.</li>
     <li>13–16 players: race to 2 wins.</li>
-    <li>75+ Fargo rate gap: higher-rated player must win 1 additional game.</li>
-    <li>Games follow BCA rules with modifications as needed by the tournament director.</li>
+    <li>If there’s a 75+ Fargo gap, the higher-rated player has to win 1 extra game.</li>
+    <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion to encourage fair gameplay at any time.</li>
   </ul>
 </section>
 
 <section id="equipment">
   <h2>Equipment & Gameplay</h2>
-  <ul>
-    <li>Racks will be Fargo Reported.</li>
-    <li>Players lag or flip a coin for the break, then alternate breaks. If no agreement, lag by default.</li>
-    <li>Magic Racks approved if available. Players must agree on rack style before the match. Triangle used by default if no agreement.</li>
-    <li>Jump shots are not allowed at River.</li>
-    <li>No timeouts. Rule questions welcomed—ask the tournament director if unsure.</li>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">Racks are Fargo Reported.</li>
+    <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
+    <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
+    <li>Jump shots are not allowed at River, and performing jump shots may result in being banned from future River Tournaments.</li>
+    <li>No timeouts. If you’re unsure about a rule, ask the tournament director.</li>
     <li>If you need a shot watched, ask the tournament director.</li>
   </ul>
 </section>
 
 <section id="conduct">
   <h2>Conduct & House Rules</h2>
-  <ul>
-    <li>No drinks on or near pool tables. Spills or damage result in permanent disqualification.</li>
-    <li>Tournament director reserves the right to adjust rules as needed.</li>
-    <li>House does not promise to always donate to the pot.</li>
+  <ul class="pool-ball-list">
+    <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
+      <ul type="a">
+        <li>Unsportsmanlike behavior of any kind at River or other pool tournaments in the Oregon community (APA, BCA, APL, etc.).</li>
+        <li>Signs of substance impairment.</li>
+        <li>Ineligible Fargo rating.</li>
+        <li>Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
+        <li>Repeated intentional distraction of opponents (sharking).</li>
+        <li>Verbal abuse or threats.</li>
+        <li>Repeated failure to follow tournament rules or etiquette.</li>
+        <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
+      </ul>
+    </li>
+    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament (not the bar itself).</li>
+    <li>House contributions to the pot aren’t guaranteed.</li>
     <li>Entry fees are cash only and may change.</li>
+    <li><strong>The tournament director has the final say on all tournament matters.</strong></li>
+    <li><strong>Remember to tip your bartenders!</strong></li>
   </ul>
 </section>
 
+<section id="bca-modified-rules">
+  <h2>BCA Modified Rules</h2>
+  <!-- The full BCA Modified Rules section can go here, using <ul> or <ol> as needed -->
+</section>
+
 <script>
-  // Basic search functionality
   const searchBox = document.getElementById('search');
   searchBox.addEventListener('input', function() {
     const term = searchBox.value.toLowerCase();
