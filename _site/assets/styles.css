@@ -13,9 +13,7 @@
 
 /* Global styling */
 body {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
+  display: block;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
