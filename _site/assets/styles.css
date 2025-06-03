@@ -33,8 +33,6 @@ nav {
 }
 
 nav a {
-  color: var(--white);
-  text-decoration: none;
   display: block;
   padding: 1rem;
   font-weight: bold;
@@ -128,12 +126,12 @@ footer {
   flex-shrink: 0;
 }
 
-/* Custom link styling in pool-ball-list (like modified BCA rules) */
-.pool-ball-list a {
+/* All links site-wide */
+a {
   color: var(--white);
   text-decoration: underline;
 }
 
-.pool-ball-list a:hover {
+a:hover {
   color: var(--accent-blue);
 }
