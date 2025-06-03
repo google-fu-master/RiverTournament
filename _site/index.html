@@ -29,5 +29,35 @@ title: River Tournament
 </p>
 
 <script>
-  // (JavaScript unchanged)
+  async function loadBracket() {
+    const endpoint = "https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec";
+
+    try {
+      const res = await fetch(endpoint);
+      const data = await res.json();
+
+      document.getElementById("tournament-date").textContent = "This Week's Bracket";
+
+      const bracket = document.getElementById("bracket");
+      const waitlist = document.getElementById("waitlist");
+
+      for (let i = 0; i < 16; i++) {
+        const player = data.bracket[i];
+        const li = document.createElement("li");
+        li.textContent = player ? (player.preferred || player.name) : "";
+        bracket.appendChild(li);
+      }
+
+      data.waitlist.forEach(p => {
+        const li = document.createElement("li");
+        li.textContent = p.preferred || p.name;
+        waitlist.appendChild(li);
+      });
+    } catch (err) {
+      document.getElementById("tournament-date").textContent = "Error loading bracket.";
+      console.error("Failed to load bracket data:", err);
+    }
+  }
+
+  loadBracket();
 </script>
