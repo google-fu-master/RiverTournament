@@ -18,9 +18,12 @@ body {
   color: var(--white);
   overflow-x: hidden;
 
-  /* Flex layout for sticky footer */
   display: flex;
   flex-direction: column;
+}
+
+header, nav, .menu, main, footer {
+  flex-shrink: 0;
 }
 
 nav {
@@ -93,7 +96,6 @@ main {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 
-  /* Allow main content to grow and push footer down */
   flex: 1 0 auto;
 }
 
@@ -110,7 +112,6 @@ footer {
   box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
   margin-top: 2rem;
 
-  /* Prevent shrinking of footer */
   flex-shrink: 0;
 }
 
@@ -123,12 +124,12 @@ footer {
   .menu {
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start; /* ensures items start at top */
+    justify-content: flex-start;
     position: absolute;
     top: 0;
     right: -200px;
     width: 200px;
-    height: 100vh; /* full height on mobile */
+    height: 100vh;
     background-color: var(--dark-navy);
     text-align: left;
     padding-top: 4rem;
@@ -138,7 +139,7 @@ footer {
   }
 
   #menu-toggle:checked + .menu {
-    transform: translateX(-200px); /* slide in from the right */
+    transform: translateX(-200px);
   }
 
   nav a {

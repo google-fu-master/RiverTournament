@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tournament Rules
+permalink: /rules/
 ---
 
 <input type="text" id="search" placeholder="Search rules...">
@@ -66,7 +67,7 @@ title: Tournament Rules
 
 <section id="bca-modified-rules">
   <h2>BCA Modified Rules</h2>
-  <!-- Full BCA Modified Rules section goes here as needed -->
+  <!-- The full BCA Modified Rules section goes here as needed -->
 </section>
 
 <script>
