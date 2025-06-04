@@ -40,18 +40,50 @@ nav {
   position: relative;
   width: 100%;
 }
+
+/* Desktop menu: show links inline, hide hamburger */
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: var(--link-yellow);
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--white);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+#menu-toggle {
+  display: none;
+}
+
+/* Mobile menu: hide inline links, show hamburger and offscreen menu */
+@media (max-width: 1024px) {
   .menu {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     position: fixed;
     top: 0;
-    left: -200px;
+    left: 0;
     width: 200px;
     height: 100vh;
     background-color: var(--dark-navy);
     padding-top: 4rem;
     transition: transform 0.3s ease;
-    transform: translateX(-200px);
+    transform: translateX(-100%);
     z-index: 1000;
   }
   #menu-toggle:checked + .hamburger + .menu {
@@ -62,54 +94,6 @@ nav {
   }
 }
 
-/* Main content alignment */
-/* Contact form styling (specific to Contact page) */
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#contactForm h1,
-#contactForm p {
-  text-align: center;
-}
-
-#contactForm fieldset {
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#contactForm .checkbox-group-inline {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-#contactForm .hint {
-  font-size: 0.8rem;
-  color: #bbb;
-  text-align: center;
-}
-
-#contactForm button {
-  padding: 0.5rem 1rem;
-  background: var(--accent-blue);
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-/* Index page specific styling */
-
-
-/* Page Header Styling */
 header {
   text-align: center;
   padding-top: 1rem;
