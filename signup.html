@@ -14,8 +14,8 @@ title: Sign Up
   <label for="last-name">Last Name (required)</label>
   <input type="text" id="last-name" name="Last Name" required style="margin-bottom: 1rem;">
 
-  <label for="preferred-name">Preferred Name</label>
-  <input type="text" id="preferred-name" name="Preferred Name" style="margin-bottom: 1rem;">
+  <label for="preferred-name">Preferred First Name</label>
+  <input type="text" id="preferred-name" name="Preferred First Name" style="margin-bottom: 1rem;">
 
   <label for="phone">Phone Number</label>
   <input type="tel" id="phone" name="Phone Number" style="margin-bottom: 1rem;">
@@ -62,7 +62,7 @@ title: Sign Up
     const data = new URLSearchParams();
     data.append('First Name', formData.get('First Name'));
     data.append('Last Name', formData.get('Last Name'));
-    data.append('Preferred Name', formData.get('Preferred Name'));
+    data.append('Preferred First Name', formData.get('Preferred First Name'));
     data.append('Phone Number', formData.get('Phone Number'));
     data.append('Email', formData.get('Email'));
     data.append('New Player', formData.get('New Player') ? 'Yes' : 'No');
