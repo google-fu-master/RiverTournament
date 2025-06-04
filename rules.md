@@ -78,7 +78,7 @@ permalink: /rules/
 
 <!-- Floating Back to Top button -->
 <a href="#top" class="back-to-top" aria-label="Back to Top">
-  <img src="/assets/images/appbuttons/backtotop.png" alt="Back to Top">
+  <img src="{{ '/assets/images/appbuttons/backtotop.png' | relative_url }}" alt="Back to Top">
 </a>
 
 <style>
