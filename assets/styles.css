@@ -121,7 +121,7 @@ nav {
 }
 
 /* Responsive adjustments for screens ≤1024px */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (pointer:coarse) {
   /* Show hamburger on mobile */
   .hamburger {
     display: block;
