@@ -12,6 +12,15 @@
 /*this is the styles.css file that lives in the assets folder*/
 
 /* Global styling */
+
+/* Global link styling */
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--link-gold);
+}
 body {
   display: block;
   font-family: Arial, sans-serif;
