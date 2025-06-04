@@ -30,7 +30,7 @@ permalink: /rules/
   <ul class="pool-ball-list">
     <li class="numbered-1">8–12 players: race to 3 wins.</li>
     <li>13–16 players: race to 2 wins.</li>
-    <li>If there’s a 75+ Fargo gap, the higher-rated player has to win 1 extra game.</li>
+    <li>For 75-124 Fargo point gaps, the higher-rated player must win 1 extra game. 125+ Fargo gap, 2 extra games.</li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion to encourage fair gameplay at any time.</li>
   </ul>
 </section>
@@ -42,8 +42,8 @@ permalink: /rules/
     <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
     <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
     <li>Jump shots are not allowed at River, and performing jump shots may result in being banned from future River Tournaments.</li>
-    <li>No timeouts. If you’re unsure about a rule, ask the tournament director.</li>
-    <li>If you need a shot watched, ask the tournament director.</li>
+    <li>Timeouts are not allowed. If you’re unsure about a rule, refer to this page, or ask your opponent or another player not currently in a match. Bring all disagreements to the tournament director immediately.</li>
+    <li>If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</li>
   </ul>
 </section>
 
@@ -62,18 +62,67 @@ permalink: /rules/
         <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
       </ul>
     </li>
-    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament (not the bar itself).</li>
+    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament, and possibly from the establishment itself (as River management sees fit).</li>
     <li>House contributions to the pot aren’t guaranteed.</li>
     <li>Entry fees are cash only and may change.</li>
     <li><strong>The tournament director has the final say on all tournament matters.</strong></li>
-    <li><strong>Remember to tip your bartenders!</strong></li>
+    <li><strong>Remember to tip your bartenders, staff, and tournament directors - they work hard for you!<\/strong><\/li>
   </ul>
 </section>
 
 <section id="bca-modified-rules">
   <h2>BCA Modified Rules</h2>
 
-  <!-- (Rules unchanged for brevity) -->
+  <h3>8-Ball</h3>
+  <ul>
+    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+    <li>Fouls cannot occur before the rack is struck.</li>
+    <li>8 on the break: If you make the 8-ball on the break, it’s an automatic win for that rack.</li>
+    <li>Scratch on the break: Incoming player must shoot from behind the head string (“kitchen”).</li>
+    <li>Open table after break until a called shot legally pockets a ball.</li>
+    <li>Groups assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
+    <li>8-ball pocket must be marked (or called verbally if agreed upon before the match).</li>
+    <li>8-ball scratch is loss of game.</li>
+    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+    <li>Timeouts: None allowed.</li>
+    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
+  </ul>
+
+  <h3>9-Ball</h3>
+  <ul>
+    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+    <li>Fouls cannot occur before the rack is struck.</li>
+    <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
+    <li>Push option: Incoming player can accept the table as is or hand it back to the breaker.</li>
+    <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues.</li>
+    <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
+    <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
+    <li>9-ball is called when it’s the game-winning shot. Other shots do not need to be called.</li>
+    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+    <li>Timeouts: None allowed.</li>
+    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
+  </ul>
+
+  <h3>10-Ball</h3>
+  <ul>
+    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+    <li>Fouls cannot occur before the rack is struck.</li>
+    <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
+    <li>Push option: Incoming player can accept the table as is or hand it back to the breaker.</li>
+    <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues.</li>
+    <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
+    <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
+    <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
+    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+    <li>Timeouts: None allowed.</li>
+    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
+  </ul>
 </section>
 
 <!-- Floating Back to Top button -->

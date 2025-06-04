@@ -25,7 +25,8 @@ title: Sign Up
 
   <label>
     <input type="checkbox" id="new-player" name="New Player" style="margin-bottom: 1rem;">
-    I’m a new player / I do not have a Fargo account yet.
+    I’m a new player \/ I do not have a Fargo account OR an APA account.
+  </label>
   </label>
 
   <label for="fargo-screenshot">Fargo Rating Screenshot (if you have one):</label>
@@ -93,7 +94,19 @@ title: Sign Up
     .then(response => response.text())
     .then(text => {
       console.log('Response from Apps Script:', text); // testing line
-	  statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+      const isNew = document.getElementById('new-player').checked;
+      if (isNew) {
+        statusMessage.innerHTML = `Thanks for signing up! Please create a Fargo account using the Fargorate app before tournament registration at 6:30pm on Thursday:<div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+    <a href="https://apps.apple.com/us/app/fargorate/id1199102391" target="_blank">
+      <img src="{{ '/assets/images/appbuttons/Download_on_the_App_Store_Badge.png' | relative_url }}" alt="Download on the App Store" style="width: 150px; height: auto;">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate" target="_blank">
+      <img src="{{ '/assets/images/appbuttons/Google_Play_Store_badge_EN.png' | relative_url }}" alt="Get it on Google Play" style="width: 150px; height: auto;">
+    </a>
+</div>`;
+      } else {
+        statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+      }
       form.reset();
     })
     .catch(error => {
