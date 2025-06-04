@@ -56,7 +56,7 @@ title: River Tournament
         const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
         li.textContent = `${i + 1}. ${displayName}`;
         waitlist.appendChild(li);
-      });
+      }
     } catch (err) {
       document.getElementById("tournament-date").textContent = "Error loading bracket.";
       console.error("Failed to load bracket data:", err);
