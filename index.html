@@ -46,7 +46,7 @@ title: River Tournament
         const player = data.bracket[i];
         const li = document.createElement("li");
         const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
-        li.textContent = `${i + 1}. ${displayName}`;
+        li.textContent = displayName;
         bracket.appendChild(li);
       }
 
