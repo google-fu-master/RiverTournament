@@ -9,7 +9,18 @@
   --white: #f5f5f5;
 }
 
+/*this is the styles.css file that lives in the assets folder*/
+
 /* Global styling */
+
+/* Global link styling */
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--link-gold);
+}
 body {
   display: flex;
   flex-direction: column;
@@ -19,30 +30,10 @@ body {
   padding: 0;
   background-color: var(--darkest);
   color: var(--white);
-}
-
-header {
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: var(--white);
-}
-
-main {
-  flex: 1;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 1rem;
-  background-color: var(--darkest);
-}
+} 
 
 footer {
+  margin-top: auto;
   background-color: var(--slate);
   color: var(--white);
   text-align: center;
@@ -54,95 +45,114 @@ nav {
   background-color: var(--dark-navy);
   color: var(--white);
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   position: relative;
   width: 100%;
 }
 
-/* Hide hamburger and show desktop menu by default */
+/* Desktop menu: show links inline, hide hamburger */
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: var(--link-yellow);
+}
 .hamburger {
   display: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--white);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1001;
 }
-
-.desktop-menu {
-  display: flex;
-  gap: 2rem;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-/* Desktop menu link styling */
-.desktop-menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
-.desktop-menu a:hover {
-  color: var(--link-yellow);
-}
-
-/* Mobile menu (slide-out) positioning */
-.mobile-menu {
-  flex-direction: column;
-  gap: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100vh;
-  background-color: var(--dark-navy);
-  padding-top: 4rem;
-  transition: transform 0.3s ease;
-  transform: translateX(-100%);
-  z-index: 1000;
-}
-
-.mobile-menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
-.mobile-menu a:hover {
-  color: var(--link-yellow);
-}
-
 #menu-toggle {
   display: none;
 }
 
+/* Mobile menu: hide inline links, show hamburger and offscreen menu */
 @media (max-width: 1024px) {
-  /* Show hamburger on mobile */
-  .hamburger {
-    display: block;
-  }
-
-  /* Hide desktop menu under 1025px */
-  .desktop-menu {
-    display: none;
-  }
-
-  /* Slide-in mobile menu when checked */
-  #menu-toggle:checked + .hamburger + .mobile-menu {
-    transform: translateX(0);
-  }
-
   nav {
     justify-content: space-between;
   }
+  /* Hide menu links offscreen */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  /* Only display hamburger icon on mobile */
+  .hamburger {
+    display: block;
+  }
+  /* Hide menu links until menu is open */
+  .menu a {
+    display: none;
+  }
+  /* Show links when menu open */
+  #menu-toggle:checked + .hamburger + .menu a {
+    display: block;
+  }
+  nav a {
+    display: none; /* Hide desktop links on mobile */
+  }
+}
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+  }
 }
 
-/* Bracket and Waitlist list styling */
+header {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--mid-navy);
+  color: var(--white);
+}
+
+header h1 {
+  margin: 0 auto;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Main content styling */
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: var(--darkest);
+}
+
+/* Bracket and waitlist bullet styling */
 #bracket,
 #waitlist {
   list-style: disc;
@@ -150,85 +160,4 @@ nav {
   margin: 0;
   background-color: var(--slate);
   border-radius: 4px;
-}
-
-#bracket li,
-#waitlist li {
-  padding: 0.5rem;
-}
-
-/* Contact form styling */
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#contactForm input[type="checkbox"] {
-  display: block;
-  margin: 0 auto;
-}
-
-#contactForm .checkbox-group-inline {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-#contactForm .hint {
-  font-size: 0.8rem;
-  color: #bbb;
-  text-align: center;
-}
-
-#contactForm button {
-  padding: 0.5rem 1rem;
-  background: var(--accent-blue);
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-/* Index page specific styling */
-#tournament-date {
-  text-align: center;
-  font-size: 2rem;
-  margin: 1rem 0;
-}
-
-.intro-text {
-  text-align: center;
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1rem;
-}
-
-.brackets {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.bracket,
-.waitlist {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.bracket h2,
-.waitlist h2 {
-  text-align: center;
-}
-
-.note {
-  text-align: center;
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 0.9rem;
 }
