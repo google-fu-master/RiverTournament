@@ -1,70 +1,199 @@
-<!DOCTYPE html>
-<!--this is the default.html file that lives in the _layout folder-->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}" />
-</head>
-<body>
+:root {
+  --darkest: #141414;
+  --dark-navy: #0D1B2A;
+  --mid-navy: #002B3A;
+  --accent-blue: #0071a4;
+  --link-yellow: #d4af37;
+  --link-gold: #a47f00;
+  --slate: #151D23;
+  --white: #f5f5f5;
+}
 
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/rules/' | relative_url }}">Rules</a>
-      <a href="{{ '/signup/' | relative_url }}">Sign Up</a>
-      <a href="{{ '/faq/' | relative_url }}">FAQ</a>
-      <a href="{{ '/stats/' | relative_url }}">Stats</a>
-      <a href="{{ '/photos/' | relative_url }}">Photos</a>
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
-    </div>
-  </nav>
+/*this is the styles.css file that lives in the assets folder*/
 
-  <header>
-    <h1>{{ page.title }}</h1>
-    {% if page.title == "River Tournament" %}
-    {% endif %}
-  </header>
+/* Global styling */
+body {
+  display: block;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--darkest);
+  color: var(--white);
+}
 
-  <main>
-    {{ content }}
-  </main>
+footer {
+  margin-top: auto;
+  background-color: var(--slate);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+}
 
-  <footer>
-    &copy; 2025 Brittany Posey - All Rights Reserved
-  </footer>
+/* Navigation styling */
+nav {
+  background-color: var(--dark-navy);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
 
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
-
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
+.menu {
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
   }
 
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
-      });
-    });
+.menu a:hover {
+  color: var(--link-yellow);
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--white);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1001;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
   }
-});
-</script>
-</body>
-</html>
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+  }
+}
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    transition: transform 0.3s ease;
+    transform: translateX(-200px);
+    z-index: 1000;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Main content alignment */
+/* Contact form styling (specific to Contact page) */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contactForm h1,
+#contactForm p {
+  text-align: center;
+}
+
+#contactForm fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contactForm .checkbox-group-inline {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#contactForm .hint {
+  font-size: 0.8rem;
+  color: #bbb;
+  text-align: center;
+}
+
+#contactForm button {
+  padding: 0.5rem 1rem;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Index page specific styling */
+
+
+/* Page Header Styling */
+header {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--mid-navy);
+  color: var(--white);
+}
+
+header h1 {
+  margin: 0 auto;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Main content styling */
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: var(--darkest);
+}
