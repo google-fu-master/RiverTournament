@@ -71,6 +71,10 @@ nav {
 
 /* Mobile menu: hide inline links, show hamburger and offscreen menu */
 @media (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
+  }
+  /* Hide menu links offscreen */
   .menu {
     display: flex;
     flex-direction: column;
@@ -86,6 +90,26 @@ nav {
     transform: translateX(-100%);
     z-index: 1000;
   }
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  /* Only display hamburger icon on mobile */
+  .hamburger {
+    display: block;
+  }
+  /* Hide menu links until menu is open */
+  .menu a {
+    display: none;
+  }
+  /* Show links when menu open */
+  #menu-toggle:checked + .hamburger + .menu a {
+    display: block;
+  }
+  nav a {
+    display: none; /* Hide desktop links on mobile */
+  }
+}
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
   }
