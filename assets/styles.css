@@ -22,13 +22,15 @@ a:hover {
   color: var(--link-gold);
 }
 body {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--darkest);
   color: var(--white);
-}
+} 
 
 footer {
   margin-top: auto;
@@ -143,8 +145,15 @@ header h1 {
 
 /* Main content styling */
 main {
+  flex: 1;
   margin: 0 auto;
   max-width: 800px;
   padding: 1rem;
   background-color: var(--darkest);
+}
+
+/* Center any checkboxes within their container */
+input[type="checkbox"] {
+  display: block;
+  margin: 0.5rem auto;
 }
