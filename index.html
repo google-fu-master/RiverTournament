@@ -9,7 +9,7 @@ title: River Tournament
 
 <p class="intro-text">
   Want to join this week's tournament? 
-  <a href="/signup.html">Sign up here!</a>
+  <a href="{{ '/signup/' | relative_url }}">Sign up here!</a>
 </p>
 
 <div class="brackets">
@@ -45,13 +45,16 @@ title: River Tournament
       for (let i = 0; i < 16; i++) {
         const player = data.bracket[i];
         const li = document.createElement("li");
-        li.textContent = player ? (player.preferred || player.name) : "";
+        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
+        li.textContent = `${i + 1}. ${displayName}`;
         bracket.appendChild(li);
       }
 
-      data.waitlist.forEach(p => {
+      for (let i = 0; i < 16; i++) {
+        const player = data.waitlist[i];
         const li = document.createElement("li");
-        li.textContent = p.preferred || p.name;
+        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
+        li.textContent = `${i + 1}. ${displayName}`;
         waitlist.appendChild(li);
       });
     } catch (err) {
