@@ -59,23 +59,12 @@ footer {
 }
 
 /* Navigation styling */
-nav {
-  background-color: var(--dark-navy);
+.nav a, .menu a {
   color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
-  width: 100%;
+  text-decoration: none;
 }
-
-/* Hide hamburger and show menu by default */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--white);
-  z-index: 1001;
+.nav a:hover, .menu a:hover {
+  color: var(--link-yellow);
 }
 
 .menu {
