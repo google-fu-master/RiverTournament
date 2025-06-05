@@ -9,9 +9,9 @@ permalink: /rules/
 
 <input type="text" id="search" placeholder="Search rules...">
 
-<section id="player-eligibility">
-  <h2>Player Eligibility & Registration</h2>
-  <ul>
+<section id="player-eligibility" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
+  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
+  <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
     <li>You’ll need to show a Fargo account and a photo ID at registration.</li>
     <li>First-timers can create a Fargo account using the mobile app (links coming soon in the FAQ).</li>
@@ -21,15 +21,14 @@ permalink: /rules/
     <li>If a player has no APA rating and no Fargo rating, they will be entered into the tournament at the highest eligible rating (445) and their Fargo account and performance will be monitored for eligibility if they return to future tournaments.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
-	<li>Entry fees must be paid at time of registration.</li>
+    <li>Entry fees must be paid at time of registration.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
   </ul>
-
 </section>
 
-<section id="match-format">
-  <h2>Match Format & Races</h2>
-  <ul>
+<section id="match-format" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
+  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Match Format & Races</h2>
+  <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8-Ball:</strong>
       <ul>
@@ -48,9 +47,9 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="equipment">
-  <h2>Equipment & Gameplay</h2>
-  <ul>
+<section id="equipment" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
+  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Equipment & Gameplay</h2>
+  <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Racks are Fargo Reported.</li>
     <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
     <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
@@ -60,9 +59,9 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="conduct">
-  <h2>Conduct & House Rules</h2>
-  <ul>
+<section id="conduct" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
+  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Conduct & House Rules</h2>
+  <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
         <li>Unsportsmanlike behavior of any kind at River or other pool tournaments in the Oregon community (APA, BCA, APL, etc.).</li>
@@ -83,8 +82,8 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="bca-modified-rules">
-  <h2>BCA Modified Rules</h2>
+<section id="bca-modified-rules" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">BCA Modified Rules</h2>
 
   <label for="formatSelect"><strong>Select Format:</strong></label>
   <select id="formatSelect">
@@ -92,134 +91,57 @@ permalink: /rules/
     <option value="nineBallRules">9-Ball</option>
     <option value="tenBallRules">10-Ball</option>
   </select>
-  <h2>BCA Modified Rules</h2>
 
   <div id="eightBallRules" class="format-rules">
-  <h3>8-Ball</h3>
-  <ul>
-    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
-    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
-    <li>Fouls cannot occur before the rack is struck.</li>
-    <li>8 on the break: If you make the 8-ball on the break, it’s an automatic win for that rack.</li>
-    <li>Scratch on the break: Incoming player must shoot from behind the head string (“kitchen”).</li>
-    <li>Open table after break until a called shot legally pockets a ball.</li>
-    <li>Groups assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
-    <li>8-ball pocket must be marked (or called verbally if agreed upon before the match).</li>
-    <li>8-ball scratch is loss of game.</li>
-    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
-    <li>Timeouts: None allowed.</li>
-  </ul>
-
+    <h3>8-Ball</h3>
+    <ul>
+      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+      <li>Fouls cannot occur before the rack is struck.</li>
+      <li>8 on the break: If you make the 8-ball on the break, it’s an automatic win for that rack.</li>
+      <li>Scratch on the break: Incoming player must shoot from behind the head string (“kitchen”).</li>
+      <li>Open table after break until a called shot legally pockets a ball.</li>
+      <li>Groups assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
+      <li>8-ball pocket must be marked (or called verbally if agreed upon before the match).</li>
+      <li>8-ball scratch is loss of game.</li>
+      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>Timeouts: None allowed.</li>
+    </ul>
   </div>
-<div id="nineBallRules" class="format-rules" style="display:none;">
-  <h3>9-Ball</h3>
-  <ul>
-    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
-    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
-    <li>Fouls cannot occur before the rack is struck.</li>
-    <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
-    <li>Push option: Incoming player can accept the table as is or hand it back to the breaker.</li>
-    <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues.</li>
-    <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-    <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
-    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
-    <li>Timeouts: None allowed.</li>
-  </ul>
 
+  <div id="nineBallRules" class="format-rules" style="display:none;">
+    <h3>9-Ball</h3>
+    <ul>
+      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+      <li>Fouls cannot occur before the rack is struck.</li>
+      <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
+      <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
+      <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues. The breaker continues shooting unless there was a foul.</li>
+      <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
+      <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
+      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>Timeouts: None allowed.</li>
+    </ul>
   </div>
-<div id="tenBallRules" class="format-rules" style="display:none;">
-  <h3>10-Ball</h3>
-  <ul>
-    <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
-    <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
-    <li>Fouls cannot occur before the rack is struck.</li>
-    <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
-    <li>Push option: Incoming player can accept the table as is or hand it back to the breaker.</li>
-    <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues. It is still the breaker's turn unless a foul has occurred.</li>
-    <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-    <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
-    <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
-    <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-    <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
-    <li>Timeouts: None allowed.</li>
-	</ul>
+
+  <div id="tenBallRules" class="format-rules" style="display:none;">
+    <h3>10-Ball</h3>
+    <ul>
+      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+      <li>Fouls cannot occur before the rack is struck.</li>
+      <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
+      <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
+      <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues. It is still the breaker's turn unless a foul has occurred.</li>
+      <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
+      <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
+      <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
+      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>Timeouts: None allowed.</li>
+    </ul>
+  </div>
 </section>
-
-<!-- Floating Back to Top button -->
-<a href="#top" class="back-to-top" aria-label="Back to Top">
-  <img src="{{ '/assets/images/appbuttons/backtotop.png' | relative_url }}" alt="Back to Top">
-</a>
-
-<style>
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: block;
-  }
-  .back-to-top img {
-    width: 50px;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-  }
-  mark {
-    background-color: yellow;
-    color: black;
-  }
-</style>
-
-<script>
-  // Smooth scrolling
-  document.documentElement.style.scrollBehavior = "smooth";
-
-  const searchBox = document.getElementById('search');
-  searchBox.addEventListener('input', function() {
-    const term = searchBox.value.toLowerCase().trim();
-    document.querySelectorAll('section').forEach(section => {
-      // Remove previous highlights
-      section.innerHTML = section.innerHTML.replace(/<mark>(.*?)<\/mark>/g, '$1');
-
-      // Check if section text includes term
-      const text = section.textContent.toLowerCase();
-      if (term && text.includes(term)) {
-        section.style.display = 'block';
-
-        // Highlight matches
-        const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')})`, 'gi');
-        section.innerHTML = section.innerHTML.replace(regex, '<mark>$1</mark>');
-      } else if (!term) {
-        section.style.display = 'block';
-      } else {
-        section.style.display = 'none';
-      }
-    });
-  });
-
-  // Back to Top click behavior
-  document.querySelector('.back-to-top').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  // Dropdown rule toggling
-  const formatSelect = document.getElementById('formatSelect');
-  const formatOfWeek = (() => {
-    const today = new Date();
-    const startDate = new Date("June 5, 2025");
-    const diffInWeeks = Math.floor((today - startDate) / (7 * 24 * 60 * 60 * 1000));
-    const rotation = ["nineBallRules", "eightBallRules"];
-    return rotation[diffInWeeks % rotation.length];
-  })();
-  formatSelect.value = formatOfWeek;
-  document.querySelectorAll('.format-rules').forEach(div => div.style.display = 'none');
-  document.getElementById(formatOfWeek).style.display = 'block';
-
-  formatSelect.addEventListener('change', function () {
-    document.querySelectorAll('.format-rules').forEach(div => div.style.display = 'none');
-    document.getElementById(this.value).style.display = 'block';
-  });
-
-</script>
