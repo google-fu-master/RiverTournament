@@ -96,9 +96,9 @@ title: River Tournaments
       const callToAction = `<div style=\"margin-top: 1rem;\"><a href=\"/signup/\" style=\"color: #ffd700; text-decoration: underline;\">Sign up now</a></div>`;
 
       if (playerCount === 16) {
-        potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2.5rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
+        potText = `<div style=\"font-size: 1.5rem; font-weight: 600;\">${fullLabel} could be</div><div style=\"font-size: 2.5rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
       } else if (playerCount < 8) {
-        potText = `<div>${fullLabel} is only</div><div style=\"font-size: 2rem; font-weight: bold; color: #ff5555;\">$${total}*</div>${callToAction}`;
+        potText = `<div style=\"font-size: 1.5rem; font-weight: 600;\">${fullLabel} is only</div><div style=\"font-size: 2rem; font-weight: bold; color: #ff5555;\">$${total}*</div>${callToAction}`;
       } else {
         potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}`;
       }
