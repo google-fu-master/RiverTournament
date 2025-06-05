@@ -141,6 +141,21 @@ nav {
   }
 }
 
+@media (min-width: 1025px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    transform: none;
+  }
+
+  .menu a {
+    padding: 0 1rem;
+  }
+}
+
 .brackets {
   display: flex;
   flex-wrap: wrap;
