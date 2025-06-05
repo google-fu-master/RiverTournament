@@ -47,7 +47,7 @@ title: River Tournaments
       const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
       const isLadiesNight = weekNumber === 3;
       const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
-      const fullLabel = `The ${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format}`;
+      const fullLabel = `The ${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} pot`;
 
       const bracket = document.getElementById("bracket");
       const waitlist = document.getElementById("waitlist");
