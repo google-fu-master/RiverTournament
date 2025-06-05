@@ -24,7 +24,7 @@ permalink: /rules/
     <li>If a player has an APA rating but no Fargo rating, their Fargo rating for the tournament will be determined using a conversion formula.</li>
     <li>If a player has no APA rating and no Fargo rating, they will be entered into the tournament at the highest eligible rating (445) and their Fargo account and performance will be monitored for eligibility if they return to future tournaments.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
-    <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
+    <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
     <li>Entry fees must be paid at time of registration.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
     <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a> if needed to complete the bracket.</strong></li>
