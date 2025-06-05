@@ -2,5 +2,6 @@ title: River Tournament
 description: Official site for River Tournament hosted by Brittany Posey
 markdown: kramdown
 permalink: pretty
-baseurl: ""
-#this is the _config.yml file
+baseurl: ""  # Correct because it's deployed to domain root
+url: "https://rivertournaments.com"
+# this is the _config.yml file
