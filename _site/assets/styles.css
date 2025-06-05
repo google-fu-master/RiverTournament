@@ -49,6 +49,7 @@ main {
   max-width: 800px;
   padding: 1rem;
   background-color: var(--darkest);
+  text-align: center;
 }
 
 footer {
