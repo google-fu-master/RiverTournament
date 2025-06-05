@@ -166,3 +166,6 @@ body.page-faq h6 {
 .brackets td {
   font-size: 1.25rem;
 }
+body.page-rules main {
+  text-align: left !important;
+}
