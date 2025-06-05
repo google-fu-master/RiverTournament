@@ -2,6 +2,7 @@
 layout: default
 title: Tournament Rules
 permalink: /rules/
+bodyClass: rules-page
 ---
 
 <!--this is the rule.md file-->
