@@ -5,10 +5,13 @@ title: Sign Up
 
 <!--- this is the signup.html file --->
 
-<p>Reserve your spot in the upcoming River Tournament on Thursday!<br>
-Your name must match your photo ID and your Fargo account. All information will be verified at tournament registration (6:30pm).<br>
-The bracket and waitlist on the home page will not show your name until the tournament director has approved your reservation. Thank you for your patience!
-</p>
+<h4 style="text-align: center;">Reserve your spot in the upcoming River Tournament on Thursday!</h4>
+<ul style="max-width: 600px; margin: 0 auto 2rem auto; padding-left: 1.25rem;">
+  <li>Your name must match your photo ID and your Fargo account. All information will be verified at in person tournament registration (Thursday 6:30pm).</li>
+  <li>The bracket and waitlist on the home page will not show your name until the tournament director has approved your reservation.</li>
+</ul>
+
+<h4 style="text-align: center;">Thank you for your patience!</h4>
 
 <form id="signup-form" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
   <label for="first-name">First Name (required)</label>
@@ -39,8 +42,8 @@ The bracket and waitlist on the home page will not show your name until the tour
 
 <p id="status-message" style="text-align: center; margin-top: 1rem;"></p>
 
-<!-- Load Google reCAPTCHA Enterprise v3 script -->
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LcrZlMrAAAAAEkUlrB_4bEz3PnF73h6jmBmb5o_"></script>
+<!-- Load Google reCAPTCHA script (v3) -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LcrZlMrAAAAAEkUlrB_4bEz3PnF73h6jmBmb5o_"></script>
 
 <script>
   const form = document.getElementById('signup-form');
@@ -49,8 +52,8 @@ The bracket and waitlist on the home page will not show your name until the tour
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    grecaptcha.enterprise.ready(() => {
-      grecaptcha.enterprise.execute('6LcrZlMrAAAAAEkUlrB_4bEz3PnF73h6jmBmb5o_', {action: 'submit'})
+    grecaptcha.ready(() => {
+      grecaptcha.execute('6LcrZlMrAAAAAEkUlrB_4bEz3PnF73h6jmBmb5o_', {action: 'submit'})
         .then(function(token) {
           submitForm(token);
         });
@@ -95,7 +98,7 @@ The bracket and waitlist on the home page will not show your name until the tour
     })
     .then(response => response.text())
     .then(text => {
-      console.log('Response from Apps Script:', text); // testing line
+      console.log('Response from Apps Script:', text);
       const isNew = document.getElementById('new-player').checked;
       if (isNew) {
         statusMessage.innerHTML = `Thanks for signing up! Please create a Fargo account using the Fargorate app before tournament registration at 6:30pm on Thursday:<div style="display: flex; gap: 1rem; align-items: center; justify-content: center; margin-top: 1rem;">
