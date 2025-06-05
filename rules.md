@@ -67,7 +67,7 @@ permalink: /rules/
     <li>House contributions to the pot aren’t guaranteed.</li>
     <li>Entry fees are cash only and may change.</li>
     <li><strong>The tournament director has the final say on all tournament matters.</strong></li>
-    <li><strong>Remember to tip your bartenders, staff, and tournament directors - they work hard for you!<\/strong><\/li>
+    <li><strong>Remember to tip your bartenders, staff, and tournament directors - they work hard for you!</strong></li>
   </ul>
 </section>
 
@@ -88,7 +88,6 @@ permalink: /rules/
     <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
     <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
     <li>Timeouts: None allowed.</li>
-    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
   </ul>
 
   <h3>9-Ball</h3>
@@ -101,11 +100,9 @@ permalink: /rules/
     <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues.</li>
     <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
     <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
-    <li>9-ball is called when it’s the game-winning shot. Other shots do not need to be called.</li>
     <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
     <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
     <li>Timeouts: None allowed.</li>
-    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
   </ul>
 
   <h3>10-Ball</h3>
@@ -115,15 +112,14 @@ permalink: /rules/
     <li>Fouls cannot occur before the rack is struck.</li>
     <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
     <li>Push option: Incoming player can accept the table as is or hand it back to the breaker.</li>
-    <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues.</li>
+    <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues. It is still the breaker's turn unless a foul has occurred.</li>
     <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
     <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
     <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
     <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
     <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
     <li>Timeouts: None allowed.</li>
-    <li>No jump shots are allowed, and performing them may result in being banned from future River Tournaments.</li>
-  </ul>
+	</ul>
 </section>
 
 <!-- Floating Back to Top button -->
