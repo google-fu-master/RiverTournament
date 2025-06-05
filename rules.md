@@ -48,7 +48,7 @@ permalink: /rules/
       </ul>
     </li>
     <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>
-    <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion to encourage fair gameplay at any time.</li>
+    <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
     <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent in the first round.</strong></li>
   </ul>
 </section>
