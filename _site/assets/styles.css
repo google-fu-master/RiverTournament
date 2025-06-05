@@ -162,6 +162,34 @@ nav {
   }
 }
 
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 1rem 0.5rem;
+  }
+
+  .brackets {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .bracket, .waitlist {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .bracket li, .waitlist li {
+    font-size: 1.1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1rem 0.5rem;
+  }
+}
+
 .brackets {
   display: flex;
   flex-wrap: wrap;
