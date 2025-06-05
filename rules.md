@@ -24,14 +24,26 @@ permalink: /rules/
     <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
   </ul>
+</div>
 </section>
 
 <section id="match-format">
   <h2>Match Format & Races</h2>
   <ul>
-    <li class="numbered-1">8–12 players: race to 3 wins.</li>
-    <li>13–16 players: race to 2 wins.</li>
-    <li>For 75-124 Fargo point gaps, the higher-rated player must win 1 extra game. 125+ Fargo gap, 2 extra games.</li>
+    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
+    <li><strong>8-Ball:</strong>
+      <ul>
+        <li>8–12 players: race to 3 wins</li>
+        <li>13–16 players: race to 2 wins</li>
+      </ul>
+    </li>
+    <li><strong>9-Ball:</strong>
+      <ul>
+        <li>8–12 players: race to 4 wins</li>
+        <li>13–16 players: race to 3 wins</li>
+      </ul>
+    </li>
+    <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion to encourage fair gameplay at any time.</li>
   </ul>
 </section>
@@ -74,6 +86,15 @@ permalink: /rules/
 <section id="bca-modified-rules">
   <h2>BCA Modified Rules</h2>
 
+  <label for="formatSelect"><strong>Select Format:</strong></label>
+  <select id="formatSelect">
+    <option value="eightBallRules">8-Ball</option>
+    <option value="nineBallRules">9-Ball</option>
+    <option value="tenBallRules">10-Ball</option>
+  </select>
+  <h2>BCA Modified Rules</h2>
+
+  <div id="eightBallRules" class="format-rules">
   <h3>8-Ball</h3>
   <ul>
     <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
@@ -90,6 +111,8 @@ permalink: /rules/
     <li>Timeouts: None allowed.</li>
   </ul>
 
+  </div>
+<div id="nineBallRules" class="format-rules" style="display:none;">
   <h3>9-Ball</h3>
   <ul>
     <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
@@ -105,6 +128,8 @@ permalink: /rules/
     <li>Timeouts: None allowed.</li>
   </ul>
 
+  </div>
+<div id="tenBallRules" class="format-rules" style="display:none;">
   <h3>10-Ball</h3>
   <ul>
     <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
@@ -164,7 +189,7 @@ permalink: /rules/
         section.style.display = 'block';
 
         // Highlight matches
-        const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')})`, 'gi');
         section.innerHTML = section.innerHTML.replace(regex, '<mark>$1</mark>');
       } else if (!term) {
         section.style.display = 'block';
@@ -179,4 +204,22 @@ permalink: /rules/
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+  // Dropdown rule toggling
+  const formatSelect = document.getElementById('formatSelect');
+  const formatOfWeek = (() => {
+    const today = new Date();
+    const startDate = new Date("June 5, 2025");
+    const diffInWeeks = Math.floor((today - startDate) / (7 * 24 * 60 * 60 * 1000));
+    const rotation = ["nineBallRules", "eightBallRules"];
+    return rotation[diffInWeeks % rotation.length];
+  })();
+  formatSelect.value = formatOfWeek;
+  document.querySelectorAll('.format-rules').forEach(div => div.style.display = 'none');
+  document.getElementById(formatOfWeek).style.display = 'block';
+
+  formatSelect.addEventListener('change', function () {
+    document.querySelectorAll('.format-rules').forEach(div => div.style.display = 'none');
+    document.getElementById(this.value).style.display = 'block';
+  });
+
 </script>
