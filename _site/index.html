@@ -98,8 +98,7 @@
       }
 
       const potAmount = playerCount * 10;
-      let houseAdd = data.houseAdd || "0";
-      houseAdd = parseFloat(houseAdd.replace(/[^\d.-]/g, '')) || 0;
+      let houseAdd = Number(data.houseAdd) || 0;
       const total = potAmount + houseAdd;
 
       let potText = "";
