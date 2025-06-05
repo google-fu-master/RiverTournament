@@ -103,11 +103,11 @@
 
       let potText = "";
       if (playerCount === 16) {
-        potText = `The pot for ${formattedDate} is <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now</a> to get your name on the waitlist!`;
-      } else if (total < 80) {
+        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now</a> to get your name on the waitlist!`;
+      } else if (playerCount < 8) {
         potText = `The pot for ${formattedDate} is only <span class="highlight">$${total}*</span><br><a href="/signup/">Sign up now</a>`;
       } else {
-        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}*</span>!`;
+        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now</a>`;
       }
 
       document.getElementById("pot-info").innerHTML = potText;
