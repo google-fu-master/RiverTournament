@@ -1,0 +1,107 @@
+---
+layout: default
+title: Location
+bodyClass: page-location
+permalink: /location/
+---
+
+<!--this is the location.html file-->
+
+<section id="venue">
+  <h2>Venue</h2>
+  <p>The tournament is held at <strong>River Pool &amp; Sports Bar</strong>, located at <strong>19 NW 5th Ave, Downtown Portland</strong>. The venue is easily accessible by public transit and offers a welcoming atmosphere for players and spectators alike. Tables are always free at River — first come, first served for practice before the tournament.</p>
+
+  <div style="margin-top: 1rem;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.0718881603296!2d-122.67509468444344!3d45.52304583765811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a03cce05927%3A0x26e47a1d11755c75!2sRiver%20Pool%20%26%20Sports%20Bar!5e0!3m2!1sen!2sus!4v1717611915416!5m2!1sen!2sus"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<section id="transportation">
+  <h2>Transportation</h2>
+
+  <h3>MAX Light Rail</h3>
+  <p>Two MAX Light Rail stations are located within a short walk of the venue:</p>
+  <ul>
+    <li><strong>NW 5th &amp; Couch:</strong> Served by the Green, Orange, and Yellow MAX lines, as well as the Blue and Yellow bus lines.</li>
+    <li><strong>NW 6th &amp; Davis:</strong> Also served by the Green, Orange, and Yellow MAX lines, plus Blue and Yellow bus lines.</li>
+  </ul>
+
+  <h4>TriMet MAX System Map</h4>
+  <p>Click the map below to view the full interactive version on TriMet’s site.</p>
+  <a href="https://trimet.org/maps/img/maxsystemmap.png" target="_blank">
+    <img src="https://trimet.org/maps/img/maxsystemmap.png" alt="TriMet MAX System Map" style="width:100%; max-width:800px; border:1px solid #ccc; margin-bottom: 1rem;" />
+  </a>
+
+  <h4>Live Arrival Times</h4>
+  <p>Below are live arrivals for nearby MAX stations.</p>
+  <iframe src="https://developer.trimet.org/ws/V1/stop_times/8379" width="100%" height="300" style="border:1px solid #ccc; margin-bottom:1rem;"></iframe>
+  <iframe src="https://developer.trimet.org/ws/V1/stop_times/8384" width="100%" height="300" style="border:1px solid #ccc; margin-bottom:1rem;"></iframe>
+
+  <h3>Other Options</h3>
+  <p><strong>Lime Scooters:</strong> Lime scooters are commonly parked throughout downtown Portland. Use the <a href="https://www.li.me/en-us/home" target="_blank">Lime app</a> to locate and unlock a scooter nearby. Availability may vary, but scooters are typically clustered around high-traffic areas like NW 5th & Couch.</p>
+
+  <p><strong>Uber:</strong> Download the <a href="https://www.uber.com/us/en/ride/" target="_blank">Uber app</a> to request a ride from anywhere in Portland. River Pool &amp; Sports Bar is a well-known landmark and easy to locate within the app.</p>
+
+  <p><strong>Lyft:</strong> Lyft also operates throughout downtown Portland. You can request a ride by downloading the <a href="https://www.lyft.com/rider" target="_blank">Lyft app</a>. Like Uber, pickup from River is fast and convenient.</p>
+</section>
+
+<section id="parking-map">
+  <h2>Nearby Parking Map</h2>
+  <p>Use the interactive map below to explore nearby parking options around River Pool &amp; Sports Bar.</p>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d22377.54801914654!2d-122.68140637339876!3d45.52319484023788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a03cce05927%3A0x26e47a1d11755c75!2sRiver%20Pool%20%26%20Sports%20Bar!5e0!3m2!1sen!2sus!4v1717612865257!5m2!1sen!2sus"
+    width="100%"
+    height="400"
+    style="border:0; margin-bottom:1rem;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<section id="parking">
+  <h2>Parking</h2>
+  <ul>
+    <li><strong>On-street metered parking:</strong> Available throughout downtown Portland. Always check signage for time limits and payment details.</li>
+    <li><strong>SmartPark Garages:</strong> Five public garages are operated by the city nearby. Visit the <a href="https://www.portland.gov/transportation/parking/parking-guide" target="_blank">Portland Parking Guide</a> for locations and rates.</li>
+    <li><strong>Private lots:</strong> Additional paid lots and garages are within walking distance. Availability and prices may vary.</li>
+  </ul>
+</section>
+
+<!-- Optional: Back to Top button -->
+<a href="#top" class="back-to-top" aria-label="Back to Top">
+  <img src="{{ '/assets/images/appbuttons/backtotop.png' | relative_url }}" alt="Back to Top">
+</a>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: block;
+  }
+  .back-to-top img {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  // Smooth scrolling for Back to Top
+  document.documentElement.style.scrollBehavior = "smooth";
+  document.querySelector('.back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

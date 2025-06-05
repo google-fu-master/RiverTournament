@@ -12,14 +12,10 @@
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="hamburger">&#9776;</label>
     <div class="menu">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/rules/' | relative_url }}">Rules</a>
-      <a href="{{ '/signup/' | relative_url }}">Sign Up</a>
-      <a href="{{ '/faq/' | relative_url }}">FAQ</a>
-      <!-- <a href="{{ '/stats/' | relative_url }}">Stats</a> -->
-      <!-- <a href="{{ '/photos/' | relative_url }}">Photos</a> -->
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
-    </div>
+  {% for item in site.data.navigation %}
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+  {% endfor %}
+</div>
   </nav>
 
   <header>
@@ -71,3 +67,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
