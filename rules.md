@@ -17,11 +17,11 @@ permalink: /rules/
     <li>First-timers can create a Fargo account using the mobile app (links coming soon in the FAQ).</li>
     <li>If you have more than one Fargo account, we’ll use the highest rating. If it’s over 445, you won’t be eligible—please get your accounts merged ahead of time.</li>
     <li>A screenshot of your Fargo rating can be uploaded in the Sign Up sheet, but your rating will be confirmed live in the Fargo app at registration.</li>
-    <li>Entry fees must be paid at time of registration.</li>
     <li>If a player has an APA rating but no Fargo rating, their Fargo rating for the tournament will be determined using a conversion formula.</li>
     <li>If a player has no APA rating and no Fargo rating, they will be entered into the tournament at the highest eligible rating (445) and their Fargo account and performance will be monitored for eligibility if they return to future tournaments.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li><strong>Your rating at registration on tournament night will decide eligibility and race lengths.</strong></li>
+	<li>Entry fees must be paid at time of registration.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
   </ul>
 </div>
