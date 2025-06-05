@@ -6,35 +6,33 @@ permalink: /contact/
 
 <!--this is the contact.html file-->
 
-
-
 <p style="text-align: center;">If your question isn’t answered in the <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!<br><br>
 <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">Text the tournament director</a> and do not use this form.</strong></p>
 
-<form id="contactForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 400px; margin: 0 auto;">
+<form id="contactForm" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
   <div style="display: flex; gap: 1rem; width: 100%;">
     <div style="flex: 1; display: flex; flex-direction: column;">
-      <label for="firstName">First Name (required)</label>
-      <input type="text" id="firstName" name="First Name" required>
+      <label for="firstName" style="margin-bottom: 0.25rem;">First Name (required)</label>
+      <input type="text" id="firstName" name="First Name" required style="margin-bottom: 1rem;">
     </div>
     <div style="flex: 1; display: flex; flex-direction: column;">
-      <label for="lastName">Last Name (required)</label>
-      <input type="text" id="lastName" name="Last Name" required>
+      <label for="lastName" style="margin-bottom: 0.25rem;">Last Name (required)</label>
+      <input type="text" id="lastName" name="Last Name" required style="margin-bottom: 1rem;">
     </div>
   </div>
 
   <div style="display: flex; gap: 1rem; width: 100%;">
     <div style="flex: 1; display: flex; flex-direction: column;">
-      <label for="phoneNumber">Phone Number</label>
-      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890">
+      <label for="phoneNumber" style="margin-bottom: 0.25rem;">Phone Number</label>
+      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890" style="margin-bottom: 1rem;">
     </div>
     <div style="flex: 1; display: flex; flex-direction: column;">
-      <label for="email">Email (optional)</label>
-      <input type="email" id="email" name="Email" placeholder="you@example.com">
+      <label for="email" style="margin-bottom: 0.25rem;">Email (optional)</label>
+      <input type="email" id="email" name="Email" placeholder="you@example.com" style="margin-bottom: 1rem;">
     </div>
   </div>
 
-  <fieldset>
+  <fieldset style="margin-bottom: 1rem;">
     <legend>Preferred Contact Method</legend>
     <div class="checkbox-group-inline">
       <input type="checkbox" id="text" name="Preferred Contact" value="Text">
@@ -47,7 +45,7 @@ permalink: /contact/
     <p class="hint">Do not check a box unless you want us to contact you about your inquiry.</p>
   </fieldset>
 
-  <fieldset>
+  <fieldset style="margin-bottom: 1rem;">
     <legend>Have you played in the tournament?</legend>
     <div class="checkbox-group-inline">
       <input type="checkbox" id="playedYes" name="Tournament Player" value="Yes">
@@ -59,13 +57,13 @@ permalink: /contact/
     </div>
   </fieldset>
 
-  <label for="subject">Subject</label>
-  <input type="text" id="subject" name="Subject" style="width: 100%; padding: 0.5rem;">
+  <label for="subject" style="margin-bottom: 0.25rem;">Subject</label>
+  <input type="text" id="subject" name="Subject" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
 
-  <label for="details">Details</label>
-  <textarea id="details" name="Details" rows="6" style="width: 100%; padding: 0.5rem;"></textarea>
+  <label for="details" style="margin-bottom: 0.25rem;">Details</label>
+  <textarea id="details" name="Details" rows="6" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
 
-  <button type="submit">Submit</button>
+  <button type="submit" style="padding: 0.5rem; background-color: var(--accent-blue); color: var(--white); border: none; border-radius: 4px; cursor: pointer;">Submit</button>
 </form>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime"></script>
@@ -90,4 +88,3 @@ permalink: /contact/
     }
   });
 </script>
-
