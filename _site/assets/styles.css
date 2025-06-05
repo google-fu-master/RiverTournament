@@ -110,11 +110,9 @@ nav {
 
 /* Responsive adjustments for screens ≤1024px */
 @media (max-width: 1024px) and (pointer:coarse) {
-  /* Show hamburger on mobile */
   .hamburger {
     display: block;
   }
-  /* Hide desktop menu initially */
   .menu {
     position: fixed;
     top: 0;
@@ -129,7 +127,6 @@ nav {
     display: flex;
     z-index: 1000;
   }
-  /* Show slide-out when toggled */
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
   }
@@ -143,16 +140,26 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
   flex-direction: row;
 }
+
+.brackets ul li {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bracket, .waitlist {
+  min-width: 300px;
+}
+
 @media (max-width: 1024px) {
   .brackets {
     flex-direction: column;
   }
 }
 
-/* Left-align body content (not titles) on Rules and FAQ pages */
 body.page-rules main,
 body.page-rules p,
 body.page-rules h2,
@@ -170,7 +177,6 @@ body.page-faq h6 {
   text-align: left !important;
 }
 
-/* Increase font size for bracket and waitlist names */
 .brackets td {
   font-size: 5rem;
   font-weight: bold;
