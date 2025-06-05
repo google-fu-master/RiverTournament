@@ -121,7 +121,7 @@
   <h3>📍 Venue &amp; Logistics</h3>
 
   <h4>Where is the tournament held?</h4>
-  <p>We play at River Pool &amp; Sports Bar, 19 NW 5th Ave, Downtown Portland. It’s easily accessible via MAX, and off-street paid parking is available.</p>
+  <p>We play at River Pool &amp; Sports Bar, 19 NW 5th Ave, Downtown Portland. It’s easily accessible via MAX, and off-street paid parking is available. You can also check out the <a href="/RiverTournament/location/">Location page</a> for venue and transit details.</p>
 
   <h4>What time is the tournament?</h4>
   <p>Registration starts at 6:30pm and shooting starts promptly at 7:00pm. Tables are always free at River; first come first serve for practice before the tournament.</p>
@@ -192,7 +192,7 @@
         const text = section.textContent.toLowerCase();
         if (term && text.includes(term)) {
           section.style.display = 'block';
-          const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\\]\]/g, '\\$&')})`, 'gi');
+          const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\]/g, '\\$&')})`, 'gi');
           section.innerHTML = section.innerHTML.replace(regex, '<mark>$1</mark>');
         } else if (!term) {
           section.style.display = 'block';
