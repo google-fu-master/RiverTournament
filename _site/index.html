@@ -36,6 +36,7 @@
   <main>
     <!-- this is the index.html file -->
 
+<h1 id="loading-text">Loading Bracket...</h1>
 <h1 id="pot-info"></h1>
 
 <div class="brackets">
@@ -51,11 +52,11 @@
 
 <p class="note">
   Bracket spots are not final until Fargo rate verification/assignment and payment are completed in-person at registration.<br>
-  <a href="sms:7607938319">Text the tournament director</a> to see if a spot open.
+  <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
 </p>
 
 <p class="disclaimer" style="text-align: center; font-size: 0.9rem; margin-top: 2rem;">
-  *Actual pot size dependent on player attendance and House
+  *Actual pot size contingent on player attendance and discretionary House donation.
 </p>
 
 <script>
@@ -103,14 +104,15 @@
 
       let potText = "";
       if (playerCount === 16) {
-        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>! <a href=\"/signup/\">Sign up now</a> to get your name on the waitlist!`;
+        potText = `The pot for ${formattedDate} is <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now</a> to get your name on the waitlist!`;
       } else if (total < 80) {
-        potText = `The pot for ${formattedDate} is only <span class="highlight">$${total}</span>; <a href=\"/signup/\">Sign up now</a>!`;
+        potText = `The pot for ${formattedDate} is only <span class="highlight">$${total}*</span><br><a href="/signup/">Sign up now</a>`;
       } else {
-        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
+        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}*</span>!`;
       }
 
       document.getElementById("pot-info").innerHTML = potText;
+      document.getElementById("loading-text").remove();
 
     } catch (err) {
       console.error("Failed to load bracket data:", err);
