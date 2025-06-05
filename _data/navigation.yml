@@ -1,13 +1,12 @@
 - title: Home
   url: /
-- title: Rules
-  url: /rules/
 - title: Sign Up
   url: /signup/
+- title: Rules
+  url: /rules/
+- title: Location
+  url: /location/
 - title: FAQ
   url: /faq/
 - title: Contact
   url: /contact/
-- title: Location
-  url: /location/
-
