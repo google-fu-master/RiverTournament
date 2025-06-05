@@ -43,7 +43,7 @@
 
 <p><input type="text" id="faq-search" placeholder="Search FAQs…" style="margin-bottom: 1rem;" /></p>
 
-<div class="faq">
+<div class="faq styled-section">
 
   <!-- Tournament Overview -->
   <h3>🏆 Tournament Overview</h3>
@@ -90,22 +90,19 @@
 
   <!-- Format & Rules -->
   <h3>📏 Format & Rules</h3>
-  
   <h4>What format are we playing (8, 9, 10-ball)?</h4>
   <p>We'll alternate 8 and 9 ball weekly (starting with 9-ball on June 5th).  We will also be doing Ladies Night once a month (TBA). </p>
-  
+
   <h4>What’s the race format?</h4>
   <p>Race lengths vary by format, the number of players, and Fargo gaps:</p>
   <ul>
     <li>8-Ball:</li>
-	  <li>8–12 players: race to 3 wins</li>
-      <li>13–16 players: race to 2 wins</li>
-	  
-	  <li>9-Ball:</li>
-	  <li>8–12 players: race to 4 wins</li>
-      <li>13–16 players: race to 3 wins</li>
-	  
-      <li>In all formats, if there’s a 75-124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap</li>
+    <li>8–12 players: race to 3 wins</li>
+    <li>13–16 players: race to 2 wins</li>
+    <li>9-Ball:</li>
+    <li>8–12 players: race to 4 wins</li>
+    <li>13–16 players: race to 3 wins</li>
+    <li>In all formats, if there’s a 75-124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap</li>
   </ul>
 
   <h4>What rules are we playing by?</h4>
@@ -144,70 +141,16 @@
   </ul>
 
   <h4>Can I get to River on the MAX Light Rail?</h4>
-  <p>Yes! There are two MAX Light Rail stations close to River (19 NW 5th Ave) are:</p>
+  <p>The two closest MAX stops are both served by the Green, Orange, and Yellow MAX lines, as well as Blue and Yellow bus lines:</p>
   <ul>
-    <li><strong>NW 5th &amp; Couch:</strong> Served by the Green, Orange, and Yellow MAX lines; also Blue and Yellow bus lines.</li>
-    <li><strong>NW 6th &amp; Davis:</strong> Served by the Green, Orange, and Yellow MAX lines; also Blue and Yellow bus lines.</li>
+    <li><a href="https://maps.app.goo.gl/pyijqPjvsLKwhbSc6" target="_blank">NW 5th & Couch</a></li>
+    <li><a href="https://maps.app.goo.gl/zEuMJ65sR51C4Djd8" target="_blank">NW 6th & Davis</a></li>
   </ul>
   <p>Most MAX lines run from around 4am and stop service just before midnight. For more information, see <a href="https://trimet.org/schedules/index.htm" target="_blank">MAX Line Schedules</a>.</p>
 
   <h4>What other transportation options are available?</h4>
   <p>Other transportation options include Lime scooters, Uber, and Lyft, all of which are readily available in the area.</p>
 </div>
-
-  <!-- Floating Back to Top button -->
-  <p><a href="#top" class="back-to-top" aria-label="Back to Top">
-    <img src="/RiverTournament/assets/images/appbuttons/backtotop.png" alt="Back to Top" />
-  </a></p>
-
-  <style>
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: block;
-    }
-    .back-to-top img {
-      width: 50px;
-      height: 50px;
-      border: none;
-      cursor: pointer;
-    }
-    mark {
-      background-color: yellow;
-      color: black;
-    }
-  </style>
-
-  <script>
-    // Smooth scrolling
-    document.documentElement.style.scrollBehavior = "smooth";
-
-    const searchBox = document.getElementById('faq-search');
-    searchBox.addEventListener('input', function() {
-      const term = searchBox.value.toLowerCase().trim();
-      document.querySelectorAll('.faq').forEach(section => {
-        section.innerHTML = section.innerHTML.replace(/<mark>(.*?)<\/mark>/g, '$1');
-        const text = section.textContent.toLowerCase();
-        if (term && text.includes(term)) {
-          section.style.display = 'block';
-          const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\]/g, '\\$&')})`, 'gi');
-          section.innerHTML = section.innerHTML.replace(regex, '<mark>$1</mark>');
-        } else if (!term) {
-          section.style.display = 'block';
-        } else {
-          section.style.display = 'none';
-        }
-      });
-    });
-
-    // Back to Top click behavior
-    document.querySelector('.back-to-top').addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
 
   </main>
 
