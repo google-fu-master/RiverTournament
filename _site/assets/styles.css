@@ -92,9 +92,19 @@ nav {
 
 .menu {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--dark-navy);
+  padding: 4rem 1rem 1rem;
+  gap: 1rem;
+  transform: translateX(-100%);
   transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
 .menu a {
@@ -111,11 +121,12 @@ nav {
 }
 
 @media (max-width: 1024px) {
-  .hamburger {
-    display: block;
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .menu {
+  .hamburger {
     position: fixed;
     top: 0;
     left: 0;
@@ -152,7 +163,7 @@ nav {
 
 .bracket li,
 .waitlist li {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: normal;
   margin-bottom: 0.5rem;
 }
