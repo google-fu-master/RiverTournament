@@ -7,7 +7,7 @@
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}" />
 </head>
-<body class="{{ page.bodyClass }}">
+<body class="page-{{ page.title | downcase | replace: ' ', '-' }}">
   <nav>
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="hamburger">&#9776;</label>
