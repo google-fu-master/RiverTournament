@@ -11,7 +11,7 @@ permalink: /contact/
   <p style="text-align: center; margin-bottom: 1rem;">If your question isn’t answered in the <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!<br><br>
   <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">Text the tournament director</a> and do not use this form.</strong></p>
 
-  <form id="contactForm">
+  <form id="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbw_D_PlEg7KlpyvdYnrNkVQd8xy7qX83ol_kabX4N-V_5AWrNpAeBrLB8YSGs3A7UJvbw/exec">
     <div class="form-group">
       <label for="firstName">First Name (required)</label>
       <input type="text" id="firstName" name="First Name" required>
@@ -67,19 +67,34 @@ permalink: /contact/
       <textarea id="details" name="Details" rows="6" placeholder="Enter your message here..."></textarea>
     </div>
 
-    <div class="form-group">
-      <button type="submit">Submit</button>
-    </div>
+    <input type="hidden" name="Timestamp" id="timestamp">
+
+$1
   </form>
 </div>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime"></script>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const now = new Date().toISOString();
+  document.getElementById('timestamp').value = now;
+});
+</script>
+
+<script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // reCAPTCHA and form submission logic (will need to be implemented here)
-    alert('Form submitted (reCAPTCHA logic needed)');
+  e.preventDefault();
+  grecaptcha.enterprise.ready(function () {
+    grecaptcha.enterprise.execute('6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime', { action: 'USER_ACTION' }).then(function (token) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.value = token;
+      e.target.appendChild(input);
+      e.target.submit();
+    });
   });
+});
 </script>
 
 <script>
