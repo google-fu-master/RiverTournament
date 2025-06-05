@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tournament Rules
-bodyClass: rules-page
+bodyClass: rules-faq
 permalink: /rules/
 ---
 
