@@ -51,7 +51,11 @@
 </section>
 
 <h1 id="loading-text">Loading Bracket...</h1>
-<h1 id="pot-info"></h1>
+<section class="pot-banner" style="background-color: #111; padding: 2rem 1rem; text-align: center; color: #fff;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <div id="pot-info"></div>
+  </div>
+</section>
 
 <div class="brackets">
   <div class="bracket">
@@ -137,12 +141,14 @@
       const total = potAmount + houseAdd;
 
       let potText = "";
+      const callToAction = `<div style=\"margin-top: 1rem;\"><a href=\"/signup/\" style=\"color: #ffd700; text-decoration: underline;\">Sign up now</a></div>`;
+
       if (playerCount === 16) {
-        potText = `${fullLabel} could be <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now to get your name on the waitlist!</a>`;
+        potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
       } else if (playerCount < 8) {
-        potText = `${fullLabel} is only <span class="highlight">$${total}*</span><br><a href="/signup/">Sign up now</a>`;
+        potText = `<div>${fullLabel} is only</div><div style=\"font-size: 2rem; font-weight: bold; color: #ff5555;\">$${total}*</div>${callToAction}`;
       } else {
-        potText = `${fullLabel} could be <span class="highlight">$${total}*</span>!<br><a href="/signup/">Sign up now</a>`;
+        potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}`;
       }
 
       document.getElementById("pot-info").innerHTML = potText;
