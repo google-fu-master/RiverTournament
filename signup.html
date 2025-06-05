@@ -6,7 +6,8 @@ title: Sign Up
 <!--- this is the signup.html file --->
 
 <p>Reserve your spot in the upcoming River Tournament on Thursday!<br>
-Your name must match your photo ID and your Fargo account. All information will be verified at tournament registration (6:30pm).
+Your name must match your photo ID and your Fargo account. All information will be verified at tournament registration (6:30pm).<br>
+The bracket and waitlist on the home page will not show your name until the tournament director has approved your reservation. Thank you for your patience!
 </p>
 
 <form id="signup-form" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
@@ -106,7 +107,7 @@ Your name must match your photo ID and your Fargo account. All information will 
     </a>
 </div>`;
       } else {
-        statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+        statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates. If you do not see your name in 24 hours, please <a href="sms:7607938319">text the tournament director</a>.';
       }
       form.reset();
     })
