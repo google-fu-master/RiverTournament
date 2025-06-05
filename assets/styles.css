@@ -144,10 +144,9 @@ nav {
   }
 }
 
-/* Left-align content only on Rules and FAQ pages */
+/* Left-align body content (not titles) on Rules and FAQ pages */
 body.page-rules main,
 body.page-rules p,
-body.page-rules h1,
 body.page-rules h2,
 body.page-rules h3,
 body.page-rules h4,
@@ -155,11 +154,15 @@ body.page-rules h5,
 body.page-rules h6,
 body.page-faq main,
 body.page-faq p,
-body.page-faq h1,
 body.page-faq h2,
 body.page-faq h3,
 body.page-faq h4,
 body.page-faq h5,
 body.page-faq h6 {
   text-align: left;
+}
+
+/* Increase font size for bracket and waitlist names */
+.brackets td {
+  font-size: 1.25rem;
 }
