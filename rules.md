@@ -24,7 +24,7 @@ permalink: /rules/
 	<li>Entry fees must be paid at time of registration.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
   </ul>
-</div>
+
 </section>
 
 <section id="match-format">

@@ -184,6 +184,7 @@ nav {
 }
 
 .bracket, .waitlist {
+  flex: 1;
   min-width: 300px;
   background-color: var(--slate);
   padding: 1.5rem;
