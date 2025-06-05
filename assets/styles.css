@@ -80,6 +80,7 @@ nav {
   padding: 1rem;
   position: relative;
   width: 100%;
+  justify-content: space-between;
 }
 
 .hamburger {
@@ -120,6 +121,10 @@ nav {
   display: none;
 }
 
+#menu-toggle:checked + .hamburger + .menu {
+  transform: translateX(0);
+}
+
 @media (max-width: 1024px) {
   nav {
     flex-direction: column;
@@ -129,27 +134,6 @@ nav {
 
   .hamburger {
     display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--white);
-    z-index: 1001;
-  }
-
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-
-  .brackets {
-    flex-direction: column;
-  }
-}
-
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-
-  nav {
-    justify-content: space-between;
   }
 
   .brackets {
