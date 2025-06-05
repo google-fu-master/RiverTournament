@@ -17,8 +17,8 @@
       <a href="/RiverTournament/rules/">Rules</a>
       <a href="/RiverTournament/signup/">Sign Up</a>
       <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
+      <!-- <a href="/RiverTournament/stats/">Stats</a> -->
+      <!-- <a href="/RiverTournament/photos/">Photos</a> -->
       <a href="/RiverTournament/contact/">Contact</a>
     </div>
   </nav>
@@ -40,8 +40,8 @@
   <label for="last-name">Last Name (required)</label>
   <input type="text" id="last-name" name="Last Name" required style="margin-bottom: 1rem;">
 
-  <label for="preferred-name">Preferred Name</label>
-  <input type="text" id="preferred-name" name="Preferred Name" style="margin-bottom: 1rem;">
+  <label for="preferred-name">Preferred First Name</label>
+  <input type="text" id="preferred-name" name="Preferred First Name" style="margin-bottom: 1rem;">
 
   <label for="phone">Phone Number</label>
   <input type="tel" id="phone" name="Phone Number" style="margin-bottom: 1rem;">
@@ -51,7 +51,8 @@
 
   <label>
     <input type="checkbox" id="new-player" name="New Player" style="margin-bottom: 1rem;">
-    I’m a new player / I do not have a Fargo account yet.
+    I’m a new player \/ I do not have a Fargo account OR an APA account.
+  </label>
   </label>
 
   <label for="fargo-screenshot">Fargo Rating Screenshot (if you have one):</label>
@@ -88,7 +89,7 @@
     const data = new URLSearchParams();
     data.append('First Name', formData.get('First Name'));
     data.append('Last Name', formData.get('Last Name'));
-    data.append('Preferred Name', formData.get('Preferred Name'));
+    data.append('Preferred First Name', formData.get('Preferred First Name'));
     data.append('Phone Number', formData.get('Phone Number'));
     data.append('Email', formData.get('Email'));
     data.append('New Player', formData.get('New Player') ? 'Yes' : 'No');
@@ -119,7 +120,19 @@
     .then(response => response.text())
     .then(text => {
       console.log('Response from Apps Script:', text); // testing line
-	  statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+      const isNew = document.getElementById('new-player').checked;
+      if (isNew) {
+        statusMessage.innerHTML = `Thanks for signing up! Please create a Fargo account using the Fargorate app before tournament registration at 6:30pm on Thursday:<div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+    <a href="https://apps.apple.com/us/app/fargorate/id1199102391" target="_blank">
+      <img src="/RiverTournament/assets/images/appbuttons/Download_on_the_App_Store_Badge.png" alt="Download on the App Store" style="width: 150px; height: auto;">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate" target="_blank">
+      <img src="/RiverTournament/assets/images/appbuttons/Google_Play_Store_badge_EN.png" alt="Get it on Google Play" style="width: 150px; height: auto;">
+    </a>
+</div>`;
+      } else {
+        statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates.';
+      }
       form.reset();
     })
     .catch(error => {
@@ -137,7 +150,7 @@
   </footer>
 
   <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.getElementById('menu-toggle');
   const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
   const savedState = localStorage.getItem('menuOpen');
@@ -158,11 +171,12 @@
     const links = document.querySelectorAll('.menu a');
     links.forEach(link => {
       link.addEventListener('click', () => {
+        toggle.checked = false;
         localStorage.setItem('menuOpen', false);
       });
     });
   }
-})();
+});
 </script>
 </body>
 </html>

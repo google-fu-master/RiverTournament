@@ -17,8 +17,8 @@
       <a href="/RiverTournament/rules/">Rules</a>
       <a href="/RiverTournament/signup/">Sign Up</a>
       <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
+      <!-- <a href="/RiverTournament/stats/">Stats</a> -->
+      <!-- <a href="/RiverTournament/photos/">Photos</a> -->
       <a href="/RiverTournament/contact/">Contact</a>
     </div>
   </nav>
@@ -35,7 +35,7 @@
 
 <p class="intro-text">
   Want to join this week's tournament? 
-  <a href="/signup.html">Sign up here!</a>
+  <a href="/RiverTournament/signup/">Sign up here!</a>
 </p>
 
 <div class="brackets">
@@ -52,7 +52,7 @@
 <p class="note">
   Even if the bracket and waitlist above are full, spots are not guaranteed until registration is complete, including Fargo rate verification and entry fee payment. 
   Last-minute cancellations, no-shows, or Fargo rating changes can open up spots. 
-  If your name is not listed in the Bracket or Waitlist, you can text the tournament director at <a href="tel:7607938319">760-793-8319</a> to confirm availability.
+  If your name is not listed in the Bracket or Waitlist, you can text the tournament director at <a href="sms:7607938319">760-793-8319</a> to confirm availability.
 </p>
 
 <script>
@@ -63,7 +63,16 @@
       const res = await fetch(endpoint);
       const data = await res.json();
 
-      document.getElementById("tournament-date").textContent = "This Week's Bracket";
+      // Compute upcoming Thursday date for heading
+      const today = new Date();
+      const dayOfWeek = today.getDay();
+      const daysUntilThursday = (4 - dayOfWeek + 7) % 7;
+      const upcomingThursday = new Date(today);
+      // If today is Thursday and past midnight, still show this Thursday
+      upcomingThursday.setDate(today.getDate() + daysUntilThursday);
+      const options = { month: 'long', day: 'numeric' };
+      const formattedDate = new Intl.DateTimeFormat('en-US', options).format(upcomingThursday);
+      document.getElementById("tournament-date").textContent = `${formattedDate} Bracket`;
 
       const bracket = document.getElementById("bracket");
       const waitlist = document.getElementById("waitlist");
@@ -71,15 +80,18 @@
       for (let i = 0; i < 16; i++) {
         const player = data.bracket[i];
         const li = document.createElement("li");
-        li.textContent = player ? (player.preferred || player.name) : "";
+        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
+        li.textContent = displayName;
         bracket.appendChild(li);
       }
 
-      data.waitlist.forEach(p => {
+      for (let i = 0; i < 16; i++) {
+        const player = data.waitlist[i];
         const li = document.createElement("li");
-        li.textContent = p.preferred || p.name;
+        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
+        li.textContent = displayName;
         waitlist.appendChild(li);
-      });
+      }
     } catch (err) {
       document.getElementById("tournament-date").textContent = "Error loading bracket.";
       console.error("Failed to load bracket data:", err);
@@ -98,7 +110,7 @@
   </footer>
 
   <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.getElementById('menu-toggle');
   const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
   const savedState = localStorage.getItem('menuOpen');
@@ -119,11 +131,12 @@
     const links = document.querySelectorAll('.menu a');
     links.forEach(link => {
       link.addEventListener('click', () => {
+        toggle.checked = false;
         localStorage.setItem('menuOpen', false);
       });
     });
   }
-})();
+});
 </script>
 </body>
 </html>

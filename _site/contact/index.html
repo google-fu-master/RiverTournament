@@ -17,8 +17,8 @@
       <a href="/RiverTournament/rules/">Rules</a>
       <a href="/RiverTournament/signup/">Sign Up</a>
       <a href="/RiverTournament/faq/">FAQ</a>
-      <a href="/RiverTournament/stats/">Stats</a>
-      <a href="/RiverTournament/photos/">Photos</a>
+      <!-- <a href="/RiverTournament/stats/">Stats</a> -->
+      <!-- <a href="/RiverTournament/photos/">Photos</a> -->
       <a href="/RiverTournament/contact/">Contact</a>
     </div>
   </nav>
@@ -31,23 +31,33 @@
   <main>
     <!--this is the contact.html file-->
 
-<h1 style="text-align: center;">Contact Us</h1>
 
-<p style="text-align: center;">If your question isn’t answered in the <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!<br>
+
+<p style="text-align: center;">If your question isn’t answered in the <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!<br><br>
 <strong>For spot availability or last-minute cancellations, please text the tournament director at 760-793-8319 and do not use this form.</strong></p>
 
 <form id="contactForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 400px; margin: 0 auto;">
-  <label for="firstName">First Name (required)</label>
-  <input type="text" id="firstName" name="First Name" required>
+  <div style="display: flex; gap: 1rem; width: 100%;">
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <label for="firstName">First Name (required)</label>
+      <input type="text" id="firstName" name="First Name" required>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <label for="lastName">Last Name (required)</label>
+      <input type="text" id="lastName" name="Last Name" required>
+    </div>
+  </div>
 
-  <label for="lastName">Last Name (required)</label>
-  <input type="text" id="lastName" name="Last Name" required>
-
-  <label for="phoneNumber">Phone Number (optional, format: nnn-nnn-nnnn)</label>
-  <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890">
-
-  <label for="email">Email (optional)</label>
-  <input type="email" id="email" name="Email" placeholder="you@example.com">
+  <div style="display: flex; gap: 1rem; width: 100%;">
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <label for="phoneNumber">Phone Number (optional, format: nnn-nnn-nnnn)</label>
+      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890">
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <label for="email">Email (optional)</label>
+      <input type="email" id="email" name="Email" placeholder="you@example.com">
+    </div>
+  </div>
 
   <fieldset>
     <legend>Preferred Contact Method</legend>
@@ -75,10 +85,10 @@
   </fieldset>
 
   <label for="subject">Subject</label>
-  <input type="text" id="subject" name="Subject">
+  <input type="text" id="subject" name="Subject" style="width: 100%; padding: 0.5rem;">
 
   <label for="details">Details</label>
-  <textarea id="details" name="Details" rows="4"></textarea>
+  <textarea id="details" name="Details" rows="6" style="width: 100%; padding: 0.5rem;"></textarea>
 
   <button type="submit">Submit</button>
 </form>
@@ -92,6 +102,21 @@
   });
 </script>
 
+<script>
+  const phoneInput = document.getElementById('phoneNumber');
+  phoneInput.addEventListener('input', function() {
+    let digits = this.value.replace(/\D/g, '');
+    if (digits.length <= 3) {
+      this.value = digits;
+    } else if (digits.length <= 6) {
+      this.value = digits.slice(0,3) + '-' + digits.slice(3);
+    } else {
+      this.value = digits.slice(0,3) + '-' + digits.slice(3,6) + '-' + digits.slice(6,10);
+    }
+  });
+</script>
+
+
   </main>
 
   <footer>
@@ -99,7 +124,7 @@
   </footer>
 
   <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.getElementById('menu-toggle');
   const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
   const savedState = localStorage.getItem('menuOpen');
@@ -120,11 +145,12 @@
     const links = document.querySelectorAll('.menu a');
     links.forEach(link => {
       link.addEventListener('click', () => {
+        toggle.checked = false;
         localStorage.setItem('menuOpen', false);
       });
     });
   }
-})();
+});
 </script>
 </body>
 </html>

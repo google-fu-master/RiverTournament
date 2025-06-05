@@ -9,11 +9,20 @@
   --white: #f5f5f5;
 }
 
-/*this is the styles.css file that lives in the assets folder*/
+/* Global link styling */
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--link-gold);
+}
 
 /* Global styling */
 body {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -21,8 +30,28 @@ body {
   color: var(--white);
 }
 
+header {
+  text-align: center;
+  background-color: var(--mid-navy);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: var(--darkest);
+}
+
 footer {
-  margin-top: auto;
   background-color: var(--slate);
   color: var(--white);
   text-align: center;
@@ -37,215 +66,90 @@ nav {
   align-items: center;
   padding: 1rem;
   position: relative;
-  height: auto;
   width: 100%;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: var(--dark-navy);
-  transform: translateX(-200px);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-.menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
-.menu a:hover {
-  color: var(--link-yellow);
-}
-
+/* Hide hamburger on desktop by default */
 .hamburger {
-  display: block;
+  display: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
 }
 
+/* Desktop horizontal menu */
+.menu {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: var(--link-yellow);
+}
+
+/* Mobile slide-out hidden by default */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--dark-navy);
+  padding-top: 4rem;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 1000;
+}
+
+/* Hide mobile-menu by default */
+.mobile-menu {
+  display: none;
+}
+
 #menu-toggle {
   display: none;
 }
 
-@media (max-width: 1024px) {
-  nav {
-    justify-content: space-between;
-  }
-  .menu {
-    transform: translateX(-200px);
-  }
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-}
-
-  nav {
-    flex-direction: row;
-    align-items: center;
-    height: auto;
-    width: 100%;
-    min-height: auto;
-    position: relative;
-  }
-
+/* Responsive adjustments for screens ≤1024px */
+@media (max-width: 1024px) and (pointer:coarse) {
+  /* Show hamburger on mobile */
   .hamburger {
     display: block;
   }
-
+  /* Hide desktop links */
   .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    text-align: left;
-    padding-top: 4rem;
-    transition: transform 0.3s ease;
+    display: none;
+  }
+  /* Show slide-out when toggled */
+  #menu-toggle:checked + .hamburger + .mobile-menu {
+    display: flex;
     transform: translateX(0);
-    z-index: 1000;
   }
-
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(-200px);
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
+  nav {
+    justify-content: space-between;
   }
 }
 
-header {
-  margin-left: 200px;
-  width: calc(100% - 200px);
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: var(--white);
-}
-
-main {
-  margin-left: 200px;
-  padding: 1rem;
-  background-color: var(--darkest);
-}
-
-/* Contact form styling (specific to Contact page) */
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#contactForm h1,
-#contactForm p {
-  text-align: center;
-}
-
-#contactForm fieldset {
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#contactForm .checkbox-group-inline {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-#contactForm .hint {
-  font-size: 0.8rem;
-  color: #bbb;
-  text-align: center;
-}
-
-#contactForm button {
-  padding: 0.5rem 1rem;
-  background: var(--accent-blue);
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-/* Index page specific styling */
-#tournament-date {
-  text-align: center;
-  font-size: 2rem;
-  margin: 1rem 0;
-}
-
-.intro-text {
-  text-align: center;
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1rem;
-}
-
+/* Bracket & Waitlist: side-by-side on desktop, stacked on mobile */
 .brackets {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  flex-direction: row;
 }
-
-.bracket,
-.waitlist {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.bracket h2,
-.waitlist h2 {
-  text-align: center;
-}
-
-#bracket,
-#waitlist {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: var(--slate);
-  border-radius: 4px;
-}
-
-#bracket li,
-#waitlist li {
-  padding: 0.5rem;
-}
-
-.note {
-  text-align: center;
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 0.9rem;
+@media (max-width: 1024px) {
+  .brackets {
+    flex-direction: column;
+  }
 }
