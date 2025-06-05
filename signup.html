@@ -87,27 +87,27 @@ The bracket and waitlist on the home page will not show your name until the tour
 
   function sendToAppsScript(data) {
     fetch('https://script.google.com/macros/s/AKfycbx66jj5zCl5ZLMEiffsyv6DRyUsdD4j-DXGxnABc7sL781DH8bsrsWyg9QSTL-2wP-PVQ/exec', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  body: data.toString()
-})
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: data.toString()
+    })
     .then(response => response.text())
     .then(text => {
       console.log('Response from Apps Script:', text); // testing line
       const isNew = document.getElementById('new-player').checked;
       if (isNew) {
-        statusMessage.innerHTML = `Thanks for signing up! Please create a Fargo account using the Fargorate app before tournament registration at 6:30pm on Thursday:<div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
-    <a href="https://apps.apple.com/us/app/fargorate/id1199102391" target="_blank">
-      <img src="{{ '/assets/images/appbuttons/Download_on_the_App_Store_Badge.png' | relative_url }}" alt="Download on the App Store" style="width: 150px; height: auto;">
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate" target="_blank">
-      <img src="{{ '/assets/images/appbuttons/Google_Play_Store_badge_EN.png' | relative_url }}" alt="Get it on Google Play" style="width: 150px; height: auto;">
-    </a>
-</div>`;
+        statusMessage.innerHTML = `Thanks for signing up! Please create a Fargo account using the Fargorate app before tournament registration at 6:30pm on Thursday:<div style="display: flex; gap: 1rem; align-items: center; justify-content: center; margin-top: 1rem;">
+          <a href="https://apps.apple.com/us/app/fargorate/id1199102391" target="_blank">
+            <img src="{{ '/assets/images/appbuttons/Download_on_the_App_Store_Badge.png' | relative_url }}" alt="Download on the App Store" style="width: 150px; height: auto;">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate" target="_blank">
+            <img src="{{ '/assets/images/appbuttons/Google_Play_Store_badge_EN.png' | relative_url }}" alt="Get it on Google Play" style="width: 150px; height: auto;">
+          </a>
+        </div>`;
       } else {
-        statusMessage.textContent = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates. If you do not see your name in 24 hours, please <a href="sms:7607938319">text the tournament director</a>.';
+        statusMessage.innerHTML = 'Thanks for signing up! Your reservation is pending. Check the Bracket and Waitlist on the home page for updates. If you do not see your name in 24 hours, please <a href="sms:7607938319">text the tournament director</a>.';
       }
       form.reset();
     })
@@ -131,4 +131,3 @@ The bracket and waitlist on the home page will not show your name until the tour
     }
   });
 </script>
-
