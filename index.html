@@ -7,13 +7,6 @@ title: River Tournaments
 
 <h1 id="pot-info"></h1>
 
-<h1 id="tournament-date">Loading Bracket...</h1>
-
-<p class="intro-text">
-  Want to join this week's tournament? 
-  <a href="{{ '/signup/' | relative_url }}">Sign up here!</a>
-</p>
-
 <div class="brackets">
   <div class="bracket">
     <h2>Bracket Reservations</h2>
@@ -50,7 +43,6 @@ title: River Tournaments
       upcomingThursday.setDate(today.getDate() + daysUntilThursday);
       const options = { month: 'long', day: 'numeric' };
       const formattedDate = new Intl.DateTimeFormat('en-US', options).format(upcomingThursday);
-      document.getElementById("tournament-date").textContent = `${formattedDate} Bracket`;
 
       const bracket = document.getElementById("bracket");
       const waitlist = document.getElementById("waitlist");
@@ -77,14 +69,19 @@ title: River Tournaments
       let houseAdd = data.houseAdd || "0";
       houseAdd = parseFloat(houseAdd.replace(/[^\d.-]/g, '')) || 0;
       const total = potAmount + houseAdd;
-      const potText = total < 80
-        ? `The pot for ${formattedDate} is only <span class="highlight">$${total}</span>; Sign up now!`
-        : `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
+
+      let potText = "";
+      if (playerCount === 16) {
+        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>! <a href=\"/signup/\">Sign up now</a> to get your name on the waitlist!`;
+      } else if (total < 80) {
+        potText = `The pot for ${formattedDate} is only <span class="highlight">$${total}</span>; <a href=\"/signup/\">Sign up now</a>!`;
+      } else {
+        potText = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
+      }
 
       document.getElementById("pot-info").innerHTML = potText;
 
     } catch (err) {
-      document.getElementById("tournament-date").textContent = "Error loading bracket.";
       console.error("Failed to load bracket data:", err);
     }
   }

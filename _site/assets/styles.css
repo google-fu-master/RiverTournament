@@ -7,6 +7,7 @@
   --link-gold: #a47f00;
   --slate: #151D23;
   --white: #f5f5f5;
+  --pot-green: #00cc66;
 }
 
 /* Global link styling */
@@ -221,6 +222,6 @@ nav {
 }
 
 .highlight {
-  color: var(--link-yellow);
+  color: var(--pot-green);
   font-weight: bold;
 }
