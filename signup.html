@@ -20,7 +20,7 @@ Your name must match your photo ID and your Fargo account. All information will 
   <input type="text" id="preferred-name" name="Preferred First Name" style="margin-bottom: 1rem;">
 
   <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="Phone Number" style="margin-bottom: 1rem;">
+  <input type="tel" id="phone" name="Phone Number" placeholder="123-456-7890" style="margin-bottom: 1rem;">
 
   <label for="email">Email Address</label>
   <input type="email" id="email" name="Email" style="margin-bottom: 1rem;">
@@ -115,5 +115,19 @@ Your name must match your photo ID and your Fargo account. All information will 
       console.error('Error:', error);
     });
   }
+</script>
+
+<script>
+  const phoneInput = document.getElementById('phoneNumber');
+  phoneInput.addEventListener('input', function() {
+    let digits = this.value.replace(/\D/g, '');
+    if (digits.length <= 3) {
+      this.value = digits;
+    } else if (digits.length <= 6) {
+      this.value = digits.slice(0,3) + '-' + digits.slice(3);
+    } else {
+      this.value = digits.slice(0,3) + '-' + digits.slice(3,6) + '-' + digits.slice(6,10);
+    }
+  });
 </script>
 
