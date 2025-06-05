@@ -1,0 +1,173 @@
+:root {
+  --darkest: #141414;
+  --dark-navy: #0D1B2A;
+  --mid-navy: #002B3A;
+  --accent-blue: #0071a4;
+  --link-yellow: #d4af37;
+  --link-gold: #a47f00;
+  --slate: #151D23;
+  --white: #f5f5f5;
+}
+
+/* Global link styling */
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--link-gold);
+}
+
+/* Global styling */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--darkest);
+  color: var(--white);
+}
+
+header {
+  text-align: center;
+  background-color: var(--mid-navy);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: var(--darkest);
+  text-align: inherit;
+}
+
+body:not(.page-rules):not(.page-faq) main {
+  text-align: center;
+}
+
+footer {
+  background-color: var(--slate);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Navigation styling */
+nav {
+  background-color: var(--dark-navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+/* Hide hamburger on desktop by default */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--white);
+  z-index: 1001;
+}
+
+/* Desktop horizontal menu */
+.menu {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: var(--link-yellow);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive adjustments for screens ≤1024px */
+@media (max-width: 1024px) and (pointer:coarse) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+  /* Hide desktop menu initially */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 4rem;
+    transform: translateX(-100%);
+    display: flex;
+    z-index: 1000;
+  }
+  /* Show slide-out when toggled */
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  nav {
+    justify-content: space-between;
+  }
+}
+
+/* Bracket & Waitlist: side-by-side on desktop, stacked on mobile */
+.brackets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+@media (max-width: 1024px) {
+  .brackets {
+    flex-direction: column;
+  }
+}
+
+/* Left-align body content (not titles) on Rules and FAQ pages */
+body.page-rules main,
+body.page-rules p,
+body.page-rules h2,
+body.page-rules h3,
+body.page-rules h4,
+body.page-rules h5,
+body.page-rules h6,
+body.page-faq main,
+body.page-faq p,
+body.page-faq h2,
+body.page-faq h3,
+body.page-faq h4,
+body.page-faq h5,
+body.page-faq h6 {
+  text-align: left;
+}
+
+/* Increase font size for bracket and waitlist names */
+.brackets td {
+  font-size: 2rem;
+  font-weight: bold;
+}
