@@ -151,3 +151,13 @@ permalink: /rules/
     </ul>
   </div>
 </section>
+
+<script>
+  document.getElementById('formatSelect').addEventListener('change', function () {
+    const selected = this.value;
+    document.querySelectorAll('.format-rules').forEach(function (div) {
+      div.style.display = 'none';
+    });
+    document.getElementById(selected).style.display = 'block';
+  });
+</script>
