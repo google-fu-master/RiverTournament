@@ -105,9 +105,14 @@
       }
 
       const potAmount = playerCount * 10;
-      const houseAdd = data.houseAdd || 0;
+      let houseAdd = data.houseAdd || "0";
+      houseAdd = parseFloat(houseAdd.replace(/[^\d.-]/g, '')) || 0;
       const total = potAmount + houseAdd;
-      document.getElementById("pot-info").innerHTML = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
+      const potText = total < 80
+        ? `The pot for ${formattedDate} is only <span class="highlight">$${total}</span>; Sign up now!`
+        : `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
+
+      document.getElementById("pot-info").innerHTML = potText;
 
     } catch (err) {
       document.getElementById("tournament-date").textContent = "Error loading bracket.";

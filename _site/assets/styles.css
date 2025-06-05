@@ -112,7 +112,9 @@ nav {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
+  white-space: nowrap;
 }
+
 .menu a:hover {
   color: var(--link-yellow);
 }
@@ -149,10 +151,11 @@ nav {
     height: auto;
     padding: 0;
     transform: none;
+    gap: 2rem;
   }
 
   .menu a {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -215,4 +218,9 @@ nav {
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.highlight {
+  color: var(--link-yellow);
+  font-weight: bold;
 }
