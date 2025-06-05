@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Tournament Rules
-permalink: /rules/
 bodyClass: rules-page
+permalink: /rules/
 ---
 
 <!--this is the rule.md file-->
