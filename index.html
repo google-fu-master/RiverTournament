@@ -26,11 +26,7 @@ title: River Tournaments
     <h2>Bracket Reservations</h2>
     <ul id="bracket"></ul>
   </div>
-  <div class="waitlist">
-    <h2>Waitlist</h2>
-    <ul id="waitlist"></ul>
-  </div>
-</div>
+  
   <div class="waitlist">
     <h2>Waitlist</h2>
     <ul id="waitlist"></ul>
@@ -42,7 +38,7 @@ title: River Tournaments
   <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
 </p>
 
-<p class="disclaimer" style="text-align: center; font-size: 0.9rem; margin-top: 2rem;">
+<p class="disclaimer" style="text-align: center; font-size: 1rem; margin-top: 2rem;">
   *Actual pot size contingent on player attendance and discretionary House donation.
 </p>
 
@@ -108,7 +104,7 @@ title: River Tournaments
       const callToAction = `<div style=\"margin-top: 1rem;\"><a href=\"/signup/\" style=\"color: #ffd700; text-decoration: underline;\">Sign up now</a></div>`;
 
       if (playerCount === 16) {
-        potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
+        potText = `<div>${fullLabel} could be</div><div style=\"font-size: 2.5rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
       } else if (playerCount < 8) {
         potText = `<div>${fullLabel} is only</div><div style=\"font-size: 2rem; font-weight: bold; color: #ff5555;\">$${total}*</div>${callToAction}`;
       } else {
