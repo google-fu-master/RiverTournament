@@ -172,6 +172,6 @@ body.page-faq h6 {
 
 /* Increase font size for bracket and waitlist names */
 .brackets td {
-  font-size: 2rem;
+  font-size: 5rem;
   font-weight: bold;
 }
