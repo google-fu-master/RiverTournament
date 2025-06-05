@@ -60,6 +60,10 @@ body.page-rules {
   text-align: left;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 footer {
   background-color: var(--slate);
   color: var(--white);
@@ -106,10 +110,11 @@ nav {
   display: none;
 }
 
-@media (max-width: 1024px) and (pointer:coarse) {
+@media (max-width: 1024px) {
   .hamburger {
     display: block;
   }
+
   .menu {
     position: fixed;
     top: 0;
@@ -121,14 +126,19 @@ nav {
     align-items: flex-start;
     padding-top: 4rem;
     transform: translateX(-100%);
-    display: flex;
     z-index: 1000;
   }
+
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
   }
+
   nav {
     justify-content: space-between;
+  }
+
+  .brackets {
+    flex-direction: column;
   }
 }
 
@@ -140,7 +150,8 @@ nav {
   flex-direction: row;
 }
 
-.brackets ul li {
+.bracket li,
+.waitlist li {
   font-size: 1.75rem;
   font-weight: normal;
   margin-bottom: 0.5rem;
@@ -148,34 +159,6 @@ nav {
 
 .bracket, .waitlist {
   min-width: 300px;
-}
-
-@media (max-width: 1024px) {
-  .brackets {
-    flex-direction: column;
-  }
-}
-
-body.page-rules main,
-body.page-rules p,
-body.page-rules h2,
-body.page-rules h3,
-body.page-rules h4,
-body.page-rules h5,
-body.page-rules h6,
-body.page-faq main,
-body.page-faq p,
-body.page-faq h2,
-body.page-faq h3,
-body.page-faq h4,
-body.page-faq h5,
-body.page-faq h6 {
-  text-align: left !important;
-}
-
-.brackets td {
-  font-size: 5rem;
-  font-weight: bold;
 }
 
 .contact-form-wrapper {
