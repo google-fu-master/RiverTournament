@@ -180,6 +180,7 @@ nav {
 }
 
 .bracket h2, .waitlist h2 {
+  width: 100%;
   text-align: center;
 }
 
