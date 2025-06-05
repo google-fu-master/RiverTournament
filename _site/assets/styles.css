@@ -56,6 +56,10 @@ body:not(.page-rules):not(.page-faq) main {
   text-align: center;
 }
 
+body.page-rules {
+  text-align: left;
+}
+
 footer {
   background-color: var(--slate);
   color: var(--white);
