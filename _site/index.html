@@ -61,6 +61,10 @@
   <a href="sms:7607938319">Text the tournament director</a> to see if a spot open.
 </p>
 
+<p class="disclaimer" style="text-align: center; font-size: 0.9rem; margin-top: 2rem;">
+  *Actual pot size dependent on player attendance and House
+</p>
+
 <script>
   async function loadBracket() {
     const endpoint = "https://script.google.com/macros/s/AKfycbx66jj5zCl5ZLMEiffsyv6DRyUsdD4j-DXGxnABc7sL781DH8bsrsWyg9QSTL-2wP-PVQ/exec";
@@ -102,7 +106,8 @@
 
       const potAmount = playerCount * 10;
       const houseAdd = data.houseAdd || 0;
-      document.getElementById("pot-info").innerHTML = `The pot for ${formattedDate} is currently <span class="highlight">$${potAmount}</span>, and the House is adding <span class="highlight">$${houseAdd}</span>.`;
+      const total = potAmount + houseAdd;
+      document.getElementById("pot-info").innerHTML = `The pot for ${formattedDate} could be <span class="highlight">$${total}</span>!`;
 
     } catch (err) {
       document.getElementById("tournament-date").textContent = "Error loading bracket.";
