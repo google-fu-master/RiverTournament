@@ -164,7 +164,8 @@ body.page-faq h6 {
 
 /* Increase font size for bracket and waitlist names */
 .brackets td {
-  font-size: 1.25rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 body.page-rules main {
   text-align: left !important;
