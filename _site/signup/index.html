@@ -44,7 +44,7 @@
 
 <h4 style="text-align: center;">Thank you for your patience!</h4>
 
-<form id="signup-form" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
+<form id="signup-form" enctype="multipart/form-data" style="display: flex; flex-direction: column; max-width: 400px; margin: 2rem auto; background-color: var(--dark-navy); padding: 1rem; border-radius: 8px;">
   <label for="first-name">First Name (required)</label>
   <input type="text" id="first-name" name="First Name" required style="margin-bottom: 1rem;">
 
@@ -68,7 +68,7 @@
   <label for="fargo-screenshot" style="text-align: left;">Fargo or APA Screenshot (if you have one):</label>
   <input type="file" id="fargo-screenshot" name="Fargo Screenshot" accept="image/*" style="margin-bottom: 1rem;">
 
-  <button type="submit (tap once, be patient)" style="padding: 0.5rem; background-color: var(--accent-blue); color: var(--white); border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+  <button type="submit" style="padding: 0.5rem; background-color: var(--accent-blue); color: var(--white); border: none; border-radius: 4px; cursor: pointer;">Submit (tap once, be patient)</button>
 </form>
 
 <p id="status-message" style="text-align: center; margin-top: 1rem;"></p>
@@ -93,39 +93,11 @@
 
   function submitForm(token) {
     const formData = new FormData(form);
-    const fileInput = document.getElementById('fargo-screenshot');
-    const file = fileInput.files[0];
+    formData.append('g-recaptcha-response', token);
 
-    const data = new URLSearchParams();
-    data.append('First Name', formData.get('First Name'));
-    data.append('Last Name', formData.get('Last Name'));
-    data.append('Preferred First Name', formData.get('Preferred First Name'));
-    data.append('Phone Number', formData.get('Phone Number'));
-    data.append('Email', formData.get('Email'));
-    data.append('New Player', formData.get('New Player') ? 'Yes' : 'No');
-    data.append('g-recaptcha-response', token);
-
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const base64String = e.target.result;
-        data.append('Fargo Screenshot', base64String);
-        sendToAppsScript(data);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      data.append('Fargo Screenshot', '');
-      sendToAppsScript(data);
-    }
-  }
-
-  function sendToAppsScript(data) {
     fetch('https://script.google.com/macros/s/AKfycbx66jj5zCl5ZLMEiffsyv6DRyUsdD4j-DXGxnABc7sL781DH8bsrsWyg9QSTL-2wP-PVQ/exec', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: data.toString()
+      body: formData
     })
     .then(response => response.text())
     .then(text => {
