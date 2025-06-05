@@ -175,6 +175,10 @@ nav {
   min-width: 300px;
 }
 
+.bracket h2, .waitlist h2 {
+  text-align: center;
+}
+
 .contact-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
