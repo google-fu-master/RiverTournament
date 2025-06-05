@@ -34,8 +34,8 @@ body {
 header {
   text-align: center;
   background-color: var(--mid-navy);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 header h1 {
@@ -57,7 +57,9 @@ body:not(.page-rules):not(.page-faq) main {
   text-align: center;
 }
 
-body.page-rules {
+body.page-rules,
+body.page-faq,
+body.page-location {
   text-align: left;
 }
 
