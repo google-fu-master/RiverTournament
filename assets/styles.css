@@ -140,3 +140,16 @@ nav {
   }
 }
 
+/* Bracket & Waitlist: side-by-side on desktop, stacked on mobile */
+.brackets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+@media (max-width: 1024px) {
+  .brackets {
+    flex-direction: column;
+  }
+}
