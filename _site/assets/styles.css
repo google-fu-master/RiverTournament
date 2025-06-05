@@ -204,6 +204,13 @@ nav {
   margin-top: 1rem;
 }
 
+.brackets > .bracket,
+.brackets > .waitlist {
+  flex: 1;
+  min-width: 300px;
+  max-width: 360px;
+}
+
 .bracket li,
 .waitlist li {
   font-size: 1.25rem;
