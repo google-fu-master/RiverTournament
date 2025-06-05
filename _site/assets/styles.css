@@ -53,7 +53,7 @@ main {
   text-align: inherit;
 }
 
-body:not(.page-rules):not(.page-faq) main {
+body:not(.page-rules):not(.page-faq):not(.page-location) main {
   text-align: center;
 }
 
