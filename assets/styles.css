@@ -78,7 +78,6 @@ nav {
   width: 100%;
 }
 
-/* Hide hamburger on desktop by default */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -87,7 +86,6 @@ nav {
   z-index: 1001;
 }
 
-/* Desktop horizontal menu */
 .menu {
   display: flex;
   gap: 2rem;
@@ -108,7 +106,6 @@ nav {
   display: none;
 }
 
-/* Responsive adjustments for screens ≤1024px */
 @media (max-width: 1024px) and (pointer:coarse) {
   .hamburger {
     display: block;
@@ -135,7 +132,6 @@ nav {
   }
 }
 
-/* Bracket & Waitlist: side-by-side on desktop, stacked on mobile */
 .brackets {
   display: flex;
   flex-wrap: wrap;
@@ -145,8 +141,8 @@ nav {
 }
 
 .brackets ul li {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 1.75rem;
+  font-weight: normal;
   margin-bottom: 0.5rem;
 }
 
@@ -182,7 +178,6 @@ body.page-faq h6 {
   font-weight: bold;
 }
 
-/* Contact form styling */
 .contact-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
