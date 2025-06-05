@@ -49,6 +49,10 @@ main {
   max-width: 800px;
   padding: 1rem;
   background-color: var(--darkest);
+  text-align: inherit;
+}
+
+body:not(.page-rules):not(.page-faq) main {
   text-align: center;
 }
 
@@ -166,7 +170,4 @@ body.page-faq h6 {
 .brackets td {
   font-size: 2rem;
   font-weight: bold;
-}
-body.page-rules main {
-  text-align: left !important;
 }
