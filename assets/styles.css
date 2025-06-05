@@ -124,21 +124,25 @@ nav {
   nav {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
   }
 
   .hamburger {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 4rem;
-    transform: translateX(-100%);
-    z-index: 1000;
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 1001;
   }
+
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+
+  .brackets {
+    flex-direction: column;
+  }
+}
 
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
