@@ -1,28 +1,33 @@
----
-layout: default
-title: River Tournaments
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>River Tournaments</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <!-- this is the index.html file -->
 
-<!-- this is the index.html file -->
+  <section id="event-banner" class="event-banner">
+    <div class="event-content">
+      <div id="event-info"></div>
+    </div>
+  </section>
 
-<section id="event-banner" class="event-banner">
-  <div class="event-content">
-    <div id="event-info"></div>
-  </div>
-</section>
+  <h1 class="player-header" id="tournament-title"></h1>
+  <div id="signup-button" class="signup-button-container"></div> <!-- Added class for centering and spacing -->
 
-<h1 class="player-header" id="tournament-title"></h1>
-<div id="signup-button" class="signup-button-container"></div> <!-- Added class for centering and spacing -->
+  <div class="brackets" id="brackets-container"></div>
 
-<div class="brackets" id="brackets-container"></div>
+  <p class="note">
+    Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
+    <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
+  </p>
 
-<p class="note">
-  Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
-  <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
-</p>
+  <p class="disclaimer">
+    *Actual pot size contingent on player attendance and discretionary House donation.
+  </p>
 
-<p class="disclaimer">
-  *Actual pot size contingent on player attendance and discretionary House donation.
-</p>
-
-<script src="assets/scripts.js"></script>
+  <script src="assets/scripts/tournament.js"></script>
+</body>
+</html>
