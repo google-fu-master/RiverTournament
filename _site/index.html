@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<!--this is the default.html file that lives in the _layouts folder-->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>River Tournaments - River Tournaments</title>
-  <link rel="stylesheet" href="/assets/styles.css" />
-</head>
-<body class="page-river-tournaments">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-  
-    <a href="/">Home</a>
-  
-    <a href="/rules/">Rules</a>
-  
-    <a href="/location/">Location</a>
-  
-    <a href="/faq/">FAQ</a>
-  
-    <a href="/contact/">Contact</a>
-  
-  <a id="nav-signup-link" class="cta-button" href="#">Sign Up</a>
-</div>
-  </nav>
-
-  <header>
-  <h1>River Tournaments</h1>
-  
-    <p style="margin-top: 1rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.8;">
-  <span style="font-size: 1.25rem; font-weight: bold;">Every Thursday | 6:30pm Registration | 7:00pm Start</span><br>
-  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; font-weight: bold;">19 NW 5th Ave, Portland, OR 97209</a>
-</p>
-  
-</header>
-
-  <main>
-    <!-- this is the index.html file -->
+<!-- this is the index.html file -->
 
 <section id="event-banner" class="event-banner">
   <div class="event-content">
@@ -108,17 +68,11 @@
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
 
   const iframe = document.createElement('iframe');
-  iframe.src = tournamentUrl;
-  iframe.name = tournamentName;
+  iframe.src = `${signupLink}/players?navigation=false`;
   iframe.style.border = 'none';
-  iframe.scrolling = 'yes';
-  iframe.frameBorder = '0';
-  iframe.marginHeight = '0px';
-  iframe.marginWidth = '0px';
-  iframe.height = '600px';
   iframe.width = '100%';
-  iframe.allowFullscreen = true;
-
+  iframe.height = '600';
+  
   const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
 
   document.getElementById("tournament-title").textContent = eventTitle;
@@ -134,42 +88,3 @@
     document.getElementById("event-banner").classList.add("ladies");
   }
 </script>
-
-  </main>
-
-  <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
-  </footer>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
-
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
-
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
-      });
-    });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
-</body>
-</html>

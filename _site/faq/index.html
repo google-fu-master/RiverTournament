@@ -1,44 +1,9 @@
-<!DOCTYPE html>
-<!--this is the default.html file that lives in the _layouts folder-->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ - River Tournaments</title>
-  <link rel="stylesheet" href="/assets/styles.css" />
-</head>
-<body class="page-faq">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-  
-    <a href="/">Home</a>
-  
-    <a href="/rules/">Rules</a>
-  
-    <a href="/location/">Location</a>
-  
-    <a href="/faq/">FAQ</a>
-  
-    <a href="/contact/">Contact</a>
-  
-  <a id="nav-signup-link" class="cta-button" href="#">Sign Up</a>
-</div>
-  </nav>
-
-  <header>
-  <h1>FAQ</h1>
-  
-</header>
-
-  <main>
-    <!--this is the faq.html file-->
+<!--this is the faq.html file-->
 
 <p style="margin-bottom: 2rem; text-align: center;">This tournament is always a work in progress! Please check back regularly for updates.<br>
   Thank you for your support!</p>
 
-<p><input type="text" id="faq-search" placeholder="Search FAQs…" style="margin-bottom: 1rem;" /></p>
+<p><input type="text" id="faq-search" placeholder="Search FAQs…" style="margin-bottom: 2rem;" /></p>
 
 <div class="faq styled-section">
 
@@ -60,7 +25,7 @@
   <h3>📝 Registration & Entry 📝</h3>
 
   <h4>Do I need to sign up ahead of time?</h4>
-  <p>It’s recommended but not required! You can sign up for the River Tournaments on DigitalPool (links below).  DigitalPool syncs with FargoRate if you have a profile; If you have an APA account, your ranks will be converted to a comparable FargoRate by the tournament director at registration for the purposes of the tournament.</p>
+  <p>It’s recommended but not required! You can sign up for the River Tournaments on DigitalPool (links below).  DigitalPool syncs with FargoRate - if you don't have a DigitalPool account or a FargotRate account, one will be created for you automatically as a result of playing in the River Tournaments; If you have an APA account, your ranks will be converted to a comparable FargoRate by the tournament director at registration for the purposes of the tournament.</p>
  <ul>
   <li><strong>8-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-8-ball-series" target="_blank">https://digitalpool.com/events/river-8-ball-series</a></li>
   <li><strong>9-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-9-ball-series" target="_blank">https://digitalpool.com/events/river-9-ball-series</a></li>
@@ -74,10 +39,10 @@
   <h4>What if the bracket and/or waitlist on the home page is full?</h4>
   <p>Even if the bracket and waitlist are full online, the final player list won’t be determined until registration. Swing by River or <a href="sms:7607938319">text the tournament director</a> before 6:30pm on Thursdays to check for any last-minute spots. We start shooting at 7 PM sharp; while showing up does not guarantee a spot, players who show up in person will always get priority over anyone not present, even if they’re listed online.</p>
 
-  <h4>What happens if I’m called to a table and not present?</h4>
+  <h4>What happens if I'm called to a table but I do not show up?</h4>
   <p>If you're not at the table within 5 minutes of being called, your match may be forfeited at the tournament director’s discretion.</p>
 
-  <h4>What if there are fewer than 8 players or a no-show at the start of the tournament?</h4>
+  <h4>What if there are fewer than 8 players or no-shows at the start of the tournament?</h4>
   <p>If a confirmed player doesn't show up by the time matches are being assigned, or if there are fewer than 8 total players, a <a href="#what-is-a-bye"><strong>Bye</strong></a> may be entered into the bracket to ensure fair and timely play.</p>
 
   <h4>How do I create a Fargo account?</h4>
@@ -100,42 +65,3 @@
   <p>The $5 admin fee covers the tournament director’s time, website maintenance and updates, Fargo fees to report tournament results, and other overhead costs needed to keep the tournament running smoothly.</p>
   
   <p style="text-align: center;">If you have a question that isn’t answered here, please let us know so we can add it. Visit the <a href="/contact.html">Contact page</a> to submit your question.</p>
-
-  </main>
-
-  <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
-  </footer>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
-
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
-
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
-      });
-    });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
-</body>
-</html>

@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<!--this is the default.html file that lives in the _layouts folder-->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Location - River Tournaments</title>
-  <link rel="stylesheet" href="/assets/styles.css" />
-</head>
-<body class="page-location">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-  
-    <a href="/">Home</a>
-  
-    <a href="/rules/">Rules</a>
-  
-    <a href="/location/">Location</a>
-  
-    <a href="/faq/">FAQ</a>
-  
-    <a href="/contact/">Contact</a>
-  
-  <a id="nav-signup-link" class="cta-button" href="#">Sign Up</a>
-</div>
-  </nav>
-
-  <header>
-  <h1>Location</h1>
-  
-</header>
-
-  <main>
-    <!--this is the location.html file-->
+<!--this is the location.html file-->
 
 <section id="venue">
   <h2>📍 Venue 📍</h2>
@@ -113,42 +78,3 @@
     margin-bottom: 1.5rem;
   }
 </style>
-
-  </main>
-
-  <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
-  </footer>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
-
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
-
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
-      });
-    });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
-</body>
-</html>
