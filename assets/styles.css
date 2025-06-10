@@ -204,11 +204,11 @@ main, .brackets {
 #tournament-title {
   font-family: 'Oswald', Arial, sans-serif;
   font-size: 2.5rem;
-  color: var(--neon-green, #39ff14);
+  color: #53e68c;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow:
-    0 0 14px var(--neon-green, #39ff14),
+    0 0 14px #53e68c,
     0 0 16px #000,
     2px 2px 0 #000;
   margin-bottom: 1rem;
@@ -561,4 +561,21 @@ body.ladies .btn-signup {
   background: var(--neon-pink, #ff79c7);
   color: #fff;
   box-shadow: 0 0 18px 6px var(--neon-pink, #ff79c7);
+}
+
+header p a {
+  color: var(--neon-blue, #30baff);
+  text-decoration: underline;
+  text-shadow:
+    0 0 4px var(--neon-blue, #30baff),
+    0 0 12px var(--neon-blue, #30baff);
+  font-weight: bold;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+header p a:hover,
+header p a:focus {
+  color: var(--neon-cyan, #00eafd);
+  text-shadow:
+    0 0 8px var(--neon-cyan, #00eafd),
+    0 0 16px var(--neon-cyan, #00eafd);
 }
