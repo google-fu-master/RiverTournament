@@ -199,31 +199,19 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* Navigation styling */
-nav {
-  background-color: var(--dark-navy);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
-  width: 100%;
-  justify-content: space-between;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  font-family: 'Oswald', 'Arial Black', sans-serif;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.menu a {
+
+#nav-signup-link {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
   transition: all 0.3s ease-in-out;
+  text-shadow: none;
+}
+
+#nav-signup-link:hover {
+  color: var(--link-yellow);
 }
 
 .menu a:hover {
