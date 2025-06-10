@@ -1,3 +1,4 @@
+```css name=assets/styles.css
 :root {
   --darkest: #141414;
   --dark-navy: #0D1B2A;
@@ -14,24 +15,9 @@
   --pot-green: #00cc66;
 }
 
-/* CTA Button Enhancement */
-.btn-signup {
-  display: inline-block;
-  background-color: var(--link-yellow);
-  color: #000;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-signup:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
+/* Hide the mobile nav checkbox toggle */
+#menu-toggle {
+  display: none;
 }
 
 /* Nav bar - horizontal by default */
@@ -44,6 +30,7 @@ nav {
   z-index: 100;
 }
 
+/* Menu as horizontal row on desktop */
 .menu {
   display: flex;
   flex-direction: row;
@@ -53,9 +40,8 @@ nav {
   gap: 2rem;
   background-color: transparent;
   position: static;
-  height: 60px; /* or your nav height */
+  height: 60px; /* adjust as needed */
 }
-
 .menu a {
   color: var(--white);
   font-weight: bold;
@@ -68,7 +54,6 @@ nav {
   height: 60px;
   transition: color 0.3s, text-shadow 0.3s;
 }
-
 .menu a:hover,
 .menu a:focus {
   color: var(--link-yellow);
@@ -112,17 +97,40 @@ nav {
   }
 }
 
-/* Nav menu links (preserved for hover effect, etc) */
-.menu a {
-  color: var(--white);
+/* CTA Button Enhancement */
+.btn-signup, .cta-button {
+  display: inline-block;
+  background-color: var(--link-yellow);
+  color: #000;
   font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+.btn-signup:hover, .cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
 }
 
-/* Typography & site styles (unchanged from your file) */
+/* Center and space the signup button */
+.signup-button-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Ensure the main content is centered and wider if needed */
+main, .brackets {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px; /* Adjust as needed for your layout */
+}
+
+/* Vintage/Competitive Typography Tweaks */
 body, input, textarea, button {
   font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 0.5px;
@@ -144,6 +152,7 @@ h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
 
+/* Title Bar Enhancement */
 header p {
   font-weight: bold;
   font-size: 1.15rem;
@@ -152,6 +161,7 @@ header p {
   text-shadow: 0 0 3px var(--accent-blue);
 }
 
+/* Contact Form Enhancements */
 .contact-form-wrapper h2 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
@@ -175,7 +185,6 @@ header p {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .contact-form-wrapper button:hover {
   background-color: var(--link-yellow);
   color: #000;
@@ -189,7 +198,6 @@ body.ladies header {
   padding-top: 1.5rem;
   padding-bottom: 0.25rem;
 }
-
 body.ladies nav,
 body.ladies .menu,
 body.ladies main,
@@ -197,7 +205,6 @@ body.ladies footer,
 body.ladies .contact-form-wrapper {
   background-color: var(--dark-pink);
 }
-
 body.ladies .pot-banner {
   border-color: var(--accent-pink);
 }
@@ -212,7 +219,6 @@ body.ladies .pot-banner {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 2px solid var(--accent-blue);
 }
-
 .iframe-wrapper iframe {
   width: 100%;
   min-height: 600px;
@@ -236,7 +242,6 @@ html, body {
   background-color: var(--darkest);
   color: var(--white);
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -244,14 +249,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
 header {
   text-align: center;
   background-color: var(--mid-navy);
   padding-top: 2rem;
   padding-bottom: 0.5rem;
 }
-
 header h1 {
   margin: 0;
   font-size: 1.85rem;
@@ -262,7 +265,6 @@ header h1 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   margin-bottom: 0.25rem;
 }
-
 main {
   flex: 1;
   margin: 0 auto;
@@ -272,21 +274,17 @@ main {
   box-sizing: border-box;
   width: 100%;
 }
-
 body:not(.page-rules):not(.page-faq):not(.page-location) main {
   text-align: center;
 }
-
 body.page-rules,
 body.page-faq,
 body.page-location {
   text-align: left;
 }
-
 .text-left {
   text-align: left !important;
 }
-
 footer {
   background-color: var(--slate);
   color: var(--white);
@@ -295,7 +293,6 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-
 #nav-signup-link {
   color: var(--white);
   text-decoration: none;
@@ -305,11 +302,9 @@ footer {
   transition: all 0.3s ease-in-out;
   text-shadow: none;
 }
-
 #nav-signup-link:hover {
   color: var(--link-yellow);
 }
-
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -321,7 +316,6 @@ footer {
     padding: 1rem 0.5rem;
   }
 }
-
 .contact-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
@@ -329,11 +323,9 @@ footer {
   background-color: var(--dark-navy);
   border-radius: 8px;
 }
-
 .contact-form-wrapper .form-group {
   margin-bottom: 1.5rem;
 }
-
 .contact-form-wrapper input,
 .contact-form-wrapper textarea {
   width: 100%;
@@ -343,14 +335,13 @@ footer {
   font-family: inherit;
   font-size: 1rem;
 }
-
 .contact-form-wrapper label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
-
 .highlight {
   color: var(--pot-green);
   font-weight: bold;
 }
+```
