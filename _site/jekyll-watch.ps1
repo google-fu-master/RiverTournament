@@ -1,6 +1,6 @@
 #this is the jekyll-watch.ps1 file
 # Set your project directory
-$global:projectDir = "C:\Users\bposey\Local Project Files\GitHub\RiverTournaments\RiverTournament"
+$global:projectDir = "D:\RiverTournament"
 
 # Command to run Jekyll serve
 $global:jekyllCommand = "bundle exec jekyll serve"

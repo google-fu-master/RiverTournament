@@ -3,6 +3,10 @@
   --dark-navy: #0D1B2A;
   --mid-navy: #002B3A;
   --accent-blue: #0071a4;
+  --accent-pink: #cc6699;
+  --darkest-pink: #1c0f1c;
+  --dark-pink: #2b102b;
+  --mid-pink: #3a003a;
   --link-yellow: #d4af37;
   --link-gold: #a47f00;
   --slate: #151D23;
@@ -10,10 +14,125 @@
   --pot-green: #00cc66;
 }
 
+/* Vintage/Competitive Typography Tweaks */
+body, input, textarea, button {
+  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, .highlight {
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header h1, .bracket h2, .waitlist h2 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Add strong neon-like glow to headings */
+h1, h2, h3 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
+/* Title Bar Enhancement */
+header p {
+  font-weight: bold;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 3px var(--accent-blue);
+}
+
+/* CTA Button Enhancement */
+.cta-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--link-yellow);
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 8px var(--link-yellow);
+  border: 2px solid var(--link-yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: var(--link-yellow);
+  color: #000;
+  box-shadow: 0 0 12px var(--link-gold);
+  border-color: var(--link-gold);
+}
+
+/* Ladies Night Theme Overrides */
+body.ladies header {
+  background-color: var(--mid-pink);
+}
+
+body.ladies nav {
+  background-color: var(--dark-pink);
+}
+
+body.ladies .menu {
+  background-color: var(--dark-pink);
+}
+
+body.ladies main {
+  background-color: var(--darkest-pink);
+}
+
+body.ladies footer {
+  background-color: var(--dark-pink);
+}
+
+body.ladies .brackets {
+  background-color: var(--dark-pink);
+}
+
+body.ladies .contact-form-wrapper {
+  background-color: var(--dark-pink);
+}
+
+body.ladies .pot-banner {
+  border-color: var(--accent-pink);
+}
+
+body.ladies .cta-button {
+  background-color: var(--accent-pink);
+  color: #fff;
+}
+
+body.ladies .cta-button:hover {
+  background-color: #b25587;
+}
+
+/* Responsive iframe container */
+.iframe-wrapper {
+  max-width: 100%;
+  margin: 2rem auto;
+  background-color: var(--slate);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--accent-blue);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+}
+
 /* Global link styling */
 a {
   color: var(--link-yellow);
   text-decoration: underline;
+  font-weight: bold;
 }
 a:hover {
   color: var(--link-gold);
@@ -23,17 +142,16 @@ a:hover {
 html, body {
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--darkest);
+  color: var(--white);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--darkest);
-  color: var(--white);
 }
 
 header {
@@ -45,7 +163,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   color: var(--white);
 }
 
@@ -55,7 +173,6 @@ main {
   max-width: 800px;
   padding: 1rem;
   background-color: var(--darkest);
-  text-align: inherit;
   box-sizing: border-box;
   width: 100%;
 }
@@ -79,6 +196,8 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* Navigation styling */
@@ -91,6 +210,9 @@ nav {
   position: relative;
   width: 100%;
   justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .hamburger {
