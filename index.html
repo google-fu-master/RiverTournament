@@ -1,334 +1,48 @@
-:root {
-  --darkest: #141414;
-  --dark-navy: #0D1B2A;
-  --mid-navy: #002B3A;
-  --accent-blue: #0071a4;
-  --accent-pink: #cc6699;
-  --darkest-pink: #1c0f1c;
-  --dark-pink: #2b102b;
-  --mid-pink: #3a003a;
-  --link-yellow: #d4af37;
-  --link-gold: #a47f00;
-  --slate: #151D23;
-  --white: #f5f5f5;
-  --pot-green: #00cc66;
-  --neon-green: #39ff14;
-  --neon-cyan: #00eafd;
-  --neon-blue: #30baff;
-  --neon-pink: #ff79c7;
-  --neon-white: #f5f5f5;
-  --neon-gold: #d4af37;
-  --deep-navy: #0D1B2A;
-  --table-green: #00cc66;
-}
-
-/* Hide the mobile nav checkbox toggle */
-#menu-toggle {
-  display: none;
-}
-
-/* Nav bar - horizontal by default */
-nav {
-  width: 100%;
-  background-color: var(--dark-navy);
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 100;
-}
-
-/* Menu as horizontal row on desktop */
-.menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  gap: 2rem;
-  background-color: transparent;
-  position: static;
-  height: 60px;
-}
-.menu a {
-  color: var(--white);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 1rem;
-  line-height: 60px;
-  height: 60px;
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow:
-    0 0 4px var(--neon-blue, #30baff),
-    0 0 8px var(--neon-blue, #30baff);
-}
-.menu a:hover,
-.menu a:focus {
-  color: var(--neon-cyan, #00eafd);
-  text-shadow:
-    0 0 8px var(--neon-cyan, #00eafd),
-    0 0 16px var(--neon-cyan, #00eafd),
-    0 0 4px var(--neon-blue, #30baff),
-    0 0 8px var(--neon-blue, #30baff);
-}
-
-/* Hamburger menu for mobile */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--white);
-  z-index: 1001;
-  position: absolute;
-  top: 10px;
-  left: 16px;
-}
-
-/* Mobile styles */
-@media (max-width: 1024px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    padding-top: 4rem;
-    gap: 2rem;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-  .hamburger {
-    display: block;
-  }
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-}
-
-/* Responsive font size for header h1 */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  main {
-    padding: 1rem 0.5rem;
-  }
-  .contact-form-wrapper {
-    padding: 1rem 0.5rem;
-  }
-  .site-title {
-    font-size: 2.2rem;
-  }
-  .player-header {
-    font-size: 1.6rem;
-  }
-  .flyer-detail, .flyer-section {
-    font-size: 1rem;
-  }
-}
-
-/* CTA Button Enhancement */
-.btn-signup, .cta-button {
-  display: inline-block;
-  background-color: var(--link-yellow);
-  color: #000;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 2rem;
-}
-.btn-signup:hover, .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
-}
-
-/* Center and space the signup button */
-.signup-button-container {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Ensure the main content is centered and wider if needed */
-main, .brackets {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-}
-
-/* Event banner styling */
-.event-banner {
-  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
-  padding: 2rem 0;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 2rem;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-.event-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* --- Player header: REMOVE background, box, border, padding --- */
-.player-header,
-#tournament-title {
-  font-family: 'Oswald', Arial, sans-serif;
-  font-size: 2.5rem;
-  color: #53e68c;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow:
-    0 0 14px #53e68c,
-    0 0 16px #000,
-    2px 2px 0 #000;
-  margin-bottom: 1rem;
-  text-align: center;
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* Notes and disclaimers */
-.note,
-.disclaimer {
-  color: var(--white);
-  font-size: 1rem;
-  margin: 1.25rem auto;
-  max-width: 700px;
-  text-align: center;
-}
-.note a {
-  color: var(--link-yellow);
-  text-decoration: underline;
-}
-.note a:hover {
-  color: var(--link-gold);
-}
-
-/* Vintage/Competitive Typography Tweaks */
-body, input, textarea, button {
-  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, .highlight {
-  font-family: 'Oswald', 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Main header with blue neon Pacifico style */
-header h1 {
-  font-family: 'Pacifico', cursive, sans-serif;
-  font-size: 3rem;
-  color: #fff;
-  text-transform: none;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  margin: 0 0 0.25rem 0;
-  line-height: 1.1;
-  text-shadow:
-    0 0 8px #30baff,
-    0 0 24px #00eafd,
-    0 0 32px #008ecc,
-    2px 2px 0 #000;
-}
-
-/* Add strong neon-like glow to headings */
-h1, h2, h3 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-/* Title Bar Enhancement */
-header p {
-  font-weight: bold;
-  font-size: 1.15rem;
-  line-height: 1.75;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 3px var(--accent-blue);
-}
-
-/* Contact Form Enhancements */
-.contact-form-wrapper h2 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-.contact-form-wrapper label {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.contact-form-wrapper button {
-  background-color: transparent;
-  color: var(--link-yellow);
-  border: 2px solid var(--link-yellow);
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 8px var(--link-yellow);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.contact-form-wrapper button:hover {
-  background-color: var(--link-yellow);
-  color: #000;
-  box-shadow: 0 0 12px var(--link-gold);
-}
-
-/* Flyer-inspired Signup Button */
-.btn-signup {
-  background: var(--neon-cyan, #00eafd);
-  color: var(--dark-navy);
-  border-radius: 2em;
-  border: none;
-  padding: 0.85em 2.5em;
-  font-size: 1.25rem;
-  font-family: 'Oswald', Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 0 18px 2px var(--neon-cyan, #00eafd), 0 2px 10px rgba(0,0,0,0.4);
-  text-shadow: 0 1px 12px #fff;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.btn-signup:hover {
-  background: var(--neon-green, #39ff14);
-  color: #000;
-  box-shadow: 0 0 28px 8px var(--neon-green, #39ff14), 0 2px 10px rgba(0,0,0,0.4);
-}
-
-/* Flyer Section */
-.flyer-section {
-  margin: 1.5rem 0;
-  font-size: 1.1rem;
-  color: var(--neon-white, #f5f5f5);
-  text-align: center;
-  font-family: 'Oswald', Arial, sans-serif;
-  letter-spacing: 1.5px;
-}
-
-body.home {
-  text-align: center;
-}
-
-body.home nav {
-  text-align: left !important;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workbench - Nav left, everything else centered</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* Inline minimal reset for sandbox */
+    body { margin: 0; }
+  </style>
+</head>
+<body class="home">
+  <nav>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Sign Up</a>
+      <a href="#">Rules</a>
+      <a href="#">Location</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+  <header>
+    <h1 class="site-title">River Tournaments</h1>
+    <p>
+      Every Thursday | 6:30pm Registration | 7:00pm Start | 
+      <a href="#">19 NW 5th Ave, Portland, OR 97209</a>
+    </p>
+  </header>
+  <main>
+    <h2 class="player-header" id="tournament-title">Tonight's Tournament</h2>
+    <div id="signup-button" class="signup-button-container">
+      <a class="btn-signup" href="#">Sign Up Now</a>
+    </div>
+    <p class="note">
+      Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
+      <a href="#">Text the tournament director</a> to see if a spot is open.
+    </p>
+    <p class="disclaimer">
+      *Actual pot size contingent on player attendance and discretionary House donation.
+    </p>
+  </main>
+  <footer>
+    &copy; 2025 River Tournaments
+  </footer>
+</body>
+</html>
