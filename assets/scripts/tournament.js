@@ -84,16 +84,29 @@
     signupBtnEl.innerHTML = signupBtnHtml;
   }
 
-  // Digitalpool iframe (if container exists)
-  var bracketsContainer = document.getElementById("brackets-container");
-  if (bracketsContainer) {
-    var iframe = document.createElement('iframe');
-    iframe.src = tournamentUrl;
-    iframe.style.border = 'none';
-    iframe.width = '100%';
-    iframe.height = '600';
-    bracketsContainer.appendChild(iframe);
-  }
+  // Digitalpool iframe: inject directly into main, fill main but not cover nav/footer/footer
+  var mainEl = document.querySelector('main');
+  if (mainEl) {
+  // Remove previous iframe if any (optional, to avoid duplicates)
+  var existingIframe = mainEl.querySelector('iframe#digitalpool-embed');
+  if (existingIframe) existingIframe.remove();
+
+  var iframe = document.createElement('iframe');
+  iframe.id = 'digitalpool-embed';
+  iframe.src = tournamentUrl;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.border = 'none';
+  iframe.style.display = 'block';
+  iframe.style.background = '#0D1B2A'; // Match your site's background
+
+  // Remove margin/padding from main to allow full fill
+  mainEl.style.margin = '0';
+  mainEl.style.padding = '0';
+  mainEl.style.height = 'calc(100vh - 60px - 56px)'; // Adjust 60px(nav) & 56px(footer) as needed
+
+  mainEl.appendChild(iframe);
+}
 
   // Update nav sign up link if present
   var navSignup = document.getElementById("nav-signup-link");

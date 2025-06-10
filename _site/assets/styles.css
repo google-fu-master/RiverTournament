@@ -114,9 +114,9 @@ nav {
 
 /* Main header with blue neon Pacifico style */
 header h1 {
-  font-family: 'Pacifico', cursive, sans-serif;
+  font-family: 'Pacifico', sans-serif;
   font-size: 3rem;
-  color: var(--neon-blue, #30baff);
+  color: #fff;
   text-transform: none;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -451,7 +451,7 @@ footer {
 
 /* --- FLYER-INSPIRED ENHANCEMENTS --- */
 .site-title {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', sans-serif;
   font-size: 3.5rem;
   color: var(--neon-cyan, #00eafd);
   text-shadow:
@@ -564,18 +564,24 @@ body.ladies .btn-signup {
 }
 
 header p a {
-  color: var(--neon-blue, #30baff);
+  color: #fff;
   text-decoration: underline;
   text-shadow:
-    0 0 4px var(--neon-blue, #30baff),
-    0 0 12px var(--neon-blue, #30baff);
+    0 0 4px #30baff,
+    0 0 12px #30baff;
   font-weight: bold;
   transition: color 0.2s, text-shadow 0.2s;
 }
 header p a:hover,
 header p a:focus {
-  color: var(--neon-cyan, #00eafd);
+  color: #00eafd;
   text-shadow:
-    0 0 8px var(--neon-cyan, #00eafd),
-    0 0 16px var(--neon-cyan, #00eafd);
+    0 0 8px #00eafd,
+    0 0 16px #00eafd;
+}
+/* DigitalPool embed: make main and iframe fill available space */
+main, #digitalpool-embed {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
 }
