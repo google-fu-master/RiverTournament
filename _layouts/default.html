@@ -13,7 +13,7 @@
     <label for="menu-toggle" class="hamburger">&#9776;</label>
     <div class="menu">
   {% for item in site.data.navigation %}
-    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% unless item.title == "Sign Up" %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endunless %}
   {% endfor %}
 </div>
   </nav>
