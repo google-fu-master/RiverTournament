@@ -73,17 +73,11 @@ title: River Tournaments
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
 
   const iframe = document.createElement('iframe');
-  iframe.src = tournamentUrl;
-  iframe.name = tournamentName;
+  iframe.src = `${signupLink}/players?navigation=false`;
   iframe.style.border = 'none';
-  iframe.scrolling = 'yes';
-  iframe.frameBorder = '0';
-  iframe.marginHeight = '0px';
-  iframe.marginWidth = '0px';
-  iframe.height = '600px';
   iframe.width = '100%';
-  iframe.allowFullscreen = true;
-
+  iframe.height = '600';
+  
   const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
 
   document.getElementById("tournament-title").textContent = eventTitle;
