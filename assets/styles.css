@@ -12,6 +12,14 @@
   --slate: #151D23;
   --white: #f5f5f5;
   --pot-green: #00cc66;
+  --neon-green: #39ff14;
+  --neon-cyan: #00eafd;
+  --neon-blue: #30baff;
+  --neon-pink: #ff79c7;
+  --neon-white: #f5f5f5;
+  --neon-gold: #d4af37;
+  --deep-navy: #0D1B2A;
+  --table-green: #00cc66;
 }
 
 /* Hide the mobile nav checkbox toggle */
@@ -52,11 +60,19 @@ nav {
   line-height: 60px;
   height: 60px;
   transition: color 0.3s, text-shadow 0.3s;
+  /* Blue neon glow: */
+  text-shadow:
+    0 0 4px var(--neon-blue, #30baff),
+    0 0 8px var(--neon-blue, #30baff);
 }
 .menu a:hover,
 .menu a:focus {
   color: var(--link-yellow);
-  text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
+  text-shadow:
+    0 0 8px var(--link-yellow),
+    0 0 16px var(--link-yellow),
+    0 0 4px var(--neon-blue, #30baff),
+    0 0 8px var(--neon-blue, #30baff);
 }
 
 /* Hamburger menu for mobile */
@@ -144,12 +160,26 @@ main, .brackets {
   margin: 0 auto;
 }
 
-/* Player header */
-.player-header {
-  font-size: 2.25rem;
-  margin: 1.5rem 0 1rem 0;
-  color: var(--link-yellow);
-  text-shadow: 0 0 8px var(--dark-navy), 0 0 2px var(--accent-blue);
+/* --- Player header: REMOVE background, box, border, padding --- */
+.player-header,
+#tournament-title {
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: var(--neon-green, #39ff14);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 14px var(--neon-green, #39ff14),
+    0 0 16px #000,
+    2px 2px 0 #000;
+  margin-bottom: 1rem;
+  text-align: center;
+  /* Remove box styles */
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 /* Notes and disclaimers */
@@ -366,13 +396,34 @@ footer {
 }
 @media (max-width: 600px) {
   header h1 {
-    font-size: 2rem;
-  }
+  font-family: 'Pacifico', cursive, sans-serif;
+  font-size: 3rem;
+  color: var(--neon-blue, #30baff);
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.1;
+  text-shadow:
+    0 0 8px #30baff,
+    0 0 24px #00eafd,
+    0 0 32px #008ecc,
+    2px 2px 0 #000;
+}
   main {
     padding: 1rem 0.5rem;
   }
   .contact-form-wrapper {
     padding: 1rem 0.5rem;
+  }
+  .site-title {
+    font-size: 2.2rem;
+  }
+  .player-header {
+    font-size: 1.6rem;
+  }
+  .flyer-detail, .flyer-section {
+    font-size: 1rem;
   }
 }
 .contact-form-wrapper {
@@ -405,17 +456,6 @@ footer {
 }
 
 /* --- FLYER-INSPIRED ENHANCEMENTS --- */
-:root {
-  --neon-green: #39ff14;
-  --neon-cyan: #00eafd;
-  --neon-blue: #30baff;
-  --neon-pink: #ff79c7;
-  --neon-white: #f5f5f5;
-  --neon-gold: #d4af37;
-  --deep-navy: #0D1B2A;
-  --table-green: #00cc66;
-}
-
 .site-title {
   font-family: 'Pacifico', cursive;
   font-size: 3.5rem;
@@ -449,21 +489,6 @@ footer {
   margin: 0 0.5em;
   color: var(--neon-cyan, #00eafd);
   font-size: 1.2em;
-}
-
-/* Neon green for main flyer headline */
-.player-header {
-  font-family: 'Oswald', Arial, sans-serif;
-  font-size: 2.5rem;
-  color: var(--neon-green, #39ff14);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow:
-    0 0 14px var(--neon-green, #39ff14),
-    0 0 16px #000,
-    2px 2px 0 #000;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 /* Neon green for alternates line */
@@ -542,17 +567,4 @@ body.ladies .btn-signup {
   background: var(--neon-pink, #ff79c7);
   color: #fff;
   box-shadow: 0 0 18px 6px var(--neon-pink, #ff79c7);
-}
-
-/* Responsive adjustments for flyer headline */
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 2.2rem;
-  }
-  .player-header {
-    font-size: 1.6rem;
-  }
-  .flyer-detail, .flyer-section {
-    font-size: 1rem;
-  }
 }
