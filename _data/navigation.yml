@@ -1,6 +1,6 @@
 - title: Home
   url: /
-  - title: Sign Up
+ - title: Sign Up
   url: "#"  # Placeholder so it's picked up by the loop; replaced dynamically
 - title: Rules
   url: /rules/
