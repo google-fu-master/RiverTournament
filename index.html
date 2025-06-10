@@ -37,10 +37,16 @@ title: River Tournaments
   }
 
   const today = new Date();
-  const dayOfWeek = today.getDay();
-  const daysUntilThursday = (4 - dayOfWeek + 7) % 7;
-  const upcomingThursday = new Date(today);
-  upcomingThursday.setDate(today.getDate() + daysUntilThursday);
+  const isAfterThursday = today.getDay() > 4 || (today.getDay() === 5 && today.getHours() === 0);
+  let upcomingThursday = new Date(today);
+
+  if (isAfterThursday) {
+    const daysUntilNextThursday = (11 - today.getDay()) % 7;
+    upcomingThursday.setDate(today.getDate() + daysUntilNextThursday);
+  } else {
+    const daysUntilThisThursday = (4 - today.getDay() + 7) % 7;
+    upcomingThursday.setDate(today.getDate() + daysUntilThisThursday);
+  }
 
   const day = upcomingThursday.getDate();
   const month = upcomingThursday.toLocaleString('default', { month: 'long' });
