@@ -290,3 +290,19 @@ nav {
   color: var(--pot-green);
   font-weight: bold;
 }
+.cta-button {
+  display: inline-block;
+  background-color: var(--link-yellow);
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--link-gold);
+}
+

@@ -5,29 +5,88 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section class="pot-banner" style="background-color: #151D23; padding: 2rem 1rem; text-align: center; color: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #0071a4; max-width: 700px; margin: 2rem auto 3rem;">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <div id="pot-info">
-      <div style="font-size: 1.5rem; font-weight: 600;">Check out the current roster</div>
-      <div style="font-size: 2.5rem; font-weight: bold; color: #00ff7f;">Updated Live</div>
-      <div style="margin-top: 1rem;">
-        <a href="https://digitalpool.com/tournaments/river-thursday-8-ball-6122025/bracket" style="color: #ffd700; text-decoration: underline;">Sign up now</a>
-      </div>
-    </div>
+<section class="pot-banner">
+  <div class="pot-content">
+    <div id="pot-info"></div>
   </div>
 </section>
 
-<h1 style="text-align: center; font-size: 2rem; margin: 3rem 0 1rem; line-height: 1.4;">Player List</h1>
+<h1 class="player-header">Player List</h1>
 
-<div class="brackets" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: flex; justify-content: center;">
-  <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-6122025/players?navigation=false" style="border: none;" name="River Thursday 8 Ball 6/12/2025" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>
-</div>
+<div class="brackets" id="brackets-container"></div>
 
 <p class="note">
-  Bracket spots are not final until Fargo rate verification/assignment and payment are completed in-person at registration.
+  Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
   <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
 </p>
 
-<p class="disclaimer" style="text-align: center; font-size: 1rem; margin-top: 2rem;">
+<p class="disclaimer">
   *Actual pot size contingent on player attendance and discretionary House donation.
 </p>
+
+<script>
+  function getOrdinalSuffix(n) {
+    if (n >= 11 && n <= 13) return 'th';
+    switch (n % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  }
+
+  const today = new Date();
+  const dayOfWeek = today.getDay();
+  const daysUntilThursday = (4 - dayOfWeek + 7) % 7;
+  const upcomingThursday = new Date(today);
+  upcomingThursday.setDate(today.getDate() + daysUntilThursday);
+
+  const day = upcomingThursday.getDate();
+  const month = upcomingThursday.toLocaleString('default', { month: 'long' });
+  const monthNum = upcomingThursday.getMonth() + 1;
+  const year = upcomingThursday.getFullYear();
+
+  const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
+  const mmddyyyy = `${monthNum}${day}${year}`;
+  const mdyyyyDisplay = `${monthNum}/${day}/${year}`;
+
+  const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
+  const isLadiesNight = weekNumber === 3;
+  const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
+  const formatNum = (format === "9-ball") ? "9" : "8";
+  const formatLabel = format.replace("-", " ");
+
+  const fullLabel = `The ${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} pot`;
+
+  const signupSlug = isLadiesNight
+    ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
+    : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
+
+  const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
+
+  const potHTML = `
+    <div class="pot-title">${fullLabel}</div>
+    <div class="pot-subtitle">Updated Live</div>
+    <div class="pot-action">
+      <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
+    </div>`;
+
+  document.getElementById("pot-info").innerHTML = potHTML;
+
+  const tournamentUrl = `${signupLink}/players?navigation=false`;
+  const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
+
+  const iframe = document.createElement('iframe');
+  iframe.src = tournamentUrl;
+  iframe.name = tournamentName;
+  iframe.style.border = 'none';
+  iframe.scrolling = 'yes';
+  iframe.frameBorder = '0';
+  iframe.marginHeight = '0px';
+  iframe.marginWidth = '0px';
+  iframe.height = '600px';
+  iframe.width = '600px';
+  iframe.allowFullscreen = true;
+
+  document.getElementById("brackets-container").appendChild(iframe);
+</script>
