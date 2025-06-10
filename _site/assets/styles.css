@@ -603,7 +603,7 @@ body.home {
 body.home main,
 body.home main > *,
 body.home main > * > * {
-  text-align: center;
+  text-align: center !important;
   margin-left: auto;
   margin-right: auto;
 }
@@ -612,4 +612,22 @@ body:not(.home) main,
 body:not(.home) main > *,
 body:not(.home) main > * > * {
   text-align: left;
+}
+
+@media (max-width: 600px) {
+  header p {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 95vw;
+    word-break: break-word;
+    text-align: center;
+  }
+  header p a {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 1rem;
+    word-break: break-all;
+  }
 }
