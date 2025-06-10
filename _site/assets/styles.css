@@ -600,12 +600,9 @@ header h1 {
 body.home {
   text-align: center;
 }
-body.home main,
-body.home main > *,
-body.home main > * > * {
-  text-align: center !important;
-  margin-left: auto;
-  margin-right: auto;
+
+body.home nav {
+  text-align: left !important;
 }
 
 body:not(.home) main,
