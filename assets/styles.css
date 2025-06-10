@@ -78,6 +78,23 @@ body.ladies .cta-button:hover {
   background-color: #b25587;
 }
 
+/* Responsive iframe container */
+.iframe-wrapper {
+  max-width: 100%;
+  margin: 2rem auto;
+  background-color: var(--slate);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--accent-blue);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+}
+
 /* Global link styling */
 a {
   color: var(--link-yellow);
@@ -366,6 +383,7 @@ nav {
   color: var(--pot-green);
   font-weight: bold;
 }
+
 .cta-button {
   display: inline-block;
   background-color: var(--link-yellow);
@@ -381,5 +399,3 @@ nav {
 .cta-button:hover {
   background-color: var(--link-gold);
 }
-
-
