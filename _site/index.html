@@ -1,14 +1,59 @@
 <!DOCTYPE html>
+<!--this is the  default.html file that lives in the _layouts folder-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>River Tournaments - River Tournaments</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="page-river-tournaments">
+  <nav> 
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <div class="menu">
+  
+  
+    <a href="/">Home</a>
+    
+      <a id="nav-signup-link" href="#">Sign Up</a>
+    
+  
+    <a href="/rules/">Rules</a>
+    
+  
+    <a href="/location/">Location</a>
+    
+  
+    <a href="/faq/">FAQ</a>
+    
+  
+    <a href="/contact/">Contact</a>
+    
+  
+  </div>
+</nav>
+
+  <header>
+  <h1>River Tournaments</h1>
+  
+    <p style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.6; font-size: 1.1rem; font-weight: bold;">
+  Every Thursday | 6:30pm Registration | 7:00pm Start &nbsp;|&nbsp;
+  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; font-weight: bold;">19 NW 5th Ave, Portland, OR 97209</a>
+</p>
+  
+</header>
+
+  <main>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>River Tournaments</title>
   <link rel="stylesheet" href="/assets/styles.css">
-  <!-- Flyer-inspired fonts for headline and body -->
   <link href="https://fonts.googleapis.com/css?family=Oswald:700|Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation bar at top -->
   <nav>
     <div class="menu">
       <a href="/">Home</a>
@@ -18,48 +63,14 @@
     </div>
   </nav>
 
-  <!-- Flyer-style "River" headline -->
   <div class="site-title">River</div>
-  <div class="flyer-detail">Pool & Sports Bar Presents</div>
-
-  <!-- Tournament title with vintage styling, filled by JS -->
   <header>
     <h1 class="player-header" id="tournament-title"></h1>
   </header>
 
-  <!-- Flyer-inspired details section -->
-  <section class="flyer-detail flyer-section">
-    <div>
-      <span>Every Thursday</span>
-      <span class="flyer-bullet">&bull;</span>
-      <span>6:30PM Registration</span>
-      <span class="flyer-bullet">&bull;</span>
-      <span>7PM Start</span>
-    </div>
-    <div class="flyer-green">8-Ball / 9-Ball Alternates Weekly</div>
-    <div class="flyer-pink">Ladies Night — 3rd Thursday</div>
-    <div class="flyer-gold" style="margin-top:1rem;">
-      $15 Cash Entry <span class="flyer-bullet">&bull;</span>
-      16-Player Cap <span class="flyer-bullet">&bull;</span>
-      Walk-ins Welcome <span class="flyer-bullet">&bull;</span>
-      Sign-up Recommended
-    </div>
-    <div class="flyer-detail" style="margin-top:1rem;">
-      <span class="flyer-caps">FARGORATE CAPS: 445 in 8, 430 in 9*</span>
-    </div>
-    <div class="flyer-detail" style="margin-top:0.5rem;">
-      Spots are limited, Sign up now!
-    </div>
-  </section>
-
   <main>
-    <section id="event-banner" class="event-banner">
-      <div class="event-content">
-        <div id="event-info"></div>
-      </div>
-    </section>
-    <!-- Sign up button placeholder, filled by JS -->
     <div id="signup-button" class="signup-button-container"></div>
+    <div id="brackets-container" class="iframe-wrapper"></div>
     <p class="note">
       Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
       <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
@@ -72,5 +83,43 @@
     &copy; 2025 River Tournaments
   </footer>
   <script src="/assets/scripts/tournament.js"></script>
+</body>
+</html>
+  </main>
+
+  <footer>
+    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('menu-toggle');
+  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+  const savedState = localStorage.getItem('menuOpen');
+
+  // Apply saved state or default
+  if (savedState === null) {
+    toggle.checked = isDesktop;
+  } else {
+    toggle.checked = savedState === 'true';
+  }
+
+  toggle.addEventListener('change', () => {
+    localStorage.setItem('menuOpen', toggle.checked);
+  });
+
+  // On mobile, always close the menu after a nav click
+  if (!isDesktop) {
+    const links = document.querySelectorAll('.menu a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+        localStorage.setItem('menuOpen', false);
+      });
+    });
+  }
+});
+</script>
+<script src="/assets/scripts/tournament.js"></script>
 </body>
 </html>

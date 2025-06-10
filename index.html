@@ -1,67 +1,34 @@
 ---
+layout: default
+title: River Tournaments
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>River Tournaments</title>
+  <title>{{ page.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
-  <!-- Flyer-inspired fonts for headline and body -->
   <link href="https://fonts.googleapis.com/css?family=Oswald:700|Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation bar at top -->
   <nav>
     <div class="menu">
-      <a href="/">Home</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
       <a id="nav-signup-link" href="#" target="_blank">Sign Up</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/contact.html">Contact</a>
+      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
     </div>
   </nav>
 
-  <!-- Flyer-style "River" headline -->
   <div class="site-title">River</div>
-  <div class="flyer-detail">Pool & Sports Bar Presents</div>
-
-  <!-- Tournament title with vintage styling, filled by JS -->
   <header>
     <h1 class="player-header" id="tournament-title"></h1>
   </header>
 
-  <!-- Flyer-inspired details section -->
-  <section class="flyer-detail flyer-section">
-    <div>
-      <span>Every Thursday</span>
-      <span class="flyer-bullet">&bull;</span>
-      <span>6:30PM Registration</span>
-      <span class="flyer-bullet">&bull;</span>
-      <span>7PM Start</span>
-    </div>
-    <div class="flyer-green">8-Ball / 9-Ball Alternates Weekly</div>
-    <div class="flyer-pink">Ladies Night — 3rd Thursday</div>
-    <div class="flyer-gold" style="margin-top:1rem;">
-      $15 Cash Entry <span class="flyer-bullet">&bull;</span>
-      16-Player Cap <span class="flyer-bullet">&bull;</span>
-      Walk-ins Welcome <span class="flyer-bullet">&bull;</span>
-      Sign-up Recommended
-    </div>
-    <div class="flyer-detail" style="margin-top:1rem;">
-      <span class="flyer-caps">FARGORATE CAPS: 445 in 8, 430 in 9*</span>
-    </div>
-    <div class="flyer-detail" style="margin-top:0.5rem;">
-      Spots are limited, Sign up now!
-    </div>
-  </section>
-
   <main>
-    <section id="event-banner" class="event-banner">
-      <div class="event-content">
-        <div id="event-info"></div>
-      </div>
-    </section>
-    <!-- Sign up button placeholder, filled by JS -->
     <div id="signup-button" class="signup-button-container"></div>
+    <div id="brackets-container" class="iframe-wrapper"></div>
     <p class="note">
       Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
       <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
@@ -71,7 +38,7 @@
     </p>
   </main>
   <footer>
-    &copy; 2025 River Tournaments
+    &copy; {{ site.time | date: "%Y" }} River Tournaments
   </footer>
   <script src="{{ '/assets/scripts/tournament.js' | relative_url }}"></script>
 </body>
