@@ -49,6 +49,98 @@
   text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
 }
 
+/* Ensure menu links are inline on desktop */
+@media (min-width: 1025px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    transform: none;
+    gap: 2rem;
+  }
+  .menu a {
+    display: inline-block;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Prevent "Sign Up" from stacking */
+#nav-signup-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  text-shadow: none;
+  white-space: nowrap;      /* Keeps "Sign Up" side by side */
+  display: inline-block;    /* Ensures inline display in row */
+}
+
+#nav-signup-link:hover {
+  color: var(--link-yellow);
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--white);
+  z-index: 1001;
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--dark-navy);
+  padding: 4rem 1rem 1rem;
+  gap: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .hamburger + .menu {
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  main {
+    padding: 1rem 0.5rem;
+  }
+  .contact-form-wrapper {
+    padding: 1rem 0.5rem;
+  }
+}
+
 /* Vintage/Competitive Typography Tweaks */
 body, input, textarea, button {
   font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
@@ -223,96 +315,6 @@ footer {
   padding: 1rem 0;
   font-weight: bold;
   letter-spacing: 0.5px;
-}
-
-#nav-signup-link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-shadow: none;
-}
-
-#nav-signup-link:hover {
-  color: var(--link-yellow);
-}
-
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--white);
-  z-index: 1001;
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100vh;
-  background-color: var(--dark-navy);
-  padding: 4rem 1rem 1rem;
-  gap: 1rem;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-#menu-toggle:checked + .hamburger + .menu {
-  transform: translateX(0);
-}
-
-@media (max-width: 1024px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-@media (min-width: 1025px) {
-  .menu {
-    position: static;
-    flex-direction: row;
-    align-items: center;
-    height: auto;
-    padding: 0;
-    transform: none;
-    gap: 2rem;
-  }
-
-  .menu a {
-    padding: 0 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  main {
-    padding: 1rem 0.5rem;
-  }
-
-  .contact-form-wrapper {
-    padding: 1rem 0.5rem;
-  }
 }
 
 .contact-form-wrapper {

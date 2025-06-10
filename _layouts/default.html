@@ -12,15 +12,13 @@
   <input type="checkbox" id="menu-toggle" />
   <label for="menu-toggle" class="hamburger">&#9776;</label>
   <div class="menu">
-    <!-- Move the correct dynamic Sign Up link to the top -->
-    <a id="nav-signup-link" href="#">Sign Up</a>
-    
-    <!-- Loop through navigation items, but skip the "Sign Up" item -->
-    {% for item in site.data.navigation %}
-      {% unless item.title == "Sign Up" %}
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-      {% endunless %}
-    {% endfor %}
+  {% assign nav = site.data.navigation %}
+  {% for item in nav %}
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% if forloop.first %}
+      <a id="nav-signup-link" href="#">Sign Up</a>
+    {% endif %}
+  {% endfor %}
   </div>
 </nav>
 
