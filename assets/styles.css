@@ -163,8 +163,13 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.75rem;
+  font-size: 2rem;
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: var(--white);
+  text-shadow: 0 0 4px var(--accent-blue), 0 0 6px var(--accent-blue);
+  margin-bottom: 0.25rem;
 }
 
 main {
