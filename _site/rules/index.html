@@ -8,26 +8,39 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="page-rules">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-  
-  <a href="/">Home</a>
-
-  <a href="/">Sign Up</a>
-
-  <a href="/rules/">Rules</a>
-
-  <a href="/location/">Location</a>
-
-  <a href="/faq/">FAQ</a>
-
-  <a href="/contact/">Contact</a>
-  
-<a id="nav-signup-link" href="#">Sign Up</a>
-</div>
-  </nav>
+  <nav> 
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <div class="menu">
+    <!-- Move the correct dynamic Sign Up link to the top -->
+    <a id="nav-signup-link" href="#">Sign Up</a>
+    
+    <!-- Loop through navigation items, but skip the "Sign Up" item -->
+    
+      
+        <a href="/">Home</a>
+      
+    
+      
+    
+      
+        <a href="/rules/">Rules</a>
+      
+    
+      
+        <a href="/location/">Location</a>
+      
+    
+      
+        <a href="/faq/">FAQ</a>
+      
+    
+      
+        <a href="/contact/">Contact</a>
+      
+    
+  </div>
+</nav>
 
   <header>
   <h1>Tournament Rules</h1>
