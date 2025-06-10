@@ -13,7 +13,13 @@ title: River Tournaments
 
 <h1 class="player-header">Player List</h1>
 
-<div class="brackets" id="brackets-container"></div>
+<div class="brackets">
+  <div class="iframe-wrapper">
+    <div class="iframe-container">
+      <iframe id="tournament-iframe" class="responsive-iframe"></iframe>
+    </div>
+  </div>
+</div>
 
 <p class="note">
   Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
@@ -65,8 +71,7 @@ title: River Tournaments
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
 
   const potHTML = `
-    <div class="pot-title">${fullLabel}</div>
-    <div class="pot-subtitle">Updated Live</div>
+    <div class="pot-title vintage-label">$1</div>
     <div class="pot-action">
       <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
     </div>`;
@@ -81,17 +86,7 @@ title: River Tournaments
   const tournamentUrl = `${signupLink}/players?navigation=false`;
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
 
-  const iframe = document.createElement('iframe');
+  const iframe = document.getElementById("tournament-iframe");
   iframe.src = tournamentUrl;
   iframe.name = tournamentName;
-  iframe.style.border = 'none';
-  iframe.scrolling = 'yes';
-  iframe.frameBorder = '0';
-  iframe.marginHeight = '0px';
-  iframe.marginWidth = '0px';
-  iframe.height = '600px';
-  iframe.width = '600px';
-  iframe.allowFullscreen = true;
-
-  document.getElementById("brackets-container").appendChild(iframe);
 </script>
