@@ -5,7 +5,7 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section class="pot-banner">
+<section id="pot-banner" class="pot-banner">
   <div class="pot-content">
     <div id="pot-info"></div>
   </div>
@@ -72,6 +72,11 @@ title: River Tournaments
     </div>`;
 
   document.getElementById("pot-info").innerHTML = potHTML;
+
+  // Add ladies class to banner if applicable
+  if (isLadiesNight) {
+    document.getElementById("pot-banner").classList.add("ladies");
+  }
 
   const tournamentUrl = `${signupLink}/players?navigation=false`;
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
