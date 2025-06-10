@@ -8,16 +8,21 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="{% if page.bodyClass %}{{ page.bodyClass }}{% else %}page-{{ page.title | downcase | replace: ' ', '-' }}{% endif %}">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-  {% for item in site.data.navigation %}
-  <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-{% endfor %}  
-<a id="nav-signup-link" href="#">Sign Up</a>
-</div>
-  </nav>
+  <nav> 
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <div class="menu">
+    <!-- Move the correct dynamic Sign Up link to the top -->
+    <a id="nav-signup-link" href="#">Sign Up</a>
+    
+    <!-- Loop through navigation items, but skip the "Sign Up" item -->
+    {% for item in site.data.navigation %}
+      {% unless item.title == "Sign Up" %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</nav>
 
   <header>
   <h1>{{ page.title }}</h1>
