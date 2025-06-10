@@ -414,10 +414,10 @@ footer {
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
   text-shadow: none;
-}
+}#
 #nav-signup-link:hover {
   color: var(--link-yellow);
-}
+}#
 
 /* Contact form and flyer styles */
 .contact-form-wrapper {
