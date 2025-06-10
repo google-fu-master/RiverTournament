@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>River Tournaments</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
 </head>
 <body>
   <!-- this is the index.html file -->
@@ -28,6 +28,6 @@
     *Actual pot size contingent on player attendance and discretionary House donation.
   </p>
 
-  <script src="assets/scripts/tournament.js"></script>
+  <script src="{{ '/assets/scripts/tournament.js' | relative_url }}"></script>
 </body>
 </html>
