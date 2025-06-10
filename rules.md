@@ -17,17 +17,17 @@ permalink: /rules/
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
-    <li>You’ll need to show a Fargo account and a photo ID at registration.</li>
-    <li>First-timers can create a Fargo account using the mobile app (links coming soon in the FAQ).</li>
-    <li>If you have more than one Fargo account, we’ll use the highest rating. If it’s over 445, you won’t be eligible—please get your accounts merged ahead of time.</li>
-    <li>A screenshot of your Fargo rating can be uploaded in the Sign Up sheet, but your rating will be confirmed live in the Fargo app at registration.</li>
-    <li>If a player has an APA rating but no Fargo rating, their Fargo rating for the tournament will be determined using a conversion formula.</li>
-    <li>If a player has no APA rating and no Fargo rating, they will be entered into the tournament at the highest eligible rating (445) and their Fargo account and performance will be monitored for eligibility if they return to future tournaments.</li>
+    <li>Players must present a <strong>FargoRate account</strong> and <strong>photo ID</strong> at registration.</li>
+	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
+	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445)</strong> and monitored for future eligibility.</li>
+	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players over 445 are not eligible—please merge accounts beforehand.</li>
+	<li>A <strong>screenshot of your Fargo rating</strong> may be uploaded during sign-up, but your rating will be <strong>verified live</strong> in the FargoRate app at registration.</li>
+	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
     <li>Entry fees must be paid at time of registration.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
-    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a> if needed to complete the bracket.</strong></li>
+    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
   </ul>
 </section>
 
@@ -37,14 +37,14 @@ permalink: /rules/
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 wins</li>
-        <li>13–16 players: race to 2 wins</li>
+        <li>8–12 players: race to 3 on the front, 2 on the back</li>
+        <li>13–16 players: race to 2 on the front, 1 on the back</li>
       </ul>
     </li>
     <li><strong>9-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 4 wins</li>
-        <li>13–16 players: race to 3 wins</li>
+        <li>8–12 players: race to 3 on the front, 2 on the back</li>
+        <li>13–16 players: race to 2 on the front, 1 on the back</li>
       </ul>
     </li>
     <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>

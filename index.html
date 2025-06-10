@@ -7,22 +7,20 @@ title: River Tournaments
 
 <section class="pot-banner" style="background-color: #151D23; padding: 2rem 1rem; text-align: center; color: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #0071a4; max-width: 700px; margin: 2rem auto 3rem;">
   <div style="max-width: 600px; margin: 0 auto;">
-    <div id="pot-info"></div>
+    <div id="pot-info">
+      <div style="font-size: 1.5rem; font-weight: 600;">Check out the current roster</div>
+      <div style="font-size: 2.5rem; font-weight: bold; color: #00ff7f;">Updated Live</div>
+      <div style="margin-top: 1rem;">
+        <a href="https://digitalpool.com/tournaments/river-thursday-8-ball-6122025/bracket" style="color: #ffd700; text-decoration: underline;">Sign up now</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<h1 id="loading-text" style="text-align: center; font-size: 2rem; margin: 3rem 0 1rem; line-height: 1.4;">Loading Bracket...</h1>
+<h1 style="text-align: center; font-size: 2rem; margin: 3rem 0 1rem; line-height: 1.4;">Player List</h1>
 
-<div class="brackets" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-  <div class="bracket">
-    <h2>Bracket Reservations</h2>
-    <ul id="bracket"></ul>
-  </div>
-
-  <div class="waitlist">
-    <h2>Waitlist</h2>
-    <ul id="waitlist"></ul>
-  </div>
+<div class="brackets" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: flex; justify-content: center;">
+  <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-6122025/players?navigation=false" style="border: none;" name="River Thursday 8 Ball 6/12/2025" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>
 </div>
 
 <p class="note">
@@ -33,83 +31,3 @@ title: River Tournaments
 <p class="disclaimer" style="text-align: center; font-size: 1rem; margin-top: 2rem;">
   *Actual pot size contingent on player attendance and discretionary House donation.
 </p>
-
-<script>
-  async function loadBracket() {
-    const endpoint = "https://script.google.com/macros/s/AKfycbx66jj5zCl5ZLMEiffsyv6DRyUsdD4j-DXGxnABc7sL781DH8bsrsWyg9QSTL-2wP-PVQ/exec";
-
-    try {
-      const res = await fetch(endpoint);
-      const data = await res.json();
-
-      const today = new Date();
-      const dayOfWeek = today.getDay();
-      const daysUntilThursday = (4 - dayOfWeek + 7) % 7;
-      const upcomingThursday = new Date(today);
-      upcomingThursday.setDate(today.getDate() + daysUntilThursday);
-      const day = upcomingThursday.getDate();
-      const month = upcomingThursday.toLocaleString('default', { month: 'long' });
-
-      function getOrdinalSuffix(n) {
-        if (n >= 11 && n <= 13) return 'th';
-        switch (n % 10) {
-          case 1: return 'st';
-          case 2: return 'nd';
-          case 3: return 'rd';
-          default: return 'th';
-        }
-      }
-
-      const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
-
-      const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
-      const isLadiesNight = weekNumber === 3;
-      const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
-      const fullLabel = `The ${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} pot`;
-
-      const bracket = document.getElementById("bracket");
-      const waitlist = document.getElementById("waitlist");
-      let playerCount = 0;
-
-      for (let i = 0; i < 16; i++) {
-        const player = data.bracket[i];
-        const li = document.createElement("li");
-        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
-        if (displayName) playerCount++;
-        li.textContent = displayName;
-        bracket.appendChild(li);
-      }
-
-      for (let i = 0; i < 16; i++) {
-        const player = data.waitlist[i];
-        const li = document.createElement("li");
-        const displayName = player && (player.preferred || player.name) ? (player.preferred || player.name) : "";
-        li.textContent = displayName;
-        waitlist.appendChild(li);
-      }
-
-      const potAmount = playerCount * 10;
-      let houseAdd = Number(data.houseAdd) || 0;
-      const total = potAmount + houseAdd;
-
-      let potText = "";
-      const callToAction = `<div style=\"margin-top: 1rem;\"><a href=\"/signup/\" style=\"color: #ffd700; text-decoration: underline;\">Sign up now</a></div>`;
-
-      if (playerCount === 16) {
-        potText = `<div style=\"font-size: 1.5rem; font-weight: 600;\">${fullLabel} could be</div><div style=\"font-size: 2.5rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}<div style=\"font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;\">Spots full – join the waitlist</div>`;
-      } else if (playerCount < 8) {
-        potText = `<div style=\"font-size: 1.5rem; font-weight: 600;\">${fullLabel} is only</div><div style=\"font-size: 2rem; font-weight: bold; color: #ff5555;\">$${total}*</div>${callToAction}`;
-      } else {
-        potText = `<div style=\"font-size: 1.5rem; font-weight: 600;\">${fullLabel} could be</div><div style=\"font-size: 2rem; font-weight: bold; color: #00ff7f;\">$${total}*</div>${callToAction}`;
-      }
-
-      document.getElementById("pot-info").innerHTML = potText;
-      document.getElementById("loading-text").remove();
-
-    } catch (err) {
-      console.error("Failed to load bracket data:", err);
-    }
-  }
-
-  loadBracket();
-</script>
