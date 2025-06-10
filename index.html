@@ -5,13 +5,14 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section id="event-banner" class="event-banner">
-  <div class="event-content">
-    <div id="event-info"></div>
+<section id="tournament-banner" class="tournament-banner">
+  <div class="tournament-content">
+    <div id="tournament-info"></div>
   </div>
 </section>
 
-<h1 class="player-header">Player List</h1>
+<h1 class="player-header" id="player-header">Player List</h1>
+<div class="signup-action" id="signup-action"></div>
 
 <div class="brackets" id="brackets-container"></div>
 
@@ -56,28 +57,21 @@ title: River Tournaments
   const formatNum = (format === "9-ball") ? "9" : "8";
   const formatLabel = format.replace("-", " ");
 
-  const fullLabel = `${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} Tournament`;
-
   const signupSlug = isLadiesNight
     ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
     : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
+  const displayLabel = `${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${formatLabel}`;
 
-  const eventHTML = `
-    <div class="event-title">${fullLabel}</div>
-    <div class="event-action">
+  const headerEl = document.getElementById("player-header");
+  if (headerEl) headerEl.textContent = `${displayLabel} Player List`;
+
+  const signupHTML = `
+    <div class="signup-action">
       <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
-    </div>
-    <p class="event-details">Every Thursday | 6:30pm Registration | 7:00pm Start<br>
-    <a href="https://www.google.com/maps?q=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" style="color: inherit; text-decoration: underline;">19 NW 5th Ave, Portland, OR 97209</a></p>`;
-
-  document.getElementById("event-info").innerHTML = eventHTML;
-
-  // Add ladies class to banner if applicable
-  if (isLadiesNight) {
-    document.getElementById("event-banner").classList.add("ladies");
-  }
+    </div>`;
+  document.getElementById("signup-action").innerHTML = signupHTML;
 
   const tournamentUrl = `${signupLink}/players?navigation=false`;
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
