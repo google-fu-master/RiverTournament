@@ -101,14 +101,9 @@ body.ladies .pot-banner {
   border-color: var(--accent-pink);
 }
 
-body.ladies .cta-button {
-  background-color: var(--accent-pink);
-  color: #fff;
-}
 
-body.ladies .cta-button:hover {
-  background-color: #b25587;
-}
+
+
 
 /* Responsive iframe container */
 .iframe-wrapper {
