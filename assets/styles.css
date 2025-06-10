@@ -14,6 +14,28 @@
   --pot-green: #00cc66;
 }
 
+/* Vintage/Competitive Typography Tweaks */
+body, input, textarea, button {
+  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, .highlight {
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header h1, .bracket h2, .waitlist h2 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Add strong neon-like glow to headings */
+h1, h2, h3 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
 /* Ladies Night Theme Overrides */
 body.ladies header {
   background-color: var(--mid-pink);
@@ -60,6 +82,7 @@ body.ladies .cta-button:hover {
 a {
   color: var(--link-yellow);
   text-decoration: underline;
+  font-weight: bold;
 }
 a:hover {
   color: var(--link-gold);
@@ -69,17 +92,16 @@ a:hover {
 html, body {
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--darkest);
+  color: var(--white);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--darkest);
-  color: var(--white);
 }
 
 header {
@@ -91,7 +113,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   color: var(--white);
 }
 
@@ -101,7 +123,6 @@ main {
   max-width: 800px;
   padding: 1rem;
   background-color: var(--darkest);
-  text-align: inherit;
   box-sizing: border-box;
   width: 100%;
 }
@@ -125,6 +146,8 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* Navigation styling */
@@ -137,6 +160,9 @@ nav {
   position: relative;
   width: 100%;
   justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .hamburger {
@@ -177,6 +203,10 @@ nav {
 
 #menu-toggle {
   display: none;
+}
+
+#menu-toggle:checked + .hamburger + .menu {
+  transform: translateX(0);
 }
 
 #menu-toggle:checked + .hamburger + .menu {
