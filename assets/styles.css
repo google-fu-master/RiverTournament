@@ -14,6 +14,41 @@
   --pot-green: #00cc66;
 }
 
+/* CTA Button Enhancement */
+.btn-signup {
+  display: inline-block;
+  background-color: var(--link-yellow);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-signup:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
+}
+
+/* Nav menu links */
+.menu a {
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--link-yellow);
+  text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
+}
+
 /* Vintage/Competitive Typography Tweaks */
 body, input, textarea, button {
   font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
@@ -44,9 +79,6 @@ header p {
   letter-spacing: 0.5px;
   text-shadow: 0 0 3px var(--accent-blue);
 }
-
-/* CTA Button Enhancement */
-
 
 /* Contact Form Enhancements */
 .contact-form-wrapper h2 {
@@ -98,10 +130,6 @@ body.ladies .contact-form-wrapper {
 body.ladies .pot-banner {
   border-color: var(--accent-pink);
 }
-
-
-
-
 
 /* Responsive iframe container */
 .iframe-wrapper {
@@ -197,7 +225,6 @@ footer {
   letter-spacing: 0.5px;
 }
 
-
 #nav-signup-link {
   color: var(--white);
   text-decoration: none;
@@ -210,11 +237,6 @@ footer {
 
 #nav-signup-link:hover {
   color: var(--link-yellow);
-}
-
-.menu a:hover {
-  color: var(--link-yellow);
-  text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
 }
 
 .hamburger {
@@ -319,26 +341,6 @@ footer {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-}
-
-.contact-form-wrapper button {
-  background-color: transparent;
-  color: var(--link-yellow);
-  border: 2px solid var(--link-yellow);
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 8px var(--link-yellow);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contact-form-wrapper button:hover {
-  background-color: var(--link-yellow);
-  color: #000;
-  box-shadow: 0 0 12px var(--link-gold);
 }
 
 .highlight {
