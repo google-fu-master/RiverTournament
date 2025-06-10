@@ -5,8 +5,8 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section id="event-banner" class="pot-banner">
-  <div class="pot-content">
+<section id="event-banner" class="event-banner">
+  <div class="event-content">
     <div id="event-info"></div>
   </div>
 </section>
@@ -21,7 +21,7 @@ title: River Tournaments
 </p>
 
 <p class="disclaimer">
-  *Actual bracket is contingent on player attendance and may be modified at registration.
+  *Actual pot size contingent on player attendance and discretionary House donation.
 </p>
 
 <script>
@@ -64,14 +64,17 @@ title: River Tournaments
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
 
-  const bannerHTML = `
-    <div class="pot-title">${fullLabel}</div>
-    <div class="pot-action">
+  const eventHTML = `
+    <div class="event-title">${fullLabel}</div>
+    <div class="event-action">
       <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
-    </div>`;
+    </div>
+    <p class="event-details">Every Thursday | 6:30pm Registration | 7:00pm Start<br>
+    <a href="https://www.google.com/maps?q=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" style="color: inherit; text-decoration: underline;">19 NW 5th Ave, Portland, OR 97209</a></p>`;
 
-  document.getElementById("event-info").innerHTML = bannerHTML;
+  document.getElementById("event-info").innerHTML = eventHTML;
 
+  // Add ladies class to banner if applicable
   if (isLadiesNight) {
     document.getElementById("event-banner").classList.add("ladies");
   }
@@ -88,7 +91,7 @@ title: River Tournaments
   iframe.marginHeight = '0px';
   iframe.marginWidth = '0px';
   iframe.height = '600px';
-  iframe.width = '600px';
+  iframe.width = '100%';
   iframe.allowFullscreen = true;
 
   document.getElementById("brackets-container").appendChild(iframe);
