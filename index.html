@@ -5,21 +5,15 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section id="pot-banner" class="pot-banner">
+<section id="event-banner" class="pot-banner">
   <div class="pot-content">
-    <div id="pot-info"></div>
+    <div id="event-info"></div>
   </div>
 </section>
 
 <h1 class="player-header">Player List</h1>
 
-<div class="brackets">
-  <div class="iframe-wrapper">
-    <div class="iframe-container">
-      <iframe id="tournament-iframe" class="responsive-iframe"></iframe>
-    </div>
-  </div>
-</div>
+<div class="brackets" id="brackets-container"></div>
 
 <p class="note">
   Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
@@ -27,7 +21,7 @@ title: River Tournaments
 </p>
 
 <p class="disclaimer">
-  *Actual pot size contingent on player attendance and discretionary House donation.
+  *Actual bracket is contingent on player attendance and may be modified at registration.
 </p>
 
 <script>
@@ -62,7 +56,7 @@ title: River Tournaments
   const formatNum = (format === "9-ball") ? "9" : "8";
   const formatLabel = format.replace("-", " ");
 
-  const fullLabel = `The ${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} pot`;
+  const fullLabel = `${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${format} Tournament`;
 
   const signupSlug = isLadiesNight
     ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
@@ -70,23 +64,32 @@ title: River Tournaments
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
 
-  const potHTML = `
-    <div class="pot-title vintage-label">$1</div>
+  const bannerHTML = `
+    <div class="pot-title">${fullLabel}</div>
     <div class="pot-action">
       <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
     </div>`;
 
-  document.getElementById("pot-info").innerHTML = potHTML;
+  document.getElementById("event-info").innerHTML = bannerHTML;
 
-  // Add ladies class to banner if applicable
   if (isLadiesNight) {
-    document.getElementById("pot-banner").classList.add("ladies");
+    document.getElementById("event-banner").classList.add("ladies");
   }
 
   const tournamentUrl = `${signupLink}/players?navigation=false`;
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
 
-  const iframe = document.getElementById("tournament-iframe");
+  const iframe = document.createElement('iframe');
   iframe.src = tournamentUrl;
   iframe.name = tournamentName;
+  iframe.style.border = 'none';
+  iframe.scrolling = 'yes';
+  iframe.frameBorder = '0';
+  iframe.marginHeight = '0px';
+  iframe.marginWidth = '0px';
+  iframe.height = '600px';
+  iframe.width = '600px';
+  iframe.allowFullscreen = true;
+
+  document.getElementById("brackets-container").appendChild(iframe);
 </script>
