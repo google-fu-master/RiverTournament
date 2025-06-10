@@ -5,14 +5,14 @@ title: River Tournaments
 
 <!-- this is the index.html file -->
 
-<section id="tournament-banner" class="tournament-banner">
-  <div class="tournament-content">
-    <div id="tournament-info"></div>
+<section id="event-banner" class="event-banner">
+  <div class="event-content">
+    <div id="event-info"></div>
   </div>
 </section>
 
-<h1 class="player-header" id="player-header">Player List</h1>
-<div class="signup-action" id="signup-action"></div>
+<h1 class="player-header" id="tournament-title"></h1>
+<div id="signup-button"></div>
 
 <div class="brackets" id="brackets-container"></div>
 
@@ -57,22 +57,12 @@ title: River Tournaments
   const formatNum = (format === "9-ball") ? "9" : "8";
   const formatLabel = format.replace("-", " ");
 
+  const eventTitle = `${formattedDate} ${formatLabel} Player List`;
   const signupSlug = isLadiesNight
     ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
     : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
-  const displayLabel = `${formattedDate} ${isLadiesNight ? "Ladies Night " : ""}${formatLabel}`;
-
-  const headerEl = document.getElementById("player-header");
-  if (headerEl) headerEl.textContent = `${displayLabel} Player List`;
-
-  const signupHTML = `
-    <div class="signup-action">
-      <a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>
-    </div>`;
-  document.getElementById("signup-action").innerHTML = signupHTML;
-
   const tournamentUrl = `${signupLink}/players?navigation=false`;
   const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
 
@@ -88,5 +78,13 @@ title: River Tournaments
   iframe.width = '100%';
   iframe.allowFullscreen = true;
 
+  const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
+
+  document.getElementById("tournament-title").textContent = eventTitle;
+  document.getElementById("signup-button").innerHTML = signupBtn;
   document.getElementById("brackets-container").appendChild(iframe);
+
+  if (isLadiesNight) {
+    document.getElementById("event-banner").classList.add("ladies");
+  }
 </script>
