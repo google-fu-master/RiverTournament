@@ -587,9 +587,10 @@ main, #digitalpool-embed {
   height: 100%;
   min-height: 0;
 }
-
-body:not(.page-rules):not(.page-faq):not(.page-location) main > * {
-  text-align: center;
+body:not(.page-rules):not(.page-faq):not(.page-location) main,
+body:not(.page-rules):not(.page-faq):not(.page-location) main > *,
+body:not(.page-rules):not(.page-faq):not(.page-location) main > * > * {
+  text-align: center !important;
 }
 
 header h1 {
