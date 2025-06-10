@@ -6,16 +6,18 @@
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
+  <!-- Navigation bar at top -->
+  <nav>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a id="nav-signup-link" href="#" target="_blank">Sign Up</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+  <!-- Tournament title with vintage styling, filled by JS -->
   <header>
-    <h1>River Tournaments</h1>
-    <nav>
-      <div class="menu">
-        <a href="/">Home</a>
-        <a href="/signup.html">Sign Up</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
-      </div>
-    </nav>
+    <h1 class="player-header" id="tournament-title"></h1>
   </header>
   <main>
     <section id="event-banner" class="event-banner">
@@ -23,17 +25,12 @@
         <div id="event-info"></div>
       </div>
     </section>
-
-    <h1 class="player-header" id="tournament-title">Tournament Name Here</h1>
-    <div id="signup-button" class="signup-button-container">
-      <a class="btn-signup" href="/signup.html">Sign Up Now</a>
-    </div>
-
+    <!-- Sign up button placeholder, filled by JS -->
+    <div id="signup-button" class="signup-button-container"></div>
     <p class="note">
       Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
       <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
     </p>
-
     <p class="disclaimer">
       *Actual pot size contingent on player attendance and discretionary House donation.
     </p>
