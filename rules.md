@@ -17,7 +17,7 @@ permalink: /rules/
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of 445 and below are welcome in our 8, 9, and 10-ball tournaments.</li>
-    <li>Players must present a <strong>FargoRate account</strong> and <strong>photo ID</strong> at registration.</li>
+    <li>Players must present a <strong>FargoRate or APA account</strong> and <strong>photo ID</strong> at registration.</li>
 	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
 	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445)</strong> and monitored for future eligibility.</li>
 	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players over 445 are not eligible—please merge accounts beforehand.</li>
@@ -25,7 +25,7 @@ permalink: /rules/
 	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
-    <li>Entry fees must be paid at time of registration.</li>
+    <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
     <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
   </ul>
@@ -107,8 +107,8 @@ permalink: /rules/
       <li>8 on the break: If you make the 8-ball on the break, it’s an automatic win for that rack.</li>
       <li>Scratch on the break: Incoming player must shoot from behind the head string (“kitchen”).</li>
       <li>Open table after break until a called shot legally pockets a ball.</li>
-      <li>Groups assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
-      <li>8-ball pocket must be marked (or called verbally if agreed upon before the match).</li>
+      <li>Groups (solids or stripes) assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
+      <li>8-ball pocket must be marked (or called verbally if agreed upon before the match). Making the 8-ball without marking/calling a pocket, or making it in a different pocket than marked/called is a loss for that rack. </li>
       <li>8-ball scratch is loss of game.</li>
       <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
@@ -122,13 +122,12 @@ permalink: /rules/
       <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
       <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
       <li>Fouls cannot occur before the rack is struck.</li>
-      <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
+      <li>Three-point break rule: At least three object balls must be either pocketed or touch the rail on the break.</li>
       <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
-      <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two head-string pockets—then it’s spotted and play continues. The breaker continues shooting unless there was a foul.</li>
+      <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two foot-string pockets (the corner pockets closest to the rack). Then it’s spotted and play continues. The breaker continues shooting unless there was a foul.</li>
       <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-      <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
-      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+      <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
     </ul>
   </div>
@@ -143,10 +142,10 @@ permalink: /rules/
       <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
       <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues. It is still the breaker's turn unless a foul has occurred.</li>
       <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-      <li>Rotation game: You must shoot at the lowest numbered ball first.</li>
+      <li>Rotation game: You must hit the lowest numbered ball first.</li>
       <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
       <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>You must hit the lowest numbered ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
     </ul>
   </div>
