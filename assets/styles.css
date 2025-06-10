@@ -596,3 +596,20 @@ body:not(.page-rules):not(.page-faq):not(.page-location) main > * > * {
 header h1 {
   font-family: 'Pacifico', cursive, sans-serif !important;
 }
+
+body.home {
+  text-align: center;
+}
+body.home main,
+body.home main > *,
+body.home main > * > * {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body:not(.home) main,
+body:not(.home) main > *,
+body:not(.home) main > * > * {
+  text-align: left;
+}
