@@ -1,4 +1,3 @@
-```css name=assets/styles.css
 :root {
   --darkest: #141414;
   --dark-navy: #0D1B2A;
@@ -40,7 +39,7 @@ nav {
   gap: 2rem;
   background-color: transparent;
   position: static;
-  height: 60px; /* adjust as needed */
+  height: 60px;
 }
 .menu a {
   color: var(--white);
@@ -127,7 +126,47 @@ nav {
 main, .brackets {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px; /* Adjust as needed for your layout */
+  max-width: 1000px;
+}
+
+/* Event banner styling */
+.event-banner {
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
+  padding: 2rem 0;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.event-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Player header */
+.player-header {
+  font-size: 2.25rem;
+  margin: 1.5rem 0 1rem 0;
+  color: var(--link-yellow);
+  text-shadow: 0 0 8px var(--dark-navy), 0 0 2px var(--accent-blue);
+}
+
+/* Notes and disclaimers */
+.note,
+.disclaimer {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 1.25rem auto;
+  max-width: 700px;
+  text-align: center;
+}
+.note a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+.note a:hover {
+  color: var(--link-gold);
 }
 
 /* Vintage/Competitive Typography Tweaks */
@@ -344,4 +383,3 @@ footer {
   color: var(--pot-green);
   font-weight: bold;
 }
-```
