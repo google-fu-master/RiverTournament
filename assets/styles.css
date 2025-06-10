@@ -184,6 +184,15 @@ main, .brackets {
   max-width: 1000px;
 }
 
+/* Center block-level children of main for better centering */
+body:not(.page-rules):not(.page-faq):not(.page-location) main {
+  text-align: center;
+}
+main > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Event banner styling */
 .event-banner {
   background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
@@ -387,9 +396,6 @@ main {
   box-sizing: border-box;
   width: 100%;
 }
-body:not(.page-rules):not(.page-faq):not(.page-location) main {
-  text-align: center;
-}
 body.page-rules,
 body.page-faq,
 body.page-location {
@@ -406,18 +412,7 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-#nav-signup-link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-shadow: none;
-}#
-#nav-signup-link:hover {
-  color: var(--link-yellow);
-}#
+/* --- REMOVED #nav-signup-link overrides so styling matches other nav links --- */
 
 /* Contact form and flyer styles */
 .contact-form-wrapper {
