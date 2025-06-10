@@ -19,9 +19,9 @@ permalink: /rules/
     <li class="numbered-1">Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players must present a <strong>FargoRate or APA account</strong> and <strong>photo ID</strong> at registration.</li>
 	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
-	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445)</strong> and monitored for future eligibility.</li>
+	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
 	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated >430 in 9-Ball and >445 in 8-Ball are not eligible—please merge accounts beforehand.</li>
-	<li>A <strong>screenshot of your Fargo rating</strong> may be uploaded during sign-up, but your rating will be <strong>verified live</strong> in the FargoRate app at registration.</li>
+	<li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
 	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
@@ -37,14 +37,14 @@ permalink: /rules/
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 on the front, 2 on the back</li>
-        <li>13–16 players: race to 2 on the front, 1 on the back</li>
+        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+        <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
       </ul>
     </li>
     <li><strong>9-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 on the front, 2 on the back</li>
-        <li>13–16 players: race to 2 on the front, 1 on the back</li>
+        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+        <li>13–16 players: race to 2 on the winner side, 1 on the losers side</li>
       </ul>
     </li>
     <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>
@@ -113,6 +113,9 @@ permalink: /rules/
       <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
+	  <li>Races:</li>
+	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
 
@@ -129,6 +132,9 @@ permalink: /rules/
       <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
+	  <li>Races:</li>
+	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
 
