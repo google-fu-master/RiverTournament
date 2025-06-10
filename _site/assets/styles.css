@@ -1,385 +1,43 @@
-:root {
-  --darkest: #141414;
-  --dark-navy: #0D1B2A;
-  --mid-navy: #002B3A;
-  --accent-blue: #0071a4;
-  --accent-pink: #cc6699;
-  --darkest-pink: #1c0f1c;
-  --dark-pink: #2b102b;
-  --mid-pink: #3a003a;
-  --link-yellow: #d4af37;
-  --link-gold: #a47f00;
-  --slate: #151D23;
-  --white: #f5f5f5;
-  --pot-green: #00cc66;
-}
-
-/* Hide the mobile nav checkbox toggle */
-#menu-toggle {
-  display: none;
-}
-
-/* Nav bar - horizontal by default */
-nav {
-  width: 100%;
-  background-color: var(--dark-navy);
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 100;
-}
-
-/* Menu as horizontal row on desktop */
-.menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  gap: 2rem;
-  background-color: transparent;
-  position: static;
-  height: 60px;
-}
-.menu a {
-  color: var(--white);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 1rem;
-  line-height: 60px;
-  height: 60px;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-.menu a:hover,
-.menu a:focus {
-  color: var(--link-yellow);
-  text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
-}
-
-/* Hamburger menu for mobile */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--white);
-  z-index: 1001;
-  position: absolute;
-  top: 10px;
-  left: 16px;
-}
-
-/* Mobile styles */
-@media (max-width: 1024px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    padding-top: 4rem;
-    gap: 2rem;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-  .hamburger {
-    display: block;
-  }
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-}
-
-/* CTA Button Enhancement */
-.btn-signup, .cta-button {
-  display: inline-block;
-  background-color: var(--link-yellow);
-  color: #000;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 2rem;
-}
-.btn-signup:hover, .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
-}
-
-/* Center and space the signup button */
-.signup-button-container {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Ensure the main content is centered and wider if needed */
-main, .brackets {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-}
-
-/* Event banner styling */
-.event-banner {
-  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
-  padding: 2rem 0;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 2rem;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-.event-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Player header */
-.player-header {
-  font-size: 2.25rem;
-  margin: 1.5rem 0 1rem 0;
-  color: var(--link-yellow);
-  text-shadow: 0 0 8px var(--dark-navy), 0 0 2px var(--accent-blue);
-}
-
-/* Notes and disclaimers */
-.note,
-.disclaimer {
-  color: var(--white);
-  font-size: 1rem;
-  margin: 1.25rem auto;
-  max-width: 700px;
-  text-align: center;
-}
-.note a {
-  color: var(--link-yellow);
-  text-decoration: underline;
-}
-.note a:hover {
-  color: var(--link-gold);
-}
-
-/* Vintage/Competitive Typography Tweaks */
-body, input, textarea, button {
-  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, .highlight {
-  font-family: 'Oswald', 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-header h1 {
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Add strong neon-like glow to headings */
-h1, h2, h3 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-/* Title Bar Enhancement */
-header p {
-  font-weight: bold;
-  font-size: 1.15rem;
-  line-height: 1.75;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 3px var(--accent-blue);
-}
-
-/* Contact Form Enhancements */
-.contact-form-wrapper h2 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-.contact-form-wrapper label {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.contact-form-wrapper button {
-  background-color: transparent;
-  color: var(--link-yellow);
-  border: 2px solid var(--link-yellow);
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 8px var(--link-yellow);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.contact-form-wrapper button:hover {
-  background-color: var(--link-yellow);
-  color: #000;
-  box-shadow: 0 0 12px var(--link-gold);
-}
-
-/* Ladies Night Theme Overrides */
-body.ladies header {
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1.5rem;
-  padding-bottom: 0.25rem;
-}
-body.ladies nav,
-body.ladies .menu,
-body.ladies main,
-body.ladies footer,
-body.ladies .contact-form-wrapper {
-  background-color: var(--dark-pink);
-}
-body.ladies .pot-banner {
-  border-color: var(--accent-pink);
-}
-
-/* Responsive iframe container */
-.iframe-wrapper {
-  max-width: 100%;
-  margin: 2rem auto;
-  background-color: var(--slate);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border: 2px solid var(--accent-blue);
-}
-.iframe-wrapper iframe {
-  width: 100%;
-  min-height: 600px;
-  border: none;
-}
-
-/* Global link styling */
-a {
-  color: var(--link-yellow);
-  text-decoration: underline;
-  font-weight: bold;
-}
-a:hover {
-  color: var(--link-gold);
-}
-
-/* Global styling */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  background-color: var(--darkest);
-  color: var(--white);
-}
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-header {
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 2rem;
-  padding-bottom: 0.5rem;
-}
-header h1 {
-  margin: 0;
-  font-size: 1.85rem;
-  font-family: 'Oswald', 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--white);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-  margin-bottom: 0.25rem;
-}
-main {
-  flex: 1;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 1rem;
-  background-color: var(--darkest);
-  box-sizing: border-box;
-  width: 100%;
-}
-body:not(.page-rules):not(.page-faq):not(.page-location) main {
-  text-align: center;
-}
-body.page-rules,
-body.page-faq,
-body.page-location {
-  text-align: left;
-}
-.text-left {
-  text-align: left !important;
-}
-footer {
-  background-color: var(--slate);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-#nav-signup-link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-shadow: none;
-}
-#nav-signup-link:hover {
-  color: var(--link-yellow);
-}
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  main {
-    padding: 1rem 0.5rem;
-  }
-  .contact-form-wrapper {
-    padding: 1rem 0.5rem;
-  }
-}
-.contact-form-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: var(--dark-navy);
-  border-radius: 8px;
-}
-.contact-form-wrapper .form-group {
-  margin-bottom: 1.5rem;
-}
-.contact-form-wrapper input,
-.contact-form-wrapper textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-.contact-form-wrapper label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-.highlight {
-  color: var(--pot-green);
-  font-weight: bold;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>River Tournaments</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <!-- Navigation bar at top -->
+  <nav>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a id="nav-signup-link" href="#" target="_blank">Sign Up</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+  <!-- Tournament title with vintage styling, filled by JS -->
+  <header>
+    <h1 class="player-header" id="tournament-title"></h1>
+  </header>
+  <main>
+    <section id="event-banner" class="event-banner">
+      <div class="event-content">
+        <div id="event-info"></div>
+      </div>
+    </section>
+    <!-- Sign up button placeholder, filled by JS -->
+    <div id="signup-button" class="signup-button-container"></div>
+    <p class="note">
+      Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
+      <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
+    </p>
+    <p class="disclaimer">
+      *Actual pot size contingent on player attendance and discretionary House donation.
+    </p>
+  </main>
+  <footer>
+    &copy; 2025 River Tournaments
+  </footer>
+  <script src="/assets/scripts/tournament.js"></script>
+</body>
+</html>
