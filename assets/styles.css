@@ -36,6 +36,39 @@ h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
 
+/* Title Bar Enhancement */
+header p {
+  font-weight: bold;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 3px var(--accent-blue);
+}
+
+/* CTA Button Enhancement */
+.cta-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--link-yellow);
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 8px var(--link-yellow);
+  border: 2px solid var(--link-yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: var(--link-yellow);
+  color: #000;
+  box-shadow: 0 0 12px var(--link-gold);
+  border-color: var(--link-gold);
+}
+
 /* Ladies Night Theme Overrides */
 body.ladies header {
   background-color: var(--mid-pink);
@@ -226,10 +259,6 @@ nav {
   transform: translateX(0);
 }
 
-#menu-toggle:checked + .hamburger + .menu {
-  transform: translateX(0);
-}
-
 @media (max-width: 1024px) {
   nav {
     flex-direction: column;
@@ -382,20 +411,4 @@ nav {
 .highlight {
   color: var(--pot-green);
   font-weight: bold;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--link-yellow);
-  color: #000;
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--link-gold);
 }
