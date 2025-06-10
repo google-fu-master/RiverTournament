@@ -453,7 +453,7 @@ footer {
 
 /* --- FLYER-INSPIRED ENHANCEMENTS --- */
 .site-title {
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'Pacifico', cursive, sans-serif;
   font-size: 3.5rem;
   color: var(--neon-cyan, #00eafd);
   text-shadow:
