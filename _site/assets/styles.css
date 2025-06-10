@@ -383,3 +383,4 @@ footer {
   color: var(--pot-green);
   font-weight: bold;
 }
+body { background: magenta !important; }
