@@ -332,3 +332,7 @@ body.home {
 body.home nav {
   text-align: left !important;
 }
+
+body.home main {
+	text-align: center !important;
+}
