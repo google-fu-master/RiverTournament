@@ -14,7 +14,17 @@
   --pot-green: #00cc66;
 }
 
-/* CTA Button Enhancement */
+/* Nav bar must span the full page width */
+nav {
+  width: 100%;
+  background-color: var(--dark-navy);
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  position: relative;
+}
+
+/* CTA Button Enhancement - Neon Effect */
 .btn-signup {
   display: inline-block;
   background-color: var(--link-yellow);
@@ -25,13 +35,33 @@
   border-radius: 8px;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--link-yellow);
+  box-shadow:
+    0 0 12px var(--link-yellow),
+    0 0 24px var(--link-yellow),
+    0 0 36px var(--link-yellow),
+    0 0 48px #fff700;
+  filter: brightness(1.2) saturate(1.5);
+  transition: 
+    transform 0.2s cubic-bezier(0.5, 2, 0.5, 1),
+    box-shadow 0.2s cubic-bezier(0.5, 2, 0.5, 1),
+    filter 0.2s cubic-bezier(0.5, 2, 0.5, 1);
+  letter-spacing: 2px;
 }
 
-.btn-signup:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
+.btn-signup:hover,
+.btn-signup:focus {
+  transform: scale(1.10) rotate(-2deg);
+  background-color: #fff700;
+  color: #000;
+  box-shadow:
+    0 0 24px var(--link-yellow),
+    0 0 48px #fff700,
+    0 0 72px #fff700,
+    0 0 96px #fff700;
+  filter: brightness(1.4) saturate(2);
+  border-color: #fff700;
+  outline: none;
 }
 
 /* Nav menu links */
@@ -52,6 +82,7 @@
 /* Ensure menu links are inline on desktop */
 @media (min-width: 1025px) {
   .menu {
+    width: 100%;
     position: static;
     flex-direction: row;
     align-items: center;
@@ -59,6 +90,7 @@
     padding: 0;
     transform: none;
     gap: 2rem;
+    background-color: transparent;
   }
   .menu a {
     display: inline-block;
@@ -75,8 +107,8 @@
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
   text-shadow: none;
-  white-space: nowrap;      /* Keeps "Sign Up" side by side */
-  display: inline-block;    /* Ensures inline display in row */
+  white-space: nowrap;
+  display: inline-block;
 }
 
 #nav-signup-link:hover {
@@ -129,6 +161,7 @@
   }
 }
 
+/* Responsive tweaks for small screens */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -141,7 +174,7 @@
   }
 }
 
-/* Vintage/Competitive Typography Tweaks */
+/* Typography and layout */
 body, input, textarea, button {
   font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 0.5px;
@@ -163,7 +196,6 @@ h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
 
-/* Title Bar Enhancement */
 header p {
   font-weight: bold;
   font-size: 1.15rem;
@@ -172,7 +204,6 @@ header p {
   text-shadow: 0 0 3px var(--accent-blue);
 }
 
-/* Contact Form Enhancements */
 .contact-form-wrapper h2 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }

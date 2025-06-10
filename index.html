@@ -78,7 +78,8 @@ title: River Tournaments
   iframe.width = '100%';
   iframe.height = '600';
   
-  const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
+  // CHANGED: use the neon button class
+  const signupBtn = `<a class="btn-signup" href="${signupLink}" target="_blank">Sign Up Now</a>`;
 
   document.getElementById("tournament-title").textContent = eventTitle;
   document.getElementById("signup-button").innerHTML = signupBtn;
