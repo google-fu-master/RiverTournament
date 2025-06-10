@@ -17,7 +17,7 @@ permalink: /rules/
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
-    <li>Players must present a <strong>FargoRate or APA account</strong> and <strong>photo ID</strong> at registration.</li>
+    <li>Players must present a <strong>FargoRate or APA account</strong> (if you have one) and a <strong>photo ID</strong> at registration.</li>
 	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
 	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
 	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated >430 in 9-Ball and >445 in 8-Ball are not eligible—please merge accounts beforehand.</li>

@@ -27,7 +27,7 @@ h1, h2, h3, h4, .highlight {
   letter-spacing: 1px;
 }
 
-header h1, .bracket h2, .waitlist h2 {
+header h1 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
@@ -46,27 +46,39 @@ header p {
 }
 
 /* CTA Button Enhancement */
-.cta-button {
-  display: inline-block;
-  background-color: transparent;
-  color: var(--link-yellow);
-  font-family: 'Oswald', 'Arial Black', sans-serif;
-  font-size: 1.25rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 0 8px var(--link-yellow);
-  border: 2px solid var(--link-yellow);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
+
+
+
+
+/* Contact Form Enhancements */
+.contact-form-wrapper h2 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
 
-.cta-button:hover {
+.contact-form-wrapper label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-form-wrapper button {
+  background-color: transparent;
+  color: var(--link-yellow);
+  border: 2px solid var(--link-yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px var(--link-yellow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-wrapper button:hover {
   background-color: var(--link-yellow);
   color: #000;
   box-shadow: 0 0 12px var(--link-gold);
-  border-color: var(--link-gold);
 }
 
 /* Ladies Night Theme Overrides */
@@ -81,7 +93,6 @@ body.ladies nav,
 body.ladies .menu,
 body.ladies main,
 body.ladies footer,
-body.ladies .brackets,
 body.ladies .contact-form-wrapper {
   background-color: var(--dark-pink);
 }
@@ -269,10 +280,6 @@ nav {
   .hamburger {
     display: block;
   }
-
-  .brackets {
-    flex-direction: column;
-  }
 }
 
 @media (min-width: 1025px) {
@@ -300,74 +307,9 @@ nav {
     padding: 1rem 0.5rem;
   }
 
-  .brackets {
-    padding: 1rem;
-    gap: 2rem;
-  }
-
-  .bracket, .waitlist {
-    padding: 1rem;
-    max-width: 100%;
-  }
-
-  .bracket li, .waitlist li {
-    font-size: 1.1rem;
-  }
-
   .contact-form-wrapper {
     padding: 1rem 0.5rem;
   }
-}
-
-.brackets {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 4rem;
-  flex-direction: row;
-  background-color: var(--dark-navy);
-  padding: 2rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  margin-top: 1rem;
-}
-
-.brackets > .bracket,
-.brackets > .waitlist {
-  flex: 1;
-  min-width: 300px;
-  max-width: 360px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.bracket li,
-.waitlist li {
-  font-size: 1.25rem;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-}
-
-.bracket, .waitlist {
-  flex: 1;
-  min-width: 300px;
-  max-width: 360px;
-  background-color: var(--slate);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-}
-
-.bracket h2, .waitlist h2 {
-  width: 100%;
-  text-align: center;
-  border-bottom: 2px solid var(--accent-blue);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .contact-form-wrapper {
@@ -399,13 +341,23 @@ nav {
 }
 
 .contact-form-wrapper button {
-  background-color: var(--accent-blue);
-  color: var(--white);
+  background-color: transparent;
+  color: var(--link-yellow);
+  border: 2px solid var(--link-yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px var(--link-yellow);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-wrapper button:hover {
+  background-color: var(--link-yellow);
+  color: #000;
+  box-shadow: 0 0 12px var(--link-gold);
 }
 
 .highlight {
