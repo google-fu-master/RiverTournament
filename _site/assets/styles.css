@@ -77,26 +77,11 @@ body.ladies header {
   padding-bottom: 0.25rem;
 }
 
-body.ladies nav {
-  background-color: var(--dark-pink);
-}
-
-body.ladies .menu {
-  background-color: var(--dark-pink);
-}
-
-body.ladies main {
-  background-color: var(--darkest-pink);
-}
-
-body.ladies footer {
-  background-color: var(--dark-pink);
-}
-
-body.ladies .brackets {
-  background-color: var(--dark-pink);
-}
-
+body.ladies nav,
+body.ladies .menu,
+body.ladies main,
+body.ladies footer,
+body.ladies .brackets,
 body.ladies .contact-form-wrapper {
   background-color: var(--dark-pink);
 }
@@ -221,6 +206,23 @@ nav {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.5px;
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: var(--link-yellow);
+  text-shadow: 0 0 6px var(--link-yellow), 0 0 12px var(--link-yellow);
 }
 
 .hamburger {
@@ -229,6 +231,7 @@ nav {
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
 
 .menu {
@@ -246,17 +249,6 @@ nav {
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
-}
-
-.menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.menu a:hover {
-  color: var(--link-yellow);
 }
 
 #menu-toggle {

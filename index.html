@@ -90,6 +90,11 @@ title: River Tournaments
   document.getElementById("signup-button").innerHTML = signupBtn;
   document.getElementById("brackets-container").appendChild(iframe);
 
+  const navSignup = document.getElementById("nav-signup-link");
+  if (navSignup) {
+    navSignup.setAttribute("href", signupLink);
+  }
+
   if (isLadiesNight) {
     document.getElementById("event-banner").classList.add("ladies");
   }
