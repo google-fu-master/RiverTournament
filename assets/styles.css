@@ -14,7 +14,27 @@
   --pot-green: #00cc66;
 }
 
-/* HORIZONTAL NAVIGATION BAR - DESKTOP */
+/* CTA Button Enhancement */
+.btn-signup {
+  display: inline-block;
+  background-color: var(--link-yellow);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-signup:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
+}
+
+/* Nav bar - horizontal by default */
 nav {
   width: 100%;
   background-color: var(--dark-navy);
@@ -24,18 +44,16 @@ nav {
   z-index: 100;
 }
 
-/* Menu as horizontal bar */
 .menu {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  justify-content: flex-start;
   align-items: center;
-  background: transparent;
+  width: 100%;
   padding: 0;
-  margin: 0;
   gap: 2rem;
-  height: 60px; /* adjust as needed */
+  background-color: transparent;
+  position: static;
+  height: 60px; /* or your nav height */
 }
 
 .menu a {
@@ -64,6 +82,9 @@ nav {
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
+  position: absolute;
+  top: 10px;
+  left: 16px;
 }
 
 /* Mobile styles */
@@ -85,11 +106,251 @@ nav {
   }
   .hamburger {
     display: block;
-    position: absolute;
-    top: 10px;
-    left: 16px;
   }
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
   }
+}
+
+/* Nav menu links (preserved for hover effect, etc) */
+.menu a {
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Typography & site styles (unchanged from your file) */
+body, input, textarea, button {
+  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, .highlight {
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header h1 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Add strong neon-like glow to headings */
+h1, h2, h3 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
+header p {
+  font-weight: bold;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 3px var(--accent-blue);
+}
+
+.contact-form-wrapper h2 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
+.contact-form-wrapper label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-form-wrapper button {
+  background-color: transparent;
+  color: var(--link-yellow);
+  border: 2px solid var(--link-yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px var(--link-yellow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-wrapper button:hover {
+  background-color: var(--link-yellow);
+  color: #000;
+  box-shadow: 0 0 12px var(--link-gold);
+}
+
+/* Ladies Night Theme Overrides */
+body.ladies header {
+  text-align: center;
+  background-color: var(--mid-navy);
+  padding-top: 1.5rem;
+  padding-bottom: 0.25rem;
+}
+
+body.ladies nav,
+body.ladies .menu,
+body.ladies main,
+body.ladies footer,
+body.ladies .contact-form-wrapper {
+  background-color: var(--dark-pink);
+}
+
+body.ladies .pot-banner {
+  border-color: var(--accent-pink);
+}
+
+/* Responsive iframe container */
+.iframe-wrapper {
+  max-width: 100%;
+  margin: 2rem auto;
+  background-color: var(--slate);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--accent-blue);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+}
+
+/* Global link styling */
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+  font-weight: bold;
+}
+a:hover {
+  color: var(--link-gold);
+}
+
+/* Global styling */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--darkest);
+  color: var(--white);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: var(--mid-navy);
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.85rem;
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  margin-bottom: 0.25rem;
+}
+
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: var(--darkest);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body:not(.page-rules):not(.page-faq):not(.page-location) main {
+  text-align: center;
+}
+
+body.page-rules,
+body.page-faq,
+body.page-location {
+  text-align: left;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+footer {
+  background-color: var(--slate);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+#nav-signup-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  text-shadow: none;
+}
+
+#nav-signup-link:hover {
+  color: var(--link-yellow);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  main {
+    padding: 1rem 0.5rem;
+  }
+  .contact-form-wrapper {
+    padding: 1rem 0.5rem;
+  }
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--dark-navy);
+  border-radius: 8px;
+}
+
+.contact-form-wrapper .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form-wrapper label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.highlight {
+  color: var(--pot-green);
+  font-weight: bold;
 }

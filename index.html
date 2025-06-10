@@ -12,7 +12,7 @@ title: River Tournaments
 </section>
 
 <h1 class="player-header" id="tournament-title"></h1>
-<div id="signup-button"></div>
+<div id="signup-button" style="margin-bottom: 2rem;"></div> <!-- Added margin-bottom for spacing -->
 
 <div class="brackets" id="brackets-container"></div>
 
@@ -78,8 +78,7 @@ title: River Tournaments
   iframe.width = '100%';
   iframe.height = '600';
   
-  // CHANGED: use the neon button class
-  const signupBtn = `<a class="btn-signup" href="${signupLink}" target="_blank">Sign Up Now</a>`;
+  const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
 
   document.getElementById("tournament-title").textContent = eventTitle;
   document.getElementById("signup-button").innerHTML = signupBtn;
