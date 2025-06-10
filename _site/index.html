@@ -1,181 +1,33 @@
 <!DOCTYPE html>
-<!--this is the  default.html file that lives in the _layouts folder-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>River Tournaments - River Tournaments</title>
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta charset="UTF-8">
+  <title>River Tournaments</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="page-river-tournaments">
-  <nav> 
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
-  <div class="menu">
-    <!-- Move the correct dynamic Sign Up link to the top -->
-    <a id="nav-signup-link" href="#">Sign Up</a>
-    
-    <!-- Loop through navigation items, but skip the "Sign Up" item -->
-    
-      
-        <a href="/">Home</a>
-      
-    
-      
-        <a href="/rules/">Rules</a>
-      
-    
-      
-        <a href="/location/">Location</a>
-      
-    
-      
-        <a href="/faq/">FAQ</a>
-      
-    
-      
-        <a href="/contact/">Contact</a>
-      
-    
-  </div>
-</nav>
+<body>
+  <!-- this is the index.html file -->
 
-  <header>
-  <h1>River Tournaments</h1>
-  
-    <p style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.6; font-size: 1.1rem; font-weight: bold;">
-  Every Thursday | 6:30pm Registration | 7:00pm Start &nbsp;|&nbsp;
-  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; font-weight: bold;">19 NW 5th Ave, Portland, OR 97209</a>
-</p>
-  
-</header>
+  <section id="event-banner" class="event-banner">
+    <div class="event-content">
+      <div id="event-info"></div>
+    </div>
+  </section>
 
-  <main>
-    <!-- this is the index.html file -->
+  <h1 class="player-header" id="tournament-title"></h1>
+  <div id="signup-button" class="signup-button-container"></div> <!-- Added class for centering and spacing -->
 
-<section id="event-banner" class="event-banner">
-  <div class="event-content">
-    <div id="event-info"></div>
-  </div>
-</section>
+  <div class="brackets" id="brackets-container"></div>
 
-<h1 class="player-header" id="tournament-title"></h1>
-<div id="signup-button"></div>
+  <p class="note">
+    Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
+    <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
+  </p>
 
-<div class="brackets" id="brackets-container"></div>
+  <p class="disclaimer">
+    *Actual pot size contingent on player attendance and discretionary House donation.
+  </p>
 
-<p class="note">
-  Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
-  <a href="sms:7607938319">Text the tournament director</a> to see if a spot is open.
-</p>
-
-<p class="disclaimer">
-  *Actual pot size contingent on player attendance and discretionary House donation.
-</p>
-
-<script>
-  function getOrdinalSuffix(n) {
-    if (n >= 11 && n <= 13) return 'th';
-    switch (n % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
-    }
-  }
-
-  const today = new Date();
-  const isAfterThursday = today.getDay() > 4 || (today.getDay() === 5 && today.getHours() === 0);
-  let upcomingThursday = new Date(today);
-
-  if (isAfterThursday) {
-    const daysUntilNextThursday = (11 - today.getDay()) % 7;
-    upcomingThursday.setDate(today.getDate() + daysUntilNextThursday);
-  } else {
-    const daysUntilThisThursday = (4 - today.getDay() + 7) % 7;
-    upcomingThursday.setDate(today.getDate() + daysUntilThisThursday);
-  }
-
-  const day = upcomingThursday.getDate();
-  const month = upcomingThursday.toLocaleString('default', { month: 'long' });
-  const monthNum = upcomingThursday.getMonth() + 1;
-  const year = upcomingThursday.getFullYear();
-
-  const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
-  const mmddyyyy = `${monthNum}${day}${year}`;
-  const mdyyyyDisplay = `${monthNum}/${day}/${year}`;
-
-  const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
-  const isLadiesNight = weekNumber === 3;
-  const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
-  const formatNum = (format === "9-ball") ? "9" : "8";
-  const formatLabel = format.replace("-", " ");
-
-  const eventTitle = `${formattedDate} ${formatLabel} Player List`;
-  const signupSlug = isLadiesNight
-    ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
-    : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
-
-  const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
-  const tournamentUrl = `${signupLink}/players?navigation=false`;
-  const tournamentName = `River Thursday ${isLadiesNight ? "Ladies Night " : ""}${formatLabel} ${mdyyyyDisplay}`;
-
-  const iframe = document.createElement('iframe');
-  iframe.src = `${signupLink}/players?navigation=false`;
-  iframe.style.border = 'none';
-  iframe.width = '100%';
-  iframe.height = '600';
-  
-  const signupBtn = `<a class="cta-button" href="${signupLink}" target="_blank">Sign Up Now</a>`;
-
-  document.getElementById("tournament-title").textContent = eventTitle;
-  document.getElementById("signup-button").innerHTML = signupBtn;
-  document.getElementById("brackets-container").appendChild(iframe);
-
-  const navSignup = document.getElementById("nav-signup-link");
-  if (navSignup) {
-    navSignup.setAttribute("href", signupLink);
-  }
-
-  if (isLadiesNight) {
-    document.getElementById("event-banner").classList.add("ladies");
-  }
-</script>
-  </main>
-
-  <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
-  </footer>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
-
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
-
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
-      });
-    });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
+  <script src="assets/scripts/tournament.js"></script>
 </body>
 </html>
