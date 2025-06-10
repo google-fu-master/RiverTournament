@@ -121,6 +121,9 @@ body.ladies .menu a:focus {
 
 /* Responsive font size for header h1 */
 @media (max-width: 600px) {
+  .site-title {
+    font-size: 2.2rem;
+  }
   header h1 {
     font-size: 2rem;
   }
@@ -129,9 +132,6 @@ body.ladies .menu a:focus {
   }
   .contact-form-wrapper {
     padding: 1rem 0.5rem;
-  }
-  .site-title {
-    font-size: 2.2rem;
   }
   .player-header {
     font-size: 1.6rem;
@@ -175,8 +175,10 @@ main, .brackets {
 }
 
 /* Center block-level children of main for better centering */
-body:not(.page-rules):not(.page-faq):not(.page-location) main {
-  text-align: center;
+body:not(.page-rules):not(.page-faq):not(.page-location) main,
+body:not(.page-rules):not(.page-faq):not(.page-location) main > *,
+body:not(.page-rules):not(.page-faq):not(.page-location) main > * > * {
+  text-align: center !important;
 }
 main > * {
   margin-left: auto;
@@ -249,12 +251,27 @@ h1, h2, h3, h4, .highlight {
   letter-spacing: 1px;
 }
 
-/* Main header with blue neon Pacifico style */
+/* Index page site title: Pacifico, only on index */
+.site-title {
+  font-family: 'Pacifico', cursive, sans-serif !important;
+  font-size: 3.5rem;
+  color: var(--neon-cyan, #00eafd);
+  text-shadow:
+    0 0 18px var(--neon-cyan, #00eafd),
+    0 0 32px #000,
+    2px 2px 0 #000;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 1.25rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* Main header with blue neon Pacifico style -- kept for backwards compatibility, but .site-title is preferred for index */
 header h1 {
-  font-family: 'Pacifico', cursive, sans-serif;
   font-size: 3rem;
   color: #fff;
-  text-transform: none;
   font-weight: 400;
   letter-spacing: 0.05em;
   margin: 0 0 0.25rem 0;
@@ -419,7 +436,6 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-/* --- REMOVED #nav-signup-link overrides so styling matches other nav links --- */
 
 /* Contact form and flyer styles */
 .contact-form-wrapper {
@@ -452,21 +468,6 @@ footer {
 }
 
 /* --- FLYER-INSPIRED ENHANCEMENTS --- */
-.site-title {
-  font-family: 'Pacifico', cursive, sans-serif;
-  font-size: 3.5rem;
-  color: var(--neon-cyan, #00eafd);
-  text-shadow:
-    0 0 18px var(--neon-cyan, #00eafd),
-    0 0 32px #000,
-    2px 2px 0 #000;
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-top: 1.25rem;
-}
-
-/* Flyer subheading styles */
 .flyer-detail {
   color: var(--neon-cyan, #00eafd);
   font-family: 'Oswald', Arial, sans-serif;
@@ -581,18 +582,10 @@ header p a:focus {
     0 0 8px #00eafd,
     0 0 16px #00eafd;
 }
+
 /* DigitalPool embed: make main and iframe fill available space */
 main, #digitalpool-embed {
   width: 100%;
   height: 100%;
   min-height: 0;
-}
-body:not(.page-rules):not(.page-faq):not(.page-location) main,
-body:not(.page-rules):not(.page-faq):not(.page-location) main > *,
-body:not(.page-rules):not(.page-faq):not(.page-location) main > * > * {
-  text-align: center !important;
-}
-
-header h1 {
-  font-family: 'Pacifico', cursive, sans-serif !important;
 }
