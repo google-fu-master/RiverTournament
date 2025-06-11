@@ -15,7 +15,7 @@
     {% assign nav = site.data.navigation %}
     {% for item in nav %}
       <a href="{{ item.url | relative_url }}"
-        {% if item.title == "Sign Up" %}id="nav-signup-link"{% endif %}>
+        {% if item.title == "Sign Up" %}id="nav-signup-link" class="menu-signup"{% endif %}>
         {{ item.title }}
       </a>
     {% endfor %}
@@ -27,7 +27,7 @@
   {% if page.title == "River Tournaments" %}
     <p style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.6; font-size: 1.1rem; font-weight: bold;">
   Every Thursday | 6:30pm Registration | 7:00pm Start &nbsp;|&nbsp;
-  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; font-weight: bold;">19 NW 5th Ave, Portland, OR 97209</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; fo[...]
 </p>
   {% endif %}
 </header>
