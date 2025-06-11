@@ -427,15 +427,28 @@ footer {
 }
 #nav-signup-link {
   color: var(--white);
-  text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-shadow: var(--neon-green);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 1rem;
+  line-height: 60px;
+  height: 60px;
+  transition: color 0.3s, text-shadow 0.3s;
+  /* Green neon glow: */
+  text-shadow:
+    0 0 4px var(--neon-green, #39ff14),
+    0 0 8px var(--neon-green, #39ff14);
 }
-#nav-signup-link:hover {
-  color: var(--neon-green);
+#nav-signup-link:hover,
+#nav-signup-link:focus {
+  color: var(--neon-green, #39ff14);
+  text-shadow:
+    0 0 8px var(--neon-green, #39ff14),
+    0 0 16px var(--neon-green, #39ff14),
+    0 0 4px var(--neon-green, #39ff14),
+    0 0 8px var(--neon-green, #39ff14);
 }
 
 /* Contact form and flyer styles */
