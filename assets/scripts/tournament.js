@@ -70,7 +70,7 @@
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
   const tournamentUrl = `${signupLink}/players?navigation=false`;
-  const overviewUrl = `${signupLink}/players?navigation=false`;
+  const overviewUrl = `${signupLink}/overview?navigation=false`;
 
   // Set main tournament title
   var titleEl = document.getElementById("tournament-title");
