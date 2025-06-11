@@ -1,128 +1,130 @@
 (function() {
-  // Helper: Find the next Thursday (including today if Thursday)
-  function getUpcomingThursday(date) {
-    var d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-    var dayOfWeek = d.getDay();
-    var daysUntilThursday = (4 - dayOfWeek + 7) % 7;
-    if (daysUntilThursday === 0) daysUntilThursday = 7; // always move forward
-    d.setDate(d.getDate() + daysUntilThursday);
-    return d;
-  }
-
-  // Helper: Find previous Friday before a given Thursday
-  function getPreviousFriday(thursdayDate) {
-    var d = new Date(thursdayDate);
-    d.setDate(d.getDate() - ((d.getDay() + 2) % 7));
-    return d;
-  }
-
-  // Helper: Get the 3rd Thursday of a given month/year
-  function getThirdThursday(year, month) {
-    var d = new Date(year, month, 1);
-    var thursdayCount = 0;
-    while (d.getMonth() === month) {
-      if (d.getDay() === 4) { // Thursday
-        thursdayCount++;
-        if (thursdayCount === 3) return new Date(d);
-      }
-      d.setDate(d.getDate() + 1);
+  function getOrdinalSuffix(n) {
+    if (n >= 11 && n <= 13) return 'th';
+    switch (n % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
     }
-    return null;
   }
 
-  // Today's date at midnight
-  var now = new Date();
-  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-  // Find this week's Thursday
-  var thursday = getUpcomingThursday(today);
-
-  // The window opens at 12:00am Friday before that Thursday
-  var fridayBefore = getPreviousFriday(thursday);
-
-  var windowStart = new Date(fridayBefore.getFullYear(), fridayBefore.getMonth(), fridayBefore.getDate(), 0, 0, 0);
-  var windowEnd = new Date(thursday.getFullYear(), thursday.getMonth(), thursday.getDate(), 23, 59, 59);
-
-  var useThisThursday = (now >= windowStart && now <= windowEnd);
-  if (!useThisThursday) {
-    thursday.setDate(thursday.getDate() + 7);
+  function getThirdThursday(year, month) {
+    let date = new Date(year, month, 1);
+    let count = 0;
+    while (date.getMonth() === month) {
+      if (date.getDay() === 4) {
+        count++;
+        if (count === 3) return new Date(date);
+      }
+      date.setDate(date.getDate() + 1);
+    }
   }
 
-  // Is this Thursday the 3rd Thursday?
-  var isLadiesNight = false;
-  var thirdThursday = getThirdThursday(thursday.getFullYear(), thursday.getMonth());
-  if (
-    thursday.getFullYear() === thirdThursday.getFullYear() &&
-    thursday.getMonth() === thirdThursday.getMonth() &&
-    thursday.getDate() === thirdThursday.getDate()
-  ) {
-    isLadiesNight = true;
+  const today = new Date();
+
+  // Find the upcoming Thursday from today
+  const isAfterThursday = today.getDay() > 4 || (today.getDay() === 5 && today.getHours() === 0);
+  let upcomingThursday = new Date(today);
+
+  if (isAfterThursday) {
+    const daysUntilNextThursday = (11 - today.getDay()) % 7;
+    upcomingThursday.setDate(today.getDate() + daysUntilNextThursday);
+  } else {
+    const daysUntilThisThursday = (4 - today.getDay() + 7) % 7;
+    upcomingThursday.setDate(today.getDate() + daysUntilThisThursday);
   }
 
-  // Alternates weekly, starting with 9-ball on Jan 4, 2024
-  var reference = new Date(2024, 0, 4); // Jan 4, 2024 (Thursday, 9-ball)
-  var weeksElapsed = Math.round((thursday - reference) / (7 * 24 * 60 * 60 * 1000));
-  var formatNum = (weeksElapsed % 2 === 0) ? "9" : "8";
-  var formatLabel = (formatNum === "9") ? "9-ball" : "8-ball";
+  const day = upcomingThursday.getDate();
+  const month = upcomingThursday.toLocaleString('default', { month: 'long' });
+  const monthNum = upcomingThursday.getMonth() + 1;
+  const year = upcomingThursday.getFullYear();
 
-  // Get mdyyyy string for this Thursday
-  var mdyyyy = (thursday.getMonth() + 1) + "" + thursday.getDate() + "" + thursday.getFullYear();
+  const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
+  const mmddyyyy = `${monthNum}${day}${year}`;
+  const mdyyyyDisplay = `${monthNum}/${day}/${year}`;
 
-  var baseUrl = "https://digitalpool.com/tournaments/";
-  var slug = isLadiesNight ?
-    "river-thursday-ladies-night-" + formatNum + "-ball-" + mdyyyy :
-    "river-thursday-" + formatNum + "-ball-" + mdyyyy;
-  var overviewUrl = baseUrl + slug + "/overview";
-  var playersUrl = baseUrl + slug + "/players?navigation=false";
+  const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
 
-  // Update main tournament title
+  // LADIES NIGHT WINDOW: from the Friday before 3rd Thursday through 3rd Thursday (inclusive)
+  const thirdThursday = getThirdThursday(upcomingThursday.getFullYear(), upcomingThursday.getMonth());
+  const ladiesWindowStart = new Date(thirdThursday);
+  ladiesWindowStart.setDate(thirdThursday.getDate() - 6);
+
+  // Ensure ladiesWindowStart is Friday (may already be Friday)
+  while (ladiesWindowStart.getDay() !== 5) {
+    ladiesWindowStart.setDate(ladiesWindowStart.getDate() + 1);
+    if (ladiesWindowStart > thirdThursday) break;
+  }
+
+  const isLadiesWeek = today >= ladiesWindowStart && today <= thirdThursday;
+
+  const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
+  const formatNum = (format === "9-ball") ? "9" : "8";
+  const formatLabel = format.replace("-", " ");
+
+  const eventTitle = `${formattedDate} ${formatLabel} Player List`;
+  const signupSlug = isLadiesWeek
+    ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
+    : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
+
+  const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
+  const tournamentUrl = `${signupLink}/players?navigation=false`;
+  const overviewUrl = `${signupLink}/overview`;
+
+  // Set main tournament title
   var titleEl = document.getElementById("tournament-title");
   if (titleEl) {
-    var month = thursday.toLocaleString('default', { month: 'long' });
-    var day = thursday.getDate();
-    var year = thursday.getFullYear();
-    titleEl.textContent =
-      month + " " + day + ", " + year + " " +
-      (isLadiesNight ? "Ladies Night " : "") +
-      formatLabel + " Player List";
-    if (isLadiesNight) titleEl.classList.add("ladies");
+    titleEl.textContent = eventTitle;
   }
 
-  // Update the signup button in main body
+  // Set up the Sign Up button
+  var signupBtnHtml = `<a class="btn-signup" href="${overviewUrl}" target="_blank">Sign Up Now</a>`;
   var signupBtnEl = document.getElementById("signup-button");
   if (signupBtnEl) {
-    signupBtnEl.innerHTML =
-      `<a class="btn-signup" href="${overviewUrl}" target="_blank">Sign Up Now</a>`;
-    if (isLadiesNight) signupBtnEl.classList.add("ladies");
+    signupBtnEl.innerHTML = signupBtnHtml;
   }
 
-  // Update nav bar signup link if present
-  var navSignup = document.getElementById("nav-signup-link");
-  if (navSignup) {
-    navSignup.setAttribute("href", overviewUrl);
-    if (isLadiesNight) navSignup.classList.add("ladies");
-  }
-
-  // Add Ladies Night class to body for styling
-  if (isLadiesNight) {
-    document.body.classList.add("ladies");
-  }
-
-  // Embed DigitalPool player list
-  var mainEl = document.querySelector('main');
-  if (mainEl) {
-    var existingIframe = mainEl.querySelector('iframe#digitalpool-embed');
+  // Inject the DigitalPool table above the note paragraph
+  var tableDiv = document.getElementById('digitalpool-table');
+  if (tableDiv) {
+    var existingIframe = tableDiv.querySelector('iframe#digitalpool-embed');
     if (existingIframe) existingIframe.remove();
 
     var iframe = document.createElement('iframe');
     iframe.id = 'digitalpool-embed';
-    iframe.src = playersUrl;
+    iframe.src = tournamentUrl;
+    iframe.style.width = '100%';
+    iframe.style.minHeight = '600px';
     iframe.style.border = 'none';
-    iframe.width = "100%";
-    iframe.height = "600";
     iframe.style.display = 'block';
     iframe.style.background = '#0D1B2A';
+    iframe.style.borderRadius = '8px';
+    iframe.style.boxShadow = '0 2px 8px rgba(0,0,0,0.4)';
+    tableDiv.appendChild(iframe);
+  }
 
-    mainEl.appendChild(iframe);
+  // Update nav sign up link if present
+  var navSignup = document.getElementById("nav-signup-link");
+  if (navSignup) {
+    navSignup.setAttribute("href", overviewUrl);
+  }
+
+  // Add Ladies Night classes for styling only
+  if (isLadiesWeek) {
+    document.body.classList.add("ladies");
+    var eventBanner = document.getElementById("event-banner");
+    if (eventBanner) {
+      eventBanner.classList.add("ladies");
+    }
+    if (titleEl) {
+      titleEl.classList.add("ladies");
+    }
+    if (signupBtnEl) {
+      signupBtnEl.classList.add("ladies");
+    }
+    if (navSignup) {
+      navSignup.classList.add("ladies");
+    }
   }
 })();
