@@ -432,10 +432,10 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
-  text-shadow: var(--dark-navy);
+  text-shadow: var(--neon-green);
 }
 #nav-signup-link:hover {
-  color: var(--neon-blue);
+  color: var(--neon-green);
 }
 
 /* Contact form and flyer styles */
