@@ -1,48 +1,109 @@
 <!DOCTYPE html>
+<!--this is the  default.html file that lives in the _layouts folder-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>River Tournaments</title>
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    /* Inline minimal reset for sandbox */
-    body { margin: 0; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>River Tournaments - River Tournaments</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-<body class="home">
+<body class="page-river-tournaments">
   <nav>
-    <div class="menu">
-      <a href="#">Home</a>
-      <a href="#">Sign Up</a>
-      <a href="#">Rules</a>
-      <a href="#">Location</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contact</a>
-    </div>
-  </nav>
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <div class="menu">
+    
+    
+      <a href="/"
+        >
+        Home
+      </a>
+    
+      <a href="/"
+        id="nav-signup-link">
+        Sign Up
+      </a>
+    
+      <a href="/rules/"
+        >
+        Rules
+      </a>
+    
+      <a href="/location/"
+        >
+        Location
+      </a>
+    
+      <a href="/faq/"
+        >
+        FAQ
+      </a>
+    
+      <a href="/contact/"
+        >
+        Contact
+      </a>
+    
+  </div>
+</nav>
+
   <header>
-    <h1 class="site-title">River Tournaments</h1>
-    <p>
-      Every Thursday | 6:30pm Registration | 7:00pm Start | 
-      <a href="#">19 NW 5th Ave, Portland, OR 97209</a>
-    </p>
-  </header>
+  <h1>River Tournaments</h1>
+  
+    <p style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.6; font-size: 1.1rem; font-weight: bold;">
+  Every Thursday | 6:30pm Registration | 7:00pm Start &nbsp;|&nbsp;
+  <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--link-yellow); text-decoration: underline; font-weight: bold;">19 NW 5th Ave, Portland, OR 97209</a>
+</p>
+  
+</header>
+
   <main>
     <h2 class="player-header" id="tournament-title">Tonight's Tournament</h2>
-    <div id="signup-button" class="signup-button-container">
-      <a class="btn-signup" href="#">Sign Up Now</a>
-    </div>
-    <p class="note">
-      Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
-      <a href="#">Text the tournament director</a> to see if a spot is open.
-    </p>
-    <p class="disclaimer">
-      *Actual pot size contingent on player attendance and discretionary House donation.
-    </p>
+<div id="signup-button" class="signup-button-container">
+  <!-- The JS will inject the Sign Up button here -->
+</div>
+<p class="note">
+  Bracket spots are not final until FargoRate verification/assignment and payment are completed in-person at registration.
+  <a href="/contact/">Text the tournament director</a> to see if a spot is open.
+</p>
+<p class="disclaimer">
+  *Actual pot size contingent on player attendance and discretionary House donation.
+</p>
   </main>
+
   <footer>
-    &copy; 2025 River Tournaments | Site and Contents by Brittany Posey
+    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
   </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('menu-toggle');
+  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+  const savedState = localStorage.getItem('menuOpen');
+
+  // Apply saved state or default
+  if (savedState === null) {
+    toggle.checked = isDesktop;
+  } else {
+    toggle.checked = savedState === 'true';
+  }
+
+  toggle.addEventListener('change', () => {
+    localStorage.setItem('menuOpen', toggle.checked);
+  });
+
+  // On mobile, always close the menu after a nav click
+  if (!isDesktop) {
+    const links = document.querySelectorAll('.menu a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+        localStorage.setItem('menuOpen', false);
+      });
+    });
+  }
+});
+</script>
+<script src="/assets/scripts/tournament.js"></script>
 </body>
 </html>
