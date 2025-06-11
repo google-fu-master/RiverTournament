@@ -432,7 +432,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
-  text-shadow: none;
+  text-shadow: var(--neon-blue);
 }
 #nav-signup-link:hover {
   color: var(--link-yellow);
