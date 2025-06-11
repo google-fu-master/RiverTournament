@@ -1,6 +1,8 @@
 ---
 - title: Home
   url: /
+- title: Sign Up
+  url: "#"
 - title: Rules
   url: /rules/
 - title: Location
