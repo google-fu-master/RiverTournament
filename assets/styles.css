@@ -588,3 +588,13 @@ body.home nav {
 body.home main {
   text-align: center !important;
 }
+
+#digitalpool-embed {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+  border-radius: 8px;
+  background: var(--dark-navy);
+  margin: 2rem 0 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
