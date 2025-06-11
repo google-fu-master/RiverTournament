@@ -83,6 +83,30 @@ body.ladies .menu a:focus {
     0 0 4px var(--neon-blue, #30baff);
 }
 
+/* Special styling for Sign Up nav link */
+.menu-signup {
+  color: var(--link-yellow) !important;
+  font-weight: bold;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08); /* subtle gold glow */
+  box-shadow:
+    0 0 8px 2px var(--link-yellow),
+    0 0 8px 2px var(--neon-blue, #30baff);
+  padding: 0 1.2rem;
+  margin-left: 0.5rem;
+  text-shadow:
+    0 0 6px var(--link-gold),
+    0 0 8px var(--neon-blue, #30baff);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.menu-signup:hover,
+.menu-signup:focus {
+  color: var(--dark-navy) !important;
+  background: var(--link-yellow);
+  box-shadow: 0 0 16px var(--link-yellow), 0 0 24px var(--accent-blue);
+  text-shadow: 0 0 12px var(--link-yellow), 0 0 8px #fff;
+}
+
 /* Hamburger menu for mobile */
 .hamburger {
   display: none;
@@ -425,18 +449,9 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-#nav-signup-link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-shadow: none;
-}
-#nav-signup-link:hover {
-  color: var(--link-yellow);
-}
+
+/* Remove previous #nav-signup-link styling to avoid conflicts */
+/* (Now handled by .menu-signup above) */
 
 /* Contact form and flyer styles */
 .contact-form-wrapper {
