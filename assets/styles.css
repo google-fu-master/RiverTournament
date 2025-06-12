@@ -251,7 +251,7 @@ header p {
   letter-spacing: 0.5px;
 }
 
-/* --- REMOVED old .contact-form-wrapper button styles in favor of .cta-button --- */
+/* Removed old .contact-form-wrapper button styles in favor of .cta-button */
 
 /* Ladies Night Theme Overrides */
 body.ladies header {
@@ -597,13 +597,23 @@ body.home main {
 }
 
 #digitalpool-embed {
-  width: 100%;
+  width: 100vw;
   min-height: 600px;
   border: none;
   border-radius: 8px;
   background: var(--dark-navy);
-  margin: 2rem 0 0 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  display: block;
+}
+
+/* For full width embed breakout (use with a wrapping .full-width-section) */
+.full-width-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--dark-navy);
 }
 
 /* ------------------ */
