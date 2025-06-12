@@ -4,14 +4,19 @@ title: Contact Us
 permalink: /contact/
 ---
 
-<!--this is  the contact.html file-->
+<!-- Contact Form updated to POST to Google Apps Script Web App -->
 
 <div class="contact-form-wrapper">
-  <h2 style="text-align: center;">Get in Touch</h2>
-  <p style="text-align: center; margin-bottom: 1rem;">If your question isn’t answered in the <a href="/rules/">Rules</a> or <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!<br><br>
-  <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">Text the tournament director</a> and do not use this form.</strong></p>
+  <h2 class="text-center">Get in Touch</h2>
+  <p class="text-center" style="margin-bottom: 1rem;">
+    If your question isn’t answered in the <a href="/rules/">Rules</a> or <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!
+    <br>
+    <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">Text the tournament director</a> (Brittany Posey) and do not use this form.</strong>
+  </p>
 
-  <form id="contactForm" method="POST" action="mailto:rivertournaments@gmail.com" enctype="text/plain">
+  <form id="contactForm" action="YOUR_APPS_SCRIPT_WEBAPP_URL" method="POST" novalidate>
+    <input type="hidden" id="timestamp" name="Timestamp">
+
     <div class="form-group">
       <label for="firstName">First Name (required)</label>
       <input type="text" id="firstName" name="First Name" required>
@@ -29,12 +34,12 @@ permalink: /contact/
 
     <div class="form-group">
       <label for="email">Email (required)</label>
-<input type="email" id="email" name="Email" placeholder="you@example.com" required>
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
     </div>
 
     <fieldset class="form-group">
       <legend>Preferred Contact Method</legend>
-      <div class="checkbox-group-inline" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div class="checkbox-group-inline">
         <input type="checkbox" id="text" name="Preferred Contact" value="Text">
         <label for="text">Text</label>
         <input type="checkbox" id="call" name="Preferred Contact" value="Call">
@@ -47,7 +52,7 @@ permalink: /contact/
 
     <fieldset class="form-group">
       <legend>Have you played in the tournament?</legend>
-      <div class="checkbox-group-inline" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div class="checkbox-group-inline">
         <input type="checkbox" id="playedYes" name="Tournament Player" value="Yes">
         <label for="playedYes">Yes</label>
         <input type="checkbox" id="playedNo" name="Tournament Player" value="No">
@@ -67,36 +72,20 @@ permalink: /contact/
       <textarea id="details" name="Details" rows="6" placeholder="Enter your message here..."></textarea>
     </div>
 
-    
+    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
 
-    <button type="submit">Submit (Tap Once, Be Patient 🧘)</button>
+    <button type="submit" class="cta-button">Submit (Tap Once, Be Patient 🧘)</button>
+
+    <div id="form-status" style="margin-top:1em;text-align:center;"></div>
   </form>
 </div>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const now = new Date().toISOString();
-  });
-</script>
+  // Set timestamp on form load
+  document.getElementById('timestamp').value = new Date().toISOString();
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  grecaptcha.enterprise.ready(function () {
-    grecaptcha.enterprise.execute('6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime', { action: 'USER_ACTION' }).then(function (token) {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = 'g-recaptcha-response';
-      input.value = token;
-      e.target.appendChild(input);
-      e.target.submit();
-    });
-  });
-});
-</script>
-
-<script>
+  // Format phone as user types
   const phoneInput = document.getElementById('phoneNumber');
   phoneInput.addEventListener('input', function() {
     let digits = this.value.replace(/\D/g, '');
@@ -107,5 +96,46 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       this.value = digits.slice(0,3) + '-' + digits.slice(3,6) + '-' + digits.slice(6,10);
     }
+  });
+
+  // Form submission with reCAPTCHA and AJAX
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var statusDiv = document.getElementById('form-status');
+    statusDiv.textContent = '';
+
+    grecaptcha.enterprise.ready(function () {
+      grecaptcha.enterprise.execute('6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime', { action: 'USER_ACTION' }).then(function (token) {
+        document.getElementById('g-recaptcha-response').value = token;
+
+        // re-set timestamp at time of submit
+        document.getElementById('timestamp').value = new Date().toISOString();
+
+        // Prepare form data
+        var formData = new FormData(form);
+
+        // Make AJAX POST request
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.text())
+        .then(result => {
+          if (result.indexOf('Success') !== -1) {
+            statusDiv.style.color = 'limegreen';
+            statusDiv.textContent = 'Thank you! Your message was sent successfully.';
+            form.reset();
+          } else {
+            statusDiv.style.color = 'red';
+            statusDiv.textContent = 'Submission error: ' + result;
+          }
+        })
+        .catch(error => {
+          statusDiv.style.color = 'red';
+          statusDiv.textContent = 'Submission failed: ' + error;
+        });
+      });
+    });
   });
 </script>
