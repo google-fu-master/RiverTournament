@@ -607,3 +607,58 @@ body.home main {
   margin: 2rem 0 0 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
+
+/* ------------------ */
+/* MOBILE ENHANCEMENTS FOR LOCATION PAGE & MAPS */
+/* ------------------ */
+.max-stops-row,
+.map-lines-row,
+.rideshare-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .max-stops-row,
+  .map-lines-row,
+  .rideshare-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+  .map-image,
+  .max-stops-row iframe,
+  .map-lines-row img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+  .map-lines-row img {
+    height: 40px !important;
+    max-width: 160px !important;
+    margin: 0 auto;
+  }
+}
+
+/* Make all images/iframes scale by default */
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make clickable images feel like buttons */
+.map-lines-row a img,
+.map-image {
+  cursor: pointer;
+}
+
+/* Slightly reduce padding on content-wrapper for mobile */
+@media (max-width: 600px) {
+  .content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
