@@ -42,7 +42,6 @@
 
   const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
   const mmddyyyy = `${monthNum}${day}${year}`;
-  // mdyyyyDisplay was unused and removed
 
   const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
 
@@ -59,7 +58,33 @@
 
   const isLadiesWeek = today >= ladiesWindowStart && today <= thirdThursday;
 
-  const format = (weekNumber % 2 === 1) ? "9-ball" : "8-ball";
+  // Determine alternating formats
+  // 9-ball: every other week, starting 6/5/2025
+  // 8-ball: every other week, starting 6/12/2025
+  // Ladies Night: every 3rd Thursday, whatever format falls that week
+
+  // Find number of weeks since 6/5/2025
+  const baseDate9 = new Date(2025, 5, 5); // months are 0-based!
+  const baseDate8 = new Date(2025, 5, 12);
+
+  function weeksBetween(start, end) {
+    const diff = end.getTime() - start.getTime();
+    return Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
+  }
+
+  const weeksSince9 = weeksBetween(baseDate9, upcomingThursday);
+  const weeksSince8 = weeksBetween(baseDate8, upcomingThursday);
+
+  let format;
+  if (upcomingThursday >= baseDate9 && weeksSince9 % 2 === 0) {
+    format = "9-ball";
+  } else if (upcomingThursday >= baseDate8 && weeksSince8 % 2 === 0) {
+    format = "8-ball";
+  } else {
+    // fallback (shouldn't occur during event season)
+    format = "9-ball";
+  }
+
   const formatNum = (format === "9-ball") ? "9" : "8";
   const formatLabel = format.replace("-", " ");
 
@@ -119,5 +144,78 @@
     if (navSignup) {
       navSignup.classList.add("ladies");
     }
+  }
+
+  // --- DYNAMIC JSON-LD STRUCTURED DATA ---
+  // Only inject on the Calendar page if #calendar-jsonld exists
+  var calendarJsonLdDiv = document.getElementById('calendar-jsonld');
+  if (calendarJsonLdDiv) {
+    // Remove existing event JSON-LD if present in the calendar container
+    var existingJsonLd = calendarJsonLdDiv.querySelector('script[type="application/ld+json"].tournament-event');
+    if (existingJsonLd) existingJsonLd.remove();
+
+    // Build the event JSON-LD object
+    var eventJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": isLadiesWeek
+        ? `River Tournaments - Ladies Night Tournament (${formatLabel})`
+        : `River Tournaments - ${formatLabel} Tournament`,
+      "startDate": (function() {
+        // Set time to 6:30pm local (America/Los_Angeles)
+        var local = new Date(upcomingThursday);
+        local.setHours(18, 30, 0, 0);
+        // Format as ISO string with time zone offset
+        // Get timezone offset in minutes and convert to ±HH:MM
+        var tzOffset = -local.getTimezoneOffset();
+        var sign = tzOffset >= 0 ? "+" : "-";
+        var pad = n => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        var hours = pad(tzOffset / 60);
+        var minutes = pad(tzOffset % 60);
+        return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
+      })(),
+      "endDate": (function() {
+        var local = new Date(upcomingThursday);
+        local.setHours(23, 0, 0, 0);
+        var tzOffset = -local.getTimezoneOffset();
+        var sign = tzOffset >= 0 ? "+" : "-";
+        var pad = n => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        var hours = pad(tzOffset / 60);
+        var minutes = pad(tzOffset % 60);
+        return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
+      })(),
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "River Tournaments Venue",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "19 NW 5th Ave",
+          "addressLocality": "Portland",
+          "addressRegion": "OR",
+          "postalCode": "97209",
+          "addressCountry": "US"
+        }
+      },
+      "image": [
+        "https://rivertournaments.com/assets/og-image.png"
+      ],
+      "description": isLadiesWeek
+        ? "Ladies Night! Special event for women pool players on the third Thursday of every month. Format alternates with the main schedule."
+        : `${formatLabel} pool tournament. Every other Thursday at 6:30pm.`,
+      "organizer": {
+        "@type": "Organization",
+        "name": "River Tournaments",
+        "email": "rivertournaments@gmail.com"
+      }
+    };
+
+    // Insert new event JSON-LD into the page inside the marker div
+    var jsonLdScript = document.createElement('script');
+    jsonLdScript.type = 'application/ld+json';
+    jsonLdScript.className = 'tournament-event';
+    jsonLdScript.textContent = JSON.stringify(eventJsonLd, null, 2);
+    calendarJsonLdDiv.appendChild(jsonLdScript);
   }
 })();
