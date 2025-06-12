@@ -11,20 +11,10 @@ permalink: /calendar/
 <section id="calendar-section">
   <h2>🗓️ Tournament Calendar 🗓️</h2>
   <p>Find upcoming tournament dates, formats (8-ball, 9-ball, Ladies Night), and special events. Click an event for details and sign-up links.</p>
-  <!-- You can embed a Google Calendar or use a table/list to show upcoming events -->
-  <div class="iframe-wrapper">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?src=your_google_calendar_id%40group.calendar.google.com&ctz=America/Los_Angeles"
-      style="border: 0"
-      width="100%"
-      height="600"
-      frameborder="0"
-      scrolling="no">
-    </iframe>
-  </div>
-  <p style="text-align:center; margin-top: 1.5rem;">
+  <!-- The event list, table, or calendar embed goes here. 
+       JS will inject/upsert the appropriate JSON-LD for SEO. -->
+  <div id="digitalpool-table"></div>
+  <p class="note" style="text-align:center; margin-top: 1.5rem;">
     <a class="btn-signup" href="/signup/">Sign Up for the Next Tournament</a>
   </p>
 </section>
-
-<!-- Event JSON-LD is injected via JS on this page only for SEO -->
