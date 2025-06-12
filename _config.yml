@@ -4,4 +4,6 @@ markdown: kramdown
 permalink: pretty
 baseurl: ""  # Correct because it's deployed to domain root
 url: "https://rivertournaments.com"
-# this is the _config.yml file
+
+plugins:
+  - jekyll-sitemap
