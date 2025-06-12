@@ -251,24 +251,7 @@ header p {
   letter-spacing: 0.5px;
 }
 
-.contact-form-wrapper button {
-  background-color: transparent;
-  color: var(--link-yellow);
-  border: 2px solid var(--link-yellow);
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 8px var(--link-yellow);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.contact-form-wrapper button:hover {
-  background-color: var(--link-yellow);
-  color: #000;
-  box-shadow: 0 0 12px var(--link-gold);
-}
+/* --- REMOVED old .contact-form-wrapper button styles in favor of .cta-button --- */
 
 /* Ladies Night Theme Overrides */
 body.ladies header {
@@ -599,6 +582,12 @@ body.ladies .player-header,
   text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
 }
 
+/* (Optional) CTA button focus accessibility */
+.cta-button:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
 /* --- Copilot-added fixes for homepage nav and main centering --- */
 body.home nav {
   text-align: left !important;
@@ -670,4 +659,35 @@ img, iframe {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+}
+
+/* --- PATCH: Contact Form Improvements --- */
+
+/* Checkbox group styling for contact form */
+.checkbox-group-inline {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .checkbox-group-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* Utility: center text */
+.text-center {
+  text-align: center;
+}
+
+/* (Optional) Contact form status message styling */
+#form-status {
+  font-size: 1.1rem;
+  margin-top: 1em;
+  min-height: 2em;
+  font-weight: bold;
 }
