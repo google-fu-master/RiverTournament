@@ -42,7 +42,7 @@
 
   const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
   const mmddyyyy = `${monthNum}${day}${year}`;
-  const mdyyyyDisplay = `${monthNum}/${day}/${year}`;
+  // mdyyyyDisplay was unused and removed
 
   const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
 
@@ -94,13 +94,6 @@
     var iframe = document.createElement('iframe');
     iframe.id = 'digitalpool-embed';
     iframe.src = tournamentUrl;
-    iframe.style.width = '100%';
-    iframe.style.minHeight = '600px';
-    iframe.style.border = 'none';
-    iframe.style.display = 'block';
-    iframe.style.background = '#0D1B2A';
-    iframe.style.borderRadius = '8px';
-    iframe.style.boxShadow = '0 2px 8px rgba(0,0,0,0.4)';
     tableDiv.appendChild(iframe);
   }
 
