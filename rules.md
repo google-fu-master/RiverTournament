@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tournament Rules
+description: Full River Tournament house rules for player eligibility, registration, gameplay, conduct, and race formats. Updated for fairness and transparency.
 bodyClass: page-rules
 permalink: /rules/
 ---
