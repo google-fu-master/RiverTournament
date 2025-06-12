@@ -1,0 +1,30 @@
+---
+layout: default
+title: Tournament Calendar
+description: View upcoming River Tournaments, event dates, formats, and details. Plan your next tournament night in Portland, OR.
+bodyClass: page-calendar
+permalink: /calendar/
+---
+
+<!--this is the calendar.html file-->
+
+<section id="calendar-section">
+  <h2>🗓️ Tournament Calendar 🗓️</h2>
+  <p>Find upcoming tournament dates, formats (8-ball, 9-ball, Ladies Night), and special events. Click an event for details and sign-up links.</p>
+  <!-- You can embed a Google Calendar or use a table/list to show upcoming events -->
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=your_google_calendar_id%40group.calendar.google.com&ctz=America/Los_Angeles"
+      style="border: 0"
+      width="100%"
+      height="600"
+      frameborder="0"
+      scrolling="no">
+    </iframe>
+  </div>
+  <p style="text-align:center; margin-top: 1.5rem;">
+    <a class="btn-signup" href="/signup/">Sign Up for the Next Tournament</a>
+  </p>
+</section>
+
+<!-- Event JSON-LD is injected via JS on this page only for SEO -->
