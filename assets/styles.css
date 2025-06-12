@@ -154,39 +154,6 @@ body.ladies .menu a:focus {
   }
 }
 
-/* CTA Button Enhancement */
-.btn-signup, .cta-button {
-  display: inline-block;
-  background-color: var(--link-yellow);
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 0 10px var(--link-yellow), 0 0 20px var(--link-yellow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 2rem;
-}
-.btn-signup:hover, .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--link-yellow), 0 0 30px var(--link-yellow);
-}
-
-/* Center and space the signup button */
-.signup-button-container {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Ensure the main content is centered and wider if needed */
-main, .brackets {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-}
-
 /* Event banner styling */
 .event-banner {
   background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
