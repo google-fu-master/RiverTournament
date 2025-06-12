@@ -11,10 +11,11 @@ permalink: /calendar/
 <section id="calendar-section">
   <h2>🗓️ Tournament Calendar 🗓️</h2>
   <p>Find upcoming tournament dates, formats (8-ball, 9-ball, Ladies Night), and special events. Click an event for details and sign-up links.</p>
-  <!-- The event list, table, or calendar embed goes here. 
-       JS will inject/upsert the appropriate JSON-LD for SEO. -->
   <div id="digitalpool-table"></div>
-  <p class="note" style="text-align:center; margin-top: 1.5rem;">
-    <a class="btn-signup" href="/signup/">Sign Up for the Next Tournament</a>
-  </p>
+  <div id="signup-button" style="text-align:center; margin-top: 1.5rem;"></div>
 </section>
+
+<!--
+The sign-up button and event table will be dynamically injected by assets/scripts/tournament.js,
+ensuring the DigitalPool link and event info are always accurate and up to date.
+-->
