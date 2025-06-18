@@ -62,7 +62,6 @@ nav {
   line-height: 60px;
   height: 60px;
   transition: color 0.3s, text-shadow 0.3s;
-  /* Blue neon glow: */
   text-shadow:
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
@@ -201,10 +200,9 @@ h2.page-title {
   padding: 0 !important;
 }
 
-/* Ladies Night THEME OVERRIDES */
+/* -------- LADIES NIGHT THEME -------- */
 body.ladies {
   background: var(--ladies-purple) !important;
-  /* Add a faint radial or linear gradient for energy */
   background-image:
     radial-gradient(ellipse at 60% 0%, rgba(255,121,199,0.12) 0%, rgba(58,0,58,0) 60%),
     radial-gradient(ellipse at 40% 100%, rgba(0,224,253,0.08) 0%, rgba(58,0,58,0) 80%);
@@ -213,7 +211,6 @@ body.ladies {
 /* Panels, main, and sections get glassy/depth effect */
 body.ladies main,
 body.ladies .content-wrapper,
-body.ladies .event-banner,
 body.ladies section,
 body.ladies .status-legend,
 body.ladies .note,
@@ -237,17 +234,39 @@ body.ladies .menu {
   box-shadow: 0 4px 18px 0 rgba(204, 102, 153, 0.14);
 }
 
-/* Headings: neon pink, glowy, uppercase */
-body.ladies h1, 
+/* LADIES NIGHT: Unify Event Banner/Title Bar Color */
+body.ladies .event-banner,
+body.ladies #tournament-title,
+body.ladies header,
+body.ladies .event-content {
+  background: linear-gradient(90deg, var(--mid-pink) 0%, var(--accent-pink) 100%) !important;
+  color: var(--neon-white, #f5f5f5) !important;
+  box-shadow: 0 4px 24px 0 rgba(204, 102, 153, 0.23), 0 2px 6px 0 rgba(0,0,0,0.12);
+  border-radius: 0 0 18px 18px;
+}
+/* LADIES NIGHT: Neon Pink Title Glow, Enhanced Readability */
+body.ladies h1,
 body.ladies h2,
-body.ladies h3,
 body.ladies .player-header,
-body.ladies #tournament-title {
-  color: var(--neon-pink);
-  text-shadow: 0 0 16px #ff79c7, 0 0 32px #fff, 0 0 2px #fff;
+body.ladies #tournament-title,
+body.ladies .event-banner h1,
+body.ladies .event-banner .player-header {
+  color: var(--neon-pink, #ff79c7) !important;
+  text-shadow:
+    0 2px 8px #1c0f1c,
+    0 0 12px #ff79c7,
+    0 0 2px #fff;
+  font-weight: 900;
   letter-spacing: 2.5px;
-  text-transform: uppercase;
-  font-family: 'Oswald', Arial, sans-serif;
+}
+body.ladies .event-banner {
+  padding: 2.2rem 1rem 1.2rem 1rem !important;
+  margin-bottom: 2.2rem;
+}
+body.ladies main,
+body.ladies .content-wrapper,
+body.ladies section {
+  background: rgba(40, 0, 40, 0.83);
 }
 
 /* Main call-to-action buttons: neon glassy effect */
@@ -565,7 +584,6 @@ footer {
   line-height: 60px;
   height: 60px;
   transition: color 0.3s, text-shadow 0.3s;
-  /* Green neon glow: */
   text-shadow:
     0 0 4px var(--neon-green, #39ff14),
     0 0 8px var(--neon-green, #39ff14);
@@ -884,14 +902,14 @@ img, iframe {
 /* -------- LOCATION PAGE BODY TEXT SIZE -------- */
 body.page-location main,
 body.page-location .content-wrapper {
-  font-size: 1.33rem; /* ~21.3px, matches 16pt */
+  font-size: 1.33rem;
   line-height: 1.7;
 }
 
 @media (max-width: 768px) {
   body.page-location main,
   body.page-location .content-wrapper {
-    font-size: 1rem; /* 16px for mobile */
+    font-size: 1rem;
   }
 }
 
