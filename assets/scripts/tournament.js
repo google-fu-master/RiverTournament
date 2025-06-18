@@ -9,32 +9,52 @@
     }
   }
 
-  function getThirdThursday(year, month) {
-    let date = new Date(year, month, 1);
-    let count = 0;
-    while (date.getMonth() === month) {
-      if (date.getDay() === 4) {
-        count++;
-        if (count === 3) return new Date(date);
+  // Returns true if the date is the 3rd Thursday of its month
+  function isThirdThursday(date) {
+    // Get the 3rd Thursday of this month
+    let d = new Date(date.getFullYear(), date.getMonth(), 1);
+    let thursdays = [];
+    while (d.getMonth() === date.getMonth()) {
+      if (d.getDay() === 4) { // Thursday
+        thursdays.push(new Date(d));
       }
-      date.setDate(date.getDate() + 1);
+      d.setDate(d.getDate() + 1);
     }
+    // Compare only the date part (ignore time)
+    return date.getDate() === thursdays[2].getDate();
   }
 
+  // Get the 3rd Thursday date of a given year/month
+  function getThirdThursday(year, month) {
+    let d = new Date(year, month, 1);
+    let thursdays = [];
+    while (d.getMonth() === month) {
+      if (d.getDay() === 4) {
+        thursdays.push(new Date(d));
+      }
+      d.setDate(d.getDate() + 1);
+    }
+    return thursdays[2];
+  }
+
+  // For Ladies Night: returns 0 if starting month (June 2025) is 9-ball, then alternates monthly
+  function getLadiesNightFormatNumber(baseYear, baseMonth, baseFormat, targetYear, targetMonth) {
+    // baseFormat: 0 = 9-ball, 1 = 8-ball
+    let monthsSince = (targetYear - baseYear) * 12 + (targetMonth - baseMonth);
+    return (baseFormat + (monthsSince % 2)) % 2;
+  }
+
+  // Find the next tournament Thursday from today (or today if today is Thursday)
   const today = new Date();
 
-  // Find the upcoming Thursday from today
-  const isAfterThursday = today.getDay() > 4 || (today.getDay() === 5 && today.getHours() === 0);
+  // Find the closest Thursday >= today
   let upcomingThursday = new Date(today);
-
-  if (isAfterThursday) {
-    const daysUntilNextThursday = (11 - today.getDay()) % 7;
-    upcomingThursday.setDate(today.getDate() + daysUntilNextThursday);
-  } else {
-    const daysUntilThisThursday = (4 - today.getDay() + 7) % 7;
-    upcomingThursday.setDate(today.getDate() + daysUntilThisThursday);
+  let daysUntilThursday = (4 - today.getDay() + 7) % 7;
+  if (daysUntilThursday !== 0) {
+    upcomingThursday.setDate(today.getDate() + daysUntilThursday);
   }
 
+  // Format info
   const day = upcomingThursday.getDate();
   const month = upcomingThursday.toLocaleString('default', { month: 'long' });
   const monthNum = upcomingThursday.getMonth() + 1;
@@ -43,55 +63,72 @@
   const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
   const mmddyyyy = `${monthNum}${day}${year}`;
 
-  const weekNumber = Math.floor((upcomingThursday.getDate() - 1) / 7) + 1;
+  // 1. Check if this is Ladies Night (3rd Thursday)
+  const ladiesNight = isThirdThursday(upcomingThursday);
 
-  // LADIES NIGHT WINDOW: from the Friday before 3rd Thursday through 3rd Thursday (inclusive)
-  const thirdThursday = getThirdThursday(upcomingThursday.getFullYear(), upcomingThursday.getMonth());
-  const ladiesWindowStart = new Date(thirdThursday);
-  ladiesWindowStart.setDate(thirdThursday.getDate() - 6);
+  // 2. If not Ladies Night, count the number of open (non-Ladies) Thursdays since June 5, 2025 (inclusive)
+  // June 5, 2025 is the base, and is a 9-ball open event
+  const baseOpen = new Date(2025, 5, 5); // June 5, 2025 (months are 0-indexed)
+  let openCount = 0;
+  let cursor = new Date(baseOpen);
 
-  // Ensure ladiesWindowStart is Friday (may already be Friday)
-  while (ladiesWindowStart.getDay() !== 5) {
-    ladiesWindowStart.setDate(ladiesWindowStart.getDate() + 1);
-    if (ladiesWindowStart > thirdThursday) break;
+  while (
+    cursor < upcomingThursday ||
+    (cursor.getDate() === upcomingThursday.getDate() &&
+     cursor.getMonth() === upcomingThursday.getMonth() &&
+     cursor.getFullYear() === upcomingThursday.getFullYear())
+  ) {
+    // If not Ladies Night, count it
+    if (!isThirdThursday(cursor)) {
+      // Only count if before or equal to upcomingThursday
+      if (
+        cursor < upcomingThursday ||
+        (cursor.getDate() === upcomingThursday.getDate() &&
+         cursor.getMonth() === upcomingThursday.getMonth() &&
+         cursor.getFullYear() === upcomingThursday.getFullYear())
+      ) {
+        openCount++;
+      }
+    }
+    // Move cursor to next Thursday
+    cursor.setDate(cursor.getDate() + ((7 - cursor.getDay() + 4) % 7 || 7));
   }
 
-  const isLadiesWeek = today >= ladiesWindowStart && today <= thirdThursday;
+  // openCount includes June 5 as #1. So for June 5, openCount = 1 (odd, 9-ball), June 12 = 2 (even, 8-ball), etc.
+  // We'll use (openCount % 2): odd = 9-ball, even = 8-ball
 
-  // Determine alternating formats
-  // 9-ball: every other week, starting 6/5/2025
-  // 8-ball: every other week, starting 6/12/2025
-  // Ladies Night: every 3rd Thursday, whatever format falls that week
-
-  // Find number of weeks since 6/5/2025
-  const baseDate9 = new Date(2025, 5, 5); // months are 0-based!
-  const baseDate8 = new Date(2025, 5, 12);
-
-  function weeksBetween(start, end) {
-    const diff = end.getTime() - start.getTime();
-    return Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
-  }
-
-  const weeksSince9 = weeksBetween(baseDate9, upcomingThursday);
-  const weeksSince8 = weeksBetween(baseDate8, upcomingThursday);
-
-  let format;
-  if (upcomingThursday >= baseDate9 && weeksSince9 % 2 === 0) {
-    format = "9-ball";
-  } else if (upcomingThursday >= baseDate8 && weeksSince8 % 2 === 0) {
-    format = "8-ball";
+  // For Ladies Night: alternate monthly, starting with 9-ball for June 2025
+  let format, formatNum, formatLabel, eventTitle, signupSlug;
+  if (ladiesNight) {
+    // Figure out if this month is 9-ball or 8-ball for Ladies Night
+    // June 2025 (month 5) = 9-ball, July 2025 (6) = 8-ball, August 2025 = 9-ball, etc.
+    const baseLadiesYear = 2025, baseLadiesMonth = 5, baseLadiesFormat = 0; // 0=9-ball
+    const lnFormat = getLadiesNightFormatNumber(
+      baseLadiesYear,
+      baseLadiesMonth,
+      baseLadiesFormat,
+      upcomingThursday.getFullYear(),
+      upcomingThursday.getMonth()
+    );
+    format = lnFormat === 0 ? "9-ball" : "8-ball";
+    formatNum = lnFormat === 0 ? "9" : "8";
+    formatLabel = format;
+    eventTitle = `${formattedDate} Ladies Night ${formatLabel} Player List`;
+    signupSlug = `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`;
   } else {
-    // fallback (shouldn't occur during event season)
-    format = "9-ball";
+    // openCount: 1 = June 5, 2 = June 12, etc.
+    // Odd = 9-ball, Even = 8-ball
+    if (openCount % 2 === 1) {
+      format = "9-ball";
+      formatNum = "9";
+    } else {
+      format = "8-ball";
+      formatNum = "8";
+    }
+    formatLabel = format;
+    eventTitle = `${formattedDate} ${formatLabel} Player List`;
+    signupSlug = `river-thursday-${formatNum}-ball-${mmddyyyy}`;
   }
-
-  const formatNum = (format === "9-ball") ? "9" : "8";
-  const formatLabel = format.replace("-", " ");
-
-  const eventTitle = `${formattedDate} ${formatLabel} Player List`;
-  const signupSlug = isLadiesWeek
-    ? `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`
-    : `river-thursday-${formatNum}-ball-${mmddyyyy}`;
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
   const tournamentUrl = `${signupLink}/players?navigation=false`;
@@ -129,7 +166,7 @@
   }
 
   // Add Ladies Night classes for styling only
-  if (isLadiesWeek) {
+  if (ladiesNight) {
     document.body.classList.add("ladies");
     var eventBanner = document.getElementById("event-banner");
     if (eventBanner) {
@@ -158,7 +195,7 @@
     var eventJsonLd = {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": isLadiesWeek
+      "name": ladiesNight
         ? `River Tournaments - Ladies Night Tournament (${formatLabel})`
         : `River Tournaments - ${formatLabel} Tournament`,
       "startDate": (function() {
@@ -166,7 +203,6 @@
         var local = new Date(upcomingThursday);
         local.setHours(18, 30, 0, 0);
         // Format as ISO string with time zone offset
-        // Get timezone offset in minutes and convert to ±HH:MM
         var tzOffset = -local.getTimezoneOffset();
         var sign = tzOffset >= 0 ? "+" : "-";
         var pad = n => String(Math.floor(Math.abs(n))).padStart(2, "0");
@@ -201,7 +237,7 @@
       "image": [
         "https://rivertournaments.com/assets/og-image.png"
       ],
-      "description": isLadiesWeek
+      "description": ladiesNight
         ? "Ladies Night! Special event for women pool players on the third Thursday of every month. Format alternates with the main schedule."
         : `${formatLabel} pool tournament. Every other Thursday at 6:30pm.`,
       "organizer": {
