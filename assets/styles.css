@@ -792,3 +792,17 @@ img, iframe {
   min-height: 2em;
   font-weight: bold;
 }
+
+/* -------- LOCATION PAGE BODY TEXT SIZE -------- */
+body.page-location main,
+body.page-location .content-wrapper {
+  font-size: 1.33rem; /* ~21.3px, matches 16pt */
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  body.page-location main,
+  body.page-location .content-wrapper {
+    font-size: 1rem; /* 16px for mobile */
+  }
+}
