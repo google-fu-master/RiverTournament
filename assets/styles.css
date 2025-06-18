@@ -7,6 +7,8 @@
   --darkest-pink: #1c0f1c;
   --dark-pink: #2b102b;
   --mid-pink: #3a003a;
+  --ladies-purple: #3a003a;
+  --ladies-panel: rgba(20,0,30,0.78);
   --link-yellow: #d4af37;
   --link-gold: #a47f00;
   --slate: #151D23;
@@ -74,13 +76,20 @@ nav {
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
 }
+body.ladies .menu a,
+body.ladies .menu a:visited {
+  color: var(--white);
+  text-shadow: 0 0 7px var(--neon-pink), 0 0 12px var(--ladies-purple);
+}
 body.ladies .menu a:hover,
 body.ladies .menu a:focus {
   color: var(--neon-pink, #ff79c7);
   text-shadow:
-    0 0 12px var(--neon-pink, #ff79c7),
-    0 0 24px var(--neon-pink, #ff79c7),
-    0 0 4px var(--neon-blue, #30baff);
+    0 0 16px var(--neon-pink, #ff79c7),
+    0 0 32px var(--neon-pink, #ff79c7),
+    0 0 4px var(--neon-pink, #ff79c7);
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
 }
 
 /* Hamburger menu for mobile */
@@ -192,29 +201,141 @@ h2.page-title {
   padding: 0 !important;
 }
 
-/* Ladies Night neon pink override for ALL page and tournament titles */
-body.ladies .player-header,
-body.ladies #tournament-title,
-body.ladies h1.page-title,
-body.ladies h2.page-title {
-  color: var(--neon-pink, #ff79c7) !important;
-  text-shadow:
-    0 0 24px var(--neon-pink, #ff79c7),
-    0 0 8px #fff,
-    2px 2px 0 #000;
+/* Ladies Night THEME OVERRIDES */
+body.ladies {
+  background: var(--ladies-purple) !important;
+  /* Add a faint radial or linear gradient for energy */
+  background-image:
+    radial-gradient(ellipse at 60% 0%, rgba(255,121,199,0.12) 0%, rgba(58,0,58,0) 60%),
+    radial-gradient(ellipse at 40% 100%, rgba(0,224,253,0.08) 0%, rgba(58,0,58,0) 80%);
 }
 
-/* STRONGER Ladies Night Neon Pink for Tournament and Page Titles */
+/* Panels, main, and sections get glassy/depth effect */
+body.ladies main,
+body.ladies .content-wrapper,
+body.ladies .event-banner,
+body.ladies section,
+body.ladies .status-legend,
+body.ladies .note,
+body.ladies .disclaimer {
+  background: var(--ladies-panel);
+  border-radius: 18px;
+  box-shadow: 0 6px 30px 0 rgba(204, 102, 153, 0.12), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+  backdrop-filter: blur(2px);
+  padding: 2rem 2.5vw;
+  margin-bottom: 2.5rem;
+}
+
+body.ladies main {
+  max-width: 900px;
+  margin-top: 2.5rem;
+}
+
+body.ladies nav,
+body.ladies .menu {
+  background: var(--ladies-purple) !important;
+  box-shadow: 0 4px 18px 0 rgba(204, 102, 153, 0.14);
+}
+
+/* Headings: neon pink, glowy, uppercase */
+body.ladies h1, 
+body.ladies h2,
+body.ladies h3,
 body.ladies .player-header,
-body.ladies header h1 {
-  color: #ff79c7 !important;
-  font-weight: 900;
-  text-shadow:
-    0 2px 8px #1c0f1c,   /* Deeper shadow for contrast */
-    0 0 15px #ff79c7,
-    0 0 4px #fff;
-  -webkit-text-stroke: 1px #fff;
-  text-stroke: 1px #fff;
+body.ladies #tournament-title {
+  color: var(--neon-pink);
+  text-shadow: 0 0 16px #ff79c7, 0 0 32px #fff, 0 0 2px #fff;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-family: 'Oswald', Arial, sans-serif;
+}
+
+/* Main call-to-action buttons: neon glassy effect */
+body.ladies .btn-signup, 
+body.ladies .cta-button {
+  background: transparent;
+  border: 2.5px solid var(--neon-pink);
+  color: var(--neon-pink);
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-radius: 100px;
+  padding: 0.95em 2.9em;
+  box-shadow: 0 0 16px #ff79c7, 0 0 32px #ff79c7;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff79c7;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+body.ladies .btn-signup:hover, 
+body.ladies .cta-button:hover {
+  background: var(--neon-pink);
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 32px #ff79c7, 0 0 48px #ff79c7;
+}
+
+body.ladies .status-legend {
+  background: none !important;
+  color: var(--white) !important;
+  font-size: 1.06rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border: none;
+  box-shadow: none;
+}
+
+body.ladies section {
+  border: none;
+  margin-top: 2rem;
+}
+
+body.ladies a {
+  color: var(--neon-pink);
+  text-decoration: underline;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff79c7;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+body.ladies a:hover {
+  color: #fff;
+  background: var(--neon-pink);
+  border-radius: 5px;
+  box-shadow: 0 0 18px #ff79c7;
+}
+
+body.ladies .note, 
+body.ladies .disclaimer {
+  font-size: 1.07rem;
+  color: var(--neon-pink);
+  border-left: 4px solid var(--neon-pink);
+  background: rgba(58,0,58,0.67);
+}
+
+body.ladies input[type="text"], 
+body.ladies input[type="search"], 
+body.ladies input[type="email"], 
+body.ladies input[type="password"], 
+body.ladies textarea,
+body.ladies select {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  border: 2px solid var(--neon-pink);
+  border-radius: 10px;
+  font-size: 1.15rem;
+  padding: 0.75em 1.1em;
+  margin-bottom: 1.2rem;
+  outline: none;
+  box-shadow: 0 0 8px #ff79c7;
+  transition: border-color 0.15s;
+}
+body.ladies input[type="text"]:focus,
+body.ladies input[type="search"]:focus,
+body.ladies input[type="email"]:focus,
+body.ladies input[type="password"]:focus,
+body.ladies textarea:focus,
+body.ladies select:focus {
+  border-color: #fff;
+  box-shadow: 0 0 16px #ff79c7;
 }
 
 /* Status Legend styling - Compact (for home/index) */
@@ -348,39 +469,6 @@ header p {
 }
 
 /* Removed old .contact-form-wrapper button styles in favor of .cta-button */
-
-/* Ladies Night Theme Overrides */
-body.ladies header {
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1.5rem;
-  padding-bottom: 0.25rem;
-}
-body.ladies nav,
-body.ladies .menu,
-body.ladies main,
-body.ladies footer,
-body.ladies .contact-form-wrapper {
-  background-color: var(--dark-pink);
-}
-body.ladies .pot-banner {
-  border-color: var(--accent-pink);
-}
-body.ladies .event-banner {
-  background: linear-gradient(90deg, var(--accent-pink) 0%, var(--mid-pink) 100%);
-  color: var(--white);
-  box-shadow: 0 0 16px 4px var(--accent-pink), 0 4px 32px rgba(204,102,153,0.15);
-}
-body.ladies .btn-signup, body.ladies .cta-button, body.ladies #nav-signup-link {
-  background-color: var(--accent-pink) !important;
-  color: #fff !important;
-  box-shadow: 0 0 15px var(--accent-pink), 0 0 30px var(--accent-pink);
-}
-body.ladies .btn-signup:hover, body.ladies .cta-button:hover, body.ladies #nav-signup-link:hover {
-  background-color: var(--link-yellow) !important;
-  color: #000 !important;
-  box-shadow: 0 0 25px var(--link-yellow), 0 0 40px var(--accent-pink);
-}
 
 /* Responsive iframe container */
 .iframe-wrapper {
