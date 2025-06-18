@@ -8,11 +8,11 @@ permalink: /rules/
 
 <!--this is the rule.md file-->
 
-<input type="text" id="search" placeholder="Search rules...">
-
 <p style="background-color: #ffeeba; color: #333; padding: 1rem; border-radius: 8px; font-weight: bold; margin: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
+
+<input type="text" id="search" placeholder="Search rules...">
 
 <section id="player-eligibility" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
@@ -38,17 +38,19 @@ permalink: /rules/
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-        <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+        <li>8–16 players: race to 2 on the winners side, 1 on the losers side</li>
       </ul>
     </li>
     <li><strong>9-Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+        <li>8–12 players: race to 3 on the winners side, 1 on the losers side</li>
         <li>13–16 players: race to 2 on the winner side, 1 on the losers side</li>
       </ul>
     </li>
-    <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>
+    <li>In all formats, if there’s a 100+ Fargo point gap, the higher-rated player must win 1 extra game.</li>
+	<li>Examples:</li> 
+	<li>8-Ball, winner's side, player A is a 307, player B is a 440 (>100 gap), player A must win 2 games and player B must win 3 games; loser's side player A must win 1 game, player B must win 2 games.</li>
+	<li>9-ball, winner's side, player A is a 307, player B is a 440 (>100 gap), player A must win 3 games and player B must win 4 games; loser's side player A must win 1 game, player B must win 2 games.</li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
     <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent in the first round.</strong></li>
   </ul>
