@@ -170,7 +170,7 @@ body.ladies .menu a:focus {
 }
 
 /* --- Player header: REMOVE background, box, border, padding --- */
-.player-header,{
+.player-header,
 #tournament-title {
   font-family: 'Oswald', Arial, sans-serif;
   font-size: 2.5rem;
@@ -183,7 +183,6 @@ body.ladies .menu a:focus {
     2px 2px 0 #000;
   margin-bottom: 1rem;
   text-align: center;
-}
   /* Remove box styles */
   background: none !important;
   border: none !important;
@@ -251,8 +250,6 @@ header p {
   letter-spacing: 0.5px;
 }
 
-/* Removed old .contact-form-wrapper button styles in favor of .cta-button */
-
 /* Ladies Night Theme Overrides */
 body.ladies header {
   text-align: center;
@@ -277,8 +274,15 @@ body.ladies .event-banner {
 }
 body.ladies .player-header,
 body.ladies header h1 {
-  color: var(--accent-pink) !important;
-  text-shadow: 0 0 12px var(--accent-pink), 0 0 24px var(--accent-pink), 0 0 6px var(--white);
+  color: #ffb6e6 !important; /* Lighter pastel pink for better readability */
+  font-weight: 900 !important;
+  text-shadow:
+    0 2px 8px #1c0f1c,    /* Deeper shadow for contrast */
+    0 0 10px #ff79c7,
+    0 0 24px #ff79c7,
+    0 0 4px #fff;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
 }
 body.ladies .btn-signup, body.ladies .cta-button, body.ladies #nav-signup-link {
   background-color: var(--accent-pink) !important;
@@ -514,11 +518,26 @@ body.ladies .event-banner {
 }
 body.ladies .player-header,
 .event-banner.ladies .player-header {
-  color: var(--neon-pink, #ff79c7) !important;
-  text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
+  color: #ffb6e6 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 8px #1c0f1c, 0 0 24px #ff79c7, 0 0 8px #fff, 2px 2px 0 #000;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
 }
 
 /* Flyer-inspired Signup Button */
+.signup-button-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .signup-button-container {
+    margin-bottom: 1.25rem;
+  }
+}
 .btn-signup {
   display: inline-block;
   background: transparent;
@@ -539,6 +558,7 @@ body.ladies .player-header,
     color 0.2s,
     border-color 0.2s;
   cursor: pointer;
+  margin-bottom: 0; /* margin handled by container */
 }
 
 .btn-signup:hover,
