@@ -218,56 +218,31 @@ body.ladies header h1 {
 }
 
 /* Status Legend styling */
-.status-legend {
-  margin: 1.25rem auto 1.5rem auto;
-  max-width: 650px;
-  background: var(--mid-navy);
+.status-legend.compact {
+  background: none;
+  border: none;
+  box-shadow: none;
+  max-width: 100%;
+  margin: 0.5rem auto 1rem auto;
+  padding: 0;
+  text-align: center;
+  font-size: 0.95rem;
   color: var(--white);
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  font-size: 1.08rem;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
-  border: 1.5px solid var(--accent-blue);
 }
+.status-legend.compact small {
+  font-size: 0.92rem;
+  color: var(--white);
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+.status-legend .status-dot,
+.status-legend dt,
+.status-legend dd,
 .status-legend dl {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7em;
-  margin: 0;
+  display: none !important;
 }
-.status-legend dt {
-  font-weight: bold;
-  color: var(--neon-cyan, #00eafd);
-  display: inline;
-}
-.status-legend dd {
-  display: inline;
-  margin: 0 0 0.8em 0.5em;
-  color: var(--white);
-}
-.status-legend dd:last-child {
-  margin-bottom: 0;
-}
-.status-legend dt::after {
-  content: ":";
-  margin-right: 0.3em;
-}
-
-/* Optionally, make status types stand out with colored dots */
-.status-legend .status-dot {
-  display: inline-block;
-  width: 0.75em;
-  height: 0.75em;
-  border-radius: 50%;
-  margin-right: 0.45em;
-  vertical-align: middle;
-}
-.status-legend .dot-unconfirmed { background: var(--link-yellow); }
-.status-legend .dot-rsvp { background: var(--accent-pink); }
-.status-legend .dot-confirmed { background: var(--pot-green); }
-.status-legend .dot-waiting { background: var(--neon-gold); }
-.status-legend .dot-paid { background: var(--neon-green); }
-
 @media (max-width: 600px) {
   .status-legend {
     padding: 0.7rem 0.6rem;
