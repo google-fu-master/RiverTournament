@@ -191,6 +191,64 @@ body.ladies .menu a:focus {
   padding: 0 !important;
 }
 
+/* Status Legend styling */
+.status-legend {
+  margin: 1.25rem auto 1.5rem auto;
+  max-width: 650px;
+  background: var(--mid-navy);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
+  border: 1.5px solid var(--accent-blue);
+}
+.status-legend dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin: 0;
+}
+.status-legend dt {
+  font-weight: bold;
+  color: var(--neon-cyan, #00eafd);
+  display: inline;
+}
+.status-legend dd {
+  display: inline;
+  margin: 0 0 0.8em 0.5em;
+  color: var(--white);
+}
+.status-legend dd:last-child {
+  margin-bottom: 0;
+}
+.status-legend dt::after {
+  content: ":";
+  margin-right: 0.3em;
+}
+
+/* Optionally, make status types stand out with colored dots */
+.status-legend .status-dot {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  margin-right: 0.45em;
+  vertical-align: middle;
+}
+.status-legend .dot-unconfirmed { background: var(--link-yellow); }
+.status-legend .dot-rsvp { background: var(--accent-pink); }
+.status-legend .dot-confirmed { background: var(--pot-green); }
+.status-legend .dot-waiting { background: var(--neon-gold); }
+.status-legend .dot-paid { background: var(--neon-green); }
+
+@media (max-width: 600px) {
+  .status-legend {
+    padding: 0.7rem 0.6rem;
+    font-size: 0.98rem;
+  }
+}
+
 /* Notes and disclaimers */
 .note,
 .disclaimer {
@@ -250,6 +308,8 @@ header p {
   letter-spacing: 0.5px;
 }
 
+/* Removed old .contact-form-wrapper button styles in favor of .cta-button */
+
 /* Ladies Night Theme Overrides */
 body.ladies header {
   text-align: center;
@@ -274,15 +334,8 @@ body.ladies .event-banner {
 }
 body.ladies .player-header,
 body.ladies header h1 {
-  color: #ffb6e6 !important; /* Lighter pastel pink for better readability */
-  font-weight: 900 !important;
-  text-shadow:
-    0 2px 8px #1c0f1c,    /* Deeper shadow for contrast */
-    0 0 10px #ff79c7,
-    0 0 24px #ff79c7,
-    0 0 4px #fff;
-  -webkit-text-stroke: 1px #fff;
-  text-stroke: 1px #fff;
+  color: var(--accent-pink) !important;
+  text-shadow: 0 0 12px var(--accent-pink), 0 0 24px var(--accent-pink), 0 0 6px var(--white);
 }
 body.ladies .btn-signup, body.ladies .cta-button, body.ladies #nav-signup-link {
   background-color: var(--accent-pink) !important;
@@ -518,26 +571,11 @@ body.ladies .event-banner {
 }
 body.ladies .player-header,
 .event-banner.ladies .player-header {
-  color: #ffb6e6 !important;
-  font-weight: 900 !important;
-  text-shadow: 0 2px 8px #1c0f1c, 0 0 24px #ff79c7, 0 0 8px #fff, 2px 2px 0 #000;
-  -webkit-text-stroke: 1px #fff;
-  text-stroke: 1px #fff;
+  color: var(--neon-pink, #ff79c7) !important;
+  text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
 }
 
 /* Flyer-inspired Signup Button */
-.signup-button-container {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-@media (max-width: 600px) {
-  .signup-button-container {
-    margin-bottom: 1.25rem;
-  }
-}
 .btn-signup {
   display: inline-block;
   background: transparent;
@@ -558,7 +596,6 @@ body.ladies .player-header,
     color 0.2s,
     border-color 0.2s;
   cursor: pointer;
-  margin-bottom: 0; /* margin handled by container */
 }
 
 .btn-signup:hover,
