@@ -217,7 +217,7 @@ body.ladies header h1 {
   text-stroke: 1px #fff;
 }
 
-/* Status Legend styling */
+/* Status Legend styling - Compact (for home/index) */
 .status-legend.compact {
   background: none;
   border: none;
@@ -251,7 +251,8 @@ body.ladies header h1 {
 }
 
 /* MAX Line Buttons Styling - fixes for location page */
-.max-lines-row {
+.max-lines-row,
+.map-lines-row {
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -259,27 +260,29 @@ body.ladies header h1 {
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
-.max-lines-row img {
+.max-lines-row img,
+.map-lines-row img {
   height: 48px;
   width: auto;
   max-width: 150px;
-  border: none;
+  border: none !important;
   border-radius: 8px;
-  background: #fff;
+  background: none !important;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   padding: 0;
   margin: 0;
   display: inline-block;
+  object-fit: contain;
 }
-
-/* Responsive: stack MAX line buttons on small screens */
 @media (max-width: 600px) {
-  .max-lines-row {
+  .max-lines-row,
+  .map-lines-row {
     flex-direction: column;
     gap: 0.7rem;
     align-items: flex-start;
   }
-  .max-lines-row img {
+  .max-lines-row img,
+  .map-lines-row img {
     max-width: 85vw;
     height: 40px;
   }
