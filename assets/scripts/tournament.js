@@ -113,7 +113,7 @@
     format = lnFormat === 0 ? "9-ball" : "8-ball";
     formatNum = lnFormat === 0 ? "9" : "8";
     formatLabel = format;
-    eventTitle = `${formattedDate} Ladies Night ${formatLabel} Player List`;
+    eventTitle = `${formattedDate} Ladies Night ${formatLabel} Players`;
     signupSlug = `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`;
   } else {
     // openCount: 1 = June 5, 2 = June 12, etc.
@@ -126,7 +126,7 @@
       formatNum = "8";
     }
     formatLabel = format;
-    eventTitle = `${formattedDate} ${formatLabel} Player List`;
+    eventTitle = `${formattedDate} ${formatLabel} Players`;
     signupSlug = `river-thursday-${formatNum}-ball-${mmddyyyy}`;
   }
 
