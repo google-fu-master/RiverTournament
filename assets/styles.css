@@ -200,24 +200,25 @@ h2.page-title {
   padding: 0 !important;
 }
 
-/* Ladies Night THEME OVERRIDES (with accent & formatting fixes) */
+/* -------- LADIES NIGHT THEME (ENHANCED W/ ACCENTS) -------- */
 body.ladies {
   background: linear-gradient(135deg, #3a003a 0%, #2b102b 100%) !important;
 }
 
-/* Top event banner: distinct, bold, not just a pink bar */
+/* Top event banner: distinct, bold, not just a pink bar, with cyan border and gold shadow */
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
   background: linear-gradient(90deg, #40215b 0%, #cc6699 100%) !important;
   color: #fff !important;
   border-radius: 0 0 24px 24px;
-  box-shadow: 0 4px 24px 0 rgba(204, 102, 153, 0.17), 0 2px 6px 0 rgba(0,0,0,0.13);
+  border-bottom: 4px solid var(--neon-cyan, #00eafd);
+  box-shadow: 0 4px 24px 0 rgba(204, 102, 153, 0.17), 0 -4px 24px 0 var(--link-gold, #d4af37);
   padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
   margin-bottom: 2.2rem;
 }
 
-/* Page title and main h1: bold neon pink, deep shadow for contrast */
+/* Main title: add neon green/cyan underline for pop */
 body.ladies h1,
 body.ladies .player-header,
 body.ladies #tournament-title,
@@ -232,25 +233,48 @@ body.ladies .event-banner h1 {
   background: none !important;
   border: none !important;
   margin-bottom: 1.2rem !important;
+  position: relative;
+}
+body.ladies h1::after,
+body.ladies .player-header::after,
+body.ladies #tournament-title::after,
+body.ladies .event-banner h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
 }
 
-/* Panels: lighter purple for panels, less shadow, more padding */
+@media (min-width: 1025px) {
+  body.ladies main,
+  body.ladies .content-wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Panels: add neon cyan border/glow for contrast */
 body.ladies main,
 body.ladies .content-wrapper,
 body.ladies section {
-  background: rgba(60, 0, 60, 0.91);
+  background: rgba(40, 0, 40, 0.94);
   border-radius: 24px;
-  box-shadow: 0 6px 24px 0 rgba(204, 102, 153, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 6px 24px 0 rgba(48, 186, 255, 0.10), 0 1.5px 6px 0 rgba(204,102,153,0.18);
+  border: 2px solid var(--neon-cyan, #00eafd);
   padding: 2.2rem 2.5vw;
   margin-bottom: 2.7rem;
 }
 
-/* Buttons: neon pink, filled on hover, blue glow accent */
+/* Buttons: neon pink with cyan border, green glow on hover */
 body.ladies .btn-signup,
 body.ladies .cta-button {
   background: #ff79c7;
   color: #fff;
-  border: 2.5px solid #fff;
+  border: 2.5px solid var(--neon-cyan);
   font-weight: 700;
   font-size: 1.2rem;
   border-radius: 100px;
@@ -263,45 +287,57 @@ body.ladies .cta-button {
 }
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
-  background: #30baff;
-  color: #fff;
-  border-color: #ff79c7;
-  box-shadow: 0 0 32px #30baff, 0 0 40px #ff79c7;
+  background: var(--neon-cyan);
+  color: #141414;
+  border-color: var(--neon-green);
+  box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
 }
 
-/* Info/callout text: neon cyan or green for secondary info */
+/* Info/callout text: gold with cyan accent bar */
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  color: #30baff;
-  border-left: 4px solid #30baff;
-  background: rgba(0, 20, 40, 0.18);
+  color: var(--link-gold);
+  border-left: 6px solid var(--neon-cyan);
+  background: rgba(0, 20, 40, 0.22);
   font-size: 1.07rem;
-  box-shadow: 0 0 8px #30baff;
+  box-shadow: 0 0 8px var(--neon-cyan);
+  padding-left: 1.4em;
 }
 
-/* Links: blue/cyan accent, underline, strong hover */
+/* Links: neon cyan, underline, strong hover, gold on hover */
 body.ladies a {
-  color: #30baff;
+  color: var(--neon-cyan);
   text-decoration: underline;
   font-weight: bold;
-  text-shadow: 0 0 8px #30baff, 0 0 4px #fff;
+  text-shadow: 0 0 8px var(--neon-cyan), 0 0 4px #fff;
   transition: color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 body.ladies a:hover {
-  color: #fff;
+  color: var(--link-gold);
   background: #30baff;
   border-radius: 5px;
-  box-shadow: 0 0 18px #30baff;
+  box-shadow: 0 0 18px var(--neon-cyan);
 }
 
-/* Section subtitles and headers: add a blue/cyan accent underline */
+/* Section subtitles and headers: neon green accent bar, cyan text */
 body.ladies h2,
 body.ladies h3 {
-  color: #ff79c7 !important;
-  border-bottom: 2.5px solid #30baff;
-  padding-bottom: 0.2em;
+  color: var(--neon-cyan) !important;
+  border-left: 8px solid var(--neon-green);
+  padding-left: 0.5em;
+  font-weight: 800;
   margin-bottom: 0.9em;
+  text-shadow: 0 0 8px var(--neon-cyan), 0 0 3px #000;
+}
+
+/* Table/iframe containers: add subtle border for separation */
+body.ladies .iframe-wrapper,
+body.ladies table {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 14px;
+  background: rgba(20, 40, 60, 0.85);
+  box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
 }
 
 /* Restore white for main body text for readability */
@@ -309,15 +345,7 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
   color: #fff;
 }
 
-/* Restore max-width for desktop only */
-@media (min-width: 1025px) {
-  body.ladies main,
-  body.ladies .content-wrapper {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+/* ...rest of your previous rules (unchanged from earlier versions) ... */
 
 /* Status Legend styling - Compact (for home/index) */
 .status-legend.compact {
@@ -450,39 +478,6 @@ header p {
 }
 
 /* Removed old .contact-form-wrapper button styles in favor of .cta-button */
-
-/* Ladies Night Theme Overrides */
-body.ladies header {
-  text-align: center;
-  background-color: var(--mid-navy);
-  padding-top: 1.5rem;
-  padding-bottom: 0.25rem;
-}
-body.ladies nav,
-body.ladies .menu,
-body.ladies main,
-body.ladies footer,
-body.ladies .contact-form-wrapper {
-  background-color: var(--dark-pink);
-}
-body.ladies .pot-banner {
-  border-color: var(--accent-pink);
-}
-body.ladies .event-banner {
-  background: linear-gradient(90deg, var(--accent-pink) 0%, var(--mid-pink) 100%);
-  color: var(--white);
-  box-shadow: 0 0 16px 4px var(--accent-pink), 0 4px 32px rgba(204,102,153,0.15);
-}
-body.ladies .btn-signup, body.ladies .cta-button, body.ladies #nav-signup-link {
-  background-color: var(--accent-pink) !important;
-  color: #fff !important;
-  box-shadow: 0 0 15px var(--accent-pink), 0 0 30px var(--accent-pink);
-}
-body.ladies .btn-signup:hover, body.ladies .cta-button:hover, body.ladies #nav-signup-link:hover {
-  background-color: var(--link-yellow) !important;
-  color: #000 !important;
-  box-shadow: 0 0 25px var(--link-yellow), 0 0 40px var(--accent-pink);
-}
 
 /* Responsive iframe container */
 .iframe-wrapper {
