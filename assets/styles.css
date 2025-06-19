@@ -24,12 +24,20 @@
   --table-green: #00cc66;
 }
 
-/* Hide the mobile nav checkbox toggle */
+/* --- GLASSMORPHISM PATTERNED BACKGROUND FOR LADIES NIGHT --- */
+body.ladies {
+  /* Multi-stop gradient, looks great with glass panels */
+  background: linear-gradient(135deg, #ff79c7 0%, #30baff 100%, #3a003a 100%);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ----- Base styling ----- */
 #menu-toggle {
   display: none;
 }
-
-/* Nav bar - horizontal by default */
 nav {
   width: 100%;
   background-color: var(--dark-navy);
@@ -38,8 +46,6 @@ nav {
   position: relative;
   z-index: 100;
 }
-
-/* Menu as horizontal row on desktop */
 .menu {
   display: flex;
   flex-direction: row;
@@ -75,7 +81,6 @@ nav {
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
 }
-
 /* Ladies Night menu accent */
 body.ladies .menu a,
 body.ladies .menu a:visited {
@@ -92,8 +97,6 @@ body.ladies .menu a:focus {
   background: rgba(255,255,255,0.05);
   border-radius: 8px;
 }
-
-/* Hamburger menu for mobile */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -104,8 +107,6 @@ body.ladies .menu a:focus {
   top: 10px;
   left: 16px;
 }
-
-/* Mobile styles */
 @media (max-width: 1024px) {
   .menu {
     flex-direction: column;
@@ -129,8 +130,6 @@ body.ladies .menu a:focus {
     transform: translateX(0);
   }
 }
-
-/* Responsive font size for header h1 */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -163,8 +162,6 @@ body.ladies .menu a:focus {
     font-size: 1rem;
   }
 }
-
-/* Event banner styling */
 .event-banner {
   background: linear-gradient(90deg, var(--accent-blue) 0%, var(--mid-navy) 100%);
   padding: 2rem 0;
@@ -178,7 +175,6 @@ body.ladies .menu a:focus {
   max-width: 800px;
   margin: 0 auto;
 }
-
 /* --- Page & Tournament Title Styling --- */
 .player-header,
 #tournament-title,
@@ -202,29 +198,26 @@ h2.page-title {
   padding: 0 !important;
 }
 
-/* ----------- LADIES NIGHT THEME (GLASSMORPHISM ENHANCED) ----------- */
-body.ladies {
-  background: linear-gradient(135deg, #3a003a 0%, #2b102b 100%) !important;
-}
-
+/* ----------- LADIES NIGHT "GLASS" PANELS ----------- */
 body.ladies main,
 body.ladies .content-wrapper,
 body.ladies section {
-  background: rgba(40, 0, 40, 0.32);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18), 0 2px 12px 0 #ff79c7;
-  backdrop-filter: blur(24px) saturate(120%);
-  -webkit-backdrop-filter: blur(24px) saturate(120%);
-  border: 1.5px solid rgba(0,234,253,0.18);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18), 0 0 24px 0 #ff79c766;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
   padding: 2.2rem 2.5vw;
   margin-bottom: 2.7rem;
+  color: #fff;
   max-width: 1300px;
   width: 98vw;
   margin-left: auto;
   margin-right: auto;
-  color: #fff;
 }
 
+/* Banner/headers: glass, neon border, shadow */
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
@@ -268,6 +261,7 @@ body.ladies .event-banner h1::after {
   background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
 }
 
+/* Neon callouts, notes, disclaimers: glass + neon glow */
 body.ladies .neon-callout,
 body.ladies .note,
 body.ladies .disclaimer,
@@ -363,6 +357,7 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
   }
 }
 
+/* ----- Rest of your site styles below (unchanged) ----- */
 /* Status Legend styling - Compact (for home/index) */
 .status-legend.compact {
   background: none;
@@ -457,22 +452,18 @@ body, input, textarea, button {
   letter-spacing: 0.5px;
   font-weight: 400;
 }
-
 h1, h2, h3, h4, .highlight {
   font-family: 'Oswald', 'Arial Black', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 header h1 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
-
 /* Add strong neon-like glow to headings */
 h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
-
 /* Title Bar Enhancement */
 header p {
   font-weight: bold;
@@ -481,20 +472,16 @@ header p {
   letter-spacing: 0.5px;
   text-shadow: 0 0 3px var(--accent-blue);
 }
-
 /* Contact Form Enhancements */
 .contact-form-wrapper h2 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
-
 .contact-form-wrapper label {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
 /* Removed old .contact-form-wrapper button styles in favor of .cta-button */
-
 /* Responsive iframe container */
 .iframe-wrapper {
   max-width: 100%;
@@ -510,7 +497,6 @@ header p {
   min-height: 600px;
   border: none;
 }
-
 /* Global link styling */
 a {
   color: var(--link-yellow);
@@ -520,7 +506,6 @@ a {
 a:hover {
   color: var(--link-gold);
 }
-
 /* Global styling */
 html, body {
   width: 100%;
@@ -603,7 +588,6 @@ footer {
     0 0 4px var(--neon-green, #39ff14),
     0 0 8px var(--neon-green, #39ff14);
 }
-
 /* Contact form and flyer styles */
 .contact-form-wrapper {
   max-width: 600px;
@@ -633,7 +617,6 @@ footer {
   color: var(--pot-green);
   font-weight: bold;
 }
-
 /* --- FLYER-INSPIRED ENHANCEMENTS --- */
 .site-title {
   font-family: 'Pacifico', cursive;
@@ -648,8 +631,6 @@ footer {
   text-align: center;
   margin-top: 1.25rem;
 }
-
-/* Flyer subheading styles */
 .flyer-detail {
   color: var(--neon-cyan, #00eafd);
   font-family: 'Oswald', Arial, sans-serif;
@@ -662,37 +643,27 @@ footer {
   margin: 0.3rem 0;
   text-align: center;
 }
-
-/* Flyer-style bullet for dot dividers */
 .flyer-bullet {
   margin: 0 0.5em;
   color: var(--neon-cyan, #00eafd);
   font-size: 1.2em;
 }
-
-/* Neon green for alternates line */
 .flyer-green {
   color: var(--neon-green, #39ff14);
   text-shadow:
     0 0 10px var(--neon-green, #39ff14),
     0 0 16px #000;
 }
-
-/* Neon pink for Ladies Night */
 .flyer-pink {
   color: var(--neon-pink, #ff79c7);
   text-shadow:
     0 0 10px var(--neon-pink, #ff79c7),
     0 0 16px #000;
 }
-
-/* Neon gold for entry/cap lines */
 .flyer-gold {
   color: var(--neon-gold, #d4af37);
   text-shadow: 0 0 8px var(--neon-gold, #d4af37);
 }
-
-/* Flyer grouping */
 .flyer-section {
   margin: 1.5rem 0;
   font-size: 1.1rem;
@@ -701,13 +672,11 @@ footer {
   font-family: 'Oswald', Arial, sans-serif;
   letter-spacing: 1.5px;
 }
-
 .flyer-caps {
   color: var(--neon-cyan, #00eafd);
   font-weight: bold;
   text-shadow: 0 0 7px var(--neon-cyan, #00eafd);
 }
-
 /* Ladies Night Banner Enhancements */
 .event-banner.ladies,
 body.ladies .event-banner {
@@ -720,7 +689,6 @@ body.ladies .player-header,
   color: var(--neon-pink, #ff79c7) !important;
   text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
 }
-
 /* Flyer-inspired Signup Button */
 .btn-signup {
   display: inline-block;
@@ -743,7 +711,6 @@ body.ladies .player-header,
     border-color 0.2s;
   cursor: pointer;
 }
-
 .btn-signup:hover,
 .btn-signup:focus {
   background: #39ff14;
@@ -752,7 +719,6 @@ body.ladies .player-header,
   box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57,255,20,0.18);
   text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
 }
-
 /* CTA (Call To Action) Button - white neon outline style */
 .cta-button {
   display: inline-block;
@@ -775,7 +741,6 @@ body.ladies .player-header,
     border-color 0.2s;
   cursor: pointer;
 }
-
 .cta-button:hover,
 .cta-button:focus {
   background: #39ff14;
@@ -784,13 +749,10 @@ body.ladies .player-header,
   box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57,255,20,0.18);
   text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
 }
-
-/* (Optional) CTA button focus accessibility */
 .cta-button:focus {
   outline: 2px solid var(--neon-green);
   outline-offset: 2px;
 }
-
 /* --- Copilot-added fixes for homepage nav and main centering --- */
 body.home nav {
   text-align: left !important;
@@ -798,7 +760,6 @@ body.home nav {
 body.home main {
   text-align: center !important;
 }
-
 #digitalpool-embed {
   width: 100vw;
   min-height: 600px;
@@ -807,8 +768,6 @@ body.home main {
   background: var(--dark-navy);
   display: block;
 }
-
-/* For full width embed breakout (use with a wrapping .full-width-section) */
 .full-width-section {
   width: 100vw;
   position: relative;
@@ -818,7 +777,6 @@ body.home main {
   margin-right: -50vw;
   background: var(--dark-navy);
 }
-
 /* ------------------ */
 /* MOBILE ENHANCEMENTS FOR LOCATION PAGE & MAPS */
 /* ------------------ */
@@ -830,7 +788,6 @@ body.home main {
   flex-wrap: wrap;
   align-items: center;
 }
-
 @media (max-width: 600px) {
   .max-stops-row,
   .map-lines-row,
@@ -853,19 +810,16 @@ body.home main {
     margin: 0 auto;
   }
 }
-
 /* Make all images/iframes scale by default */
 img, iframe {
   max-width: 100%;
   height: auto;
 }
-
 /* Make clickable images feel like buttons */
 .map-lines-row a img,
 .map-image {
   cursor: pointer;
 }
-
 /* Slightly reduce padding on content-wrapper for mobile */
 @media (max-width: 600px) {
   .content-wrapper {
@@ -873,9 +827,7 @@ img, iframe {
     padding-right: 0.5rem;
   }
 }
-
 /* --- PATCH: Contact Form Improvements --- */
-
 /* Checkbox group styling for contact form */
 .checkbox-group-inline {
   display: flex;
@@ -883,7 +835,6 @@ img, iframe {
   flex-wrap: wrap;
   align-items: center;
 }
-
 @media (max-width: 600px) {
   .checkbox-group-inline {
     flex-direction: column;
@@ -891,12 +842,10 @@ img, iframe {
     align-items: flex-start;
   }
 }
-
 /* Utility: center text */
 .text-center {
   text-align: center;
 }
-
 /* (Optional) Contact form status message styling */
 #form-status {
   font-size: 1.1rem;
@@ -904,21 +853,18 @@ img, iframe {
   min-height: 2em;
   font-weight: bold;
 }
-
 /* -------- LOCATION PAGE BODY TEXT SIZE -------- */
 body.page-location main,
 body.page-location .content-wrapper {
   font-size: 1.33rem;
   line-height: 1.7;
 }
-
 @media (max-width: 768px) {
   body.page-location main,
   body.page-location .content-wrapper {
     font-size: 1rem;
   }
 }
-
 /* Large Search Bars on Rules and FAQ pages */
 body.page-rules #search,
 body.page-faq #faq-search {
@@ -937,7 +883,6 @@ body.page-faq #faq-search {
   font-weight: 500;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 body.page-rules #search:focus,
 body.page-faq #faq-search:focus {
   outline: none;
