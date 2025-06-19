@@ -24,19 +24,24 @@
   --table-green: #00cc66;
 }
 
-/* === GLOBAL SITE BACKGROUND IMAGE === */
+/* === GLOBAL BACKGROUND IMAGE, NO OVERLAY === */
 body {
-  background:
-    linear-gradient(rgba(58,0,58,0.68), rgba(43,16,43,0.58)),
-    url('assets/images/backgrounds/drew-beamer-vAij-E26haI-unsplash.jpg') center center/cover no-repeat fixed;
+  background: url('assets/images/backgrounds/drew-beamer-vAij-E26haI-unsplash.jpg') center center/cover no-repeat fixed;
   min-height: 100vh;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: overlay;
+  color: var(--white);
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* === GLASSMORPHISM PANELS (APPLIES ALWAYS) === */
+/* === GLASSMORPHISM PANELS: ALL PAGES === */
 main,
 .content-wrapper,
 section,
@@ -45,25 +50,29 @@ nav,
 .event-banner,
 table,
 .iframe-wrapper {
-  background: rgba(25, 25, 35, 0.33);
+  background: rgba(28, 28, 32, 0.44);
   border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18), 0 0 12px 1.5px #ff79c750, 0 0 4px 0 #00eafd55;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18), 0 0 12px 1.5px #ff79c740, 0 0 4px 0 #00eafd33;
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1.5px solid rgba(255,255,255,0.17);
+  border: 1.5px solid rgba(255,255,255,0.13);
   color: #fff;
   transition: background 0.3s;
 }
 
-/* Keep nav bar less translucent and a bit darker on top for contrast */
+/* Nav bar: extra dark and less translucent for contrast */
 nav {
-  background: rgba(13, 27, 42, 0.67);
+  background: rgba(13, 27, 42, 0.82);
   border-radius: 0 0 24px 24px;
   box-shadow: 0 4px 32px 0 rgba(31,38,135,0.24), 0 0 8px #00eafd33;
   backdrop-filter: blur(14px);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
-/* Extra padding/margins for main content panels */
 main,
 .content-wrapper,
 section {
@@ -73,6 +82,9 @@ section {
   width: 98vw;
   margin-left: auto;
   margin-right: auto;
+  flex: 1;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .event-banner,
@@ -81,9 +93,10 @@ header,
   border-bottom: 4px solid var(--neon-cyan, #00eafd);
   padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
   margin-bottom: 2.2rem;
+  text-align: center;
 }
 
-/* ----- Base styling ----- */
+/* Hide the mobile nav checkbox toggle */
 #menu-toggle {
   display: none;
 }
@@ -122,7 +135,6 @@ header,
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
 }
-/* Ladies Night menu accent */
 body.ladies .menu a,
 body.ladies .menu a:visited {
   color: var(--white);
@@ -216,7 +228,6 @@ body.ladies .menu a:focus {
   max-width: 800px;
   margin: 0 auto;
 }
-/* --- Page & Tournament Title Styling --- */
 .player-header,
 #tournament-title,
 h1.page-title,
@@ -238,15 +249,6 @@ h2.page-title {
   box-shadow: none !important;
   padding: 0 !important;
 }
-
-/* ----------- LADIES NIGHT "GLASS" PANELS ----------- */
-body.ladies main,
-body.ladies .content-wrapper,
-body.ladies section {
-  /* These are now handled above in the new block for glassmorphism, but if you want to keep any unique properties, move them up */
-}
-
-/* Banner/headers: glass, neon border, shadow */
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
@@ -369,7 +371,6 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
     margin-right: auto;
   }
 }
-/* Status Legend styling - Compact (for home/index) */
 .status-legend.compact {
   background: none;
   border: none;
@@ -532,15 +533,6 @@ header h1 {
   color: var(--white);
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   margin-bottom: 0.25rem;
-}
-main {
-  flex: 1;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 1rem;
-  background-color: var(--darkest);
-  box-sizing: border-box;
-  width: 100%;
 }
 body:not(.page-rules):not(.page-faq):not(.page-location) main {
   text-align: center;
@@ -868,3 +860,5 @@ body.page-faq #faq-search:focus {
   border-color: var(--accent-pink, #cc6699);
   box-shadow: 0 4px 16px rgba(204,102,153,0.15);
 }
+
+/* ... (the rest of your file continues here) ... */
