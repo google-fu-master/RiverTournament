@@ -24,17 +24,56 @@
   --table-green: #00cc66;
 }
 
-/* --- GLASSMORPHISM PATTERNED BACKGROUND FOR LADIES NIGHT --- */
-body.ladies {
-  /* Multi-stop gradient, looks great with glass panels */
-  background: linear-gradient(135deg, #ff79c7 0%, #30baff 100%, #3a003a 100%);
+/* === GLOBAL GLASSMORPHISM BACKGROUND & PANELS === */
+body {
+  /* Photo background with overlay for contrast, applies to ALL pages */
+  background:
+    linear-gradient(rgba(58,0,58,0.72), rgba(43,16,43,0.68)),
+    url('assets/images/backgrounds/drew-beamer-vAij-E26haI-unsplash.jpg') center center/cover no-repeat fixed;
   min-height: 100vh;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
 }
 
-/* ----- Base styling ----- */
+main,
+.content-wrapper,
+section,
+header,
+.event-banner,
+table,
+.iframe-wrapper {
+  background: rgba(255,255,255,0.18);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.30), 0 0 12px 2px #ff79c7, 0 0 4px 0 #00eafd;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1.5px solid rgba(255,255,255,0.33);
+  color: #fff;
+  transition: background 0.3s;
+}
+
+main,
+.content-wrapper,
+section {
+  padding: 2.2rem 2.5vw;
+  margin-bottom: 2.7rem;
+  max-width: 1300px;
+  width: 98vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-banner,
+header,
+#tournament-title {
+  border-bottom: 4px solid var(--neon-cyan, #00eafd);
+  padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
+  margin-bottom: 2.2rem;
+}
+
+/* Hide the mobile nav checkbox toggle */
 #menu-toggle {
   display: none;
 }
@@ -81,7 +120,6 @@ nav {
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
 }
-/* Ladies Night menu accent */
 body.ladies .menu a,
 body.ladies .menu a:visited {
   color: var(--white);
@@ -175,7 +213,6 @@ body.ladies .menu a:focus {
   max-width: 800px;
   margin: 0 auto;
 }
-/* --- Page & Tournament Title Styling --- */
 .player-header,
 #tournament-title,
 h1.page-title,
@@ -202,22 +239,9 @@ h2.page-title {
 body.ladies main,
 body.ladies .content-wrapper,
 body.ladies section {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18), 0 0 24px 0 #ff79c766;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  padding: 2.2rem 2.5vw;
-  margin-bottom: 2.7rem;
-  color: #fff;
-  max-width: 1300px;
-  width: 98vw;
-  margin-left: auto;
-  margin-right: auto;
+  /* These are now handled above in the new block for glassmorphism, but if you want to keep any unique properties, move them up */
 }
 
-/* Banner/headers: glass, neon border, shadow */
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
@@ -231,7 +255,6 @@ body.ladies #tournament-title {
   padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
   margin-bottom: 2.2rem;
 }
-
 body.ladies h1,
 body.ladies .player-header,
 body.ladies #tournament-title,
@@ -260,8 +283,6 @@ body.ladies .event-banner h1::after {
   border-radius: 2px;
   background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
 }
-
-/* Neon callouts, notes, disclaimers: glass + neon glow */
 body.ladies .neon-callout,
 body.ladies .note,
 body.ladies .disclaimer,
@@ -271,8 +292,6 @@ body.ladies .status-legend {
   box-shadow: 0 2px 18px 0 var(--neon-cyan, #00eafd), 0 0 8px #ff79c7;
   backdrop-filter: blur(12px) saturate(110%);
 }
-
-/* Buttons: neon pink with cyan border, green glow on hover */
 body.ladies .btn-signup,
 body.ladies .cta-button {
   background: #ff79c7;
@@ -295,8 +314,6 @@ body.ladies .cta-button:hover {
   border-color: var(--neon-green);
   box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
 }
-
-/* Info/callout text: gold with cyan accent bar */
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
@@ -307,8 +324,6 @@ body.ladies .status-legend {
   box-shadow: 0 0 8px var(--neon-cyan);
   padding-left: 1.4em;
 }
-
-/* Links: neon cyan, underline, strong hover, gold on hover */
 body.ladies a {
   color: var(--neon-cyan);
   text-decoration: underline;
@@ -322,8 +337,6 @@ body.ladies a:hover {
   border-radius: 5px;
   box-shadow: 0 0 18px var(--neon-cyan);
 }
-
-/* Section subtitles and headers: neon green accent bar, cyan text */
 body.ladies h2,
 body.ladies h3 {
   color: var(--neon-cyan) !important;
@@ -333,8 +346,6 @@ body.ladies h3 {
   margin-bottom: 0.9em;
   text-shadow: 0 0 8px var(--neon-cyan), 0 0 3px #000;
 }
-
-/* Table/iframe containers: add subtle border for separation */
 body.ladies .iframe-wrapper,
 body.ladies table {
   border: 2px solid var(--neon-cyan);
@@ -342,12 +353,9 @@ body.ladies table {
   background: rgba(20, 40, 60, 0.85);
   box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
 }
-
-/* Restore white for main body text for readability */
 body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section {
   color: #fff;
 }
-
 @media (min-width: 1025px) {
   body.ladies main,
   body.ladies .content-wrapper {
@@ -356,8 +364,6 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
     margin-right: auto;
   }
 }
-
-/* ----- Rest of your site styles below (unchanged) ----- */
 /* Status Legend styling - Compact (for home/index) */
 .status-legend.compact {
   background: none;
@@ -390,8 +396,6 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
     font-size: 0.98rem;
   }
 }
-
-/* MAX Line Buttons Styling - fixes for location page */
 .max-lines-row,
 .map-lines-row {
   display: flex;
@@ -428,8 +432,6 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
     height: 40px;
   }
 }
-
-/* Notes and disclaimers */
 .note,
 .disclaimer {
   color: var(--white);
@@ -445,8 +447,6 @@ body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section
 .note a:hover {
   color: var(--link-gold);
 }
-
-/* Vintage/Competitive Typography Tweaks */
 body, input, textarea, button {
   font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 0.5px;
@@ -460,11 +460,9 @@ h1, h2, h3, h4, .highlight {
 header h1 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
-/* Add strong neon-like glow to headings */
 h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
-/* Title Bar Enhancement */
 header p {
   font-weight: bold;
   font-size: 1.15rem;
@@ -472,7 +470,6 @@ header p {
   letter-spacing: 0.5px;
   text-shadow: 0 0 3px var(--accent-blue);
 }
-/* Contact Form Enhancements */
 .contact-form-wrapper h2 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
 }
@@ -481,8 +478,6 @@ header p {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-/* Removed old .contact-form-wrapper button styles in favor of .cta-button */
-/* Responsive iframe container */
 .iframe-wrapper {
   max-width: 100%;
   margin: 2rem auto;
@@ -497,7 +492,6 @@ header p {
   min-height: 600px;
   border: none;
 }
-/* Global link styling */
 a {
   color: var(--link-yellow);
   text-decoration: underline;
@@ -506,11 +500,9 @@ a {
 a:hover {
   color: var(--link-gold);
 }
-/* Global styling */
 html, body {
   width: 100%;
   overflow-x: hidden;
-  background-color: var(--darkest);
   color: var(--white);
 }
 body {
@@ -588,7 +580,6 @@ footer {
     0 0 4px var(--neon-green, #39ff14),
     0 0 8px var(--neon-green, #39ff14);
 }
-/* Contact form and flyer styles */
 .contact-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
@@ -617,7 +608,6 @@ footer {
   color: var(--pot-green);
   font-weight: bold;
 }
-/* --- FLYER-INSPIRED ENHANCEMENTS --- */
 .site-title {
   font-family: 'Pacifico', cursive;
   font-size: 3.5rem;
@@ -677,7 +667,6 @@ footer {
   font-weight: bold;
   text-shadow: 0 0 7px var(--neon-cyan, #00eafd);
 }
-/* Ladies Night Banner Enhancements */
 .event-banner.ladies,
 body.ladies .event-banner {
   background: linear-gradient(90deg, var(--neon-pink, #ff79c7) 0%, var(--deep-navy, #0D1B2A) 100%);
@@ -689,7 +678,6 @@ body.ladies .player-header,
   color: var(--neon-pink, #ff79c7) !important;
   text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
 }
-/* Flyer-inspired Signup Button */
 .btn-signup {
   display: inline-block;
   background: transparent;
@@ -719,7 +707,6 @@ body.ladies .player-header,
   box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57,255,20,0.18);
   text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
 }
-/* CTA (Call To Action) Button - white neon outline style */
 .cta-button {
   display: inline-block;
   background: transparent;
@@ -753,7 +740,6 @@ body.ladies .player-header,
   outline: 2px solid var(--neon-green);
   outline-offset: 2px;
 }
-/* --- Copilot-added fixes for homepage nav and main centering --- */
 body.home nav {
   text-align: left !important;
 }
@@ -777,9 +763,6 @@ body.home main {
   margin-right: -50vw;
   background: var(--dark-navy);
 }
-/* ------------------ */
-/* MOBILE ENHANCEMENTS FOR LOCATION PAGE & MAPS */
-/* ------------------ */
 .max-stops-row,
 .map-lines-row,
 .rideshare-buttons {
@@ -810,25 +793,20 @@ body.home main {
     margin: 0 auto;
   }
 }
-/* Make all images/iframes scale by default */
 img, iframe {
   max-width: 100%;
   height: auto;
 }
-/* Make clickable images feel like buttons */
 .map-lines-row a img,
 .map-image {
   cursor: pointer;
 }
-/* Slightly reduce padding on content-wrapper for mobile */
 @media (max-width: 600px) {
   .content-wrapper {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 }
-/* --- PATCH: Contact Form Improvements --- */
-/* Checkbox group styling for contact form */
 .checkbox-group-inline {
   display: flex;
   gap: 1rem;
@@ -842,18 +820,15 @@ img, iframe {
     align-items: flex-start;
   }
 }
-/* Utility: center text */
 .text-center {
   text-align: center;
 }
-/* (Optional) Contact form status message styling */
 #form-status {
   font-size: 1.1rem;
   margin-top: 1em;
   min-height: 2em;
   font-weight: bold;
 }
-/* -------- LOCATION PAGE BODY TEXT SIZE -------- */
 body.page-location main,
 body.page-location .content-wrapper {
   font-size: 1.33rem;
@@ -865,7 +840,6 @@ body.page-location .content-wrapper {
     font-size: 1rem;
   }
 }
-/* Large Search Bars on Rules and FAQ pages */
 body.page-rules #search,
 body.page-faq #faq-search {
   width: 100%;
