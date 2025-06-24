@@ -1,0 +1,12 @@
+#menu-toggle { display: none; }
+nav {
+  width: 100%;
+  background-color: var(--dark-navy);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+}
+.menu { /* ...the rest of your menu/nav styles... */ }
+.hamburger { /* ... */ }
+/* ...rest of nav/menu/mobile nav... */
