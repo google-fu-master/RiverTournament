@@ -1,3 +1,4 @@
+/* --- FOOTER --- */
 footer {
   background-color: var(--slate);
   color: var(--white);
@@ -6,6 +7,115 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-/* status legend, note, disclaimer, etc. */
-.status-legend.index-bar { /* ...improved styles... */ }
-.note, .disclaimer { /* ...improved styles... */ }
+
+/* --- STATUS LEGEND BARS --- */
+.status-legend.index-bar {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  border-radius: 0 0 8px 8px;
+  background: rgba(21, 29, 35, 0.98);
+  color: var(--white);
+  font-size: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 0.55em 0.5em 0.65em 0.5em;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 2em;
+}
+.status-legend.compact {
+  background: none;
+  border: none;
+  box-shadow: none;
+  max-width: 100%;
+  margin: 0.5rem auto 1rem auto;
+  padding: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+.status-legend.compact small {
+  font-size: 0.92rem;
+  color: var(--white);
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+.status-legend .status-dot,
+.status-legend dt,
+.status-legend dd,
+.status-legend dl {
+  display: none !important;
+}
+@media (max-width: 600px) {
+  .status-legend.index-bar {
+    font-size: 0.89rem;
+    padding: 1.1em 0.7em 1.1em 0.7em;
+    line-height: 1.55;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.7em;
+    margin-bottom: 0.8em;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
+    background: rgba(26,32,38,0.97);
+  }
+  .status-legend.index-bar small {
+    font-size: 0.93em;
+    line-height: 1.55;
+    display: block;
+    padding: 0 0.2em;
+    letter-spacing: 0;
+  }
+  .status-legend.index-bar small {
+    display: block;
+  }
+  .status-legend.index-bar small span {
+    display: inline-block;
+    margin-bottom: 0.4em;
+  }
+}
+@media (max-width: 700px) {
+  .status-legend.index-bar {
+    font-size: 0.97em;
+    padding: 1.1em 0.4em 1.2em 0.4em;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1em;
+  }
+}
+
+/* --- NOTES & DISCLAIMERS --- */
+.note,
+.disclaimer {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 1.25rem auto;
+  max-width: 700px;
+  text-align: center;
+  background: rgba(40, 40, 60, 0.28);
+  border-radius: 10px;
+  padding: 1em 1.5em;
+  box-shadow: 0 0 8px #00eafd50;
+}
+.note a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+}
+.note a:hover {
+  color: var(--link-gold);
+}
+.note strong, .disclaimer strong {
+  color: #d4af37;
+}
+.disclaimer {
+  color: #ffd;
+  font-size: 1em;
+  margin-top: 1em;
+}
