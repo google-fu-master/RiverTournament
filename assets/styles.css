@@ -847,9 +847,58 @@ body.home main {
 /* Responsive for mobile */
 @media (max-width: 600px) {
   .status-legend.index-bar {
-    font-size: 0.95rem;
-    padding: 0.7em 0.35em 0.75em 0.35em;
-    min-height: 1.7em;
+    font-size: 0.89rem;
+    padding: 1.1em 0.7em 1.1em 0.7em;
+    line-height: 1.55;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.7em;
+    margin-bottom: 0.8em;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
+    background: rgba(26,32,38,0.97);
+  }
+  .status-legend.index-bar small {
+    font-size: 0.93em;
+    line-height: 1.55;
+    display: block;
+    padding: 0 0.2em;
+    letter-spacing: 0;
+  }
+  .status-legend.index-bar small {
+    display: block;
+  }
+  .status-legend.index-bar small span {
+    display: inline-block;
+    margin-bottom: 0.4em;
+  }
+  .player-header,
+  #tournament-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.7rem;
+    padding: 0 0.3em;
+  }
+  #signup-button .signup-button-container,
+  .signup-button-container {
+    margin-bottom: 1.2rem;
+    margin-top: 0.7rem;
+  }
+  .digitalpool-section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  body, main, .content-wrapper {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+}
+
+/* Tablet fallback tweaks */
+@media (max-width: 900px) {
+  .player-header,
+  #tournament-title {
+    font-size: 1.7rem;
+    padding: 0 0.5em;
   }
 }
 
