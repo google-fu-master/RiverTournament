@@ -1,0 +1,29 @@
+/* --- Location page: Center headings/subheadings/images, left-align text --- */
+body.page-location h1,
+body.page-location h2,
+body.page-location h3,
+body.page-location h4,
+body.page-location h5,
+body.page-location h6 {
+  text-align: center !important;
+}
+body.page-location .content-wrapper img,
+body.page-location img,
+body.page-location .map-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  max-width: 100%;
+}
+body.page-location .content-wrapper,
+body.page-location section,
+body.page-location p,
+body.page-location li,
+body.page-location ul,
+body.page-location ol,
+body.page-location .max-lines-row,
+body.page-location .rideshare-buttons {
+  text-align: left !important;
+}
