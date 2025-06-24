@@ -14,7 +14,7 @@ body.page-location .map-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.3rem;
+  margin-top: 1.2rem;
   margin-bottom: 1.2rem;
   max-width: 100%;
 }
@@ -101,3 +101,4 @@ img, iframe {
     padding-right: 0.5rem;
   }
 }
+body { border: 10px solid red !important; }
