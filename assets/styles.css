@@ -1034,9 +1034,13 @@ body.home main {
   }
   #signup-button .signup-button-container,
   .signup-button-container {
-    margin-bottom: 1.2rem;
-    margin-top: 0.7rem;
-  }
+  margin: 2.5rem auto 2.5rem auto; /* Top and bottom margin for padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0; /* Extra padding above and below the button */
+  width: 100%;
+}
   .digitalpool-section {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
