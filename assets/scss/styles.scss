@@ -1,26 +1,9 @@
-// VARIABLES
-@import "variables";
-
-// BASE STYLES (html, body, main, typographic, utility)
-@import "base";
-
-// NAVIGATION & MENU
-@import "nav";
-
-// TOURNAMENT CARDS AND GRID
-@import "tournament-cards";
-
-// LADIES NIGHT THEME
-@import "ladies";
-
-// LOCATION PAGE STYLES
-@import "location";
-
-// REUSABLE COMPONENTS (buttons, flyer, forms, etc)
-@import "components";
-
-// FOOTER, STATUS LEGEND, NOTES
-@import "footer";
-
-// RESPONSIVE QUERIES (must be last!)
-@import "responsiveness";
+@use 'variables' as *;
+@use 'base' as *;
+@use 'nav' as *;
+@use 'ladies' as *;
+@use 'location' as *;
+@use 'tournament' as *;
+@use 'components' as *;
+@use 'footer' as *;
+@use 'responsive' as *;
