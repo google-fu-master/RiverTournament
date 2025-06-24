@@ -1,4 +1,4 @@
-/* --- Location page: Center headings/subheadings/images, left-align text --- */
+/* --- LOCATION PAGE: Center headings and images, left-align most text and content --- */
 body.page-location h1,
 body.page-location h2,
 body.page-location h3,
@@ -7,6 +7,7 @@ body.page-location h5,
 body.page-location h6 {
   text-align: center !important;
 }
+
 body.page-location .content-wrapper img,
 body.page-location img,
 body.page-location .map-image {
@@ -17,6 +18,7 @@ body.page-location .map-image {
   margin-bottom: 1.2rem;
   max-width: 100%;
 }
+
 body.page-location .content-wrapper,
 body.page-location section,
 body.page-location p,
@@ -26,4 +28,76 @@ body.page-location ol,
 body.page-location .max-lines-row,
 body.page-location .rideshare-buttons {
   text-align: left !important;
+}
+
+/* --- MAPS, MAX LINES AND RIDESHARE BUTTONS (used on location page and maps) --- */
+.max-lines-row,
+.map-lines-row,
+.max-stops-row,
+.rideshare-buttons {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.max-lines-row img,
+.map-lines-row img {
+  height: 48px;
+  width: auto;
+  max-width: 150px;
+  border: none !important;
+  border-radius: 8px;
+  background: none !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .max-lines-row,
+  .map-lines-row,
+  .max-stops-row,
+  .rideshare-buttons {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    align-items: stretch !important;
+  }
+  .map-image,
+  .max-stops-row iframe,
+  .map-lines-row img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+  .map-lines-row img {
+    height: 40px !important;
+    max-width: 160px !important;
+    margin: 0 auto;
+  }
+}
+
+/* Make all images/iframes scale by default (for location and maps) */
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make clickable images feel like buttons */
+.map-lines-row a img,
+.map-image {
+  cursor: pointer;
+}
+
+/* Slightly reduce padding on content-wrapper for mobile */
+@media (max-width: 600px) {
+  .content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
