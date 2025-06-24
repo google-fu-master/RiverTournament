@@ -999,42 +999,103 @@ img, iframe {
   font-weight: bold;
 }
 
-/* -------- LOCATION PAGE BODY TEXT SIZE -------- */
-body.page-location main,
-body.page-location .content-wrapper {
-  font-size: 1.33rem;
-  line-height: 1.7;
+/* ----------------------------- */
+/* --- TOURNAMENT CALENDAR FIXES --- */
+/* ----------------------------- */
+
+/* Make calendar event details easier to read on mobile and desktop */
+.upcoming-tournaments-list {
+  margin-top: 2em;
+  padding: 0;
+  list-style: none;
 }
 
-@media (max-width: 768px) {
-  body.page-location main,
-  body.page-location .content-wrapper {
-    font-size: 1rem;
+.upcoming-tournaments-list li {
+  margin-bottom: 2em;
+  padding: 1em 1.3em;
+  background: rgba(0,32,48,0.33);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,234,253,0.07);
+  display: block;
+  text-align: left;
+}
+
+.tournament-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size: 1.08em;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  align-items: center;
+}
+
+.tournament-date {
+  color: #ffd700;
+  text-shadow: none;
+  font-weight: bold;
+  font-size: 1.06em;
+}
+
+.tournament-type,
+.tournament-format {
+  color: #00eafd;
+  text-shadow: 0 0 2px #00eafd;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 1.06em;
+}
+
+.tournament-description {
+  color: #00eaff;
+  font-size: 1em;
+  line-height: 1.55;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 0.15em;
+  word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .upcoming-tournaments-list li {
+    margin-bottom: 1.3em;
+    padding: 0.85em 0.7em;
+    font-size: 0.97em;
+  }
+  .tournament-meta {
+    gap: 0.7em;
+    font-size: 0.98em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tournament-date,
+  .tournament-type,
+  .tournament-format {
+    font-size: 1em;
+  }
+  .tournament-description {
+    font-size: 0.98em;
+    line-height: 1.45;
   }
 }
 
-/* Large Search Bars on Rules and FAQ pages */
-body.page-rules #search,
-body.page-faq #faq-search {
-  width: 100%;
-  max-width: 540px;
-  font-size: 1.5rem;
-  padding: 0.85em 1.2em;
-  border-radius: 12px;
-  border: 2px solid var(--accent-blue, #0071a4);
-  margin: 1.3rem auto 2rem auto;
-  display: block;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  background: var(--slate, #151D23);
-  color: var(--white, #f5f5f5);
-  font-family: inherit;
-  font-weight: 500;
-  transition: border-color 0.2s, box-shadow 0.2s;
+/* Remove text-transform: uppercase from details for better readability */
+.tournament-description, .tournament-type, .tournament-format {
+  text-transform: none !important;
 }
 
-body.page-rules #search:focus,
-body.page-faq #faq-search:focus {
-  outline: none;
-  border-color: var(--accent-pink, #cc6699);
-  box-shadow: 0 4px 16px rgba(204,102,153,0.15);
+/* Reduce heading glow for calendar headings */
+#calendar-section h2, .calendar-title, .calendar-heading, .upcoming-tournaments-list-title {
+  text-shadow: 0 0 5px #00eafd, 0 0 8px #00eafd;
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 0.7em;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Add margin for the list */
+#calendar-section .upcoming-tournaments-list {
+  margin-bottom: 2em;
 }
