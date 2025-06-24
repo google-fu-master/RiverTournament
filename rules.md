@@ -36,21 +36,13 @@ permalink: /rules/
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Match Format & Races</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
-    <li><strong>8-Ball:</strong>
+    <li><strong>8 & 9 Ball:</strong>
       <ul>
-        <li>8–16 players: race to 2 on the winners side, 1 on the losers side</li>
+        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
+        <li>13-16 players: race to 1, both sides.</li>
+        <li>All Brackets: 100+ Fargo point gap, the higher-rated player must win 1 extra game.</li>
       </ul>
     </li>
-    <li><strong>9-Ball:</strong>
-      <ul>
-        <li>8–12 players: race to 3 on the winners side, 1 on the losers side</li>
-        <li>13–16 players: race to 2 on the winner side, 1 on the losers side</li>
-      </ul>
-    </li>
-    <li>In all formats, if there’s a 100+ Fargo point gap, the higher-rated player must win 1 extra game.</li>
-	<li>Examples:</li> 
-	<li>8-Ball, winner's side, player A is a 307, player B is a 440 (>100 gap), player A must win 2 games and player B must win 3 games; loser's side player A must win 1 game, player B must win 2 games.</li>
-	<li>9-ball, winner's side, player A is a 307, player B is a 440 (>100 gap), player A must win 3 games and player B must win 4 games; loser's side player A must win 1 game, player B must win 2 games.</li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
     <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent in the first round.</strong></li>
   </ul>
