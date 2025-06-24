@@ -1,0 +1,32 @@
+/* Typography, html/body, and utility classes */
+body, input, textarea, button {
+  font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+h1, h2, h3, h4, .highlight {
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--darkest);
+  color: var(--white);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.text-center { text-align: center; }
+.text-left { text-align: left !important; }
+a {
+  color: var(--link-yellow);
+  text-decoration: underline;
+  font-weight: bold;
+  &:hover { color: var(--link-gold); }
+}
