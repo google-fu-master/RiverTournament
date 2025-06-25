@@ -1,5 +1,4 @@
 /* ========== LADIES NIGHT THEME (GLASSMORPHISM ENHANCED) ========== */
-
 body.ladies {
   background: linear-gradient(135deg, #3a003a 0%, #2b102b 100%) !important;
 }
@@ -75,7 +74,7 @@ body.ladies .status-legend {
   backdrop-filter: blur(12px) saturate(110%);
 }
 
-/* Buttons: neon pink with cyan border, green glow on button hover */
+/* Buttons: neon pink with cyan border, green glow on hover */
 body.ladies .btn-signup,
 body.ladies .cta-button {
   background: #ff79c7;
@@ -99,7 +98,6 @@ body.ladies .cta-button:hover {
   box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
 }
 
-/* Info/callout text: gold with cyan accent bar */
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
@@ -111,7 +109,6 @@ body.ladies .status-legend {
   padding-left: 1.4em;
 }
 
-/* Links: neon cyan, underline, strong hover, gold on hover */
 body.ladies a {
   color: var(--neon-cyan);
   text-decoration: underline;
@@ -126,7 +123,6 @@ body.ladies a:hover {
   box-shadow: 0 0 18px var(--neon-cyan);
 }
 
-/* Section subtitles and headers: neon green accent bar, cyan text */
 body.ladies h2,
 body.ladies h3 {
   color: var(--neon-cyan) !important;
@@ -137,7 +133,6 @@ body.ladies h3 {
   text-shadow: 0 0 8px var(--neon-cyan), 0 0 3px #000;
 }
 
-/* Table/iframe containers: add subtle border for separation */
 body.ladies .iframe-wrapper,
 body.ladies table {
   border: 2px solid var(--neon-cyan);
@@ -146,12 +141,10 @@ body.ladies table {
   box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
 }
 
-/* Restore white for main body text for readability */
 body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section {
   color: #fff;
 }
 
-/* Ladies Night menu accent */
 body.ladies .menu a,
 body.ladies .menu a:visited {
   color: var(--white);
@@ -168,7 +161,6 @@ body.ladies .menu a:focus {
   border-radius: 8px;
 }
 
-/* Ladies Night Banner Enhancements */
 .event-banner.ladies,
 body.ladies .event-banner {
   background: linear-gradient(90deg, var(--neon-pink, #ff79c7) 0%, var(--deep-navy, #0D1B2A) 100%);

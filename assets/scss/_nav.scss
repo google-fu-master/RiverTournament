@@ -27,7 +27,6 @@ nav {
   position: static;
   height: 60px;
 }
-
 .menu a {
   color: var(--white);
   font-weight: bold;
@@ -43,7 +42,6 @@ nav {
     0 0 4px var(--neon-blue, #30baff),
     0 0 8px var(--neon-blue, #30baff);
 }
-
 .menu a:hover,
 .menu a:focus {
   color: var(--neon-cyan, #00eafd);
