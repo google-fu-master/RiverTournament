@@ -108,14 +108,26 @@
 
 /* --- FLYER & EVENT COMPONENTS --- */
 .site-title {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', 'Oswald', Arial, sans-serif; // or your chosen heading font
   font-size: 3.5rem;
-  color: var(--neon-cyan, #00eafd);
-  text-shadow: 0 0 18px var(--neon-cyan, #00eafd), 0 0 32px #000, 2px 2px 0 #000;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-  margin-top: 1.25rem;
+  margin: 1.2rem 0 0.5rem 0;
+  color: var(--neon-blue, #30baff);
+  /* Subtle neon blue glow */
+  text-shadow:
+    0 0 3px var(--neon-blue, #30baff),
+    0 0 8px var(--neon-blue, #30baff);
+}
+
+body.ladies .site-title {
+  color: var(--neon-pink, #ff79c7);
+  /* Subtle neon pink glow */
+  text-shadow:
+    0 0 3px var(--neon-pink, #ff79c7),
+    0 0 8px var(--neon-pink, #ff79c7);
 }
 .flyer-detail {
   color: var(--neon-cyan, #00eafd);
