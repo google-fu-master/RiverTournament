@@ -40,11 +40,11 @@ permalink: /rules/
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
         <li>13-16 players: race to 1, both sides.</li>
-        <li>All Brackets: 100+ Fargo point gap, the higher-rated player must win 1 extra game.</li>
+        <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
       </ul>
     </li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
-    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent in the first round.</strong></li>
+    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
 
