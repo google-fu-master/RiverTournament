@@ -20,79 +20,71 @@ permalink: /contact/
 }
 </script>
 
-<!-- Contact Form updated to POST to Google Apps Script Web App -->
-
 <div class="contact-form-wrapper">
-  <h2 class="text-center">Get in Touch</h2>
-  <p class="text-center" style="margin-bottom: 1rem;">
-    If your question isn’t answered in the <a href="/rules/">Rules</a> or <a href="/faq/">FAQs</a>, please reach out here. We’ll get back to you soon!
-    <br>
-    <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">Text the tournament director</a> (Brittany Posey) and do not use this form.</strong>
+  <h2 class="contact-heading">Contact Us</h2>
+  <p class="contact-intro">
+    If your question isn’t answered in the <a href="/rules/">Rules</a> or <a href="/faq/">FAQs</a>, please reach out below. We’ll get back to you soon!<br>
+    <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">text the tournament director</a> (Brittany Posey) and do <span style="text-decoration:underline;">not</span> use this form.</strong>
   </p>
 
-  <form id="contactForm" action="YOUR_APPS_SCRIPT_WEBAPP_URL" method="POST" novalidate>
+  <form id="contactForm" action="YOUR_APPS_SCRIPT_WEBAPP_URL" method="POST" novalidate autocomplete="off">
     <input type="hidden" id="timestamp" name="Timestamp">
 
-    <div class="form-group">
-      <label for="firstName">First Name (required)</label>
-      <input type="text" id="firstName" name="First Name" required>
+    <div class="form-block">
+      <label for="firstName">First Name <span class="required">*</span></label>
+      <input type="text" id="firstName" name="First Name" required autocomplete="given-name">
     </div>
 
-    <div class="form-group">
-      <label for="lastName">Last Name (required)</label>
-      <input type="text" id="lastName" name="Last Name" required>
+    <div class="form-block">
+      <label for="lastName">Last Name <span class="required">*</span></label>
+      <input type="text" id="lastName" name="Last Name" required autocomplete="family-name">
     </div>
 
-    <div class="form-group">
+    <div class="form-block">
       <label for="phoneNumber">Phone Number</label>
-      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890">
+      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890" autocomplete="tel">
     </div>
 
-    <div class="form-group">
-      <label for="email">Email (required)</label>
-      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+    <div class="form-block">
+      <label for="email">Email <span class="required">*</span></label>
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required autocomplete="email">
     </div>
 
-    <fieldset class="form-group">
-      <legend>Preferred Contact Method</legend>
-      <div class="checkbox-group-inline">
-        <input type="checkbox" id="text" name="Preferred Contact" value="Text">
-        <label for="text">Text</label>
-        <input type="checkbox" id="call" name="Preferred Contact" value="Call">
-        <label for="call">Call</label>
-        <input type="checkbox" id="emailContact" name="Preferred Contact" value="Email">
-        <label for="emailContact">Email</label>
+    <div class="form-block">
+      <label>Preferred Contact Method</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="text" name="Preferred Contact" value="Text"> Text</label>
+        <label><input type="checkbox" id="call" name="Preferred Contact" value="Call"> Call</label>
+        <label><input type="checkbox" id="emailContact" name="Preferred Contact" value="Email"> Email</label>
       </div>
-      <p class="hint">Do not check a box unless you want us to contact you about your inquiry.</p>
-    </fieldset>
+      <div class="hint">Do not check a box unless you want us to contact you about your inquiry.</div>
+    </div>
 
-    <fieldset class="form-group">
-      <legend>Have you played in the tournament?</legend>
-      <div class="checkbox-group-inline">
-        <input type="checkbox" id="playedYes" name="Tournament Player" value="Yes">
-        <label for="playedYes">Yes</label>
-        <input type="checkbox" id="playedNo" name="Tournament Player" value="No">
-        <label for="playedNo">No</label>
-        <input type="checkbox" id="playedWant" name="Tournament Player" value="I Want To">
-        <label for="playedWant">I Want To</label>
+    <div class="form-block">
+      <label>Have you played in the tournament?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="playedYes" name="Tournament Player" value="Yes"> Yes</label>
+        <label><input type="checkbox" id="playedNo" name="Tournament Player" value="No"> No</label>
+        <label><input type="checkbox" id="playedWant" name="Tournament Player" value="I Want To"> I Want To</label>
       </div>
-    </fieldset>
+    </div>
 
-    <div class="form-group">
+    <div class="form-block">
       <label for="subject">Subject</label>
       <input type="text" id="subject" name="Subject">
     </div>
 
-    <div class="form-group">
+    <div class="form-block">
       <label for="details">Details</label>
       <textarea id="details" name="Details" rows="6" placeholder="Enter your message here..."></textarea>
     </div>
 
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
 
-    <button type="submit" class="cta-button">Submit (Tap Once, Be Patient 🧘)</button>
-
-    <div id="form-status" style="margin-top:1em;text-align:center;"></div>
+    <div class="form-block center">
+      <button type="submit" class="cta-button">Submit (Tap Once, Be Patient 🧘)</button>
+    </div>
+    <div id="form-status" class="form-status"></div>
   </form>
 </div>
 

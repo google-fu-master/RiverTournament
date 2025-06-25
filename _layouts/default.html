@@ -21,29 +21,33 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="{% if page.bodyClass %}{{ page.bodyClass }}{% else %}page-{{ page.title | downcase | replace: ' ', '-' }}{% endif %}">
-  <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="menu">
-      {% assign nav = site.data.navigation %}
-      {% for item in nav %}
-        <a href="{{ item.url | relative_url }}"
-          {% if item.title == "Sign Up" %}id="nav-signup-link"{% endif %}>
-          {{ item.title }}
-        </a>
-      {% endfor %}
+  <nav class="main-nav">
+    <div class="nav-flex">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Open navigation">&#9776;</label>
+      <div class="menu">
+        {% assign nav = site.data.navigation %}
+        {% for item in nav %}
+          <a href="{{ item.url | relative_url }}"
+            {% if item.title == "Sign Up" %}id="nav-signup-link"{% endif %}>
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </div>
     </div>
   </nav>
 
   <header>
-    <h1>{{ page.title }}</h1>
+    <h1 class="site-title">{{ page.title }}</h1>
     {% if page.title == "River Tournaments" %}
-      <p style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; line-height: 1.6; font-size: 1.1rem; font-weight: bold;">
-        Every Thursday | 6:30pm Registration | 7:00pm Start &nbsp;|&nbsp;
-        <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer" style="color: var(--white); text-decoration: underline; font-weight: bold;">
-          19 NW 5th Ave, Portland OR
-        </a>
-      </p>
+      <div class="site-address-block">
+        <span class="site-info">Every Thursday | 6:30pm Registration | 7:00pm Start</span><br>
+        <span class="site-address">
+          <a href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener noreferrer">
+            19 NW 5th Ave, Portland OR
+          </a>
+        </span>
+      </div>
     {% endif %}
   </header>
 

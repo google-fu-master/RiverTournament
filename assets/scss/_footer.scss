@@ -6,6 +6,44 @@ footer {
   padding: 1rem 0;
   font-weight: bold;
   letter-spacing: 0.5px;
+
+  /* Social icons row */
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+    margin-top: 0.7em;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0 0.2em;
+    text-decoration: none;
+  }
+  .footer-social a:hover,
+  .footer-social a:focus {
+    background: rgba(52,186,255,0.13);
+  }
+  .footer-social img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px #30baffcc);
+    transition: filter 0.2s;
+  }
+  .footer-social a:hover img,
+  .footer-social a:focus img {
+    filter: drop-shadow(0 0 8px #30baff) brightness(1.15);
+  }
 }
 
 /* --- STATUS LEGEND BARS --- */
