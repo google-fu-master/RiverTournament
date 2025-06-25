@@ -55,7 +55,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.85rem;
-  font-family: 'Oswald', 'Arial Black', sans-serif;
+  font-family: 'Montserrat', 'Oswald', 'Arial Black', sans-serif; /* FIXED: Montserrat first */
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--white);
@@ -84,7 +84,7 @@ body, input, textarea, button {
   font-weight: 400;
 }
 h1, h2, h3, h4, .highlight {
-  font-family: 'Oswald', 'Arial Black', sans-serif;
+  font-family: 'Montserrat', 'Oswald', 'Arial Black', sans-serif; /* FIXED: Montserrat for all headings */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -108,25 +108,41 @@ a:hover {
 
 /* ====== LAYOUT HELPERS ====== */
 .iframe-wrapper {
-  max-width: 100%;
-  margin: 2rem auto;
+  width: 100vw; /* FIXED: Make iframe-wrapper full viewport width */
+  max-width: 100vw;
+  margin: 2rem 0 2rem 50%;
+  transform: translateX(-50%);
   background-color: var(--slate);
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 2px solid var(--accent-blue);
+  position: relative;
+  left: 50%;
+  right: 50%;
 }
 .iframe-wrapper iframe {
-  width: 100%;
+  width: 100vw;
   min-height: 600px;
   border: none;
   background: #141414 !important;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Responsive tweaks for base elements */
 @media (max-width: 800px) {
   main {
     padding: 1rem 0.5rem;
+  }
+  .iframe-wrapper, .iframe-wrapper iframe {
+    width: 100vw;
+    max-width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: 0;
+    transform: none;
+    padding: 0;
   }
 }
 @media (max-width: 600px) {
@@ -143,10 +159,10 @@ a:hover {
   }
   header h1 {
     font-size: 1.25rem;
-    font-family: 'Pacifico', cursive, sans-serif;
+    font-family: 'Montserrat', 'Pacifico', cursive, sans-serif; /* FIXED: Montserrat preferred even on mobile */
     color: var(--neon-blue, #30baff);
     text-transform: none;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin: 0 0 0.15rem 0;
     line-height: 1.15;
@@ -171,4 +187,22 @@ a:hover {
   main {
     padding: 0.5rem 0.2rem;
   }
+  .iframe-wrapper, .iframe-wrapper iframe {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin-left: -50vw;
+    margin-right: 0;
+    left: 50%;
+    transform: none;
+    padding: 0;
+  }
+}
+
+/* Center content and prevent cut-off for main's direct children */
+main > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
