@@ -18,14 +18,14 @@ permalink: /rules/
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
-    <li>Players must present a <strong>FargoRate or APA account</strong> (if you have one) and a <strong>photo ID</strong> at registration.</li>
-	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
-	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
-	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated >430 in 9-Ball and >445 in 8-Ball are not eligible—please merge accounts beforehand.</li>
+    <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
+	<li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
+	<li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
+	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated >430 in 9-Ball and >445 in 8-Ball are not eligible — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> merge accounts beforehand .</li>
 	<li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
 	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
-    <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
+    <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
     <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
