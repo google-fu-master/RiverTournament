@@ -85,10 +85,11 @@ header {
   gap: 0.75rem;
 }
 
-header h1 {
+header h1,
+.site-title {
   margin: 0;
   font-size: 1.85rem;
-  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif; /* FIXED: Montserrat first */
+  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif; /* FIXED: Montserrat first, applies everywhere */
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--white);
@@ -200,9 +201,10 @@ a:hover {
     align-items: flex-start;
     gap: 0.2rem;
   }
-  header h1 {
+  header h1,
+  .site-title {
     font-size: 1.25rem;
-    font-family: "Montserrat", "Pacifico", cursive, sans-serif; /* FIXED: Montserrat preferred even on mobile */
+    /* REMOVED: font-family override, always Montserrat */
     color: var(--neon-blue, #30baff);
     text-transform: none;
     font-weight: 700;
