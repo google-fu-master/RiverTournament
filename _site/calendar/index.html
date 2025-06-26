@@ -10,10 +10,7 @@
     />
     <meta name="robots" content="index,follow" />
     <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Tournament Calendar - River Tournaments"
-    />
+    <meta property="og:title" content="Tournament Calendar - River Tournaments" />
     <meta
       property="og:description"
       content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results..."
@@ -21,10 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rivertournaments.com/calendar/" />
     <meta property="og:site_name" content="River Tournaments" />
-    <meta
-      property="og:image"
-      content="https://rivertournaments.com/assets/og-image.png"
-    />
+    <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png" />
     <meta property="fb:page_id" content="61577340925686" />
     <!-- Contact for search engines and humans -->
     <meta name="contact" content="rivertournaments@gmail.com" />
@@ -73,7 +67,9 @@
       }
     </style>
   </head>
-  <body class="page-location">
+  <body
+    class="page-location"
+  >
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="main-nav" aria-label="Main navigation">
       <div class="nav-flex">
@@ -85,100 +81,135 @@
           >&#9776;</label
         >
         <div class="menu">
-          <a href="/"> Home </a>
-
-          <a href="/" id="nav-signup-link"> Sign Up </a>
-
-          <a href="/rules/"> Rules </a>
-
-          <a href="/location/"> Parking </a>
-
-          <a href="/calendar/"> Calendar </a>
-
-          <a href="/faq/"> FAQ </a>
-
-          <a href="/contact/"> Contact </a>
+           
+          <a
+            href="/"
+            
+          >
+            Home
+          </a>
+          
+          <a
+            href="/"
+            id="nav-signup-link"
+          >
+            Sign Up
+          </a>
+          
+          <a
+            href="/rules/"
+            
+          >
+            Rules
+          </a>
+          
+          <a
+            href="/location/"
+            
+          >
+            Parking
+          </a>
+          
+          <a
+            href="/calendar/"
+            
+          >
+            Calendar
+          </a>
+          
+          <a
+            href="/faq/"
+            
+          >
+            FAQ
+          </a>
+          
+          <a
+            href="/contact/"
+            
+          >
+            Contact
+          </a>
+          
         </div>
       </div>
     </nav>
 
     <header role="banner">
       <h1 class="site-title">Tournament Calendar</h1>
+      
     </header>
 
-    <main id="main-content" role="main">
-      <main class="content-wrapper page-location">
-        <section class="upcoming-tournaments flyer-section">
-          <h2>Upcoming Tournaments</h2>
-          <!-- Changed from UL to a DIV container for cards -->
-          <div id="upcoming-tournament-cards" class="tournament-cards">
-            <div class="tournament-card loading">Loading tournaments...</div>
-          </div>
-        </section>
+    <main id="main-content" role="main"><main class="content-wrapper page-location">
+  <h1 class="visually-hidden">River Tournament Calendar</h1>
 
-        <div class="iframe-wrapper" style="margin-top: 2em">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA"
-            style="border: 0; background: transparent"
-            width="100%"
-            height="700"
-            frameborder="0"
-            scrolling="no"
-            title="River Tournaments Google Calendar"
-            loading="lazy"
-          >
-          </iframe>
-        </div>
+  <section class="upcoming-tournaments flyer-section">
+    <h2>Upcoming Tournaments</h2>
+    <!-- Changed from UL to a DIV container for cards -->
+    <div id="upcoming-tournament-cards" class="tournament-cards">
+      <div class="tournament-card loading">Loading tournaments...</div>
+    </div>
+  </section>
 
-        <!-- Google Calendar API fetch for Upcoming Tournaments -->
-        <script>
-          // ======= Google API Key provided =======
-          const API_KEY = "AIzaSyBLNdT-6xsYi3_lzSdEVMM3WSYT-X8PVy8";
-          // =======================================
+  <div class="iframe-wrapper" style="margin-top: 2em">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA"
+      style="border: 0; background: transparent"
+      width="100%"
+      height="700"
+      frameborder="0"
+      scrolling="no"
+      title="River Tournaments Google Calendar"
+      loading="lazy"
+    >
+    </iframe>
+  </div>
 
-          const calendarId =
-            "198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f@group.calendar.google.com";
-          const maxResults = 3;
+  <!-- Google Calendar API fetch for Upcoming Tournaments -->
+  <script>
+    // ======= Google API Key provided =======
+    const API_KEY = "AIzaSyBLNdT-6xsYi3_lzSdEVMM3WSYT-X8PVy8";
+    // =======================================
 
-          const upcomingCardsContainer = document.getElementById(
-            "upcoming-tournament-cards",
-          );
-          upcomingCardsContainer.innerHTML =
-            '<div class="tournament-card loading">Loading tournaments...</div>';
+    const calendarId =
+      "198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f@group.calendar.google.com";
+    const maxResults = 3;
 
-          // Format a date for display
-          function formatDate(start) {
-            const date = new Date(start.dateTime || start.date);
-            const options = {
-              weekday: "short",
-              month: "short",
-              day: "numeric",
-            };
-            return date.toLocaleDateString(undefined, options);
-          }
+    const upcomingCardsContainer = document.getElementById(
+      "upcoming-tournament-cards",
+    );
+    upcomingCardsContainer.innerHTML =
+      '<div class="tournament-card loading">Loading tournaments...</div>';
 
-          // Truncate text to a certain number of characters
-          function truncateText(text, maxLength) {
-            if (!text) return "";
-            if (text.length <= maxLength) return text;
-            return text.substring(0, maxLength) + "...";
-          }
+    // Format a date for display
+    function formatDate(start) {
+      const date = new Date(start.dateTime || start.date);
+      const options = { weekday: "short", month: "short", day: "numeric" };
+      return date.toLocaleDateString(undefined, options);
+    }
 
-          // Create a card for each event
-          function createTournamentCard(event) {
-            const dateStr = formatDate(event.start);
-            const summary = event.summary || "Tournament";
-            const description = event.description || "";
-            // Show only summary and a truncated description, with a details toggle
-            const truncated = truncateText(description, 80);
-            const hasMore = description.length > 80;
+    // Truncate text to a certain number of characters
+    function truncateText(text, maxLength) {
+      if (!text) return "";
+      if (text.length <= maxLength) return text;
+      return text.substring(0, maxLength) + "...";
+    }
 
-            // Google calendar event link (if available)
-            const eventLink = event.htmlLink
-              ? `<a class="tournament-card-link" href="${event.htmlLink}" target="_blank" rel="noopener" title="View in Google Calendar">Add to Calendar</a>`
-              : "";
+    // Create a card for each event
+    function createTournamentCard(event) {
+      const dateStr = formatDate(event.start);
+      const summary = event.summary || "Tournament";
+      const description = event.description || "";
+      // Show only summary and a truncated description, with a details toggle
+      const truncated = truncateText(description, 80);
+      const hasMore = description.length > 80;
 
-            return `
+      // Google calendar event link (if available)
+      const eventLink = event.htmlLink
+        ? `<a class="tournament-card-link" href="${event.htmlLink}" target="_blank" rel="noopener" title="View in Google Calendar">Add to Calendar</a>`
+        : "";
+
+      return `
         <div class="tournament-card">
           <div class="tournament-card-date flyer-gold">${dateStr}</div>
           <div class="tournament-card-title flyer-caps">${summary}</div>
@@ -195,61 +226,57 @@
           ${eventLink}
         </div>
       `;
-          }
+    }
 
-          // Fetch upcoming events from Google Calendar API
-          fetch(
-            `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}&maxResults=${maxResults}`,
-          )
-            .then((res) => res.json())
-            .then((data) => {
-              upcomingCardsContainer.innerHTML = "";
-              if (!data.items || data.items.length === 0) {
-                upcomingCardsContainer.innerHTML =
-                  '<div class="tournament-card no-events">No upcoming tournaments found.</div>';
-                return;
+    // Fetch upcoming events from Google Calendar API
+    fetch(
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}&maxResults=${maxResults}`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        upcomingCardsContainer.innerHTML = "";
+        if (!data.items || data.items.length === 0) {
+          upcomingCardsContainer.innerHTML =
+            '<div class="tournament-card no-events">No upcoming tournaments found.</div>';
+          return;
+        }
+        data.items.forEach((event) => {
+          upcomingCardsContainer.innerHTML += createTournamentCard(event);
+        });
+
+        // Add toggle logic for details
+        Array.from(
+          upcomingCardsContainer.querySelectorAll(".tournament-card"),
+        ).forEach((card) => {
+          card.addEventListener("click", function (e) {
+            if (e.target.classList.contains("tournament-card-toggle")) {
+              e.preventDefault();
+              const shortDesc = card.querySelector(".tournament-card-short");
+              const fullDesc = card.querySelector(".tournament-card-full");
+              if (shortDesc && fullDesc) {
+                if (shortDesc.style.display !== "none") {
+                  shortDesc.style.display = "none";
+                  fullDesc.style.display = "";
+                } else {
+                  shortDesc.style.display = "";
+                  fullDesc.style.display = "none";
+                }
               }
-              data.items.forEach((event) => {
-                upcomingCardsContainer.innerHTML += createTournamentCard(event);
-              });
-
-              // Add toggle logic for details
-              Array.from(
-                upcomingCardsContainer.querySelectorAll(".tournament-card"),
-              ).forEach((card) => {
-                card.addEventListener("click", function (e) {
-                  if (e.target.classList.contains("tournament-card-toggle")) {
-                    e.preventDefault();
-                    const shortDesc = card.querySelector(
-                      ".tournament-card-short",
-                    );
-                    const fullDesc = card.querySelector(
-                      ".tournament-card-full",
-                    );
-                    if (shortDesc && fullDesc) {
-                      if (shortDesc.style.display !== "none") {
-                        shortDesc.style.display = "none";
-                        fullDesc.style.display = "";
-                      } else {
-                        shortDesc.style.display = "";
-                        fullDesc.style.display = "none";
-                      }
-                    }
-                  }
-                });
-              });
-            })
-            .catch((err) => {
-              upcomingCardsContainer.innerHTML =
-                '<div class="tournament-card error">Unable to load tournaments.</div>';
-            });
-        </script>
-      </main>
-    </main>
+            }
+          });
+        });
+      })
+      .catch((err) => {
+        upcomingCardsContainer.innerHTML =
+          '<div class="tournament-card error">Unable to load tournaments.</div>';
+      });
+  </script>
+</main>
+</main>
 
     <footer role="contentinfo">
-      &copy; 2025 River Tournaments. Site and content created by Brittany
-      Posey.<br />
+      &copy; 2025 River Tournaments. Site and content
+      created by Brittany Posey.<br />
       <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a>
       &nbsp;|&nbsp;
       <a
