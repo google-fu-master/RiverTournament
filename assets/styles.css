@@ -156,1023 +156,6 @@ a:hover {
   text-align: left !important;
 }
 
-/* ====== LAYOUT HELPERS ====== */
-.iframe-wrapper {
-  width: 100vw;
-  max-width: 100vw;
-  margin: 2rem 0 2rem 50%;
-  transform: translateX(-50%);
-  background-color: var(--slate);
-  padding: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border: 2px solid var(--accent-blue);
-  position: relative;
-  left: 50%;
-  right: 0;
-  box-sizing: border-box;
-}
-
-.iframe-wrapper iframe {
-  width: 100vw;
-  max-width: 100vw;
-  min-width: 0;
-  border: none;
-  background: #141414 !important;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Responsive tweaks for base elements */
-@media (max-width: 800px) {
-  main {
-    padding: 1rem 0.5rem;
-    max-width: 100vw;
-    box-sizing: border-box;
-  }
-  .iframe-wrapper, .iframe-wrapper iframe {
-    width: 100vw;
-    max-width: 100vw;
-    min-width: 0;
-    margin-left: -50vw;
-    left: 50%;
-    margin-right: 0;
-    transform: none;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-  }
-}
-@media (max-width: 600px) {
-  header {
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-  header h1, .site-title {
-    font-size: 1.25rem;
-    font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
-    color: var(--neon-blue, #30baff);
-    text-transform: none;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin: 0 0 0.15rem 0;
-    line-height: 1.15;
-    text-shadow: 0 0 8px #30baff, 0 0 24px #00eafd, 0 0 32px #008ecc, 2px 2px 0 #000;
-    max-width: 98vw;
-    overflow-wrap: break-word;
-    display: block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .site-address,
-  header p {
-    font-size: 1rem;
-    line-height: 1.2;
-    margin-top: 0.2rem;
-    max-width: 98vw;
-    overflow-wrap: break-word;
-    display: block;
-    word-break: break-word;
-  }
-  main {
-    padding: 0.5rem 0.2rem;
-    max-width: 100vw;
-    box-sizing: border-box;
-  }
-  .iframe-wrapper, .iframe-wrapper iframe {
-    width: 100vw;
-    max-width: 100vw;
-    min-width: 0;
-    margin-left: -50vw;
-    margin-right: 0;
-    left: 50%;
-    transform: none;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-  }
-}
-/* ===== NAVIGATION & MENU STYLES ===== */
-/* Hide the mobile nav checkbox toggle */
-#menu-toggle {
-  display: none;
-}
-
-/* Nav bar - horizontal by default */
-nav {
-  width: 100%;
-  background-color: var(--dark-navy);
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 100;
-}
-
-/* Menu as horizontal row on desktop */
-.menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  gap: 2rem;
-  background-color: transparent;
-  position: static;
-  height: 60px;
-}
-
-.menu a {
-  color: var(--white);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 1rem;
-  line-height: 60px;
-  height: 60px;
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 4px var(--neon-blue, #30baff), 0 0 8px var(--neon-blue, #30baff);
-}
-
-.menu a:hover,
-.menu a:focus {
-  color: var(--neon-cyan, #00eafd);
-  text-shadow: 0 0 8px var(--neon-cyan, #00eafd), 0 0 16px var(--neon-cyan, #00eafd), 0 0 4px var(--neon-blue, #30baff), 0 0 8px var(--neon-blue, #30baff);
-}
-
-/* Ladies Night menu accent */
-body.ladies .menu a,
-body.ladies .menu a:visited {
-  color: var(--white);
-  text-shadow: 0 0 7px var(--neon-pink), 0 0 12px var(--ladies-purple);
-}
-
-body.ladies .menu a:hover,
-body.ladies .menu a:focus {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow: 0 0 16px var(--neon-pink, #ff79c7), 0 0 32px var(--neon-pink, #ff79c7), 0 0 4px var(--neon-pink, #ff79c7);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-}
-
-/* Hamburger menu for mobile */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--white);
-  z-index: 1001;
-  position: absolute;
-  top: 10px;
-  left: 16px;
-}
-
-/* Mobile styles */
-@media (max-width: 1024px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: var(--dark-navy);
-    padding-top: 4rem;
-    gap: 2rem;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-  .hamburger {
-    display: block;
-  }
-  #menu-toggle:checked + .hamburger + .menu {
-    transform: translateX(0);
-  }
-}
-/* ========== LADIES NIGHT THEME (GLASSMORPHISM ENHANCED) ========== */
-body.ladies {
-  background: linear-gradient(135deg, #3a003a 0%, #2b102b 100%) !important;
-}
-
-body.ladies main,
-body.ladies .content-wrapper,
-body.ladies section {
-  background: rgba(40, 0, 40, 0.32);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 2px 12px 0 #ff79c7;
-  backdrop-filter: blur(24px) saturate(120%);
-  -webkit-backdrop-filter: blur(24px) saturate(120%);
-  border: 1.5px solid rgba(0, 234, 253, 0.18);
-  padding: 2.2rem 2.5vw;
-  margin-bottom: 2.7rem;
-  max-width: 1300px;
-  width: 98vw;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff;
-}
-
-body.ladies .event-banner,
-body.ladies header,
-body.ladies #tournament-title {
-  background: rgba(204, 102, 153, 0.13);
-  border-radius: 0 0 32px 32px;
-  box-shadow: 0 4px 32px 0 rgba(48, 186, 255, 0.8), 0 -6px 24px 0 rgba(212, 175, 55, 0.3764705882);
-  border-bottom: 4px solid var(--neon-cyan, #00eafd);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  color: #fff !important;
-  padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
-  margin-bottom: 2.2rem;
-}
-
-body.ladies h1,
-body.ladies .player-header,
-body.ladies #tournament-title,
-body.ladies .event-banner h1 {
-  color: #ff79c7 !important;
-  text-shadow: 0 2px 10px #201a2e, 0 0 15px #ff79c7, 0 0 8px #fff;
-  font-weight: 900;
-  letter-spacing: 3px;
-  background: none !important;
-  border: none !important;
-  margin-bottom: 1.2rem !important;
-  position: relative;
-}
-
-body.ladies h1::after,
-body.ladies .player-header::after,
-body.ladies #tournament-title::after,
-body.ladies .event-banner h1::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  margin: 12px auto 0 auto;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
-}
-
-body.ladies .neon-callout,
-body.ladies .note,
-body.ladies .disclaimer,
-body.ladies .status-legend {
-  background: rgba(20, 20, 40, 0.32);
-  border-radius: 18px;
-  box-shadow: 0 2px 18px 0 var(--neon-cyan, #00eafd), 0 0 8px #ff79c7;
-  backdrop-filter: blur(12px) saturate(110%);
-}
-
-/* Buttons: neon pink with cyan border, green glow on hover */
-body.ladies .btn-signup,
-body.ladies .cta-button {
-  background: #ff79c7;
-  color: #fff;
-  border: 2.5px solid var(--neon-cyan);
-  font-weight: 700;
-  font-size: 1.2rem;
-  border-radius: 100px;
-  padding: 0.95em 2.9em;
-  box-shadow: 0 0 18px #30baff, 0 0 24px #ff79c7;
-  text-shadow: 0 0 10px #fff, 0 0 22px #ff79c7;
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
-  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.2s;
-}
-
-body.ladies .btn-signup:hover,
-body.ladies .cta-button:hover {
-  background: var(--neon-cyan);
-  color: #141414;
-  border-color: var(--neon-green);
-  box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
-}
-
-body.ladies .note,
-body.ladies .disclaimer,
-body.ladies .status-legend {
-  color: var(--link-gold);
-  border-left: 6px solid var(--neon-cyan);
-  background: rgba(0, 20, 40, 0.22);
-  font-size: 1.07rem;
-  box-shadow: 0 0 8px var(--neon-cyan);
-  padding-left: 1.4em;
-}
-
-body.ladies a {
-  color: var(--neon-cyan);
-  text-decoration: underline;
-  font-weight: bold;
-  text-shadow: 0 0 8px var(--neon-cyan), 0 0 4px #fff;
-  transition: color 0.15s, background 0.15s, box-shadow 0.15s;
-}
-
-body.ladies a:hover {
-  color: var(--link-gold);
-  background: #30baff;
-  border-radius: 5px;
-  box-shadow: 0 0 18px var(--neon-cyan);
-}
-
-body.ladies h2,
-body.ladies h3 {
-  color: var(--neon-cyan) !important;
-  border-left: 8px solid var(--neon-green);
-  padding-left: 0.5em;
-  font-weight: 800;
-  margin-bottom: 0.9em;
-  text-shadow: 0 0 8px var(--neon-cyan), 0 0 3px #000;
-}
-
-body.ladies .iframe-wrapper,
-body.ladies table {
-  border: 2px solid var(--neon-cyan);
-  border-radius: 14px;
-  background: rgba(20, 40, 60, 0.85);
-  box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
-}
-
-body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section {
-  color: #fff;
-}
-
-body.ladies .menu a,
-body.ladies .menu a:visited {
-  color: var(--white);
-  text-shadow: 0 0 7px var(--neon-pink), 0 0 12px var(--ladies-purple);
-}
-
-body.ladies .menu a:hover,
-body.ladies .menu a:focus {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow: 0 0 16px var(--neon-pink, #ff79c7), 0 0 32px var(--neon-pink, #ff79c7), 0 0 4px var(--neon-pink, #ff79c7);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-}
-
-.event-banner.ladies,
-body.ladies .event-banner {
-  background: linear-gradient(90deg, var(--neon-pink, #ff79c7) 0%, var(--deep-navy, #0D1B2A) 100%);
-  color: var(--neon-white, #f5f5f5);
-  box-shadow: 0 0 32px 8px var(--neon-pink, #ff79c7);
-}
-
-body.ladies .player-header,
-.event-banner.ladies .player-header {
-  color: var(--neon-pink, #ff79c7) !important;
-  text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
-}
-
-@media (min-width: 1025px) {
-  body.ladies main,
-  body.ladies .content-wrapper {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-/* --- LOCATION PAGE: Center headings, subheadings, and images, left-align most text and content --- */
-body.page-location h1,
-body.page-location h2,
-body.page-location h3,
-body.page-location h4,
-body.page-location h5,
-body.page-location h6 {
-  text-align: center !important;
-}
-
-body.page-location .content-wrapper img,
-body.page-location img,
-body.page-location .map-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  max-width: 100%;
-}
-
-body.page-location .content-wrapper,
-body.page-location section,
-body.page-location p,
-body.page-location li,
-body.page-location ul,
-body.page-location ol,
-body.page-location .max-lines-row,
-body.page-location .rideshare-buttons {
-  text-align: left !important;
-}
-
-/* --- MAPS, MAX LINES AND RIDESHARE BUTTONS (used on location page and maps) --- */
-.max-lines-row,
-.map-lines-row,
-.max-stops-row,
-.rideshare-buttons {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.max-lines-row img,
-.map-lines-row img {
-  height: 48px;
-  width: auto;
-  max-width: 150px;
-  border: none !important;
-  border-radius: 8px;
-  background: none !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  object-fit: contain;
-}
-
-@media (max-width: 600px) {
-  .max-lines-row,
-  .map-lines-row,
-  .max-stops-row,
-  .rideshare-buttons {
-    flex-direction: column !important;
-    gap: 0.7rem !important;
-    align-items: stretch !important;
-  }
-  .map-image,
-  .max-stops-row iframe,
-  .map-lines-row img {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: 200px !important;
-    object-fit: cover !important;
-  }
-  .map-lines-row img {
-    height: 40px !important;
-    max-width: 160px !important;
-    margin: 0 auto;
-  }
-}
-/* Make all images/iframes scale by default (for location and maps) */
-img, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make clickable images feel like buttons */
-.map-lines-row a img,
-.map-image {
-  cursor: pointer;
-}
-
-/* Slightly reduce padding on content-wrapper for mobile */
-@media (max-width: 600px) {
-  .content-wrapper {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
-/* ===== TOURNAMENT CARDS & EVENTS CONTAINER ===== */
-/* --- Tournament Event Card Styles --- */
-.tournament-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin: 2rem 0 1.5rem 0;
-  padding: 0;
-}
-
-/* 2-column grid for desktop cards */
-.tournament-cards.tournament-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 2.5rem;
-  justify-content: center;
-  align-items: stretch;
-  margin: 2.5rem auto 2.5rem auto;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 2vw;
-}
-
-/* Wider, more padded cards for grid */
-.tournament-cards.tournament-cards-grid .tournament-card {
-  max-width: 600px;
-  min-width: 320px;
-  width: 100%;
-  padding: 2.2rem 2.5rem 2rem 2.5rem;
-  margin: 0;
-  box-sizing: border-box;
-  box-shadow: 0 0 18px 2px #30baff, 0 2px 24px rgba(0, 234, 253, 0.09);
-}
-
-.tournament-cards.tournament-cards-grid .tournament-card-title {
-  font-size: 1.2rem;
-}
-
-/* Base card styles */
-.tournament-card {
-  background: rgba(13, 27, 42, 0.92);
-  border: 2px solid var(--accent-blue);
-  border-radius: 16px;
-  box-shadow: 0 4px 18px 0 rgba(0, 234, 253, 0.12), 0 2px 8px 0 rgba(48, 186, 255, 0.5019607843);
-  padding: 2.2rem 2.5rem 2rem 2.5rem;
-  min-width: 260px;
-  max-width: 340px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0;
-  transition: box-shadow 0.22s, border-color 0.2s, background 0.2s;
-  position: relative;
-  color: var(--neon-white);
-  font-family: "Oswald", Arial, sans-serif;
-  text-align: left;
-  overflow: hidden;
-}
-
-.tournament-card.loading,
-.tournament-card.no-events,
-.tournament-card.error {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  color: var(--neon-cyan);
-  font-size: 1.1rem;
-  background: rgba(13, 27, 42, 0.6);
-  border-style: dashed;
-}
-
-.tournament-card:hover,
-.tournament-card:focus-within {
-  box-shadow: 0 2px 32px 0 var(--neon-cyan, #00eafd), 0 4px 24px rgba(57, 255, 20, 0.4392156863);
-  border-color: var(--neon-cyan);
-  background: rgba(0, 20, 40, 0.99);
-}
-
-.tournament-card-date {
-  font-size: 1.12rem;
-  font-weight: bold;
-  margin-bottom: 0.3em;
-  letter-spacing: 1px;
-}
-
-.tournament-card-title {
-  font-size: 1.28rem;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 8px var(--neon-cyan, #00eafd);
-}
-
-.tournament-card-desc {
-  font-size: 1.06rem;
-  margin-bottom: 0.7em;
-  color: var(--white);
-  text-shadow: none;
-  text-align: left;
-  min-height: 2.4em;
-  width: 100%;
-  word-break: break-word;
-}
-
-.tournament-card-link {
-  margin-top: 0.5em;
-  background: var(--accent-blue);
-  color: #fff;
-  font-weight: bold;
-  padding: 0.5em 1.1em;
-  border-radius: 2em;
-  text-decoration: none;
-  box-shadow: 0 0 12px rgba(0, 234, 253, 0.5019607843);
-  text-shadow: 0 0 6px #00eafd;
-  font-size: 0.98rem;
-  transition: background 0.14s, color 0.18s;
-  display: block;
-  min-width: 180px;
-  max-width: 95%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tournament-card-link:hover,
-.tournament-card-link:focus {
-  background: var(--neon-cyan);
-  color: #141414;
-  box-shadow: 0 0 16px #39ff14;
-}
-
-.tournament-card-toggle {
-  background: transparent;
-  border: none;
-  color: var(--neon-cyan);
-  font-weight: bold;
-  cursor: pointer;
-  margin-left: 0.4em;
-  font-size: 1em;
-  text-decoration: underline;
-  padding: 0;
-  transition: color 0.15s;
-}
-
-.tournament-card-toggle:hover {
-  color: var(--link-gold);
-  text-shadow: 0 0 4px var(--neon-cyan);
-}
-
-.tournament-card.mobile .tournament-card-desc,
-.tournament-card.mobile .tournament-card-full,
-.tournament-card.mobile .tournament-card-short {
-  display: none !important;
-}
-
-/* Hide desktop details on mobile */
-@media (max-width: 900px) {
-  .tournament-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-    padding: 0;
-  }
-  .tournament-cards.tournament-cards-grid {
-    display: flex; /* fallback to flex */
-  }
-  .tournament-card.desktop .tournament-card-desc,
-  .tournament-card.desktop .tournament-card-full,
-  .tournament-card.desktop .tournament-card-short {
-    display: none !important;
-  }
-  .tournament-cards {
-    gap: 1rem;
-  }
-  .tournament-card {
-    min-width: 220px;
-    max-width: 100%;
-    padding: 1.1rem 1rem 1rem 1rem;
-  }
-}
-@media (max-width: 1100px) {
-  .tournament-cards.tournament-cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 700px;
-    padding: 0 1vw;
-  }
-  .tournament-cards.tournament-cards-grid .tournament-card {
-    max-width: 95vw;
-    padding: 1.5rem 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .tournament-cards {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-    padding: 0;
-  }
-  .tournament-card {
-    width: 98vw;
-    min-width: 0;
-    max-width: 99vw;
-    padding: 1rem 0.7rem 1rem 0.7rem;
-    font-size: 0.98rem;
-  }
-  .tournament-card-title {
-    font-size: 1.09rem;
-  }
-  .tournament-card-date {
-    font-size: 1rem;
-  }
-  .tournament-card-link {
-    font-size: 0.92rem;
-    padding: 0.45em 1em;
-  }
-}
-/* --- Upcoming Tournaments List Container (for Calendar/Event List) --- */
-.upcoming-tournaments-list {
-  margin-top: 2em;
-  padding: 0;
-  list-style: none;
-}
-
-.upcoming-tournaments-list li {
-  margin-bottom: 2em;
-  padding: 1em 1.3em;
-  background: rgba(0, 32, 48, 0.33);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 234, 253, 0.07);
-  display: block;
-  text-align: left;
-}
-
-.tournament-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  font-size: 1.08em;
-  margin-bottom: 0.5em;
-  font-weight: 500;
-  align-items: center;
-}
-
-.tournament-date {
-  color: #ffd700;
-  text-shadow: none;
-  font-weight: bold;
-  font-size: 1.06em;
-}
-
-.tournament-type,
-.tournament-format {
-  color: #00eafd;
-  text-shadow: 0 0 2px #00eafd;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  font-size: 1.06em;
-}
-
-.tournament-description {
-  color: #00eaff;
-  font-size: 1em;
-  line-height: 1.55;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  margin-top: 0.15em;
-  word-break: break-word;
-}
-
-/* Remove text-transform: uppercase from details for better readability */
-.tournament-description,
-.tournament-type,
-.tournament-format {
-  text-transform: none !important;
-}
-
-/* Responsive for upcoming tournaments list */
-@media (max-width: 600px) {
-  .upcoming-tournaments-list li {
-    margin-bottom: 1.3em;
-    padding: 0.85em 0.7em;
-    font-size: 0.97em;
-  }
-  .tournament-meta {
-    gap: 0.7em;
-    font-size: 0.98em;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .tournament-date,
-  .tournament-type,
-  .tournament-format {
-    font-size: 1em;
-  }
-  .tournament-description {
-    font-size: 0.98em;
-    line-height: 1.45;
-  }
-}
-/* Heading tweaks for upcoming tournaments list */
-#calendar-section h2,
-.calendar-title,
-.calendar-heading,
-.upcoming-tournaments-list-title {
-  text-shadow: 0 0 5px #00eafd, 0 0 8px #00eafd;
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 0.7em;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-/* Add margin for the list */
-#calendar-section .upcoming-tournaments-list {
-  margin-bottom: 2em;
-}
-
-/* ===== COMPONENTS, BUTTONS, FLYER, CALENDAR, UTILITY ===== */
-/* --- BUTTONS --- */
-.btn-signup {
-  display: inline-block;
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 2em;
-  padding: 0.85em 2.5em;
-  font-size: 1.25rem;
-  font-family: "Oswald", Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255, 255, 255, 0.18);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
-  cursor: pointer;
-}
-
-.btn-signup:hover,
-.btn-signup:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
-}
-
-.cta-button {
-  display: inline-block;
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 2em;
-  padding: 0.85em 2.5em;
-  font-size: 1.25rem;
-  font-family: "Oswald", Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255, 255, 255, 0.18);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
-  cursor: pointer;
-}
-
-.cta-button:hover,
-.cta-button:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
-}
-
-.cta-button:focus {
-  outline: 2px solid var(--neon-green);
-  outline-offset: 2px;
-}
-
-/* --- SIGNUP BUTTON CONTAINER --- */
-.signup-button-container {
-  margin: 2.5rem auto 2.5rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.2rem 0;
-  width: 100%;
-}
-
-@media (max-width: 600px) {
-  .signup-button-container {
-    padding: 1.6rem 0 !important;
-    margin: 1.5rem auto !important;
-  }
-}
-/* --- CONTACT FORM --- */
-.contact-form-wrapper h2 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
-}
-
-.contact-form-wrapper label {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Checkbox group styling for contact form */
-.checkbox-group-inline {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-@media (max-width: 600px) {
-  .checkbox-group-inline {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-}
-/* (Optional) Contact form status message styling */
-#form-status {
-  font-size: 1.1rem;
-  margin-top: 1em;
-  min-height: 2em;
-  font-weight: bold;
-}
-
-/* --- FLYER & EVENT COMPONENTS --- */
-.site-title {
-  font-family: "Montserrat", "Oswald", Arial, sans-serif;
-  font-size: 3.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  margin: 1.2rem 0 0.5rem 0;
-  color: var(--neon-blue, #30baff);
-  /* Subtle neon blue glow */
-  text-shadow: 0 0 3px var(--neon-blue, #30baff), 0 0 8px var(--neon-blue, #30baff);
-}
-
-body.ladies .site-title {
-  color: var(--neon-pink, #ff79c7);
-  /* Subtle neon pink glow */
-  text-shadow: 0 0 3px var(--neon-pink, #ff79c7), 0 0 8px var(--neon-pink, #ff79c7);
-}
-
-.flyer-detail {
-  color: var(--neon-cyan, #00eafd);
-  font-family: "Oswald", Arial, sans-serif;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px var(--neon-cyan, #00eafd), 0 0 10px #000;
-  margin: 0.3rem 0;
-  text-align: center;
-}
-
-.flyer-bullet {
-  margin: 0 0.5em;
-  color: var(--neon-cyan, #00eafd);
-  font-size: 1.2em;
-}
-
-.flyer-green {
-  color: var(--neon-green, #39ff14);
-  text-shadow: 0 0 10px var(--neon-green, #39ff14), 0 0 16px #000;
-}
-
-.flyer-pink {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow: 0 0 10px var(--neon-pink, #ff79c7), 0 0 16px #000;
-}
-
-.flyer-gold {
-  color: var(--neon-gold, #d4af37);
-  text-shadow: 0 0 8px var(--neon-gold, #d4af37);
-}
-
-.flyer-section {
-  margin: 1.5rem 0;
-  font-size: 1.1rem;
-  color: var(--neon-white, #f5f5f5);
-  text-align: center;
-  font-family: "Oswald", Arial, sans-serif;
-  letter-spacing: 1.5px;
-}
-
-.flyer-caps {
-  color: var(--neon-cyan, #00eafd);
-  font-weight: bold;
-  text-shadow: 0 0 7px var(--neon-cyan, #00eafd);
-}
-
-/* --- IFRAME WRAPPER COMPONENT --- */
-.iframe-wrapper {
-  max-width: 100%;
-  margin: 2rem auto;
-  background-color: var(--slate);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border: 2px solid var(--accent-blue);
-}
-
-.iframe-wrapper iframe {
-  width: 100%;
-  min-height: 600px;
-  border: none;
-  background: #141414 !important;
-}
-
-/* --- UTILITY COMPONENTS --- */
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
 /* --- FOOTER --- */
 footer {
   background-color: var(--slate);
@@ -1499,5 +482,207 @@ textarea:focus {
     gap: 0.5em;
   }
 }
+/* ===== COMPONENTS, BUTTONS, FLYER, CALENDAR, UTILITY ===== */
+/* --- BUTTONS --- */
+.btn-signup {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2em;
+  padding: 0.85em 2.5em;
+  font-size: 1.25rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
 
-/*# sourceMappingURL=styles.css.map */
+.btn-signup:hover,
+.btn-signup:focus {
+  background: #39ff14;
+  color: #141414;
+  border-color: #39ff14;
+  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
+  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+}
+
+.cta-button {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2em;
+  padding: 0.85em 2.5em;
+  font-size: 1.25rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background: #39ff14;
+  color: #141414;
+  border-color: #39ff14;
+  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
+  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+}
+
+.cta-button:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+/* --- SIGNUP BUTTON CONTAINER --- */
+.signup-button-container {
+  margin: 2.5rem auto 2.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .signup-button-container {
+    padding: 1.6rem 0 !important;
+    margin: 1.5rem auto !important;
+  }
+}
+/* --- CONTACT FORM --- */
+.contact-form-wrapper h2 {
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+}
+
+.contact-form-wrapper label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Checkbox group styling for contact form */
+.checkbox-group-inline {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .checkbox-group-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+/* (Optional) Contact form status message styling */
+#form-status {
+  font-size: 1.1rem;
+  margin-top: 1em;
+  min-height: 2em;
+  font-weight: bold;
+}
+
+/* --- FLYER & EVENT COMPONENTS --- */
+.site-title {
+  font-family: "Montserrat", "Oswald", Arial, sans-serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 1.2rem 0 0.5rem 0;
+  color: var(--neon-blue, #30baff);
+  /* Subtle neon blue glow */
+  text-shadow: 0 0 3px var(--neon-blue, #30baff), 0 0 8px var(--neon-blue, #30baff);
+}
+
+body.ladies .site-title {
+  color: var(--neon-pink, #ff79c7);
+  /* Subtle neon pink glow */
+  text-shadow: 0 0 3px var(--neon-pink, #ff79c7), 0 0 8px var(--neon-pink, #ff79c7);
+}
+
+.flyer-detail {
+  color: var(--neon-cyan, #00eafd);
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--neon-cyan, #00eafd), 0 0 10px #000;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+.flyer-bullet {
+  margin: 0 0.5em;
+  color: var(--neon-cyan, #00eafd);
+  font-size: 1.2em;
+}
+
+.flyer-green {
+  color: var(--neon-green, #39ff14);
+  text-shadow: 0 0 10px var(--neon-green, #39ff14), 0 0 16px #000;
+}
+
+.flyer-pink {
+  color: var(--neon-pink, #ff79c7);
+  text-shadow: 0 0 10px var(--neon-pink, #ff79c7), 0 0 16px #000;
+}
+
+.flyer-gold {
+  color: var(--neon-gold, #d4af37);
+  text-shadow: 0 0 8px var(--neon-gold, #d4af37);
+}
+
+.flyer-section {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  color: var(--neon-white, #f5f5f5);
+  text-align: center;
+  font-family: "Oswald", Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.flyer-caps {
+  color: var(--neon-cyan, #00eafd);
+  font-weight: bold;
+  text-shadow: 0 0 7px var(--neon-cyan, #00eafd);
+}
+
+/* --- IFRAME WRAPPER COMPONENT --- */
+.iframe-wrapper {
+  max-width: 100%;
+  margin: 2rem auto;
+  background-color: var(--slate);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--accent-blue);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+  background: #141414 !important;
+}
+
+/* --- UTILITY COMPONENTS --- */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left !important;
+}

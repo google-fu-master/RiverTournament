@@ -8,15 +8,17 @@ permalink: /rules/
 
 <!--this is the rule.md file-->
 
-<p style="background-color: #ffeeba; color: #333; padding: 1rem; border-radius: 8px; font-weight: bold; margin: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<h1 class="visually-hidden">River Tournament Rules and House Guidelines</h1>
+
+<p class="rules-note">
   Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
 
-<input type="text" id="search" placeholder="Search rules...">
+<input type="text" id="search" class="rules-search" placeholder="Search rules..." aria-label="Search rules">
 
-<section id="player-eligibility" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
-  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility & Registration</h2>
-  <ul style="line-height: 1.8; padding-left: 1rem;">
+<section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
+  <h1 id="player-eligibility-title">Player Eligibility & Registration</h1>
+  <ul>
     <li class="numbered-1">Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
 	<li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
@@ -32,9 +34,9 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="match-format" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
-  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Match Format & Races</h2>
-  <ul style="line-height: 1.8; padding-left: 1rem;">
+<section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
+  <h2 id="match-format-title">Match Format & Races</h2>
+  <ul>
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8 & 9 Ball:</strong>
       <ul>
@@ -48,9 +50,9 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="equipment" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
-  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Equipment & Gameplay</h2>
-  <ul style="line-height: 1.8; padding-left: 1rem;">
+<section id="equipment" class="rules-section" role="region" aria-labelledby="equipment-title">
+  <h2 id="equipment-title">Equipment & Gameplay</h2>
+  <ul>
     <li class="numbered-1">Racks are Fargo Reported.</li>
     <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
     <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
@@ -60,9 +62,9 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="conduct" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
-  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Conduct & House Rules</h2>
-  <ul style="line-height: 1.8; padding-left: 1rem;">
+<section id="conduct" class="rules-section" role="region" aria-labelledby="conduct-title">
+  <h2 id="conduct-title">Conduct & House Rules</h2>
+  <ul>
     <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
         <li>Unsportsmanlike behavior of any kind at River or other pool tournaments in the Oregon community (APA, BCA, APL, etc.).</li>
@@ -83,8 +85,8 @@ permalink: /rules/
   </ul>
 </section>
 
-<section id="bca-modified-rules" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-  <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">BCA Modified Rules</h2>
+<section id="bca-modified-rules" class="rules-section" role="region" aria-labelledby="bca-modified-rules-title">
+  <h2 id="bca-modified-rules-title">BCA Modified Rules</h2>
 
   <label for="formatSelect"><strong>Select Format:</strong></label>
   <select id="formatSelect">
@@ -161,3 +163,77 @@ permalink: /rules/
     document.getElementById(selected).style.display = 'block';
   });
 </script>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .rules-note {
+    background-color: #ffeeba;
+    color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .rules-search {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #0071a4;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .rules-section {
+    background-color: #0d1b2a;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+
+  .rules-section h1,
+  .rules-section h2 {
+    border-bottom: 2px solid #0071a4;
+    padding-bottom: 0.5rem;
+  }
+
+  .rules-section ul {
+    line-height: 1.8;
+    padding-left: 1rem;
+  }
+
+  .numbered-1 {
+    counter-increment: list-item;
+  }
+
+  .numbered-1::before {
+    content: counter(list-item) ". ";
+    font-weight: bold;
+    color: #0071a4;
+  }
+
+  .format-rules {
+    margin-top: 1rem;
+  }
+
+  #formatSelect {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #0071a4;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+  }
+</style>

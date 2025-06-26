@@ -21,41 +21,41 @@ permalink: /contact/
 </script>
 
 <div class="contact-form-wrapper">
-  <h2 class="contact-heading">Contact Us</h2>
+  <h1 class="contact-heading">Contact Us</h1>
   <p class="contact-intro">
     If your question isn’t answered in the <a href="/rules/">Rules</a> or <a href="/faq/">FAQs</a>, please reach out below. We’ll get back to you soon!<br>
     <strong>For spot availability or last-minute cancellations, please <a href="sms:7607938319">text the tournament director</a> (Brittany Posey) and do <span style="text-decoration:underline;">not</span> email.</strong>
   </p>
 
-  <form id="contactForm" action="YOUR_APPS_SCRIPT_WEBAPP_URL" method="POST" novalidate autocomplete="off">
-    <input type="hidden" id="timestamp" name="Timestamp">
+  <form id="contactForm" action="YOUR_APPS_SCRIPT_WEBAPP_URL" method="POST" novalidate autocomplete="off" aria-label="Contact form">
+    <input type="hidden" id="timestamp" name="timestamp">
 
     <div class="form-block">
       <label for="firstName">First Name <span class="required">*</span></label>
-      <input type="text" id="firstName" name="First Name" required autocomplete="given-name">
+      <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
     </div>
 
     <div class="form-block">
       <label for="lastName">Last Name <span class="required">*</span></label>
-      <input type="text" id="lastName" name="Last Name" required autocomplete="family-name">
+      <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
     </div>
 
     <div class="form-block">
       <label for="phoneNumber">Phone Number</label>
-      <input type="text" id="phoneNumber" name="Phone Number" placeholder="123-456-7890" autocomplete="tel">
+      <input type="text" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" autocomplete="tel">
     </div>
 
     <div class="form-block">
       <label for="email">Email <span class="required">*</span></label>
-      <input type="email" id="email" name="Email" placeholder="you@example.com" required autocomplete="email">
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
     </div>
 
     <div class="form-block">
       <label>Preferred Contact Method</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" id="text" name="Preferred Contact" value="Text"> Text</label>
-        <label><input type="checkbox" id="call" name="Preferred Contact" value="Call"> Call</label>
-        <label><input type="checkbox" id="emailContact" name="Preferred Contact" value="Email"> Email</label>
+        <label><input type="checkbox" id="text" name="preferredContact" value="Text"> Text</label>
+        <label><input type="checkbox" id="call" name="preferredContact" value="Call"> Call</label>
+        <label><input type="checkbox" id="emailContact" name="preferredContact" value="Email"> Email</label>
       </div>
       <div class="hint">Do not check a box unless you want us to contact you about your inquiry.</div>
     </div>
@@ -63,28 +63,28 @@ permalink: /contact/
     <div class="form-block">
       <label>Have you played in the tournament?</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" id="playedYes" name="Tournament Player" value="Yes"> Yes</label>
-        <label><input type="checkbox" id="playedNo" name="Tournament Player" value="No"> No</label>
-        <label><input type="checkbox" id="playedWant" name="Tournament Player" value="I Want To"> I Want To</label>
+        <label><input type="checkbox" id="playedYes" name="tournamentPlayer" value="Yes"> Yes</label>
+        <label><input type="checkbox" id="playedNo" name="tournamentPlayer" value="No"> No</label>
+        <label><input type="checkbox" id="playedWant" name="tournamentPlayer" value="I Want To"> I Want To</label>
       </div>
     </div>
 
     <div class="form-block">
       <label for="subject">Subject</label>
-      <input type="text" id="subject" name="Subject">
+      <input type="text" id="subject" name="subject">
     </div>
 
     <div class="form-block">
       <label for="details">Details</label>
-      <textarea id="details" name="Details" rows="6" placeholder="Enter your message here..."></textarea>
+      <textarea id="details" name="details" rows="6" placeholder="Enter your message here..."></textarea>
     </div>
 
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
 
     <div class="form-block center">
-      <button type="submit" class="cta-button">Submit (Tap Once, Be Patient 🧘)</button>
+      <button type="submit" class="cta-button" aria-label="Submit contact form">Submit (Tap Once, Be Patient 🧘)</button>
     </div>
-    <div id="form-status" class="form-status"></div>
+    <div id="form-status" class="form-status" aria-live="polite"></div>
   </form>
 </div>
 
