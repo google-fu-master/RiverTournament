@@ -1,0 +1,32 @@
+// _navbar.scss
+@use 'variables' as *;
+@use 'glassmorphism' as *;
+
+.navbar {
+  @extend .glass;
+  height: $navbar-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: $neon-blue;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    transition: color $transition;
+    &:hover {
+      color: $neon-pink;
+    }
+  }
+}
