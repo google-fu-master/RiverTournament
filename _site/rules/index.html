@@ -1,78 +1,100 @@
 <!DOCTYPE html>
-<!--this is the  default.html file that lives in the _layouts folder-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tournament Rules - River Tournaments</title>
+  <meta name="description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
+  <meta name="robots" content="index,follow">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tournament Rules - River Tournaments">
+  <meta property="og:description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivertournaments.com/rules/">
+  <meta property="og:site_name" content="River Tournaments">
+  <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png">
+  <meta property="fb:page_id" content="61577340925686">
+  <!-- Contact for search engines and humans -->
+  <meta name="contact" content="rivertournaments@gmail.com">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://rivertournaments.com/rules/">
+  <!-- Google Fonts for site-wide headings and titles -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="page-rules">
-  <nav>
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
-  <div class="menu">
-    
-    
-      <a href="/"
-        >
-        Home
-      </a>
-    
-      <a href="/"
-        id="nav-signup-link">
-        Sign Up
-      </a>
-    
-      <a href="/rules/"
-        >
-        Rules
-      </a>
-    
-      <a href="/location/"
-        >
-        Location
-      </a>
-    
-      <a href="/faq/"
-        >
-        FAQ
-      </a>
-    
-      <a href="/contact/"
-        >
-        Contact
-      </a>
-    
-  </div>
-</nav>
+  <nav class="main-nav">
+    <div class="nav-flex">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Open navigation">&#9776;</label>
+      <div class="menu">
+        
+        
+          <a href="/"
+            >
+            Home
+          </a>
+        
+          <a href="/"
+            id="nav-signup-link">
+            Sign Up
+          </a>
+        
+          <a href="/rules/"
+            >
+            Rules
+          </a>
+        
+          <a href="/location/"
+            >
+            Parking
+          </a>
+        
+          <a href="/calendar/"
+            >
+            Calendar
+          </a>
+        
+          <a href="/faq/"
+            >
+            FAQ
+          </a>
+        
+          <a href="/contact/"
+            >
+            Contact
+          </a>
+        
+      </div>
+    </div>
+  </nav>
 
   <header>
-  <h1>Tournament Rules</h1>
-  
-</header>
+    <h1 class="site-title">Tournament Rules</h1>
+    
+  </header>
 
   <main>
     <!--this is the rule.md file-->
-
-<p><input type="text" id="search" placeholder="Search rules..." /></p>
 
 <p style="background-color: #ffeeba; color: #333; padding: 1rem; border-radius: 8px; font-weight: bold; margin: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
 
+<p><input type="text" id="search" placeholder="Search rules..." /></p>
+
 <section id="player-eligibility" style="background-color: #0D1B2A; padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 2rem;">
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Player Eligibility &amp; Registration</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Players with Fargo ratings of &lt;445 in 8-ball, &lt;430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
-    <li>Players must present a <strong>FargoRate or APA account</strong> (if you have one) and a <strong>photo ID</strong> at registration.</li>
-	<li>If you <strong>do not have a FargoRate account</strong>, your <strong>APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
-	<li>If you have <strong>no APA or Fargo rating</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
-	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible—please merge accounts beforehand.</li>
+    <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
+	<li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
+	<li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
+	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> merge accounts beforehand .</li>
 	<li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
 	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
-    <li>Your rating at registration on tournament night will decide eligibility and race lengths.</li>
+    <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
     <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
@@ -83,21 +105,15 @@
   <h2 style="border-bottom: 2px solid #0071a4; padding-bottom: 0.5rem;">Match Format &amp; Races</h2>
   <ul style="line-height: 1.8; padding-left: 1rem;">
     <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
-    <li><strong>8-Ball:</strong>
+    <li><strong>8 &amp; 9 Ball:</strong>
       <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-        <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
+        <li>13-16 players: race to 1, both sides.</li>
+        <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
       </ul>
     </li>
-    <li><strong>9-Ball:</strong>
-      <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-        <li>13–16 players: race to 2 on the winner side, 1 on the losers side</li>
-      </ul>
-    </li>
-    <li>In all formats, if there’s a 75–124 Fargo point gap, the higher-rated player must win 1 extra game, and 2 extra games for 125+ Fargo point gap.</li>
     <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
-    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent in the first round.</strong></li>
+    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
 
@@ -219,38 +235,40 @@
   </main>
 
   <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
+    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.<br>
+    <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a> &nbsp;|&nbsp;
+    <a href="https://www.facebook.com/61577340925686" target="_blank" rel="noopener">Facebook Page</a>
   </footer>
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('menu-toggle');
+      const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+      const savedState = localStorage.getItem('menuOpen');
 
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
+      // Apply saved state or default
+      if (savedState === null) {
+        toggle.checked = isDesktop;
+      } else {
+        toggle.checked = savedState === 'true';
+      }
 
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
+      toggle.addEventListener('change', () => {
+        localStorage.setItem('menuOpen', toggle.checked);
       });
+
+      // On mobile, always close the menu after a nav click
+      if (!isDesktop) {
+        const links = document.querySelectorAll('.menu a');
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.checked = false;
+            localStorage.setItem('menuOpen', false);
+          });
+        });
+      }
     });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
+  </script>
+  <script src="/assets/scripts/tournament.js"></script>
 </body>
 </html>

@@ -1,56 +1,78 @@
 <!DOCTYPE html>
-<!--this is the  default.html file that lives in the _layouts folder-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Location - River Tournaments</title>
+  <title>Location, Transportation & Parking - River Tournaments</title>
+  <meta name="description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
+  <meta name="robots" content="index,follow">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Location, Transportation & Parking - River Tournaments">
+  <meta property="og:description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivertournaments.com/location/">
+  <meta property="og:site_name" content="River Tournaments">
+  <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png">
+  <meta property="fb:page_id" content="61577340925686">
+  <!-- Contact for search engines and humans -->
+  <meta name="contact" content="rivertournaments@gmail.com">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://rivertournaments.com/location/">
+  <!-- Google Fonts for site-wide headings and titles -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="page-location">
-  <nav>
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
-  <div class="menu">
-    
-    
-      <a href="/"
-        >
-        Home
-      </a>
-    
-      <a href="/"
-        id="nav-signup-link">
-        Sign Up
-      </a>
-    
-      <a href="/rules/"
-        >
-        Rules
-      </a>
-    
-      <a href="/location/"
-        >
-        Location
-      </a>
-    
-      <a href="/faq/"
-        >
-        FAQ
-      </a>
-    
-      <a href="/contact/"
-        >
-        Contact
-      </a>
-    
-  </div>
-</nav>
+  <nav class="main-nav">
+    <div class="nav-flex">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Open navigation">&#9776;</label>
+      <div class="menu">
+        
+        
+          <a href="/"
+            >
+            Home
+          </a>
+        
+          <a href="/"
+            id="nav-signup-link">
+            Sign Up
+          </a>
+        
+          <a href="/rules/"
+            >
+            Rules
+          </a>
+        
+          <a href="/location/"
+            >
+            Parking
+          </a>
+        
+          <a href="/calendar/"
+            >
+            Calendar
+          </a>
+        
+          <a href="/faq/"
+            >
+            FAQ
+          </a>
+        
+          <a href="/contact/"
+            >
+            Contact
+          </a>
+        
+      </div>
+    </div>
+  </nav>
 
   <header>
-  <h1>Location</h1>
-  
-</header>
+    <h1 class="site-title">Location, Transportation & Parking</h1>
+    
+  </header>
 
   <main>
     <!--this is the location.html file-->
@@ -77,21 +99,86 @@
   <h2>🚆 Transportation 🚆</h2>
   <div class="content-wrapper">
     <h3>MAX Light Rail</h3>
-    <p>The two closest MAX stops are both served by the Green, Orange, Yellow, and Blue lines:</p>
-    <ul>
-      <li><a href="https://www.google.com/maps/place/NW+5th+%26+Couch/@45.5243924,-122.6772306,18z" target="_blank">NW 5th &amp; Couch</a></li>
-      <li><a href="https://www.google.com/maps/place/NW+6th+%26+Davis/@45.5246917,-122.6775911,18z" target="_blank">NW 6th &amp; Davis</a></li>
-    </ul>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+  <div style="flex: 1 1 300px; min-width: 280px; max-width: 400px;">
+    <strong>NW 5th & Couch</strong>
+    <iframe
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAU-vDbAg0K224ecCB3YCME89uhyebNYkI&q=NW+5th+%26+Couch,+Portland+OR&zoom=18"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <div style="flex: 1 1 300px; min-width: 280px; max-width: 400px;">
+    <strong>NW 6th & Davis</strong>
+    <iframe
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAU-vDbAg0K224ecCB3YCME89uhyebNYkI&q=NW+6th+%26+Davis,+Portland+OR&zoom=18"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+      <p>Both the NW 5th &amp; Couch stop and the NW 6th &amp; Davis stop are serviced by the following lines:</p>
+<div class="max-lines-row">
+  <a href="https://trimet.org/schedules/maxblueline.htm" target="_blank" aria-label="MAX Blue Line">
+    <img src="/assets/images/location/blueline.png" alt="MAX Blue Line">
+  </a>
+  <a href="https://trimet.org/schedules/maxgreenline.htm" target="_blank" aria-label="MAX Green Line">
+    <img src="/assets/images/location/greenline.png" alt="MAX Green Line">
+  </a>
+  <a href="https://trimet.org/schedules/maxorangeline.htm" target="_blank" aria-label="MAX Orange Line">
+    <img src="/assets/images/location/orangeline.png" alt="MAX Orange Line">
+  </a>
+  <a href="https://trimet.org/schedules/maxyellowline.htm" target="_blank" aria-label="MAX Yellow Line">
+    <img src="/assets/images/location/yellowline.png" alt="MAX Yellow Line">
+  </a>
+</div>
+</div>
 
-    <h4>TriMet MAX System Map</h4>
-    <a href="https://trimet.org/schedules/maps/max-system.pdf" target="_blank">
-      View Full MAX System Map (PDF)
-    </a>
+    <h4>TriMet MAX System Map & Schedules</h4>
+    <a href="https://trimet.org/schedules/" target="_blank" aria-label="TriMet Schedules">
+  <img src="https://trimet.org/maps/img/railsystem.png?v=aug2024"
+       alt="TriMet MAX System Map"
+       class="map-image"
+       style="width:100%;max-width:800px;height:400px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
+</a>
 
     <h3>Other Options</h3>
-    <p><strong>Lime Scooters:</strong> Commonly available downtown. Use the <a href="https://www.li.me/en-us/home" target="_blank">Lime app</a> to find and unlock a scooter.</p>
-    <p><strong>Uber:</strong> <a href="uber://?action=setPickup&dropoff[latitude]=45.523046&dropoff[longitude]=-122.675095" target="_blank">Launch the app</a> or <a href="https://www.uber.com/us/en/ride/" target="_blank">request online</a>.</p>
-    <p><strong>Lyft:</strong> <a href="lyft://ridetype?id=lyft&destination[latitude]=45.523046&destination[longitude]=-122.675095" target="_blank">Launch the app</a> or <a href="https://www.lyft.com/rider" target="_blank">request online</a>.</p>
+    <p><strong>Lime Scooters</strong> are commonly available downtown. Use the Lime mobile app!</p>
+    <p></p><a href="https://www.li.me/en-us/home" target="_blank" aria-label="Lime Scooter"></p>
+  <img src="/assets/images/appbuttons/LimeLogo.png" alt="Lime Scooter" style="height:48px; width:auto; border-radius:8px; background:#fff; padding:4px 8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); border:1px solid #eee;">
+</a>
+    <!-- Uber and Lyft app buttons start here -->
+    <p><strong>Uber & Lyft</strong> make downtown transportation easy. Book your ride now!
+    <div class="rideshare-buttons" style="display: flex; gap: 20px; align-items: center; margin-top: 1rem; margin-bottom: 1rem;">
+      <a id="uber-link" href="https://www.uber.com/us/en/ride/" target="_blank" aria-label="Uber">
+        <img src="/assets/images/appbuttons/Uber-White-Logo.wine.png" alt="Uber" class="appbutton" style="height:48px; width:auto;"/>
+      </a>
+      <a id="lyft-link" href="https://www.lyft.com/rider" target="_blank" aria-label="Lyft">
+        <img src="/assets/images/appbuttons/lyfticon.png" alt="Lyft" class="appbutton" style="height:48px; width:auto;"/>
+      </a>
+    </div>
+    <script>
+      // Device detection for rideshare app links
+      (function() {
+        function isMobile() {
+          return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent);
+        }
+        var uberLink = document.getElementById('uber-link');
+        var lyftLink = document.getElementById('lyft-link');
+        if (uberLink && lyftLink && isMobile()) {
+          uberLink.setAttribute('href', 'uber://?action=setPickup&dropoff[latitude]=45.523046&dropoff[longitude]=-122.675095');
+          lyftLink.setAttribute('href', 'lyft://ridetype?id=lyft&destination[latitude]=45.523046&destination[longitude]=-122.675095');
+        }
+      })();
+    </script>
+    <!-- Uber and Lyft app buttons end here -->
   </div>
 </section>
 
@@ -137,38 +224,40 @@
   </main>
 
   <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.
+    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.<br>
+    <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a> &nbsp;|&nbsp;
+    <a href="https://www.facebook.com/61577340925686" target="_blank" rel="noopener">Facebook Page</a>
   </footer>
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('menu-toggle');
-  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const savedState = localStorage.getItem('menuOpen');
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('menu-toggle');
+      const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+      const savedState = localStorage.getItem('menuOpen');
 
-  // Apply saved state or default
-  if (savedState === null) {
-    toggle.checked = isDesktop;
-  } else {
-    toggle.checked = savedState === 'true';
-  }
+      // Apply saved state or default
+      if (savedState === null) {
+        toggle.checked = isDesktop;
+      } else {
+        toggle.checked = savedState === 'true';
+      }
 
-  toggle.addEventListener('change', () => {
-    localStorage.setItem('menuOpen', toggle.checked);
-  });
-
-  // On mobile, always close the menu after a nav click
-  if (!isDesktop) {
-    const links = document.querySelectorAll('.menu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-        localStorage.setItem('menuOpen', false);
+      toggle.addEventListener('change', () => {
+        localStorage.setItem('menuOpen', toggle.checked);
       });
+
+      // On mobile, always close the menu after a nav click
+      if (!isDesktop) {
+        const links = document.querySelectorAll('.menu a');
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.checked = false;
+            localStorage.setItem('menuOpen', false);
+          });
+        });
+      }
     });
-  }
-});
-</script>
-<script src="/assets/scripts/tournament.js"></script>
+  </script>
+  <script src="/assets/scripts/tournament.js"></script>
 </body>
 </html>

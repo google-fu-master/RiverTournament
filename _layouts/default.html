@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see results[...]">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see results...{% endif %}">
   <meta name="robots" content="index,follow">
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see [...]">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see results...{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:site_name" content="River Tournaments">
@@ -19,7 +19,7 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <!-- Google Fonts for site-wide headings and titles -->
-  <<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body class="{% if page.bodyClass %}{{ page.bodyClass }}{% else %}page-{{ page.title | downcase | replace: ' ', '-' }}{% endif %}">

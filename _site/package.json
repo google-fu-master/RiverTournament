@@ -1,0 +1,14 @@
+{
+  "name": "river-tournament-site",
+  "version": "1.0.0",
+  "description": "River Tournament Site with automated SCSS compilation",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/scss/styles.scss:assets/styles.css"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}
