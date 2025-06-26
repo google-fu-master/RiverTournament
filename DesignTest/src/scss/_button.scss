@@ -4,28 +4,26 @@
 
 .button-glass {
   @extend .glass;
-  color: $neon-blue;
+  color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
   padding: 0.75em 2em;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0.5em;
-  background: linear-gradient(90deg, $neon-pink 0%, $neon-blue 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 0 2px 16px 0 $neon-blue;
+  margin: 0.5em 0.2em;
+  background: $glass-bg;
+  background-clip: padding-box;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.25);
   transition: box-shadow $transition, border $transition, background $transition;
+  backdrop-filter: blur($glass-blur);
+  -webkit-backdrop-filter: blur($glass-blur);
+  border-radius: $border-radius;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
   &:hover {
-    box-shadow: 0 4px 32px 0 $neon-pink, 0 1.5px 8px 0 $neon-green;
-    border: 1.5px solid $neon-green;
-    background: linear-gradient(90deg, $neon-green 0%, $neon-yellow 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    box-shadow: 0 8px 40px 0 rgba(255,255,255,0.35), 0 1.5px 8px 0 rgba(255,255,255,0.25);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.18);
   }
 }
