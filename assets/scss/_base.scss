@@ -58,6 +58,7 @@ header h1, .site-title {
   margin: 0;
   font-size: 1.85rem;
   font-family: 'Montserrat', 'Oswald', 'Arial Black', sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--white);
@@ -65,6 +66,10 @@ header h1, .site-title {
   margin-bottom: 0.25rem;
   word-break: break-word;
   max-width: 90vw;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 header p,
 .site-address {
@@ -89,6 +94,7 @@ h1, h2, h3, h4, .highlight {
   font-family: 'Montserrat', 'Oswald', 'Arial Black', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 h1, h2, h3 {
   text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
@@ -171,7 +177,7 @@ a:hover {
     font-family: 'Montserrat', 'Oswald', 'Arial Black', sans-serif;
     color: var(--neon-blue, #30baff);
     text-transform: none;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin: 0 0 0.15rem 0;
     line-height: 1.15;
@@ -182,6 +188,10 @@ a:hover {
       2px 2px 0 #000;
     max-width: 98vw;
     overflow-wrap: break-word;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .site-address,
   header p {
