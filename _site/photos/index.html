@@ -1,132 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>River Tournament Photos - River Tournaments</title>
-  <meta name="description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
-  <meta name="robots" content="index,follow">
-  <!-- Open Graph -->
-  <meta property="og:title" content="River Tournament Photos - River Tournaments">
-  <meta property="og:description" content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results...">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rivertournaments.com/photos/">
-  <meta property="og:site_name" content="River Tournaments">
-  <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png">
-  <meta property="fb:page_id" content="61577340925686">
-  <!-- Contact for search engines and humans -->
-  <meta name="contact" content="rivertournaments@gmail.com">
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-  <link rel="canonical" href="https://rivertournaments.com/photos/">
-  <!-- Google Fonts for site-wide headings and titles -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
-</head>
-<body class="page-photos">
-  <nav class="main-nav">
-    <div class="nav-flex">
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="hamburger" aria-label="Open navigation">&#9776;</label>
-      <div class="menu">
-        
-        
-          <a href="/"
-            >
-            Home
-          </a>
-        
-          <a href="/"
-            id="nav-signup-link">
-            Sign Up
-          </a>
-        
-          <a href="/rules/"
-            >
-            Rules
-          </a>
-        
-          <a href="/location/"
-            >
-            Parking
-          </a>
-        
-          <a href="/calendar/"
-            >
-            Calendar
-          </a>
-        
-          <a href="/faq/"
-            >
-            FAQ
-          </a>
-        
-          <a href="/contact/"
-            >
-            Contact
-          </a>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>River Tournament Photos - River Tournaments</title>
+    <meta
+      name="description"
+      content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results..."
+    />
+    <meta name="robots" content="index,follow" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="River Tournament Photos - River Tournaments"
+    />
+    <meta
+      property="og:description"
+      content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results..."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rivertournaments.com/photos/" />
+    <meta property="og:site_name" content="River Tournaments" />
+    <meta
+      property="og:image"
+      content="https://rivertournaments.com/assets/og-image.png"
+    />
+    <meta property="fb:page_id" content="61577340925686" />
+    <!-- Contact for search engines and humans -->
+    <meta name="contact" content="rivertournaments@gmail.com" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://rivertournaments.com/photos/" />
+    <!-- Google Fonts for site-wide headings and titles -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .skip-link {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #222;
+        color: #fff;
+        padding: 8px 16px;
+        z-index: 1000;
+        transform: translateY(-120%);
+        transition: transform 0.2s;
+      }
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 3px solid #ff0;
+      }
+      .main-nav a:focus,
+      .main-nav a:hover,
+      .hamburger:focus {
+        outline: 2px solid #0078d7;
+        outline-offset: 2px;
+        background: #f0f0f0;
+        color: #222;
+      }
+    </style>
+  </head>
+  <body class="page-photos">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="nav-flex">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="hamburger"
+          aria-label="Open navigation menu"
+          >&#9776;</label
+        >
+        <div class="menu">
+          <a href="/"> Home </a>
+
+          <a href="/" id="nav-signup-link"> Sign Up </a>
+
+          <a href="/rules/"> Rules </a>
+
+          <a href="/location/"> Parking </a>
+
+          <a href="/calendar/"> Calendar </a>
+
+          <a href="/faq/"> FAQ </a>
+
+          <a href="/contact/"> Contact </a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <header>
-    <h1 class="site-title">River Tournament Photos</h1>
-    
-  </header>
+    <header role="banner">
+      <h1 class="site-title">River Tournament Photos</h1>
+    </header>
 
-  <main>
-    <!--this is the photos.html file-->
+    <main id="main-content" role="main">
+      <!--this is the photos.html file-->
 
-<section id="tournament-photos">
-  <h2>📸 Tournament Photos 📸</h2>
-  <p>Enjoy highlights from recent River Tournaments! Want to see your photo here? <a href="/contact/">Contact us</a> to submit your favorite shots.</p>
-  <div class="photo-gallery" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
-    <!-- Example images; replace with your own images and update paths/names -->
-    <img src="/assets/images/photos/2025-05-winners.jpg" alt="May 2025 Winners" style="max-width: 320px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.13);" />
-    <img src="/assets/images/photos/2025-05-action.jpg" alt="Players in action, May 2025" style="max-width: 320px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.13);" />
-    <img src="/assets/images/photos/ladies-night-2025-spring.jpg" alt="Ladies Night Spring 2025" style="max-width: 320px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.13);" />
-    <!-- Add more images as needed -->
-  </div>
-  <p style="text-align:center; margin-top: 2rem;"><em>Check back after each event for new photos!</em></p>
-</section>
+      <section id="tournament-photos">
+        <h2>📸 Tournament Photos 📸</h2>
+        <p>
+          Enjoy highlights from recent River Tournaments! Want to see your photo
+          here? <a href="/contact/">Contact us</a> to submit your favorite
+          shots.
+        </p>
+        <div class="photo-gallery">
+          <!-- Example images; replace with your own images and update paths/names -->
+          <img
+            src="/assets/images/photos/2025-05-winners.jpg"
+            alt="Group photo of May 2025 River Tournament winners holding trophies at River Pool & Sports Bar"
+            class="gallery-img"
+          />
+          <img
+            src="/assets/images/photos/2025-05-action.jpg"
+            alt="Players in action during May 2025 River Tournament, shooting pool"
+            class="gallery-img"
+          />
+          <img
+            src="/assets/images/photos/ladies-night-2025-spring.jpg"
+            alt="Ladies Night Spring 2025 group photo, women pool players smiling at River"
+            class="gallery-img"
+          />
+          <!-- Add more images as needed -->
+        </div>
+        <p class="gallery-caption">
+          <em>Check back after each event for new photos!</em>
+        </p>
+      </section>
 
-  </main>
+      <style>
+        .photo-gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          justify-content: center;
+          margin-top: 2rem;
+        }
+        .gallery-img {
+          max-width: 320px;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+        }
+        .gallery-caption {
+          text-align: center;
+          margin-top: 2rem;
+        }
+      </style>
+    </main>
 
-  <footer>
-    &copy; 2025 River Tournaments. Site and content created by Brittany Posey.<br>
-    <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a> &nbsp;|&nbsp;
-    <a href="https://www.facebook.com/61577340925686" target="_blank" rel="noopener">Facebook Page</a>
-  </footer>
+    <footer role="contentinfo">
+      &copy; 2025 River Tournaments. Site and content created by Brittany
+      Posey.<br />
+      <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a>
+      &nbsp;|&nbsp;
+      <a
+        href="https://www.facebook.com/61577340925686"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook Page"
+        >Facebook Page</a
+      >
+    </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggle = document.getElementById('menu-toggle');
-      const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
-      const savedState = localStorage.getItem('menuOpen');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("menu-toggle");
+        const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+        const savedState = localStorage.getItem("menuOpen");
 
-      // Apply saved state or default
-      if (savedState === null) {
-        toggle.checked = isDesktop;
-      } else {
-        toggle.checked = savedState === 'true';
-      }
+        // Apply saved state or default
+        if (savedState === null) {
+          toggle.checked = isDesktop;
+        } else {
+          toggle.checked = savedState === "true";
+        }
 
-      toggle.addEventListener('change', () => {
-        localStorage.setItem('menuOpen', toggle.checked);
-      });
-
-      // On mobile, always close the menu after a nav click
-      if (!isDesktop) {
-        const links = document.querySelectorAll('.menu a');
-        links.forEach(link => {
-          link.addEventListener('click', () => {
-            toggle.checked = false;
-            localStorage.setItem('menuOpen', false);
-          });
+        toggle.addEventListener("change", () => {
+          localStorage.setItem("menuOpen", toggle.checked);
         });
-      }
-    });
-  </script>
-  <script src="/assets/scripts/tournament.js"></script>
-</body>
+
+        // On mobile, always close the menu after a nav click
+        if (!isDesktop) {
+          const links = document.querySelectorAll(".menu a");
+          links.forEach((link) => {
+            link.addEventListener("click", () => {
+              toggle.checked = false;
+              localStorage.setItem("menuOpen", false);
+            });
+          });
+        }
+      });
+    </script>
+    <script src="/assets/scripts/tournament.js"></script>
+  </body>
 </html>

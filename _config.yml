@@ -2,7 +2,7 @@ title: River Tournaments
 description: Official site for River Tournament hosted by Brittany Posey
 markdown: kramdown
 permalink: pretty
-baseurl: ""  # Correct because it's deployed to domain root
+baseurl: "" # Correct because it's deployed to domain root
 url: "https://rivertournaments.com"
 
 plugins:

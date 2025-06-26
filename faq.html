@@ -9,94 +9,469 @@ permalink: /faq/
 <!--this is the faq.html file-->
 
 <h1 class="visually-hidden">River Tournament Frequently Asked Questions</h1>
-<p><input type="text" id="faq-search" class="faq-search" placeholder="Search FAQs…" aria-label="Search FAQs" /></p>
 
-<div class="faq styled-section" role="region" aria-labelledby="faq-overview">
+<!-- Sticky section navigation -->
+<nav class="faq-sticky-nav" aria-label="FAQ Sections">
+  <ul>
+    <li><a href="#faq-overview">Overview</a></li>
+    <li><a href="#faq-registration">Registration & Entry</a></li>
+    <li><a href="#faq-ratings">Player Ratings</a></li>
+    <li><a href="#faq-bracket">Bracket & Waitlist</a></li>
+    <li><a href="#faq-fees">Fees</a></li>
+  </ul>
+</nav>
 
+<p>
+  <input
+    type="text"
+    id="faq-search"
+    class="faq-search"
+    placeholder="Search FAQs…"
+    aria-label="Search FAQs"
+    autocomplete="off"
+  />
+</p>
+
+<div class="faq styled-section" role="region" aria-labelledby="faq-overview" id="faq-content">
   <!-- Tournament Overview -->
   <h2 id="faq-overview">🏆 Tournament Overview 🏆</h2>
 
   <h3>Who can play in these tournaments?</h3>
-  <p>Any player with a Fargo rating less than or equal to the rating caps is welcome! The current caps are 445 in 8-Ball, and 430 in 9-Ball. These caps are subject to change during the first few weeks as we find the right balance for fair competition. Thank you for your patience!</p>
+  <p>
+    Any player with a Fargo rating less than or equal to the rating caps is
+    welcome! The current caps are 445 in 8-Ball, and 430 in 9-Ball. These caps
+    are subject to change during the first few weeks as we find the right
+    balance for fair competition. Thank you for your patience!
+  </p>
 
   <h3>Who is this tournament for, and why is the Fargo cap so low?</h3>
-  <p>This tournament series is designed to give lower-rated players a competitive and welcoming environment to play and improve. The Portland and Vancouver areas already offer many open and uncapped tournaments (see below), so this event is specifically for those who often find themselves outmatched in higher-level competitions. It's time to give the underdogs their own spotlight!</p>
+  <p>
+    This tournament series is designed to give lower-rated players a competitive
+    and welcoming environment to play and improve. The Portland and Vancouver
+    areas already offer many open and uncapped tournaments (see below), so this
+    event is specifically for those who often find themselves outmatched in
+    higher-level competitions. It's time to give the underdogs their own
+    spotlight!
+  </p>
   <ul>
-    <li><a href="http://www.sharkshooter.net/portland_info.html" target="_blank" rel="noopener">Portland Tournaments (Shark Shooter)</a></li>
-    <li><a href="http://www.sharkshooter.net/Vancouver_Info.html" target="_blank" rel="noopener">Vancouver Tournaments (Shark Shooter)</a></li>
+    <li>
+      <a
+        href="http://www.sharkshooter.net/portland_info.html"
+        target="_blank"
+        rel="noopener"
+        >Portland Tournaments (Shark Shooter)</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://www.sharkshooter.net/Vancouver_Info.html"
+        target="_blank"
+        rel="noopener"
+        >Vancouver Tournaments (Shark Shooter)</a
+      >
+    </li>
   </ul>
-  <p><em>Note: The Shark Shooter website may show a "connection is not secure" error. You can safely continue past that warning to access tournament information.</em></p>
+  <p>
+    <em
+      >Note: The Shark Shooter website may show a "connection is not secure"
+      error. You can safely continue past that warning to access tournament
+      information.</em
+    >
+  </p>
 
   <!-- Registration & Entry -->
   <h2 id="faq-registration">📝 Registration & Entry 📝</h2>
 
   <h3>Do I need to sign up ahead of time?</h3>
-  <p>Sign up is <strong>highly recommended</strong> but not required! You can sign up for the River Tournaments on DigitalPool (links below).  DigitalPool syncs with FargoRate - if you don't have a DigitalPool account or a FargotRate account, one will be created for you automatically as a result of playing in the River Tournaments; If you have an APA account, your ranks will be converted to a comparable FargoRate by the tournament director at registration for the purposes of the tournament.</p>
- <ul>
-  <li><strong>8-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-8-ball-series" target="_blank" rel="noopener">River 8-Ball Series</a></li>
-  <li><strong>9-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-9-ball-series" target="_blank" rel="noopener">River 9-Ball Series</a></li>
-  <li><strong>Ladies Night 8-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-thursday-ladies-night-8-ball-series" target="_blank" rel="noopener">Ladies Night 8-Ball Series</a></li>
-  <li><strong>Ladies Night 9-Ball Tournaments:</strong> <a href="https://digitalpool.com/events/river-thursday-ladies-night-9-ball-series" target="_blank" rel="noopener">Ladies Night 9-Ball Series</a></li>
-</ul>
+  <p>
+    Sign up is <strong>highly recommended</strong> but not required! You can
+    sign up for the River Tournaments on DigitalPool (links below). DigitalPool
+    syncs with FargoRate - if you don't have a DigitalPool account or a
+    FargotRate account, one will be created for you automatically as a result of
+    playing in the River Tournaments; If you have an APA account, your ranks
+    will be converted to a comparable FargoRate by the tournament director at
+    registration for the purposes of the tournament.
+  </p>
+  <ul>
+    <li>
+      <strong>8-Ball Tournaments:</strong>
+      <a
+        href="https://digitalpool.com/events/river-8-ball-series"
+        target="_blank"
+        rel="noopener"
+        >River 8-Ball Series</a
+      >
+    </li>
+    <li>
+      <strong>9-Ball Tournaments:</strong>
+      <a
+        href="https://digitalpool.com/events/river-9-ball-series"
+        target="_blank"
+        rel="noopener"
+        >River 9-Ball Series</a
+      >
+    </li>
+    <li>
+      <strong>Ladies Night 8-Ball Tournaments:</strong>
+      <a
+        href="https://digitalpool.com/events/river-thursday-ladies-night-8-ball-series"
+        target="_blank"
+        rel="noopener"
+        >Ladies Night 8-Ball Series</a
+      >
+    </li>
+    <li>
+      <strong>Ladies Night 9-Ball Tournaments:</strong>
+      <a
+        href="https://digitalpool.com/events/river-thursday-ladies-night-9-ball-series"
+        target="_blank"
+        rel="noopener"
+        >Ladies Night 9-Ball Series</a
+      >
+    </li>
+  </ul>
 
   <h3>How do player ratings work?</h3>
-  <p>In general, FargoRate will be the source of truth for all players in the River Tournaments. Because these tournaments are aimed at low-ranking players who may not have a FargoRate or have very little robustness (FargoRate-reported games), rank conversions may be done at the Tournament Director's discretion to maintain fair play and balanced competition.</p>
+  <p>
+    In general, FargoRate will be the source of truth for all players in the
+    River Tournaments. Because these tournaments are aimed at low-ranking
+    players who may not have a FargoRate or have very little robustness
+    (FargoRate-reported games), rank conversions may be done at the Tournament
+    Director's discretion to maintain fair play and balanced competition.
+  </p>
   <p><strong>If you have:</strong></p>
   <ul>
-    <li>A FargoRate Profile with 50+ robustness: your FargoRate is your rate for all River Tournaments, period.</li>
-    <li>An APA profile with at least 12 matches in the last 2 years (4 matches per 1 year of sessions) but <strong>no FargoRate profile</strong>: your APA lifetime stats will be used to assign a comparable FargoRate for the tournament.</li>
-    <li>Neither a FargoRate profile nor an APA profile with 12 matches in the last 2 years: you will be entered at the maximum eligible rating (430 in 9-Ball, 445 in 8-Ball) and your scores will be submitted to FargoRate to create a profile and rating for you. When you return to a River Tournament with a FargoRate profile, we will use your offical Fargo ranking (Tournament Director assessment/conversion may still apply on a case by case basis).</li>
-    <li>If you have more than one FargoRate profile: we will use the highest rated profile rank. Players over 430 in 9-Ball and 445 in 8-Ball are not eligible to play in the tournament (unless converted to an eligible rating at Tournament Director's discrtion). You can email <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge your accounts.</li>
+    <li>
+      A FargoRate Profile with 50+ robustness: your FargoRate is your rate for
+      all River Tournaments, period.
+    </li>
+    <li>
+      An APA profile with at least 12 matches in the last 2 years (4 matches per
+      1 year of sessions) but <strong>no FargoRate profile</strong>: your APA
+      lifetime stats will be used to assign a comparable FargoRate for the
+      tournament.
+    </li>
+    <li>
+      Neither a FargoRate profile nor an APA profile with 12 matches in the last
+      2 years: you will be entered at the maximum eligible rating (430 in
+      9-Ball, 445 in 8-Ball) and your scores will be submitted to FargoRate to
+      create a profile and rating for you. When you return to a River Tournament
+      with a FargoRate profile, we will use your offical Fargo ranking
+      (Tournament Director assessment/conversion may still apply on a case by
+      case basis).
+    </li>
+    <li>
+      If you have more than one FargoRate profile: we will use the highest rated
+      profile rank. Players over 430 in 9-Ball and 445 in 8-Ball are not
+      eligible to play in the tournament (unless converted to an eligible rating
+      at Tournament Director's discrtion). You can email
+      <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge
+      your accounts.
+    </li>
   </ul>
-  <p>You may request a blended APA/FargoRate conversion if you have <em>less than 50 robustness</em> on your FargoRate profile if you feel your FargoRate does not accurately represent your skill level. Note that this is only a request, and the Tournament Director reserves the right to accept or deny it.</p>
+  <p>
+    You may request a blended APA/FargoRate conversion if you have
+    <em>less than 50 robustness</em> on your FargoRate profile if you feel your
+    FargoRate does not accurately represent your skill level. Note that this is
+    only a request, and the Tournament Director reserves the right to accept or
+    deny it.
+  </p>
   <ul>
-    <li>If you have played at least 12 APA matches in the last 2 years, your APA lifetime stats and current FargoRate and robustness will be used to generate a comparable FargoRate for tournament eligibility.</li>
-    <li>If you have <em>not</em> played at least 12 APA matches in the last 2 years, your conversion may not accurately capture your current skill level. We reserve the right to convert or maintain your current FargoRate and assess your skill level during your first River Tournament. We may also run another conversion and/or assign a more appropriate rate (which may be the max eligible FargoRate) at subsequent tournaments until you reach 50+ FargoRate robustness.
+    <li>
+      If you have played at least 12 APA matches in the last 2 years, your APA
+      lifetime stats and current FargoRate and robustness will be used to
+      generate a comparable FargoRate for tournament eligibility.
+    </li>
+    <li>
+      If you have <em>not</em> played at least 12 APA matches in the last 2
+      years, your conversion may not accurately capture your current skill
+      level. We reserve the right to convert or maintain your current FargoRate
+      and assess your skill level during your first River Tournament. We may
+      also run another conversion and/or assign a more appropriate rate (which
+      may be the max eligible FargoRate) at subsequent tournaments until you
+      reach 50+ FargoRate robustness.
+    </li>
   </ul>
-  <p>Note: The Tournament Director may ask for a screenshot of your APA profile before the tournament for conversions, however your APA profile will be verified with Photo ID at registration. FargoRate ranks are verified through DigitalPool which syncs with FargoRate in real time. All River Tournaments are reported to FargoRate, and once processed, you'll be able to claim your official profile.</p>
+  <p>
+    Note: The Tournament Director may ask for a screenshot of your APA profile
+    before the tournament for conversions, however your APA profile will be
+    verified with Photo ID at registration. FargoRate ranks are verified through
+    DigitalPool which syncs with FargoRate in real time. All River Tournaments
+    are reported to FargoRate, and once processed, you'll be able to claim your
+    official profile.
+  </p>
 
   <h3>What if the bracket and/or waitlist on the home page is full?</h3>
-  <p>Even if the bracket and waitlist are full online, the final player list will not be determined until registration. Swing by River or <a href="sms:7607938319">text the tournament director</a> before 6:30pm on Thursdays to check for any last-minute spots. We start shooting at 7 PM sharp; while showing up does not guarantee a spot, players who show up in person will always get priority over anyone not present, even if they’re listed online.</p>
+  <p>
+    Even if the bracket and waitlist are full online, the final player list will
+    not be determined until registration. Swing by River or
+    <a href="sms:7607938319">text the tournament director</a> before 6:30pm on
+    Thursdays to check for any last-minute spots. We start shooting at 7 PM
+    sharp; while showing up does not guarantee a spot, players who show up in
+    person will always get priority over anyone not present, even if they’re
+    listed online.
+  </p>
 
   <h3>How do you determine where players start in the bracket?</h3>
-  <p>At registration, players will draw from a bag of adorable miniature pool balls.  The number ball you draw is your starting position in the bracket. This ensures a totally randomized bracket and player matchup.</p>
+  <p>
+    At registration, players will draw from a bag of adorable miniature pool
+    balls. The number ball you draw is your starting position in the bracket.
+    This ensures a totally randomized bracket and player matchup.
+  </p>
 
   <h3>What happens if I'm called to a table but I do not show up?</h3>
-  <p>If you're not at the table within 5 minutes of your match being called/texted to you, your match may be forfeited at the tournament director’s discretion.</p>
+  <p>
+    If you're not at the table within 5 minutes of your match being
+    called/texted to you, your match may be forfeited at the tournament
+    director’s discretion.
+  </p>
 
-  <h3>What if there are fewer than 8 players, and odd number of players, or no-shows at the start of/during the tournament?</h3>
-  <p>If the bracket has fewer than 8 players or an odd number of players following registration, the tournament director may join the tournament (if eligible per their FargoRate).</p>
-    <p>If the bracket has an odd number of players and the Tournament director is ineligible to play, the last 3 players in the bracket may do a mini tournament amongst themselves to "play in" to the winner's bracket. They still get the same two "lives" as the rest of the players. This ensures that the odd player at the end of the main bracket doesn't automatically advance all the way through the winner's side on byes.</p>
-  <p>If a confirmed player doesn't show up by the time matches are being assigned, or if there are fewer than 8 total players, a <a href="#what-is-a-bye"><strong>Bye</strong></a> may be entered into the bracket to ensure fair and timely play.</p>
-  <p>Example of the odd-player bracket mini "play in" tournament (in this example, the main tournament has 9 players sign up, and the tournament director is ineligible to play):</p>  
-  <p>The first two matches of the main bracket will proceed on Tables 2 & 3. The last 3 players of the main bracket (the players that drew balls 7, 8, and 9 at registration in this example; we'll call them Player A, Player B, and Player C, respectively) will play on Table 1; race to 1 in that Thursday's format (8 or 9-ball), 100+ FargoRate gap handicap applies; these games will be also be FargoRate-reported.</p>
+  <h3>
+    What if there are fewer than 8 players, and odd number of players, or
+    no-shows at the start of/during the tournament?
+  </h3>
+  <p>
+    If the bracket has fewer than 8 players or an odd number of players
+    following registration, the tournament director may join the tournament (if
+    eligible per their FargoRate).
+  </p>
+  <p>
+    If the bracket has an odd number of players and the Tournament director is
+    ineligible to play, the last 3 players in the bracket may do a mini
+    tournament amongst themselves to "play in" to the winner's bracket. They
+    still get the same two "lives" as the rest of the players. This ensures that
+    the odd player at the end of the main bracket doesn't automatically advance
+    all the way through the winner's side on byes.
+  </p>
+  <p>
+    If a confirmed player doesn't show up by the time matches are being
+    assigned, or if there are fewer than 8 total players, a
+    <a href="#what-is-a-bye"><strong>Bye</strong></a> may be entered into the
+    bracket to ensure fair and timely play.
+  </p>
+  <p>
+    Example of the odd-player bracket mini "play in" tournament (in this
+    example, the main tournament has 9 players sign up, and the tournament
+    director is ineligible to play):
+  </p>
+  <p>
+    The first two matches of the main bracket will proceed on Tables 2 & 3. The
+    last 3 players of the main bracket (the players that drew balls 7, 8, and 9
+    at registration in this example; we'll call them Player A, Player B, and
+    Player C, respectively) will play on Table 1; race to 1 in that Thursday's
+    format (8 or 9-ball), 100+ FargoRate gap handicap applies; these games will
+    be also be FargoRate-reported.
+  </p>
   <ul>
     <li>Match 1: Player A vs Player B</li>
     <li>Match 2: Player C vs Winner of Match 1</li>
-    <li>Match 3: Loser of Match 1 vs Loser of Match 2 (Elimination Match); Loser of Match 3 is out of the tournament since they've lost twice.</li>
-    <li>Match 4: Winner of Match 2 vs Winner of Match 3 (Play-In Final); If winner of Match 4 is undefeated, they advance to the 2nd round of the main winner's bracket. If the winner of Match 4 lost once in Match 1-3, they advance to the loser's side of the main bracket. </li>
+    <li>
+      Match 3: Loser of Match 1 vs Loser of Match 2 (Elimination Match); Loser
+      of Match 3 is out of the tournament since they've lost twice.
+    </li>
+    <li>
+      Match 4: Winner of Match 2 vs Winner of Match 3 (Play-In Final); If winner
+      of Match 4 is undefeated, they advance to the 2nd round of the main
+      winner's bracket. If the winner of Match 4 lost once in Match 1-3, they
+      advance to the loser's side of the main bracket.
+    </li>
   </ul>
 
   <h3>How do I create a FargoRate profile?</h3>
-  <p>You do not need to/you cannot create a FargoRate profile for yourself. After you play in a FargoRate-reported event (such as the River Tournaments) FargoRate will automatically generate your profile. Scores are submitted weekly, and it may take a couple of weeks for your profile to appear. Once it's live, you can claim it in the FargoRate app and start tracking your progress:</p>
-  <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
-    <a href="https://apps.apple.com/us/app/fargorate/id1199102391" target="_blank">
-      <img src="{{ '/assets/images/appbuttons/Download_on_the_App_Store_Badge.png' | relative_url }}" alt="Download on the App Store" style="width: 150px; height: auto;">
+  <p>
+    You do not need to/you cannot create a FargoRate profile for yourself. After
+    you play in a FargoRate-reported event (such as the River Tournaments)
+    FargoRate will automatically generate your profile. Scores are submitted
+    weekly, and it may take a couple of weeks for your profile to appear. Once
+    it's live, you can claim it in the FargoRate app and start tracking your
+    progress:
+  </p>
+  <div
+    style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem"
+  >
+    <a
+      href="https://apps.apple.com/us/app/fargorate/id1199102391"
+      target="_blank"
+    >
+      <img
+        src="{{ '/assets/images/appbuttons/Download_on_the_App_Store_Badge.png' | relative_url }}"
+        alt="Download on the App Store"
+        style="width: 150px; height: auto"
+      />
     </a>
-    <a href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate" target="_blank">
-      <img src="{{ '/assets/images/appbuttons/Google_Play_Store_badge_EN.png' | relative_url }}" alt="Get it on Google Play" style="width: 150px; height: auto;">
+    <a
+      href="https://play.google.com/store/apps/details?id=com.fargorate.fargorate"
+      target="_blank"
+    >
+      <img
+        src="{{ '/assets/images/appbuttons/Google_Play_Store_badge_EN.png' | relative_url }}"
+        alt="Get it on Google Play"
+        style="width: 150px; height: auto"
+      />
     </a>
   </div>
-  <p>FargoRate profiles are automatically created when scores from an eligible match are submitted and processed by FargoRate. All River Tournaments are officially FargoRate reported. If you’re new and don’t already have a profile, one will be created for you automatically once your first event’s scores are processed.</p>
-  <p>FargoRate typically collects tournament data weekly, but processing and profile creation may take a few weeks. Once your profile is live, you will be able to claim it through the app and begin tracking your rating and progress.</p>
+  <p>
+    FargoRate profiles are automatically created when scores from an eligible
+    match are submitted and processed by FargoRate. All River Tournaments are
+    officially FargoRate reported. If you’re new and don’t already have a
+    profile, one will be created for you automatically once your first event’s
+    scores are processed.
+  </p>
+  <p>
+    FargoRate typically collects tournament data weekly, but processing and
+    profile creation may take a few weeks. Once your profile is live, you will
+    be able to claim it through the app and begin tracking your rating and
+    progress.
+  </p>
 
   <h3>How much is the entry fee?</h3>
-  <p>As of June 3, 2025, the entry fee is $15 (cash only) and must be paid at the time of registration. $10 goes directly into the pot, while $5 is an admin fee. Fees can change at the tournament director’s discretion, and any house donations will be announced at registration. Your bracket spot is only confirmed after your rating is verified and your entry fee is paid.</p>
+  <p>
+    As of June 3, 2025, the entry fee is $15 (cash only) and must be paid at the
+    time of registration. $10 goes directly into the pot, while $5 is an admin
+    fee. Fees can change at the tournament director’s discretion, and any house
+    donations will be announced at registration. Your bracket spot is only
+    confirmed after your rating is verified and your entry fee is paid.
+  </p>
 
   <h3>What is the admin fee?</h3>
-  <p>The $5 admin fee covers the tournament director’s time, website maintenance and updates, Fargo fees to report tournament results, and other overhead costs needed to keep the tournament running smoothly.</p>
-  
-  <p style="text-align: center;">If you have a question that is not answered here, please let us know so we can add it. Visit the <a href="{{ site.baseurl }}/contact.html">Contact page</a> to submit your question.</p>
-  
-  <p style="margin-bottom: 2rem; text-align: center;">These tournaments are always a work in progress! Please check back regularly for updates.<br>
-  Thank you for your support!</p>
+  <p>
+    The $5 admin fee covers the tournament director’s time, website maintenance
+    and updates, Fargo fees to report tournament results, and other overhead
+    costs needed to keep the tournament running smoothly.
+  </p>
+
+  <p style="text-align: center">
+    If you have a question that is not answered here, please let us know so we
+    can add it. Visit the
+    <a href="{{ site.baseurl }}/contact.html">Contact page</a> to submit your
+    question.
+  </p>
+
+  <p style="margin-bottom: 2rem; text-align: center">
+    These tournaments are always a work in progress! Please check back regularly
+    for updates.<br />
+    Thank you for your support!
+  </p>
+</div>
+
+<script>
+// Live FAQ search/filter
+const searchInput = document.getElementById('faq-search');
+const faqContent = document.getElementById('faq-content');
+searchInput.addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const questions = faqContent.querySelectorAll('h3, h2, p, ul, ol, li');
+  let anyVisible = false;
+  questions.forEach(el => {
+    if (el.textContent.toLowerCase().includes(query) || query === '') {
+      el.style.display = '';
+      anyVisible = true;
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  // Optionally, show a message if nothing matches
+  if (!anyVisible && query.length > 0) {
+    if (!document.getElementById('faq-no-results')) {
+      const noResults = document.createElement('p');
+      noResults.id = 'faq-no-results';
+      noResults.textContent = 'No matching FAQs found.';
+      noResults.style.textAlign = 'center';
+      noResults.style.color = '#ffb300';
+      faqContent.appendChild(noResults);
+    }
+  } else {
+    const noResults = document.getElementById('faq-no-results');
+    if (noResults) noResults.remove();
+  }
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who can play in these tournaments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any player with a Fargo rating less than or equal to the rating caps is welcome! The current caps are 445 in 8-Ball, and 430 in 9-Ball. These caps are subject to change during the first few weeks as we find the right balance for fair competition. Thank you for your patience!"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is this tournament for, and why is the Fargo cap so low?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This tournament series is designed to give lower-rated players a competitive and welcoming environment to play and improve. The Portland and Vancouver areas already offer many open and uncapped tournaments, so this event is specifically for those who often find themselves outmatched in higher-level competitions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to sign up ahead of time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sign up is highly recommended but not required! You can sign up for the River Tournaments on DigitalPool. DigitalPool syncs with FargoRate - if you don't have a DigitalPool account or a FargoRate account, one will be created for you automatically as a result of playing in the River Tournaments; If you have an APA account, your ranks will be converted to a comparable FargoRate by the tournament director at registration for the purposes of the tournament."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do player ratings work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FargoRate will be the source of truth for all players. Rank conversions may be done at the Tournament Director's discretion to maintain fair play and balanced competition. See the FAQ for details on APA and FargoRate conversions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the bracket and/or waitlist on the home page is full?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even if the bracket and waitlist are full online, the final player list will not be determined until registration. Swing by River or text the tournament director before 6:30pm on Thursdays to check for any last-minute spots. Players who show up in person will always get priority."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you determine where players start in the bracket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At registration, players will draw from a bag of miniature pool balls. The number ball you draw is your starting position in the bracket. This ensures a totally randomized bracket and player matchup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I'm called to a table but I do not show up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you're not at the table within 5 minutes of your match being called/texted to you, your match may be forfeited at the tournament director’s discretion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I create a FargoRate profile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do not need to/you cannot create a FargoRate profile for yourself. After you play in a FargoRate-reported event, FargoRate will automatically generate your profile. Scores are submitted weekly, and it may take a couple of weeks for your profile to appear."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is the entry fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of June 3, 2025, the entry fee is $15 (cash only) and must be paid at the time of registration. $10 goes directly into the pot, while $5 is an admin fee. Fees can change at the tournament director’s discretion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the admin fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The $5 admin fee covers the tournament director’s time, website maintenance and updates, Fargo fees to report tournament results, and other overhead costs needed to keep the tournament running smoothly."
+      }
+    }
+  ]
+}
+</script>

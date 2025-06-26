@@ -8,10 +8,12 @@ body.ladies .content-wrapper,
 body.ladies section {
   background: rgba(40, 0, 40, 0.32);
   border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18), 0 2px 12px 0 #ff79c7;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.18),
+    0 2px 12px 0 #ff79c7;
   backdrop-filter: blur(24px) saturate(120%);
   -webkit-backdrop-filter: blur(24px) saturate(120%);
-  border: 1.5px solid rgba(0,234,253,0.18);
+  border: 1.5px solid rgba(0, 234, 253, 0.18);
   padding: 2.2rem 2.5vw;
   margin-bottom: 2.7rem;
   max-width: 1300px;
@@ -24,9 +26,11 @@ body.ladies section {
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
-  background: rgba(204,102,153,0.13);
+  background: rgba(204, 102, 153, 0.13);
   border-radius: 0 0 32px 32px;
-  box-shadow: 0 4px 32px 0 #30baffcc, 0 -6px 24px 0 #d4af3760;
+  box-shadow:
+    0 4px 32px 0 #30baffcc,
+    0 -6px 24px 0 #d4af3760;
   border-bottom: 4px solid var(--neon-cyan, #00eafd);
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
@@ -70,7 +74,9 @@ body.ladies .disclaimer,
 body.ladies .status-legend {
   background: rgba(20, 20, 40, 0.32);
   border-radius: 18px;
-  box-shadow: 0 2px 18px 0 var(--neon-cyan, #00eafd), 0 0 8px #ff79c7;
+  box-shadow:
+    0 2px 18px 0 var(--neon-cyan, #00eafd),
+    0 0 8px #ff79c7;
   backdrop-filter: blur(12px) saturate(110%);
 }
 
@@ -84,18 +90,28 @@ body.ladies .cta-button {
   font-size: 1.2rem;
   border-radius: 100px;
   padding: 0.95em 2.9em;
-  box-shadow: 0 0 18px #30baff, 0 0 24px #ff79c7;
-  text-shadow: 0 0 10px #fff, 0 0 22px #ff79c7;
+  box-shadow:
+    0 0 18px #30baff,
+    0 0 24px #ff79c7;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 22px #ff79c7;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
-  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.2s;
+  transition:
+    background 0.18s,
+    color 0.18s,
+    border-color 0.18s,
+    box-shadow 0.2s;
 }
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
   background: var(--neon-cyan);
   color: #141414;
   border-color: var(--neon-green);
-  box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
+  box-shadow:
+    0 0 32px var(--neon-green),
+    0 0 40px #ff79c7;
 }
 
 body.ladies .note,
@@ -113,8 +129,13 @@ body.ladies a {
   color: var(--neon-cyan);
   text-decoration: underline;
   font-weight: bold;
-  text-shadow: 0 0 8px var(--neon-cyan), 0 0 4px #fff;
-  transition: color 0.15s, background 0.15s, box-shadow 0.15s;
+  text-shadow:
+    0 0 8px var(--neon-cyan),
+    0 0 4px #fff;
+  transition:
+    color 0.15s,
+    background 0.15s,
+    box-shadow 0.15s;
 }
 body.ladies a:hover {
   color: var(--link-gold);
@@ -130,7 +151,9 @@ body.ladies h3 {
   padding-left: 0.5em;
   font-weight: 800;
   margin-bottom: 0.9em;
-  text-shadow: 0 0 8px var(--neon-cyan), 0 0 3px #000;
+  text-shadow:
+    0 0 8px var(--neon-cyan),
+    0 0 3px #000;
 }
 
 body.ladies .iframe-wrapper,
@@ -141,14 +164,19 @@ body.ladies table {
   box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
 }
 
-body.ladies, body.ladies main, body.ladies .content-wrapper, body.ladies section {
+body.ladies,
+body.ladies main,
+body.ladies .content-wrapper,
+body.ladies section {
   color: #fff;
 }
 
 body.ladies .menu a,
 body.ladies .menu a:visited {
   color: var(--white);
-  text-shadow: 0 0 7px var(--neon-pink), 0 0 12px var(--ladies-purple);
+  text-shadow:
+    0 0 7px var(--neon-pink),
+    0 0 12px var(--ladies-purple);
 }
 body.ladies .menu a:hover,
 body.ladies .menu a:focus {
@@ -157,20 +185,27 @@ body.ladies .menu a:focus {
     0 0 16px var(--neon-pink, #ff79c7),
     0 0 32px var(--neon-pink, #ff79c7),
     0 0 4px var(--neon-pink, #ff79c7);
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
 }
 
 .event-banner.ladies,
 body.ladies .event-banner {
-  background: linear-gradient(90deg, var(--neon-pink, #ff79c7) 0%, var(--deep-navy, #0D1B2A) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--neon-pink, #ff79c7) 0%,
+    var(--deep-navy, #0d1b2a) 100%
+  );
   color: var(--neon-white, #f5f5f5);
   box-shadow: 0 0 32px 8px var(--neon-pink, #ff79c7);
 }
 body.ladies .player-header,
 .event-banner.ladies .player-header {
   color: var(--neon-pink, #ff79c7) !important;
-  text-shadow: 0 0 24px var(--neon-pink, #ff79c7), 0 0 8px #fff, 2px 2px 0 #000;
+  text-shadow:
+    0 0 24px var(--neon-pink, #ff79c7),
+    0 0 8px #fff,
+    2px 2px 0 #000;
 }
 
 @media (min-width: 1025px) {

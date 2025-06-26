@@ -8,16 +8,65 @@ permalink: /rules/
 
 <!--this is the rule.md file-->
 
+<!-- Sticky section navigation -->
+<nav class="faq-sticky-nav" aria-label="Rules Sections">
+  <ul>
+    <li><a href="#player-eligibility">Eligibility</a></li>
+    <li><a href="#match-format">Match Format</a></li>
+    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="#conduct">Conduct</a></li>
+    <li><a href="#bca-modified-rules">BCA Rules</a></li>
+  </ul>
+</nav>
+
+<p>
+  <input type="text" id="rules-search" class="rules-search" placeholder="Search rules..." aria-label="Search rules" autocomplete="off" />
+</p>
+
+<script>
+// Live search for rules page
+(function() {
+  var searchInput = document.getElementById('rules-search');
+  if (!searchInput) return;
+  var sections = Array.from(document.querySelectorAll('.rules-section'));
+  var highlight = (text, term) => text.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
+  searchInput.addEventListener('input', function() {
+    var val = this.value.trim().toLowerCase();
+    if (!val) {
+      sections.forEach(sec => {
+        sec.style.display = '';
+        Array.from(sec.querySelectorAll('mark')).forEach(m => {
+          m.replaceWith(m.textContent);
+        });
+      });
+      return;
+    }
+    sections.forEach(sec => {
+      let found = false;
+      // Search in section text and list items
+      sec.querySelectorAll('li, h2, h3, p').forEach(el => {
+        let html = el.innerHTML.replace(/<mark>(.*?)<\/mark>/g, '$1');
+        if (el.textContent.toLowerCase().includes(val)) {
+          el.innerHTML = highlight(html, val);
+          found = true;
+        } else {
+          el.innerHTML = html;
+        }
+      });
+      sec.style.display = found ? '' : 'none';
+    });
+  });
+})();
+</script>
+
 <h1 class="visually-hidden">River Tournament Rules and House Guidelines</h1>
 
 <p class="rules-note">
   Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
 
-<input type="text" id="search" class="rules-search" placeholder="Search rules..." aria-label="Search rules">
-
 <section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
-  <h1 id="player-eligibility-title">Player Eligibility & Registration</h1>
+  <h2 id="player-eligibility-title">Player Eligibility & Registration</h2>
   <ul>
     <li class="numbered-1">Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
@@ -88,12 +137,12 @@ permalink: /rules/
 <section id="bca-modified-rules" class="rules-section" role="region" aria-labelledby="bca-modified-rules-title">
   <h2 id="bca-modified-rules-title">BCA Modified Rules</h2>
 
-  <label for="formatSelect"><strong>Select Format:</strong></label>
-  <select id="formatSelect">
-    <option value="eightBallRules">8-Ball</option>
-    <option value="nineBallRules">9-Ball</option>
-    <option value="tenBallRules">10-Ball</option>
-  </select>
+<label for="formatSelect"><strong>Select Format:</strong></label>
+<select id="formatSelect">
+<option value="eightBallRules">8-Ball</option>
+<option value="nineBallRules">9-Ball</option>
+<option value="tenBallRules">10-Ball</option>
+</select>
 
   <div id="eightBallRules" class="format-rules">
     <h3>8-Ball</h3>
@@ -154,6 +203,55 @@ permalink: /rules/
   </div>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is eligible to play in River Tournaments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are eligible. Players without a FargoRate or APA account may be assigned a comparable rating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are race lengths determined?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Race lengths vary by format, number of players, and Fargo gaps. See the Match Format & Races section for details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What equipment and rules are used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We follow modified BCA rules. Magic Racks are allowed if both players agree. Jump shots and timeouts are not allowed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What conduct is expected at River Tournaments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unsportsmanlike behavior, substance impairment, and rule violations may result in removal. The tournament director has final say on all matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I select the rules for 8-Ball, 9-Ball, or 10-Ball?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the format selector on this page to view the specific rules for each game type."
+      }
+    }
+  ]
+}
+</script>
+
 <script>
   document.getElementById('formatSelect').addEventListener('change', function () {
     const selected = this.value;
@@ -163,77 +261,3 @@ permalink: /rules/
     document.getElementById(selected).style.display = 'block';
   });
 </script>
-
-<style>
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-
-  .rules-note {
-    background-color: #ffeeba;
-    color: #333;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: bold;
-    margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .rules-search {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #0071a4;
-    border-radius: 4px;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .rules-section {
-    background-color: #0d1b2a;
-    padding: 2rem 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-  }
-
-  .rules-section h1,
-  .rules-section h2 {
-    border-bottom: 2px solid #0071a4;
-    padding-bottom: 0.5rem;
-  }
-
-  .rules-section ul {
-    line-height: 1.8;
-    padding-left: 1rem;
-  }
-
-  .numbered-1 {
-    counter-increment: list-item;
-  }
-
-  .numbered-1::before {
-    content: counter(list-item) ". ";
-    font-weight: bold;
-    color: #0071a4;
-  }
-
-  .format-rules {
-    margin-top: 1rem;
-  }
-
-  #formatSelect {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #0071a4;
-    border-radius: 4px;
-    width: 100%;
-    max-width: 200px;
-  }
-</style>

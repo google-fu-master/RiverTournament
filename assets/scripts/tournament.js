@@ -1,11 +1,15 @@
-(function() {
+(function () {
   function getOrdinalSuffix(n) {
-    if (n >= 11 && n <= 13) return 'th';
+    if (n >= 11 && n <= 13) return "th";
     switch (n % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
     }
   }
 
@@ -14,7 +18,8 @@
     let d = new Date(date.getFullYear(), date.getMonth(), 1);
     let thursdays = [];
     while (d.getMonth() === date.getMonth()) {
-      if (d.getDay() === 4) { // Thursday
+      if (d.getDay() === 4) {
+        // Thursday
         thursdays.push(new Date(d));
       }
       d.setDate(d.getDate() + 1);
@@ -36,7 +41,13 @@
   }
 
   // For Ladies Night: returns 0 if starting month (June 2025) is 9-ball, then alternates monthly
-  function getLadiesNightFormatNumber(baseYear, baseMonth, baseFormat, targetYear, targetMonth) {
+  function getLadiesNightFormatNumber(
+    baseYear,
+    baseMonth,
+    baseFormat,
+    targetYear,
+    targetMonth,
+  ) {
     let monthsSince = (targetYear - baseYear) * 12 + (targetMonth - baseMonth);
     return (baseFormat + (monthsSince % 2)) % 2;
   }
@@ -52,7 +63,7 @@
 
   // Format info
   const day = upcomingThursday.getDate();
-  const month = upcomingThursday.toLocaleString('default', { month: 'long' });
+  const month = upcomingThursday.toLocaleString("default", { month: "long" });
   const monthNum = upcomingThursday.getMonth() + 1;
   const year = upcomingThursday.getFullYear();
 
@@ -71,15 +82,15 @@
   while (
     cursor < upcomingThursday ||
     (cursor.getDate() === upcomingThursday.getDate() &&
-     cursor.getMonth() === upcomingThursday.getMonth() &&
-     cursor.getFullYear() === upcomingThursday.getFullYear())
+      cursor.getMonth() === upcomingThursday.getMonth() &&
+      cursor.getFullYear() === upcomingThursday.getFullYear())
   ) {
     if (!isThirdThursday(cursor)) {
       if (
         cursor < upcomingThursday ||
         (cursor.getDate() === upcomingThursday.getDate() &&
-         cursor.getMonth() === upcomingThursday.getMonth() &&
-         cursor.getFullYear() === upcomingThursday.getFullYear())
+          cursor.getMonth() === upcomingThursday.getMonth() &&
+          cursor.getFullYear() === upcomingThursday.getFullYear())
       ) {
         openCount++;
       }
@@ -93,13 +104,15 @@
   // For Ladies Night: alternate monthly, starting with 9-ball for June 2025
   let format, formatNum, formatLabel, eventTitle, signupSlug;
   if (ladiesNight) {
-    const baseLadiesYear = 2025, baseLadiesMonth = 5, baseLadiesFormat = 0; // 0=9-ball
+    const baseLadiesYear = 2025,
+      baseLadiesMonth = 5,
+      baseLadiesFormat = 0; // 0=9-ball
     const lnFormat = getLadiesNightFormatNumber(
       baseLadiesYear,
       baseLadiesMonth,
       baseLadiesFormat,
       upcomingThursday.getFullYear(),
-      upcomingThursday.getMonth()
+      upcomingThursday.getMonth(),
     );
     format = lnFormat === 0 ? "9-ball" : "8-ball";
     formatNum = lnFormat === 0 ? "9" : "8";
@@ -137,12 +150,12 @@
   }
 
   // Inject the DigitalPool table above the note paragraph
-  var tableDiv = document.getElementById('digitalpool-table');
+  var tableDiv = document.getElementById("digitalpool-table");
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
-    var iframe = document.createElement('iframe');
-    iframe.id = 'digitalpool-embed';
+    var iframe = document.createElement("iframe");
+    iframe.id = "digitalpool-embed";
     iframe.src = tournamentUrl;
     iframe.style.width = "100%";
     iframe.style.height = "600px";
@@ -176,90 +189,90 @@
   }
 
   // --- DYNAMIC JSON-LD STRUCTURED DATA ---
-  var calendarJsonLdDiv = document.getElementById('calendar-jsonld');
+  var calendarJsonLdDiv = document.getElementById("calendar-jsonld");
   if (calendarJsonLdDiv) {
-    var existingJsonLd = calendarJsonLdDiv.querySelector('script[type="application/ld+json"].tournament-event');
+    var existingJsonLd = calendarJsonLdDiv.querySelector(
+      'script[type="application/ld+json"].tournament-event',
+    );
     if (existingJsonLd) existingJsonLd.remove();
 
     var eventJsonLd = {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": ladiesNight
+      name: ladiesNight
         ? `River Tournaments - Ladies Night Tournament (${formatLabel})`
         : `River Tournaments - ${formatLabel} Tournament`,
-      "startDate": (function() {
+      startDate: (function () {
         var local = new Date(upcomingThursday);
         local.setHours(18, 30, 0, 0);
         var tzOffset = -local.getTimezoneOffset();
         var sign = tzOffset >= 0 ? "+" : "-";
-        var pad = n => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        var pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
         var hours = pad(tzOffset / 60);
         var minutes = pad(tzOffset % 60);
         return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
       })(),
-      "endDate": (function() {
+      endDate: (function () {
         var local = new Date(upcomingThursday);
         local.setHours(23, 0, 0, 0);
         var tzOffset = -local.getTimezoneOffset();
         var sign = tzOffset >= 0 ? "+" : "-";
-        var pad = n => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        var pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
         var hours = pad(tzOffset / 60);
         var minutes = pad(tzOffset % 60);
         return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
       })(),
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      location: {
         "@type": "Place",
-        "name": "River Tournaments Venue",
-        "address": {
+        name: "River Tournaments Venue",
+        address: {
           "@type": "PostalAddress",
-          "streetAddress": "19 NW 5th Ave",
-          "addressLocality": "Portland",
-          "addressRegion": "OR",
-          "postalCode": "97209",
-          "addressCountry": "US"
-        }
+          streetAddress: "19 NW 5th Ave",
+          addressLocality: "Portland",
+          addressRegion: "OR",
+          postalCode: "97209",
+          addressCountry: "US",
+        },
       },
-      "image": [
-        "https://rivertournaments.com/assets/og-image.png"
-      ],
-      "description": ladiesNight
+      image: ["https://rivertournaments.com/assets/og-image.png"],
+      description: ladiesNight
         ? "Ladies Night! Special event for women pool players on the third Thursday of every month. Format alternates with the main schedule."
         : `${formatLabel} pool tournament. Every other Thursday at 6:30pm.`,
-      "organizer": {
+      organizer: {
         "@type": "Organization",
-        "name": "River Tournaments",
-        "email": "rivertournaments@gmail.com"
-      }
+        name: "River Tournaments",
+        email: "rivertournaments@gmail.com",
+      },
     };
 
-    var jsonLdScript = document.createElement('script');
-    jsonLdScript.type = 'application/ld+json';
-    jsonLdScript.className = 'tournament-event';
+    var jsonLdScript = document.createElement("script");
+    jsonLdScript.type = "application/ld+json";
+    jsonLdScript.className = "tournament-event";
     jsonLdScript.textContent = JSON.stringify(eventJsonLd, null, 2);
     calendarJsonLdDiv.appendChild(jsonLdScript);
   }
 
   // --- NEW: Desktop/mobile event card grid & minimal info ---
   // This part is for the Calendar.html page ONLY
-  if (document.getElementById('upcoming-tournament-cards')) {
+  if (document.getElementById("upcoming-tournament-cards")) {
     function getMaxResults() {
       return window.innerWidth < 900 ? 2 : 4;
     }
 
     function formatDate(start) {
       const date = new Date(start.dateTime || start.date);
-      const options = { weekday: 'short', month: 'short', day: 'numeric' };
+      const options = { weekday: "short", month: "short", day: "numeric" };
       return date.toLocaleDateString(undefined, options);
     }
 
     function createTournamentCard(event, mobile) {
       const dateStr = formatDate(event.start);
-      const summary = event.summary || 'Tournament';
+      const summary = event.summary || "Tournament";
       const eventLink = event.htmlLink
         ? `<a class="tournament-card-link" href="${event.htmlLink}" target="_blank" rel="noopener" title="View in Google Calendar">Add to Calendar</a>`
-        : '';
+        : "";
       if (mobile) {
         // Mobile: date, format, Add to Calendar only
         return `
@@ -271,18 +284,25 @@
         `;
       } else {
         // Desktop: full card
-        const description = event.description || '';
-        const truncated = description.length > 80 ? description.substring(0, 80) + '...' : description;
+        const description = event.description || "";
+        const truncated =
+          description.length > 80
+            ? description.substring(0, 80) + "..."
+            : description;
         const hasMore = description.length > 80;
         return `
           <div class="tournament-card desktop">
             <div class="tournament-card-date flyer-gold">${dateStr}</div>
             <div class="tournament-card-title flyer-caps">${summary}</div>
             <div class="tournament-card-desc flyer-detail">
-              ${hasMore ? `
+              ${
+                hasMore
+                  ? `
                 <span class="tournament-card-short">${truncated} <button class="tournament-card-toggle">Details</button></span>
                 <span class="tournament-card-full" style="display:none;">${description} <button class="tournament-card-toggle">Less</button></span>
-              ` : description}
+              `
+                  : description
+              }
             </div>
             ${eventLink}
           </div>
@@ -291,60 +311,66 @@
     }
 
     function renderCards(data) {
-      const container = document.getElementById('upcoming-tournament-cards');
+      const container = document.getElementById("upcoming-tournament-cards");
       const mobile = window.innerWidth < 900;
-      container.innerHTML = '';
+      container.innerHTML = "";
       if (!data.items || data.items.length === 0) {
-        container.innerHTML = '<div class="tournament-card no-events">No upcoming tournaments found.</div>';
+        container.innerHTML =
+          '<div class="tournament-card no-events">No upcoming tournaments found.</div>';
         return;
       }
-      data.items.forEach(event => {
+      data.items.forEach((event) => {
         container.innerHTML += createTournamentCard(event, mobile);
       });
       if (!mobile) {
-        container.classList.add('tournament-cards-grid');
+        container.classList.add("tournament-cards-grid");
       } else {
-        container.classList.remove('tournament-cards-grid');
+        container.classList.remove("tournament-cards-grid");
       }
 
       // Add toggle logic for details (desktop only)
       if (!mobile) {
-        Array.from(container.querySelectorAll('.tournament-card')).forEach(card => {
-          card.addEventListener('click', function(e) {
-            if (e.target.classList.contains('tournament-card-toggle')) {
-              e.preventDefault();
-              const shortDesc = card.querySelector('.tournament-card-short');
-              const fullDesc = card.querySelector('.tournament-card-full');
-              if (shortDesc && fullDesc) {
-                if (shortDesc.style.display !== 'none') {
-                  shortDesc.style.display = 'none';
-                  fullDesc.style.display = '';
-                } else {
-                  shortDesc.style.display = '';
-                  fullDesc.style.display = 'none';
+        Array.from(container.querySelectorAll(".tournament-card")).forEach(
+          (card) => {
+            card.addEventListener("click", function (e) {
+              if (e.target.classList.contains("tournament-card-toggle")) {
+                e.preventDefault();
+                const shortDesc = card.querySelector(".tournament-card-short");
+                const fullDesc = card.querySelector(".tournament-card-full");
+                if (shortDesc && fullDesc) {
+                  if (shortDesc.style.display !== "none") {
+                    shortDesc.style.display = "none";
+                    fullDesc.style.display = "";
+                  } else {
+                    shortDesc.style.display = "";
+                    fullDesc.style.display = "none";
+                  }
                 }
               }
-            }
-          });
-        });
+            });
+          },
+        );
       }
     }
 
     function fetchAndRenderEvents() {
       const API_KEY = "AIzaSyBLNdT-6xsYi3_lzSdEVMM3WSYT-X8PVy8";
-      const calendarId = '198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f@group.calendar.google.com';
+      const calendarId =
+        "198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f@group.calendar.google.com";
       const maxResults = getMaxResults();
-      const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&orderBy=startTime&singleEvents=true&timeMin=${(new Date()).toISOString()}&maxResults=${maxResults}`;
-      document.getElementById('upcoming-tournament-cards').innerHTML = '<div class="tournament-card loading">Loading tournaments...</div>';
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}&maxResults=${maxResults}`;
+      document.getElementById("upcoming-tournament-cards").innerHTML =
+        '<div class="tournament-card loading">Loading tournaments...</div>';
       fetch(url)
-        .then(res => res.json())
+        .then((res) => res.json())
         .then(renderCards)
         .catch(() => {
-          document.getElementById('upcoming-tournament-cards').innerHTML = '<div class="tournament-card error">Unable to load tournaments.</div>';
+          document.getElementById("upcoming-tournament-cards").innerHTML =
+            '<div class="tournament-card error">Unable to load tournaments.</div>';
         });
     }
 
-    window.addEventListener('resize', fetchAndRenderEvents);
-    window.addEventListener('DOMContentLoaded', fetchAndRenderEvents);
+    window.addEventListener("resize", fetchAndRenderEvents);
+    window.addEventListener("DOMContentLoaded", fetchAndRenderEvents);
   }
 })();

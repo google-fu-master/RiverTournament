@@ -51,7 +51,7 @@ body.page-location .rideshare-buttons {
   border: none !important;
   border-radius: 8px;
   background: none !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -83,7 +83,8 @@ body.page-location .rideshare-buttons {
 }
 
 /* Make all images/iframes scale by default (for location and maps) */
-img, iframe {
+img,
+iframe {
   max-width: 100%;
   height: auto;
 }

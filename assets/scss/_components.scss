@@ -9,13 +9,21 @@
   border-radius: 2em;
   padding: 0.85em 2.5em;
   font-size: 1.25rem;
-  font-family: 'Oswald', Arial, sans-serif;
+  font-family: "Oswald", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255,255,255,0.18);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow:
+    0 0 16px 2px #fff,
+    0 2px 10px rgba(255, 255, 255, 0.18);
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.2s,
+    border-color 0.2s;
   cursor: pointer;
 }
 .btn-signup:hover,
@@ -23,8 +31,12 @@
   background: #39ff14;
   color: #141414;
   border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57,255,20,0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+  box-shadow:
+    0 0 24px 4px #39ff14,
+    0 2px 14px rgba(57, 255, 20, 0.18);
+  text-shadow:
+    0 0 12px #39ff14,
+    0 0 24px #39ff14;
 }
 
 .cta-button {
@@ -35,13 +47,21 @@
   border-radius: 2em;
   padding: 0.85em 2.5em;
   font-size: 1.25rem;
-  font-family: 'Oswald', Arial, sans-serif;
+  font-family: "Oswald", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  box-shadow: 0 0 16px 2px #fff, 0 2px 10px rgba(255,255,255,0.18);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow:
+    0 0 16px 2px #fff,
+    0 2px 10px rgba(255, 255, 255, 0.18);
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.2s,
+    border-color 0.2s;
   cursor: pointer;
 }
 .cta-button:hover,
@@ -49,8 +69,12 @@
   background: #39ff14;
   color: #141414;
   border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57,255,20,0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+  box-shadow:
+    0 0 24px 4px #39ff14,
+    0 2px 14px rgba(57, 255, 20, 0.18);
+  text-shadow:
+    0 0 12px #39ff14,
+    0 0 24px #39ff14;
 }
 .cta-button:focus {
   outline: 2px solid var(--neon-green);
@@ -75,7 +99,9 @@
 
 /* --- CONTACT FORM --- */
 .contact-form-wrapper h2 {
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue);
+  text-shadow:
+    0 0 5px var(--accent-blue),
+    0 0 10px var(--accent-blue);
 }
 .contact-form-wrapper label {
   font-weight: 600;
@@ -108,7 +134,8 @@
 
 /* --- FLYER & EVENT COMPONENTS --- */
 .site-title {
-  font-family: 'Montserrat', 'Oswald', Arial, sans-serif; // or your chosen heading font
+  font-family:
+    "Montserrat", "Oswald", Arial, sans-serif; // or your chosen heading font
   font-size: 3.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -131,11 +158,13 @@ body.ladies .site-title {
 }
 .flyer-detail {
   color: var(--neon-cyan, #00eafd);
-  font-family: 'Oswald', Arial, sans-serif;
+  font-family: "Oswald", Arial, sans-serif;
   font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 8px var(--neon-cyan, #00eafd), 0 0 10px #000;
+  text-shadow:
+    0 0 8px var(--neon-cyan, #00eafd),
+    0 0 10px #000;
   margin: 0.3rem 0;
   text-align: center;
 }
@@ -146,11 +175,15 @@ body.ladies .site-title {
 }
 .flyer-green {
   color: var(--neon-green, #39ff14);
-  text-shadow: 0 0 10px var(--neon-green, #39ff14), 0 0 16px #000;
+  text-shadow:
+    0 0 10px var(--neon-green, #39ff14),
+    0 0 16px #000;
 }
 .flyer-pink {
   color: var(--neon-pink, #ff79c7);
-  text-shadow: 0 0 10px var(--neon-pink, #ff79c7), 0 0 16px #000;
+  text-shadow:
+    0 0 10px var(--neon-pink, #ff79c7),
+    0 0 16px #000;
 }
 .flyer-gold {
   color: var(--neon-gold, #d4af37);
@@ -161,7 +194,7 @@ body.ladies .site-title {
   font-size: 1.1rem;
   color: var(--neon-white, #f5f5f5);
   text-align: center;
-  font-family: 'Oswald', Arial, sans-serif;
+  font-family: "Oswald", Arial, sans-serif;
   letter-spacing: 1.5px;
 }
 .flyer-caps {
@@ -188,5 +221,71 @@ body.ladies .site-title {
 }
 
 /* --- UTILITY COMPONENTS --- */
-.text-center { text-align: center; }
-.text-left { text-align: left !important; }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left !important;
+}
+
+/* --- RULES SECTION --- */
+.rules-note {
+  background-color: #ffeeba;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rules-search {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #0071a4;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.rules-section {
+  background-color: #0d1b2a;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.rules-section h1,
+.rules-section h2 {
+  border-bottom: 2px solid #0071a4;
+  padding-bottom: 0.5rem;
+}
+
+.rules-section ul {
+  line-height: 1.8;
+  padding-left: 1rem;
+}
+
+.numbered-1 {
+  counter-increment: list-item;
+}
+
+.numbered-1::before {
+  content: counter(list-item) ". ";
+  font-weight: bold;
+  color: #0071a4;
+}
+
+.format-rules {
+  margin-top: 1rem;
+}
+
+#formatSelect {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #0071a4;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+}

@@ -29,7 +29,7 @@ footer {
   }
   .footer-social a:hover,
   .footer-social a:focus {
-    background: rgba(52,186,255,0.13);
+    background: rgba(52, 186, 255, 0.13);
   }
   .footer-social img {
     display: block;
@@ -54,7 +54,7 @@ footer {
   background: rgba(21, 29, 35, 0.98);
   color: var(--white);
   font-size: 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
   padding: 0.55em 0.5em 0.65em 0.5em;
   line-height: 1.3;
@@ -102,8 +102,8 @@ footer {
     margin-top: 0.7em;
     margin-bottom: 0.8em;
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
-    background: rgba(26,32,38,0.97);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 32, 38, 0.97);
   }
   .status-legend.index-bar small {
     font-size: 0.93em;
@@ -149,7 +149,8 @@ footer {
 .note a:hover {
   color: var(--link-gold);
 }
-.note strong, .disclaimer strong {
+.note strong,
+.disclaimer strong {
   color: #d4af37;
 }
 .disclaimer {

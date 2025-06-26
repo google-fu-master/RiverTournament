@@ -8,34 +8,39 @@ permalink: /photos/
 
 <!--this is the photos.html file-->
 
+<h1 class="visually-hidden">River Tournament Photo Gallery</h1>
+
 <section id="tournament-photos">
   <h2>📸 Tournament Photos 📸</h2>
-  <p>Enjoy highlights from recent River Tournaments! Want to see your photo here? <a href="/contact/">Contact us</a> to submit your favorite shots.</p>
-  <div class="photo-gallery">
+  <p>
+    Enjoy highlights from recent River Tournaments! Want to see your photo here?
+    <a href="/contact/">Contact us</a> to submit your favorite shots.
+  </p>
+  <div class="photo-gallery" role="list" aria-label="Tournament photo gallery">
     <!-- Example images; replace with your own images and update paths/names -->
-    <img src="/assets/images/photos/2025-05-winners.jpg" alt="Group photo of May 2025 River Tournament winners holding trophies at River Pool & Sports Bar" class="gallery-img" />
-    <img src="/assets/images/photos/2025-05-action.jpg" alt="Players in action during May 2025 River Tournament, shooting pool" class="gallery-img" />
-    <img src="/assets/images/photos/ladies-night-2025-spring.jpg" alt="Ladies Night Spring 2025 group photo, women pool players smiling at River" class="gallery-img" />
+    <img
+      src="/assets/images/photos/2025-05-winners.jpg"
+      alt="Group photo of May 2025 River Tournament winners holding trophies at River Pool & Sports Bar"
+      class="gallery-img"
+      role="listitem"
+    />
+    <img
+      src="/assets/images/photos/2025-05-action.jpg"
+      alt="Players in action during May 2025 River Tournament, shooting pool"
+      class="gallery-img"
+      role="listitem"
+    />
+    <img
+      src="/assets/images/photos/ladies-night-2025-spring.jpg"
+      alt="Ladies Night Spring 2025 group photo, women pool players smiling at River"
+      class="gallery-img"
+      role="listitem"
+    />
     <!-- Add more images as needed -->
   </div>
-  <p class="gallery-caption"><em>Check back after each event for new photos!</em></p>
+  <p class="gallery-caption">
+    <em>Check back after each event for new photos!</em>
+  </p>
 </section>
 
-<style>
-.photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.gallery-img {
-  max-width: 320px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-}
-.gallery-caption {
-  text-align: center;
-  margin-top: 2rem;
-}
-</style>
+<!-- Styles moved to SCSS -->

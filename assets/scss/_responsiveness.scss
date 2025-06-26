@@ -132,7 +132,8 @@
     font-size: 0.97em;
     word-break: break-word;
   }
-  th, td {
+  th,
+  td {
     white-space: normal !important;
     word-break: break-word;
     font-size: 0.97em;
@@ -249,8 +250,8 @@
     margin-top: 0.7em;
     margin-bottom: 0.8em;
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
-    background: rgba(26,32,38,0.97);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 32, 38, 0.97);
   }
   .status-legend.index-bar small {
     font-size: 0.93em;
