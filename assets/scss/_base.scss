@@ -41,13 +41,17 @@ iframe {
 header {
   text-align: center;
   background-color: var(--mid-navy);
-  padding-top: 2rem;
-  padding-bottom: 0.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
   box-sizing: border-box;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
   overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 .header-flex {
   display: flex;
@@ -85,6 +89,13 @@ header p,
   word-break: break-word;
   display: block;
   max-width: 98vw;
+}
+
+.site-address-block {
+  font-family: 'Oswald', sans-serif;
+  color: var(--link-yellow);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
 
 /* ====== TYPOGRAPHY ====== */

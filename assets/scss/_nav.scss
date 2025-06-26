@@ -1,8 +1,15 @@
 /* ===== NAVIGATION & MENU STYLES ===== */
 
-/* Hide the mobile nav checkbox toggle */
+/* Hide the mobile nav checkbox toggle, but keep accessible for screen readers */
 #menu-toggle {
-  display: none;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Nav bar - horizontal by default */
@@ -13,9 +20,19 @@ nav {
   padding: 0;
   position: relative;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Menu as horizontal row on desktop */
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -26,9 +43,12 @@ nav {
   background-color: transparent;
   position: static;
   height: 60px;
+  justify-content: center;
 }
 .menu a {
-  color: var(--white);
+  color: var(--link-yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -37,63 +57,43 @@ nav {
   padding: 0 1rem;
   line-height: 60px;
   height: 60px;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
-  text-shadow:
-    0 0 4px var(--neon-blue, #30baff),
-    0 0 8px var(--neon-blue, #30baff);
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 .menu a:hover,
 .menu a:focus {
-  color: var(--neon-cyan, #00eafd);
-  text-shadow:
-    0 0 8px var(--neon-cyan, #00eafd),
-    0 0 16px var(--neon-cyan, #00eafd),
-    0 0 4px var(--neon-blue, #30baff),
-    0 0 8px var(--neon-blue, #30baff);
-}
-
-/* Ladies Night menu accent */
-body.ladies .menu a,
-body.ladies .menu a:visited {
-  color: var(--white);
-  text-shadow:
-    0 0 7px var(--neon-pink),
-    0 0 12px var(--ladies-purple);
-}
-body.ladies .menu a:hover,
-body.ladies .menu a:focus {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow:
-    0 0 16px var(--neon-pink, #ff79c7),
-    0 0 32px var(--neon-pink, #ff79c7),
-    0 0 4px var(--neon-pink, #ff79c7);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  background: #222;
+  color: #fff;
 }
 
 /* Hamburger menu for mobile */
 .hamburger {
   display: none;
   font-size: 2rem;
+  margin-right: 1rem;
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
   position: absolute;
   top: 10px;
   left: 16px;
+  background: none;
+  border: none;
 }
 
 /* Mobile styles */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
+  .nav-flex {
+    justify-content: flex-start;
+    padding: 0.5rem 0.5rem;
+  }
   .menu {
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 220px;
     height: 100vh;
     background-color: var(--dark-navy);
     padding-top: 4rem;
@@ -101,11 +101,35 @@ body.ladies .menu a:focus {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
   }
   .hamburger {
     display: block;
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    background: var(--dark-navy);
+    border-radius: 50%;
+    padding: 0.25em 0.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   }
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
+  }
+  .menu a {
+    line-height: 2.5rem;
+    height: auto;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    border-radius: 0;
+    border-left: 4px solid transparent;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .menu a:hover,
+  .menu a:focus {
+    background: #1a1a1a;
+    color: var(--neon-cyan, #00eafd);
+    border-left: 4px solid var(--neon-cyan, #00eafd);
   }
 }
