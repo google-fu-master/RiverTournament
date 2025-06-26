@@ -30,6 +30,7 @@ html, body {
   overflow-x: hidden;
   background-color: var(--darkest);
   color: var(--white);
+  box-sizing: border-box;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 main {
@@ -85,10 +87,10 @@ header {
   gap: 0.75rem;
 }
 
-header h1 {
+header h1, .site-title {
   margin: 0;
   font-size: 1.85rem;
-  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif; /* FIXED */
+  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--white);
@@ -119,7 +121,7 @@ body, input, textarea, button {
 }
 
 h1, h2, h3, h4, .highlight {
-  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif; /* FIXED */
+  font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -150,26 +152,49 @@ a:hover {
 
 /* ====== LAYOUT HELPERS ====== */
 .iframe-wrapper {
-  max-width: 100%;
-  margin: 2rem auto;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 2rem 0 2rem 50%;
+  transform: translateX(-50%);
   background-color: var(--slate);
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 2px solid var(--accent-blue);
+  position: relative;
+  left: 50%;
+  right: 0;
+  box-sizing: border-box;
 }
 
 .iframe-wrapper iframe {
-  width: 100%;
-  min-height: 600px;
+  width: 100vw;
+  max-width: 100vw;
+  min-width: 0;
   border: none;
   background: #141414 !important;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Responsive tweaks for base elements */
 @media (max-width: 800px) {
   main {
     padding: 1rem 0.5rem;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .iframe-wrapper, .iframe-wrapper iframe {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin-left: -50vw;
+    left: 50%;
+    margin-right: 0;
+    transform: none;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
   }
 }
 @media (max-width: 600px) {
@@ -184,9 +209,9 @@ a:hover {
     align-items: flex-start;
     gap: 0.2rem;
   }
-  header h1 {
+  header h1, .site-title {
     font-size: 1.25rem;
-    /* REMOVED: font-family override! Always Montserrat */
+    font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
     color: var(--neon-blue, #30baff);
     text-transform: none;
     font-weight: 400;
@@ -209,6 +234,20 @@ a:hover {
   }
   main {
     padding: 0.5rem 0.2rem;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .iframe-wrapper, .iframe-wrapper iframe {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin-left: -50vw;
+    margin-right: 0;
+    left: 50%;
+    transform: none;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
   }
 }
 /* ===== NAVIGATION & MENU STYLES ===== */
