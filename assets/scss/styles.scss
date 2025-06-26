@@ -8,3 +8,16 @@
 @use "footer" as *;
 @use "form" as *;
 @use "rules" as *;
+
+// DEBUG: Force main content visible on mobile
+@media (max-width: 900px) {
+  main, .content-wrapper, .digitalpool-section {
+    position: relative !important;
+    z-index: 1 !important;
+    background: #fff !important;
+    color: #000 !important;
+    min-height: 200px !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
