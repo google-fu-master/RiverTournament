@@ -21,3 +21,10 @@
     opacity: 1 !important;
   }
 }
+
+// DEBUG: Hide mobile menu to test if it is covering content
+@media (max-width: 900px) {
+  .menu {
+    display: none !important;
+  }
+}

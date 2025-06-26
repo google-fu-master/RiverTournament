@@ -1988,5 +1988,10 @@ textarea:focus {
     opacity: 1 !important;
   }
 }
+@media (max-width: 900px) {
+  .menu {
+    display: none !important;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
