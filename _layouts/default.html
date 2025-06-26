@@ -134,13 +134,15 @@
       document.addEventListener("DOMContentLoaded", function () {
         const toggle = document.getElementById("menu-toggle");
         const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
-        const savedState = localStorage.getItem("menuOpen");
 
-        // Apply saved state or default
-        if (savedState === null) {
-          toggle.checked = isDesktop;
+        // Always close menu on mobile load
+        if (!isDesktop) {
+          toggle.checked = false;
+          localStorage.setItem("menuOpen", false);
         } else {
-          toggle.checked = savedState === "true";
+          // On desktop, restore previous state or open by default
+          const savedState = localStorage.getItem("menuOpen");
+          toggle.checked = savedState === null ? true : savedState === "true";
         }
 
         toggle.addEventListener("change", () => {
