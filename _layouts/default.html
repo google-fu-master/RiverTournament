@@ -84,14 +84,7 @@
           {% assign nav = site.data.navigation %} {% for item in nav %}
           <a
             href="{{ item.url | relative_url }}"
-            {%
-            if
-            item.title=""
-            ="Sign Up"
-            %}id="nav-signup-link"
-            {%
-            endif
-            %}
+            {% if item.title == "Sign Up" %}id="nav-signup-link"{% endif %}
           >
             {{ item.title }}
           </a>
