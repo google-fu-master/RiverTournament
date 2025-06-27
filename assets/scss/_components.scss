@@ -235,16 +235,19 @@ body.ladies .site-title {
 }
 
 // Center and contain important notes and disclaimers on all screen sizes
-.note,
-.disclaimer {
+..tournament-note {
   margin: 2rem auto 0 auto;
-  max-width: 700px;
   width: 90%;
-  text-align: center;
-  display: block;
+  max-width: 1100px;
   box-sizing: border-box;
-  padding-left: 0;
-  padding-right: 0;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
+  color: var(--link-yellow);
+  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  box-shadow: 0 0 12px 1px #0ff2, 0 2px 10px rgba(0,255,255,0.08);
+  display: block;
 }
 
 /* --- RULES SECTION --- */
