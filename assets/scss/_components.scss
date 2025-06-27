@@ -234,6 +234,19 @@ body.ladies .site-title {
   text-align: left !important;
 }
 
+// Center and contain important notes and disclaimers on all screen sizes
+.note,
+.disclaimer {
+  margin: 2rem auto 0 auto;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* --- RULES SECTION --- */
 .rules-note {
   background-color: #ffeeba;
@@ -297,10 +310,23 @@ body.ladies .site-title {
 }
 
 /* --- DIGITAL POOL SECTION --- */
-.digitalpool-section,
+.digitalpool-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: none;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 #digitalpool-table {
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   margin: 0 auto 2rem auto;
   box-sizing: border-box;
   background: none;
