@@ -301,6 +301,23 @@
   }
 }
 
+/* Digital Pool Section & Status Legend: Remove breakout on mobile for centering */
+@media (max-width: 700px) {
+  .digitalpool-section,
+  .status-legend.index-bar {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 98vw !important;
+    max-width: 99vw !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+}
+
 /* Signup button container */
 @media (max-width: 600px) {
   .signup-button-container {
