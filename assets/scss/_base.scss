@@ -273,6 +273,18 @@ a:hover {
     box-sizing: border-box;
     position: relative;
   }
+  /* DigitalPool section and status legend mobile centering fix */
+  .digitalpool-section,
+  #digitalpool-table,
+  .status-legend.index-bar {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+    box-sizing: border-box;
+  }
 }
 @media (max-width: 600px) {
   header {

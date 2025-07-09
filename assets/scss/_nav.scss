@@ -81,20 +81,30 @@ nav {
 .hamburger {
   display: none;
   font-size: 2rem;
-  margin-right: 1rem;
+  /* Center icon in circle: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
   position: absolute;
-  top: 10px;
+  top: 16px;
   left: 16px;
-  background: none;
+  background: var(--dark-navy);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   border: none;
+  padding: 0;
 }
 
 /* Mobile styles */
 @media (max-width: 900px) {
   .nav-flex {
+    position: relative; /* allow absolute hamburger inside */
     justify-content: flex-start;
     padding: 0.5rem 0.5rem;
   }
@@ -112,14 +122,15 @@ nav {
     box-shadow: 2px 0 8px rgba(0,0,0,0.2);
   }
   .hamburger {
-    display: block;
-    position: fixed;
-    left: 16px;
+    display: flex;
+    position: absolute;
     top: 16px;
-    background: var(--dark-navy);
-    border-radius: 50%;
-    padding: 0.25em 0.5em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    left: 16px;
+    z-index: 1010;
+  }
+  nav {
+    /* Add enough top padding for hamburger not to overlap header */
+    padding-top: 56px;
   }
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);

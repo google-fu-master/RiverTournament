@@ -1356,6 +1356,21 @@ body.ladies .site-title {
   text-align: left !important;
 }
 
+.tournament-note {
+  margin: 2rem auto 0 auto;
+  width: 90%;
+  max-width: 1100px;
+  box-sizing: border-box;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--link-yellow);
+  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  box-shadow: 0 0 12px 1px rgba(0, 255, 255, 0.1333333333), 0 2px 10px rgba(0, 255, 255, 0.08);
+  display: block;
+}
+
 /* --- RULES SECTION --- */
 .rules-note {
   background-color: #ffeeba;
@@ -1419,10 +1434,23 @@ body.ladies .site-title {
 }
 
 /* --- DIGITAL POOL SECTION --- */
-.digitalpool-section,
+.digitalpool-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: none;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 #digitalpool-table {
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   margin: 0 auto 2rem auto;
   box-sizing: border-box;
   background: none;
@@ -1430,15 +1458,17 @@ body.ladies .site-title {
 }
 
 .status-legend.index-bar {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 1rem auto;
+  margin: 1.5rem auto 0 auto;
+  width: 90%;
+  max-width: 1100px;
+  box-sizing: border-box;
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
   color: var(--link-yellow);
   font-size: 1rem;
   border-radius: 0 0 12px 12px;
   padding: 0.5rem 0;
+  overflow-x: auto;
 }
 
 @media (max-width: 600px) {
@@ -1975,6 +2005,84 @@ textarea:focus {
     width: 100%;
     display: block;
     text-align: center;
+  }
+}
+@media (max-width: 900px) {
+  .menu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    height: 100vh;
+    background-color: var(--dark-navy);
+    padding-top: 4rem;
+    gap: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    background: var(--dark-navy);
+    border-radius: 50%;
+    padding: 0.25em 0.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    z-index: 1100;
+  }
+  main {
+    padding: 0.5rem 0.2rem !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+  .player-header, #tournament-title {
+    font-size: 1.3rem !important;
+    padding: 0.5rem 0.2rem !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    text-align: center !important;
+    line-height: 1.15 !important;
+    word-break: break-word;
+  }
+  .site-title {
+    font-size: 1.5rem !important;
+    padding: 0.5rem 0.2rem !important;
+    margin: 0.5rem 0 0.5rem 0 !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+    word-break: break-word;
+  }
+  .site-address-block {
+    font-size: 1rem !important;
+    padding: 0 0.2rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+  .digitalpool-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+  }
+  .status-legend.index-bar {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 0.2rem !important;
+    margin: 0.5rem 0 !important;
+    text-align: center !important;
+  }
+  .signup-button-container {
+    margin: 1rem auto !important;
+    padding: 0.5rem 0 !important;
   }
 }
 

@@ -16,14 +16,14 @@
       content="Weekly pool tournaments in the River region. Sign up, check brackets, and see results..."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rivertournaments.com/" />
+    <meta property="og:url" content="http://localhost:4000/" />
     <meta property="og:site_name" content="River Tournaments" />
-    <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png" />
+    <meta property="og:image" content="http://localhost:4000/assets/og-image.png" />
     <meta property="fb:page_id" content="61577340925686" />
     <!-- Contact for search engines and humans -->
     <meta name="contact" content="rivertournaments@gmail.com" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="https://rivertournaments.com/" />
+    <link rel="canonical" href="http://localhost:4000/" />
     <!-- Google Fonts for site-wide headings and titles -->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Pacifico&display=swap"
@@ -213,15 +213,11 @@
   }
 </script>
 
-<p class="note">
-  Bracket spots are not final until FargoRate verification/assignment and
-  payment are completed in-person at registration.
-  <a href="sms:7607938319">Text the tournament director</a> (Brittany Posey) to
-  see if a spot is open.
-</p>
-<p class="disclaimer">
-  *Actual pot size contingent on player attendance and discretionary House
-  donation.
+<p class="tournament-note">
+  Signing up is a bracket spot reservation <em>request</em>. Bracket is not final until player FargoRate verification/assignment and payment are completed in-person at registration.<br>
+  If the bracket is full, you can join the Waitlist or <a href="sms:7607938319">Text Brittany Posey</a> (the Tournament Director) to see if a spot is open.<br>
+  <br>
+  *Actual pot size and payouts are contingent on player attendance and discretionary House donation.
 </p>
 </main>
 
@@ -243,13 +239,15 @@
       document.addEventListener("DOMContentLoaded", function () {
         const toggle = document.getElementById("menu-toggle");
         const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
-        const savedState = localStorage.getItem("menuOpen");
 
-        // Apply saved state or default
-        if (savedState === null) {
-          toggle.checked = isDesktop;
+        // Always close menu on mobile load
+        if (!isDesktop) {
+          toggle.checked = false;
+          localStorage.setItem("menuOpen", false);
         } else {
-          toggle.checked = savedState === "true";
+          // On desktop, restore previous state or open by default
+          const savedState = localStorage.getItem("menuOpen");
+          toggle.checked = savedState === null ? true : savedState === "true";
         }
 
         toggle.addEventListener("change", () => {
