@@ -95,40 +95,31 @@
     margin-top: 60px;
   }
 
-  /* iframe-wrapper FULL WIDTH FIX */
-  .iframe-wrapper,
-  .iframe-wrapper iframe {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
-    margin-left: -50vw !important;
-    left: 50% !important;
-    margin-right: 0 !important;
-    transform: none !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    display: block !important;
-  }
-}
 
 @media (max-width: 700px) {
   .digitalpool-section,
   .status-legend.index-bar {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    display: block !important;
     text-align: center !important;
   }
   .iframe-wrapper,
   .iframe-wrapper iframe {
-    width: 98vw !important;
-    max-width: 99vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
     left: unset !important;
     transform: none !important;
     display: block !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    position: relative !important;
   }
 }
 
