@@ -97,49 +97,39 @@
 
 
 @media (max-width: 700px) {
-  .digitalpool-section,
+  .digitalpool-section {
+    /* Reset the breakout positioning for mobile - just center normally */
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  
   .status-legend.index-bar {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
-    display: block !important;
     text-align: center !important;
-    overflow-x: hidden !important;
   }
   
-  /* Ensure Digital Pool iframe and container are properly centered */
+  /* Ensure Digital Pool iframe is centered within its container */
   .digitalpool-section #digitalpool-table,
   .digitalpool-section #digitalpool-embed {
     width: 100% !important;
-    max-width: 100% !important;
     margin: 0 auto !important;
     display: block !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-  }
-  
-  /* Prevent iframe from overflowing on small screens */
-  .digitalpool-section #digitalpool-table {
-    overflow: hidden !important;
-    position: relative !important;
-    padding: 0 !important;
-  }
-  
-  .digitalpool-section #digitalpool-embed {
-    position: relative !important;
-    left: 0 !important;
-    transform: none !important;
+    text-align: center !important;
   }
 }
 
@@ -485,15 +475,13 @@
   .digitalpool-section {
     padding-left: 0.25em !important;
     padding-right: 0.25em !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
   
   .digitalpool-section #digitalpool-table,
   .digitalpool-section #digitalpool-embed {
     width: 100% !important;
-    max-width: calc(100vw - 0.5em) !important;
     margin: 0 auto !important;
-    overflow-x: hidden !important;
   }
 }
 
