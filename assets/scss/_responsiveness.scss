@@ -94,9 +94,16 @@
   header h1 {
     margin-top: 60px;
   }
-
+}
 
 @media (max-width: 700px) {
+  /* Ensure no horizontal overflow issues on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
   .digitalpool-section {
     /* Reset the breakout positioning for mobile - just center normally */
     position: relative !important;
@@ -111,6 +118,7 @@
     padding-right: 0.5em !important;
     box-sizing: border-box !important;
     text-align: center !important;
+    transform: none !important;
   }
   
   .status-legend.index-bar {
@@ -130,11 +138,19 @@
     margin: 0 auto !important;
     display: block !important;
     text-align: center !important;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
   }
 }
 
 /* 2. Main Content and Containers */
 @media (max-width: 700px) {
+  /* Prevent most elements from causing horizontal overflow, but exclude Digital Pool */
+  *:not(.digitalpool-section):not(#digitalpool-table):not(#digitalpool-embed) {
+    max-width: 100% !important;
+  }
+  
   main,
   .content-wrapper,
   .container {
@@ -505,9 +521,9 @@
     width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    margin: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 auto !important;
     box-sizing: border-box !important;
     display: block !important;
     padding: 0 !important;
@@ -519,5 +535,4 @@
     margin: 0 auto !important;
     box-sizing: border-box !important;
   }
-}
 }
