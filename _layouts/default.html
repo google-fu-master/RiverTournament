@@ -64,36 +64,6 @@
         background: #f0f0f0;
         color: #222;
       }
-      .social-buttons {
-        display: inline-flex;
-        gap: 0.75rem;
-        align-items: center;
-        margin-top: 0.5rem;
-      }
-      .social-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        color: var(--white, #fff) !important;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background-color 0.2s;
-        font-weight: 500;
-        min-width: 120px;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .social-button:hover {
-        background: rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-      }
-      .social-button img {
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-      }
     </style>
   </head>
   <body
@@ -149,28 +119,23 @@
       &copy; {{ "now" | date: "%Y" }} River Tournaments. Site and content created by Brittany Posey.<br />
       <a href="mailto:rivertournaments@gmail.com">rivertournaments@gmail.com</a>
       &nbsp;|&nbsp;
-      <div class="social-buttons">
-        <a
-          href="https://www.facebook.com/share/14FYDi9NfPs/?mibextid=wwXIfr"
-          target="_blank"
-          rel="noopener"
-          aria-label="Facebook Page"
-          class="facebook-button social-button"
-        >
-          <img src="/assets/images/logos/icons8-facebook-48.png" alt="Facebook" />
-          Facebook
-        </a>
-        <a
-          href="https://www.instagram.com/rivertournamentspdx"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram Profile"
-          class="instagram-button social-button"
-        >
-          <img src="/assets/images/logos/Instagram_icon.png" alt="Instagram" />
-          Instagram
-        </a>
-      </div>
+      <a
+        href="https://www.facebook.com/share/14FYDi9NfPs/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook Page"
+      >
+        <img src="/assets/images/logos/icons8-facebook-48.png" alt="Facebook" width="20" height="20" />
+      </a>
+      &nbsp;&nbsp;
+      <a
+        href="https://www.instagram.com/rivertournamentspdx"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram Profile"
+      >
+        <img src="/assets/images/logos/Instagram_icon.png" alt="Instagram" width="20" height="20" />
+      </a>
     </footer>
 
     <script>
