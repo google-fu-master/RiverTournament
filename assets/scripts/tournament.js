@@ -161,6 +161,14 @@
     iframe.style.height = "600px";
     iframe.style.border = "none";
     iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
+    iframe.style.display = "block";
+    iframe.style.margin = "0 auto";
+    iframe.style.boxSizing = "border-box";
+    
+    // Add responsive attributes
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("scrolling", "auto");
+    
     tableDiv.appendChild(iframe);
   }
 
