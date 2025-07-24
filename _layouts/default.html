@@ -92,12 +92,19 @@
       </div>
     </nav>
 
+
     <header role="banner">
-      <h1 class="site-title">{{ page.title }}</h1>
+      {% if page.title == "River Tournaments" %}
+        <div style="text-align:center; margin-top: 1.2em;">
+          <img src="/assets/images/logos/RT_logowebsitetest.png" alt="River Tournaments Logo" style="max-width: 340px; width: 90vw; height: auto; display: block; margin: 0 auto 0.5em auto;" />
+        </div>
+      {% else %}
+        <h1 class="site-title">{{ page.title }}</h1>
+      {% endif %}
       {% if page.title == "River Tournaments" %}
       <div class="site-address-block">
         <span class="site-info"
-          >Every Thursday | 6:30pm Registration | 7:00pm Start</span
+          >Every Thursday | 6:30pm Check-In | 7:00pm Start</span
         ><br />
         <span class="site-address">
           <a
