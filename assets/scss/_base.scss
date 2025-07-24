@@ -4,7 +4,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: var(--darkest);
-  color: var(--white);
+  color: var(--off-white);
   box-sizing: border-box;
 }
 body {
@@ -68,7 +68,7 @@ header h1,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--white);
+  color: var(--off-white);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 0.25rem;
   word-break: break-word;
@@ -93,7 +93,7 @@ header p,
 
 .site-address-block {
   font-family: 'Oswald', sans-serif;
-  color: var(--link-yellow);
+  color: var(--cool-link);
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
@@ -127,12 +127,12 @@ h3 {
 
 /* ====== LINKS ====== */
 a {
-  color: var(--link-yellow);
+  color: var(--cool-link);
   text-decoration: underline;
   font-weight: bold;
 }
 a:hover {
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
 }
 
 /* ====== UTILITY CLASSES ====== */
@@ -297,9 +297,8 @@ a:hover {
     margin: 0 0 0.15rem 0;
     line-height: 1.15;
     text-shadow:
-      0 0 8px #30baff,
-      0 0 24px #00eafd,
-      0 0 32px #008ecc,
+      0 0 4px #30baff,
+      0 0 10px #00eafd,
       2px 2px 0 #000;
     max-width: 98vw;
     overflow-wrap: break-word;

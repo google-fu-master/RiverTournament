@@ -117,7 +117,7 @@ body.ladies .cta-button:hover {
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
   border-left: 6px solid var(--neon-cyan);
   background: rgba(0, 20, 40, 0.22);
   font-size: 1.07rem;
@@ -138,7 +138,7 @@ body.ladies a {
     box-shadow 0.15s;
 }
 body.ladies a:hover {
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
   background: #30baff;
   border-radius: 5px;
   box-shadow: 0 0 18px var(--neon-cyan);
@@ -173,7 +173,7 @@ body.ladies section {
 
 body.ladies .menu a,
 body.ladies .menu a:visited {
-  color: var(--white);
+  color: var(--off-white);
   text-shadow:
     0 0 7px var(--neon-pink),
     0 0 12px var(--ladies-purple);
@@ -196,7 +196,7 @@ body.ladies .event-banner {
     var(--neon-pink, #ff79c7) 0%,
     var(--deep-navy, #0d1b2a) 100%
   );
-  color: var(--neon-white, #f5f5f5);
+  color: var(--off-white);
   box-shadow: 0 0 32px 8px var(--neon-pink, #ff79c7);
 }
 body.ladies .player-header,

@@ -38,7 +38,7 @@
   border-radius: 8px;
   border: 1.5px solid var(--accent-blue);
   background: var(--dark-navy);
-  color: var(--white);
+  color: var(--off-white);
   margin-bottom: 2rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   &:focus {
@@ -98,7 +98,7 @@
     transition: background 0.15s, color 0.15s;
     &:hover, &:focus {
       background: var(--mid-navy);
-      color: var(--link-gold);
+      color: var(--cool-link-hover);
       outline: none;
     }
   }
@@ -132,7 +132,7 @@
     transition: background 0.15s, color 0.15s;
     &:hover, &:focus {
       background: var(--mid-navy);
-      color: var(--link-gold);
+      color: var(--cool-link-hover);
       outline: none;
     }
   }

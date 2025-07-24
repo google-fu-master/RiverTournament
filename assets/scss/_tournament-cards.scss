@@ -61,7 +61,7 @@
     border-color 0.2s,
     background 0.2s;
   position: relative;
-  color: var(--neon-white);
+  color: var(--off-white);
   font-family: "Oswald", Arial, sans-serif;
   text-align: left;
   overflow: hidden;
@@ -109,7 +109,7 @@
 .tournament-card-desc {
   font-size: 1.06rem;
   margin-bottom: 0.7em;
-  color: var(--white);
+  color: var(--off-white);
   text-shadow: none;
   text-align: left;
   min-height: 2.4em;
@@ -158,7 +158,7 @@
   transition: color 0.15s;
 }
 .tournament-card-toggle:hover {
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
   text-shadow: 0 0 4px var(--neon-cyan);
 }
 

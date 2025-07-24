@@ -192,13 +192,13 @@ body.ladies .site-title {
     0 0 16px #000;
 }
 .flyer-gold {
-  color: var(--neon-gold, #d4af37);
-  text-shadow: 0 0 8px var(--neon-gold, #d4af37);
+  color: var(--cool-link-hover);
+  text-shadow: 0 0 8px var(--cool-link-hover);
 }
 .flyer-section {
   margin: 1.5rem 0;
   font-size: 1.1rem;
-  color: var(--neon-white, #f5f5f5);
+  color: var(--off-white);
   text-align: center;
   font-family: "Oswald", Arial, sans-serif;
   letter-spacing: 1.5px;
@@ -242,7 +242,7 @@ body.ladies .site-title {
   box-sizing: border-box;
   text-align: center;
   background: rgba(0,0,0,0.4);
-  color: var(--link-yellow);
+  color: var(--cool-link);
   font-size: 1.1rem;
   border-radius: 12px;
   padding: 1.2rem 1rem 0.8rem 1rem;
@@ -343,7 +343,7 @@ body.ladies .site-title {
   box-sizing: border-box;
   text-align: center;
   background: rgba(0,0,0,0.4);
-  color: var(--link-yellow);
+  color: var(--cool-link);
   font-size: 1rem;
   border-radius: 0 0 12px 12px;
   padding: 0.5rem 0;

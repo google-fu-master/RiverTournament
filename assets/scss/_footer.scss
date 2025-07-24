@@ -1,7 +1,7 @@
 /* --- FOOTER --- */
 footer {
   background-color: var(--slate);
-  color: var(--white);
+  color: var(--off-white);
   text-align: center;
   padding: 1rem 0;
   font-weight: bold;
@@ -52,7 +52,7 @@ footer {
   margin: 0;
   border-radius: 0 0 8px 8px;
   background: rgba(21, 29, 35, 0.98);
-  color: var(--white);
+  color: var(--off-white);
   font-size: 1rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -76,11 +76,11 @@ footer {
   padding: 0;
   text-align: center;
   font-size: 0.95rem;
-  color: var(--white);
+  color: var(--off-white);
 }
 .status-legend.compact small {
   font-size: 0.92rem;
-  color: var(--white);
+  color: var(--off-white);
   font-family: inherit;
   font-weight: 400;
   letter-spacing: 0.02em;
