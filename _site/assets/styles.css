@@ -477,20 +477,30 @@ nav {
 .hamburger {
   display: none;
   font-size: 2rem;
-  margin-right: 1rem;
+  /* Center icon in circle: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
   cursor: pointer;
   color: var(--white);
   z-index: 1001;
   position: absolute;
-  top: 10px;
+  top: 16px;
   left: 16px;
-  background: none;
+  background: var(--dark-navy);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   border: none;
+  padding: 0;
 }
 
 /* Mobile styles */
 @media (max-width: 900px) {
   .nav-flex {
+    position: relative; /* allow absolute hamburger inside */
     justify-content: flex-start;
     padding: 0.5rem 0.5rem;
   }
@@ -508,14 +518,15 @@ nav {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   }
   .hamburger {
-    display: block;
-    position: fixed;
-    left: 16px;
+    display: flex;
+    position: absolute;
     top: 16px;
-    background: var(--dark-navy);
-    border-radius: 50%;
-    padding: 0.25em 0.5em;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    left: 16px;
+    z-index: 1010;
+  }
+  nav {
+    /* Add enough top padding for hamburger not to overlap header */
+    padding-top: 56px;
   }
   #menu-toggle:checked + .hamburger + .menu {
     transform: translateX(0);
@@ -2007,6 +2018,513 @@ textarea:focus {
     text-align: center;
   }
 }
+/* ===== RESPONSIVE & MEDIA QUERIES ===== */
+/* 1. Header and Navigation */
+@media (max-width: 1024px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy, #111d26);
+    padding-top: 4rem;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  .hamburger {
+    display: block;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 700px) {
+  .main-nav,
+  .nav-flex {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1em;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .nav-flex {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  .hamburger {
+    margin-right: 1em;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--dark-navy, #111d26);
+    padding-top: 4rem;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+  .site-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.1em;
+    word-break: break-word;
+    min-width: 0;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+  }
+  .site-address-block {
+    margin-top: 0.3em;
+    font-size: 1rem;
+    line-height: 1.3;
+    word-break: break-word;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    display: block;
+  }
+  .site-address {
+    display: block;
+    margin-top: 0.2em;
+    font-size: 0.98rem;
+    word-break: break-word;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .site-title,
+  header h1 {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 700px) {
+  /* Ensure no horizontal overflow issues on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .digitalpool-section {
+    /* Reset the breakout positioning for mobile - just center normally */
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    transform: none !important;
+  }
+  .status-legend.index-bar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    text-align: center !important;
+  }
+  /* Ensure Digital Pool iframe is centered within its container */
+  .digitalpool-section #digitalpool-table,
+  .digitalpool-section #digitalpool-embed {
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center !important;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+/* 2. Main Content and Containers */
+@media (max-width: 700px) {
+  /* Prevent most elements from causing horizontal overflow, but exclude Digital Pool */
+  *:not(.digitalpool-section):not(#digitalpool-table):not(#digitalpool-embed) {
+    max-width: 100% !important;
+  }
+  main,
+  .content-wrapper,
+  .container {
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+/* 3. Tables and Table Wrappers */
+@media (max-width: 700px) {
+  .table-responsive,
+  .data-table,
+  table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    font-size: 0.97em;
+    word-break: break-word;
+  }
+  th,
+  td {
+    white-space: normal !important;
+    word-break: break-word;
+    font-size: 0.97em;
+  }
+}
+/* 4. Forms */
+@media (max-width: 700px) {
+  .contact-form-wrapper,
+  .form-block {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .form-block {
+    margin-bottom: 1rem;
+  }
+  .contact-form-wrapper input,
+  .contact-form-wrapper select,
+  .contact-form-wrapper textarea {
+    width: 100% !important;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  .checkbox-group-inline {
+    flex-direction: column !important;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+/* 5. Buttons */
+@media (max-width: 700px) {
+  .cta-button,
+  button[type=submit] {
+    width: 100%;
+    font-size: 1.09rem;
+    padding: 0.9em 0;
+    margin-top: 1.1em;
+    box-sizing: border-box;
+  }
+}
+/* 6. Footer */
+@media (max-width: 700px) {
+  footer {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    font-size: 0.97em;
+    word-break: break-word;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  footer a,
+  footer .social-icons {
+    display: inline-block;
+    margin: 0 0.25em 0.5em 0.25em;
+    max-width: 100vw;
+    word-break: break-all;
+  }
+}
+/* 7. Images and Galleries */
+@media (max-width: 700px) {
+  .photo-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .photo-gallery img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+}
+/* 8. Other Responsive Rules */
+/* Header/main font size and padding */
+@media (max-width: 600px) {
+  .site-title,
+  header h1 {
+    font-size: 2.2rem;
+    margin-top: 60px;
+  }
+  .player-header {
+    font-size: 1.6rem;
+  }
+  .flyer-detail,
+  .flyer-section {
+    font-size: 1rem;
+  }
+  .signup-button-container {
+    padding: 1.6rem 0 !important;
+    margin: 1.5rem auto !important;
+  }
+  .content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+/* Status legend and legend bar */
+@media (max-width: 600px) {
+  .status-legend.index-bar {
+    font-size: 0.89rem;
+    padding: 1.1em 0.7em 1.1em 0.7em;
+    line-height: 1.55;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.7em;
+    margin-bottom: 0.8em;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 32, 38, 0.97);
+  }
+  .status-legend.index-bar small {
+    font-size: 0.93em;
+    line-height: 1.55;
+    display: block;
+    padding: 0 0.2em;
+    letter-spacing: 0;
+  }
+  .status-legend.index-bar small span {
+    display: inline-block;
+    margin-bottom: 0.4em;
+  }
+  .player-header,
+  #tournament-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.7rem;
+    padding: 0 0.3em;
+  }
+  .digitalpool-section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  body,
+  main,
+  .content-wrapper {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+}
+/* Tablet fallback tweaks for headings */
+@media (max-width: 900px) {
+  .player-header,
+  #tournament-title {
+    font-size: 1.7rem;
+    padding: 0 0.5em;
+  }
+}
+/* Status legend index bar on tablets */
+@media (max-width: 700px) {
+  .status-legend.index-bar {
+    font-size: 0.97em;
+    padding: 1.1em 0.4em 1.2em 0.4em;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1em;
+  }
+  /* Hamburger menu styling for mobile */
+  .hamburger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 2rem !important;
+    line-height: 1 !important;
+    width: 48px !important;
+    height: 48px !important;
+    top: 24px !important;
+    left: 16px !important;
+    z-index: 1010 !important;
+    background: var(--dark-navy) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .site-title,
+  header h1 {
+    margin-top: 80px !important;
+  }
+}
+/* Signup button container */
+@media (max-width: 600px) {
+  .signup-button-container {
+    padding: 1.6rem 0 !important;
+    margin: 1.5rem auto !important;
+  }
+}
+/* Tournament Cards Responsiveness */
+@media (max-width: 1100px) {
+  .tournament-cards.tournament-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    padding: 0 1vw;
+  }
+  .tournament-cards.tournament-cards-grid .tournament-card {
+    max-width: 95vw;
+    padding: 1.5rem 1rem;
+  }
+}
+@media (max-width: 900px) {
+  .tournament-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0;
+  }
+  .tournament-cards.tournament-cards-grid {
+    display: flex;
+  }
+  .tournament-card.desktop .tournament-card-desc,
+  .tournament-card.desktop .tournament-card-full,
+  .tournament-card.desktop .tournament-card-short {
+    display: none !important;
+  }
+  .tournament-cards {
+    gap: 1rem;
+  }
+  .tournament-card {
+    min-width: 220px;
+    max-width: 100%;
+    padding: 1.1rem 1rem 1rem 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .tournament-cards {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0;
+  }
+  .tournament-card {
+    width: 98vw;
+    min-width: 0;
+    max-width: 99vw;
+    padding: 1rem 0.7rem 1rem 0.7rem;
+    font-size: 0.98rem;
+  }
+  .tournament-card-title {
+    font-size: 1.09rem;
+  }
+  .tournament-card-date {
+    font-size: 1rem;
+  }
+  .tournament-card-link {
+    font-size: 0.92rem;
+    padding: 0.45em 1em;
+  }
+}
+/* MAX Lines, Maps, and Rideshare buttons */
+@media (max-width: 600px) {
+  .max-lines-row,
+  .map-lines-row,
+  .max-stops-row,
+  .rideshare-buttons {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    align-items: stretch !important;
+  }
+  .map-image,
+  .max-stops-row iframe,
+  .map-lines-row img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+  .map-lines-row img {
+    height: 40px !important;
+    max-width: 160px !important;
+    margin: 0 auto;
+  }
+}
+/* Slightly reduce padding on content-wrapper for mobile */
+@media (max-width: 600px) {
+  .content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+/* Checkbox group responsive for contact forms */
+@media (max-width: 600px) {
+  .checkbox-group-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+/* Status legend responsiveness for compact style */
+@media (max-width: 600px) {
+  .status-legend {
+    padding: 0.7rem 0.6rem;
+    font-size: 0.98rem;
+  }
+  /* Additional Digital Pool mobile optimizations for very small screens */
+  .digitalpool-section {
+    padding-left: 0.25em !important;
+    padding-right: 0.25em !important;
+    margin: 0 auto !important;
+  }
+  .digitalpool-section #digitalpool-table,
+  .digitalpool-section #digitalpool-embed {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+/* Responsive for location page headings/images */
+@media (max-width: 600px) {
+  .player-header,
+  #tournament-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.7rem;
+    padding: 0 0.3em;
+  }
+  .digitalpool-section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+/* Center iframe-wrapper and iframe on mobile */
+@media (max-width: 700px) {
+  .iframe-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+  .iframe-wrapper iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+}
 @media (max-width: 900px) {
   .menu {
     display: flex !important;
@@ -2029,60 +2547,23 @@ textarea:focus {
     transform: translateX(0);
   }
   .hamburger {
-    display: block;
-    position: fixed;
+    display: flex;
+    position: absolute;
     left: 16px;
     top: 16px;
     background: var(--dark-navy);
     border-radius: 50%;
-    padding: 0.25em 0.5em;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
     z-index: 1100;
-  }
-  main {
-    padding: 0.5rem 0.2rem !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
-    box-sizing: border-box;
-  }
-  .player-header, #tournament-title {
-    font-size: 1.3rem !important;
-    padding: 0.5rem 0.2rem !important;
-    margin: 0.5rem 0 1rem 0 !important;
-    text-align: center !important;
-    line-height: 1.15 !important;
-    word-break: break-word;
-  }
-  .site-title {
-    font-size: 1.5rem !important;
-    padding: 0.5rem 0.2rem !important;
-    margin: 0.5rem 0 0.5rem 0 !important;
-    text-align: center !important;
-    line-height: 1.1 !important;
-    word-break: break-word;
-  }
-  .site-address-block {
-    font-size: 1rem !important;
-    padding: 0 0.2rem !important;
-    margin-bottom: 0.5rem !important;
-    text-align: center !important;
-  }
-  .digitalpool-section {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    overflow-x: auto !important;
-  }
-  .status-legend.index-bar {
-    font-size: 0.95rem !important;
-    padding: 0.5rem 0.2rem !important;
-    margin: 0.5rem 0 !important;
-    text-align: center !important;
-  }
-  .signup-button-container {
-    margin: 1rem auto !important;
-    padding: 0.5rem 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    border: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
