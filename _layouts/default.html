@@ -97,33 +97,32 @@
       {% if page.title == "River Tournaments" %}
         <div style="text-align:center; margin-top: 1.2em;">
           <img src="/assets/images/logos/RT_logowebsitetest.png" alt="River Tournaments Logo" style="max-width: 340px; width: 90vw; height: auto; display: block; margin: 0 auto 0.5em auto;" />
+          <div class="site-address-block">
+            <span class="site-info"
+              >Every Thursday | 6:30pm Check-In | 7:00pm Start</span
+            ><br />
+            <span class="site-address">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Maps: 19 NW 5th Ave, Portland OR"
+              >
+                19 NW 5th Ave Downtown Portland OR
+              </a>
+            </span>
+          </div>
         </div>
       {% else %}
         <h1 class="site-title">{{ page.title }}</h1>
-      {% endif %}
-      {% if page.title == "River Tournaments" %}
-      <div class="site-address-block">
-        <span class="site-info"
-          >Every Thursday | 6:30pm Check-In | 7:00pm Start</span
-        ><br />
-        <span class="site-address">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=19+NW+5th+Ave,+Portland,+OR+97209"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Google Maps: 19 NW 5th Ave, Portland OR"
-          >
-            19 NW 5th Ave, Portland OR
-          </a>
-        </span>
-      </div>
       {% endif %}
     </header>
 
     <main id="main-content" role="main">{{ content }}</main>
 
     <footer role="contentinfo">
-      &copy; {{ "now" | date: "%Y" }} River Tournaments | Site and content created by Brittany Posey<br />
+      &copy; {{ "now" | date: "%Y" }} River Tournaments<br>
+      <br>Site and content created by Brittany Posey<br />
       <a
         href="https://www.facebook.com/share/14FYDi9NfPs/?mibextid=wwXIfr"
         target="_blank"
