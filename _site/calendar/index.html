@@ -10,15 +10,15 @@
       <meta property="og:title" content="Tournament Calendar | River Tournaments Downtown Portland, OR" />
       <meta property="og:description" content="See the full schedule of upcoming pool tournaments in Downtown Portland, OR. Find dates, times, and details for every event." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://rivertournaments.com/calendar/" />
+      <meta property="og:url" content="http://0.0.0.0:4000/calendar/" />
       <meta property="og:site_name" content="River Tournaments" />
-      <meta property="og:image" content="https://rivertournaments.com/assets/og-image.png" />
+      <meta property="og:image" content="http://0.0.0.0:4000/assets/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Tournament Calendar | River Tournaments Downtown Portland, OR" />
       <meta name="twitter:description" content="See the full schedule of upcoming pool tournaments in Downtown Portland, OR. Find dates, times, and details for every event." />
-      <meta name="twitter:image" content="https://rivertournaments.com/assets/og-image.png" />
+      <meta name="twitter:image" content="http://0.0.0.0:4000/assets/og-image.png" />
       <meta name="contact" content="rivertournaments@gmail.com" />
-      <link rel="canonical" href="https://rivertournaments.com/calendar/" />
+      <link rel="canonical" href="http://0.0.0.0:4000/calendar/" />
     
     <!-- Google Fonts for site-wide headings and titles -->
     <link
@@ -62,16 +62,25 @@
         color: #222;
       }
       .home-banner {
-        width: 100%;
+        width: 100vw;
         max-width: 100vw;
+        min-width: 100vw;
+        margin: 0 calc(50% - 50vw) 1.2em calc(50% - 50vw);
         background: transparent;
         text-align: center;
-        margin-top: 1.2em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        margin-left: 0;
-        margin-right: 0;
         box-sizing: border-box;
+        border-radius: 0;
+      }
+      .tournament-note {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 100vw;
+        margin: 1.2em calc(50% - 50vw) 1.2em calc(50% - 50vw);
+        box-sizing: border-box;
+        border-radius: 0;
+        text-align: center;
       }
       .home-logo {
         width: 100%;
