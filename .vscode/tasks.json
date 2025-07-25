@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Rebuild Jekyll site for updated meta descriptions",
+			"command": "bundle exec jekyll build"
+		}
+	]
+}

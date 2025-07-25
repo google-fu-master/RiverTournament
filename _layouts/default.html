@@ -6,14 +6,14 @@
     <title>{{ page.title }} - {{ site.title }}</title>
     <meta
       name="description"
-      content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see results...{% endif %}"
+      content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in Downtown Portland, OR. Sign up, check brackets, and see results...{% endif %}"
     />
     <meta name="robots" content="index,follow" />
     <!-- Open Graph -->
     <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
     <meta
       property="og:description"
-      content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in the River region. Sign up, check brackets, and see results...{% endif %}"
+      content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}Weekly pool tournaments in Downtown Portland, OR. Sign up, check brackets, and see results...{% endif %}"
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
@@ -64,6 +64,35 @@
         background: #f0f0f0;
         color: #222;
       }
+      .home-banner {
+        width: 100vw;
+        max-width: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        text-align: center;
+        margin-top: 1.2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
+      .home-logo {
+        width: 100%;
+        max-width: 340px;
+        min-width: 120px;
+        height: auto;
+        display: block;
+        margin: 0 auto 0.5em auto;
+      }
+      @media (max-width: 600px) {
+        .home-banner {
+          padding-top: 0.2em;
+          padding-bottom: 0.2em;
+        }
+        .home-logo {
+          max-width: 80vw;
+          min-width: 80px;
+        }
+      }
     </style>
   </head>
   <body
@@ -95,8 +124,8 @@
 
     <header role="banner">
       {% if page.title == "River Tournaments" %}
-        <div style="text-align:center; margin-top: 1.2em;">
-          <img src="/assets/images/logos/RT_logowebsitetest.png" alt="River Tournaments Logo" style="max-width: 340px; width: 90vw; height: auto; display: block; margin: 0 auto 0.5em auto;" />
+        <div class="home-banner">
+          <img class="home-logo" src="/assets/images/logos/RT_logowebsitetest.png" alt="River Tournaments Logo" />
           <div class="site-address-block">
             <span class="site-info"
               >Every Thursday | 6:30pm Check-In | 7:00pm Start</span
