@@ -114,6 +114,22 @@
 .page-rules details.rules-collapsible:not([open]) > summary::before { transform: rotate(-90deg); }
 .page-rules details.rules-collapsible .rules-body { padding-left: 1rem; margin-top: 0.35rem; }
 
+/* Make <summary> visually match the previous H2 header style */
+.page-rules details.rules-collapsible > summary {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #0071a4; /* blue underline */
+}
+
+.page-rules details.rules-collapsible > summary:focus {
+  outline: 3px solid rgba(0, 113, 164, 0.16);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 @media (max-width: 800px) {
   .page-rules details.rules-collapsible > summary {
     padding: 0.6rem 0.4rem;
