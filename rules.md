@@ -67,7 +67,7 @@ permalink: /rules/
   Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
 
-<details id="player-eligibility" class="rules-section rules-collapsible" role="region" aria-labelledby="player-eligibility-title" open>
+<details id="player-eligibility" class="rules-section rules-collapsible" aria-labelledby="player-eligibility-title" open>
   <summary id="player-eligibility-title">Player Eligibility &amp; Registration</summary>
   <div class="rules-body">
     <ul>
@@ -87,7 +87,7 @@ permalink: /rules/
   </div>
 </details>
 
-<details id="match-format" class="rules-section rules-collapsible" role="region" aria-labelledby="match-format-title" open>
+<details id="match-format" class="rules-section rules-collapsible" aria-labelledby="match-format-title" open>
   <summary id="match-format-title">Match Format &amp; Races</summary>
   <div class="rules-body">
     <ul>
@@ -110,7 +110,7 @@ permalink: /rules/
   </div>
 </details>
 
-<details id="equipment" class="rules-section rules-collapsible" role="region" aria-labelledby="equipment-title" open>
+<details id="equipment" class="rules-section rules-collapsible" aria-labelledby="equipment-title" open>
   <summary id="equipment-title">Equipment &amp; Gameplay</summary>
   <div class="rules-body">
     <ul>
@@ -123,7 +123,7 @@ permalink: /rules/
   </div>
 </details>
 
-<details id="conduct" class="rules-section rules-collapsible" role="region" aria-labelledby="conduct-title" open>
+<details id="conduct" class="rules-section rules-collapsible" aria-labelledby="conduct-title" open>
   <summary id="conduct-title">Conduct &amp; House Rules</summary>
   <div class="rules-body">
     <ul>
@@ -148,7 +148,7 @@ permalink: /rules/
   </div>
 </details>
 
-<details id="bca-rules" class="rules-section rules-collapsible" role="region" aria-labelledby="bca-rules-title" open>
+<details id="bca-rules" class="rules-section rules-collapsible" aria-labelledby="bca-rules-title" open>
   <summary id="bca-rules-title">BCA Rules</summary>
   <div class="rules-body">
 
