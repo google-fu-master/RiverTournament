@@ -1,5 +1,65 @@
 /* ===== RULES & FAQ SECTION STYLES ===== */
 
+/* Scoped readable container and typography for rules page */
+.page-rules {
+  --rules-max-width: 70ch;
+  --rules-font-size: clamp(15px, 1.6vw, 18px);
+  --rules-line-height: 1.65;
+  font-size: var(--rules-font-size);
+  line-height: var(--rules-line-height);
+  color: var(--text-color, #e9eef2);
+}
+
+/* Center sections and constrain width */
+.page-rules .rules-section {
+  max-width: var(--rules-max-width);
+  margin: 0 auto 1.6rem;
+  padding: 0 1rem;
+}
+
+/* Headings spacing */
+.page-rules h2,
+.page-rules h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+/* Paragraphs and lists spacing */
+.page-rules p,
+.page-rules li {
+  margin-bottom: 0.65rem;
+}
+
+/* Lists: comfortable spacing and nested padding */
+.page-rules ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+.page-rules ul ul {
+  padding-left: 1rem;
+  margin-top: 0.4rem;
+}
+
+/* Improve readability for li.numbered-1 use */
+.page-rules li.numbered-1 {
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 800px) {
+  .faq-sticky-nav ul {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0 0.5rem;
+  }
+  .faq-sticky-nav li { white-space: nowrap; }
+  .page-rules .rules-section { padding: 0 0.75rem; }
+}
+
+
 .rules-section {
   background: var(--dark-navy);
   padding: 2rem 1rem;
