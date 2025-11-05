@@ -81,7 +81,7 @@ permalink: /rules/
     <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
-    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with bye.</li>
+  <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a bye.</strong></li>
   </ul>
 </section>
 
@@ -155,8 +155,8 @@ permalink: /rules/
     <ul>
       <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; rack your own.</li>
       <li>Racking: Balls are racked with the 8-ball in the center of the triangle, a stripe in one back corner, and a solid in the other. Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight and positioned with the apex ball on the foot spot.</li>
-      <li>Legal Break: The cue ball starts behind the head string (2nd diamond, aka the kitchen). A legal break requires that at least four object balls hit a cushion or a ball is pocketed. If this requirement isn’t met, it’s an illegal break, and the incoming player may accept the table, re-rack and break, or have the original breaker re-break.
-      <li>Fouls Before the Rack is Struck: No fouls can be called until the cue ball contacts the rack on the break. (Tournament director may still address etiquette or sportsmanship issues at any time.)</li>
+  <li>Legal Break: The cue ball starts behind the head string (2nd diamond, aka the kitchen). A legal break requires that at least four object balls hit a cushion or a ball is pocketed. If this requirement isn’t met, it’s an illegal break, and the incoming player may accept the table, re-rack and break, or have the original breaker re-break.</li>
+  <li>Fouls Before the Rack is Struck: No fouls can be called until the cue ball contacts the rack on the break. (Tournament director may still address etiquette or sportsmanship issues at any time.)</li>
       <li>8 on the break: If the 8-ball is pocketed <strong>and no foul occurs</strong>, the breaker may spot the 8-ball and continue shooting OR re-rack and break again. If the 8-ball is pocketed <strong>and a foul occurs</strong>, the incoming player may spot the 8-ball and take ball in hand behind the headstring or re-rack and break again.</li>
       <li>Scratch on the break: If the cue ball is scratched or jumped on a legal break, it’s a foul. The incoming player gets ball in hand behind the head string (2nd diamond, aka the kitchen).</li>
       <li>Open Table: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a rail. Failure to do so is a foul, your opponent gets ball in hand.</li>
@@ -203,9 +203,12 @@ permalink: /rules/
       <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
   <li>Timeouts: None allowed.</li>
-  <li>Races:</li>
-  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+      <li>Races:
+        <ul>
+          <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
+          <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
@@ -285,4 +288,76 @@ permalink: /rules/
     });
     document.getElementById(selected).style.display = 'block';
   });
+</script>
+
+<!-- Collapse-on-mobile: convert each .rules-section into a collapsible block on small screens -->
+<script>
+(function(){
+  const MOBILE_BREAK = 800;
+  function setupCollapsible(){
+    const isMobile = window.innerWidth <= MOBILE_BREAK;
+    document.querySelectorAll('.rules-section').forEach((sec, idx) => {
+      // skip if already initialized
+      if (!isMobile && sec.dataset.mobileInit) {
+        // restore desktop: if we previously replaced h2, skip restoration for simplicity
+        return;
+      }
+      if (!isMobile) return; // only initialize on mobile
+      if (sec.dataset.mobileInit) return;
+
+      const h2 = sec.querySelector('h2');
+      if (!h2) return;
+
+      // create header wrapper and toggle button
+      const header = document.createElement('div');
+      header.className = 'rules-header';
+      const btn = document.createElement('button');
+      btn.className = 'rules-collapse-toggle';
+      btn.type = 'button';
+      // keep first section expanded by default for easier scanning
+      const expanded = idx === 0;
+      btn.setAttribute('aria-expanded', expanded.toString());
+      btn.innerHTML = h2.innerHTML;
+      header.appendChild(btn);
+
+      // replace h2 with header
+      h2.parentNode.replaceChild(header, h2);
+
+      // collect the rest of the nodes into a body wrapper
+      const body = document.createElement('div');
+      body.className = 'rules-body';
+      // move all following siblings into body
+      while (header.nextSibling) {
+        body.appendChild(header.nextSibling);
+      }
+
+      // set initial visibility
+      if (!expanded) body.style.display = 'none';
+
+      sec.appendChild(body);
+      sec.dataset.mobileInit = '1';
+
+      // toggle behavior
+      btn.addEventListener('click', function(){
+        const isExp = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', (!isExp).toString());
+        if (isExp) {
+          body.style.display = 'none';
+          sec.classList.add('collapsed-mobile');
+        } else {
+          body.style.display = '';
+          sec.classList.remove('collapsed-mobile');
+        }
+      });
+    });
+  }
+
+  // Initialize on load and on resize (debounced)
+  window.addEventListener('load', setupCollapsible);
+  let __rulesResize;
+  window.addEventListener('resize', function(){
+    clearTimeout(__rulesResize);
+    __rulesResize = setTimeout(setupCollapsible, 200);
+  });
+})();
 </script>

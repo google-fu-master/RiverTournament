@@ -59,6 +59,31 @@
   .page-rules .rules-section { padding: 0 0.75rem; }
 }
 
+/* Collapse-on-mobile styles */
+@media (max-width: 800px) {
+  .page-rules .rules-header { margin-bottom: 0.5rem; }
+  .page-rules .rules-collapse-toggle {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color, #e9eef2);
+    cursor: pointer;
+  }
+  .page-rules .rules-collapse-toggle[aria-expanded="false"]::after {
+    content: "▸";
+    float: right;
+  }
+  .page-rules .rules-collapse-toggle[aria-expanded="true"]::after {
+    content: "▾";
+    float: right;
+  }
+  .page-rules .rules-body { transition: max-height 0.18s ease; }
+}
+
 
 .rules-section {
   background: var(--dark-navy);
