@@ -10,5 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "axe-core": "^4.11.0",
+    "jsdom": "^27.1.0"
   }
 }
