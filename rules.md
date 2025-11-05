@@ -81,29 +81,28 @@ permalink: /rules/
     <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
-    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
+    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with bye.</li>
   </ul>
 </section>
 
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps. The tournament director may change the races depending on number of players. The races below are a general guideline.</li>
-    <li><strong>8-Ball:</strong>
+    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps. The tournament director may adjust races based on attendance; the items below are general guidelines.</li>
+    <li><strong>8-Ball</strong>
       <ul>
-        <li>8–12 players: race to 2 on the front, 1 on the back.</li>
-        <li>13-16 players: race to 1, both sides.</li>
+        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
+        <li>13–16 players: race to 1 on both winners and losers sides.</li>
       </ul>
     </li>
-    <li><strong>9-Ball:</strong>
+    <li><strong>9-Ball</strong>
       <ul>
-        <li>8–12 players: race to 3 on the front, 2 on the back.</li>
-        <li>13-16 players: race to 2 on the front, 2 on the back.</li>
-        <li>All Formats, All Tournaments, Front ONLY: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
+        <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
+        <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
+        <li>All formats/tournaments: 100+ FargoRate gap on the front — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
       </ul>
     </li>
   <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
-    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
 
