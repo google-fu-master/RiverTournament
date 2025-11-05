@@ -6,6 +6,8 @@ bodyClass: page-rules
 permalink: /rules/
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <!--this is the rule.md file-->
 
 <!-- Sticky section navigation -->
@@ -15,7 +17,7 @@ permalink: /rules/
     <li><a href="#match-format">Match Format</a></li>
     <li><a href="#equipment">Equipment</a></li>
     <li><a href="#conduct">Conduct</a></li>
-    <li><a href="#bca-modified-rules">BCA Rules</a></li>
+    <li><a href="#bca-rules">BCA Rules</a></li>
   </ul>
 </nav>
 
@@ -68,13 +70,13 @@ permalink: /rules/
 <section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
   <h2 id="player-eligibility-title">Player Eligibility & Registration</h2>
   <ul>
-    <li>Players with Fargo ratings of <445 in 8-ball, <430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
+    <li>Players with Fargo ratings of &lt;445 in 8-ball, &lt;430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
-	<li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
-	<li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
-	<li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated >430 in 9-Ball and >445 in 8-Ball are not eligible — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> merge accounts beforehand .</li>
-	<li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
-	<li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
+    <li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
+    <li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
+    <li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge accounts beforehand.</li>
+    <li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
+    <li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
@@ -94,7 +96,7 @@ permalink: /rules/
         <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
       </ul>
     </li>
-    <li>We follow <a href="#bca-modified-rules">modified BCA rules</a>; adjustments may be made at the tournament director’s discretion <em>at any time</em> to encourage fair gameplay.</li>
+  <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
     <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
@@ -105,7 +107,6 @@ permalink: /rules/
     <li class="numbered-1">Racks are Fargo Reported.</li>
     <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
     <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
-    <li>Jump shots are not allowed at River, and performing jump shots may result in being banned from future River Tournaments.</li>
     <li>Timeouts are not allowed. If you’re unsure about a rule, refer to this page, or ask your opponent or another player not currently in a match. Bring all disagreements to the tournament director immediately.</li>
     <li>If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</li>
   </ul>
@@ -116,7 +117,7 @@ permalink: /rules/
   <ul>
     <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
-        <li>Unsportsmanlike behavior of any kind at River or other pool tournaments in the Oregon community (APA, BCA, APL, etc.).</li>
+        <li>Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
         <li>Signs of substance impairment.</li>
         <li>Ineligible Fargo rating.</li>
         <li>Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
@@ -126,16 +127,16 @@ permalink: /rules/
         <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
       </ul>
     </li>
-    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament, and possibly from the establishment itself (as River management sees fit).</li>
-    <li>House contributions to the pot aren’t guaranteed.</li>
-    <li>Entry fees are cash only and may change.</li>
+    <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament, and possible fees and/or ban from the establishment itself (as River management sees fit).</li>
+    <li>House contributions to the pot are never guaranteed.</li>
+    <li>Entry fees are cash only and are subject to change.</li>
     <li><strong>The tournament director has the final say on all tournament matters.</strong></li>
     <li><strong>Remember to tip your bartenders, staff, and tournament directors - they work hard for you!</strong></li>
   </ul>
 </section>
 
-<section id="bca-modified-rules" class="rules-section" role="region" aria-labelledby="bca-modified-rules-title">
-  <h2 id="bca-modified-rules-title">BCA Modified Rules</h2>
+<section id="bca-rules" class="rules-section" role="region" aria-labelledby="bca-rules-title">
+  <h2 id="bca-rules-title">BCA Rules</h2>
 
 <label for="formatSelect"><strong>Select Format:</strong></label>
 <select id="formatSelect">
@@ -159,8 +160,8 @@ permalink: /rules/
       <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
-	  <li>Races:</li>
-	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+      <li>Races:</li>
+      <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
       <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
@@ -177,9 +178,9 @@ permalink: /rules/
       <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
       <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
-      <li>Timeouts: None allowed.</li>
-	  <li>Races:</li>
-	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+  <li>Timeouts: None allowed.</li>
+  <li>Races:</li>
+  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
       <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
@@ -229,7 +230,7 @@ permalink: /rules/
       "name": "What equipment and rules are used?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We follow modified BCA rules. Magic Racks are allowed if both players agree. Jump shots and timeouts are not allowed."
+        "text": "We follow BCA rules. Magic Racks are allowed if both players agree. Jump shots and timeouts are not allowed."
       }
     },
     {
