@@ -93,11 +93,13 @@ permalink: /rules/
       <ul>
         <li>8–12 players: race to 2 on the front, 1 on the back.</li>
         <li>13-16 players: race to 1, both sides.</li>
+      </ul>
+    </li>
     <li><strong>9-Ball:</strong>
       <ul>
         <li>8–12 players: race to 3 on the front, 2 on the back.</li>
         <li>13-16 players: race to 2 on the front, 2 on the back.</li>
-  <li>All Formats, All Tournaments, Front ONLY: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
+        <li>All Formats, All Tournaments, Front ONLY: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
       </ul>
     </li>
   <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
