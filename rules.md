@@ -93,7 +93,7 @@ permalink: /rules/
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
         <li>13-16 players: race to 1, both sides.</li>
-        <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
+  <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
       </ul>
     </li>
   <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
