@@ -6,8 +6,6 @@ bodyClass: page-rules
 permalink: /rules/
 ---
 
-<!-- markdownlint-disable MD033 -->
-
 <!--this is the rule.md file-->
 
 <!-- Sticky section navigation -->
@@ -72,37 +70,32 @@ permalink: /rules/
   <ul>
     <li>Players with Fargo ratings of &lt;445 in 8-ball, &lt;430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
-    <li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility. Conversions are at the Tournament Director's discretion.</li>
+    <li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
     <li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
     <li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge accounts beforehand.</li>
-    <li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director may find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
-    <li>All River Tournaments are <strong>reported to FargoRate</strong>. FargoRate estimates 2-3 weeks to process scores and create new player profiles; once processed, you will be able to <strong>claim your profile via the FargoRate mobile app.</strong>.</li>
+    <li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one).  If you are in the OPAL APA system, the tournament director will find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
+    <li>All River Tournaments are <strong>reported to FargoRate</strong>. Once processed, you will be able to <strong>claim your official profile</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
     <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
-  <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a bye.</li>
+    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
   </ul>
 </section>
 
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps. The tournament director may adjust races based on attendance; the items below are general guidelines.</li>
-    <li><strong>8-Ball</strong>
+    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
+    <li><strong>8 & 9 Ball:</strong>
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>13–16 players: race to 1 on both winners and losers sides.</li>
-      </ul>
-    </li>
-    <li><strong>9-Ball</strong>
-      <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
-        <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>All formats/tournaments: 100+ FargoRate gap on the front — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
+        <li>13-16 players: race to 1, both sides.</li>
+        <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
       </ul>
     </li>
   <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
+    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
 
@@ -153,40 +146,21 @@ permalink: /rules/
   <div id="eightBallRules" class="format-rules">
     <h3>8-Ball</h3>
     <ul>
-      <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; rack your own.</li>
-      <li>Racking: Balls are racked with the 8-ball in the center of the triangle, a stripe in one back corner, and a solid in the other. Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight and positioned with the apex ball on the foot spot.</li>
-  <li>Legal Break: The cue ball starts behind the head string (2nd diamond, aka the kitchen). A legal break requires that at least four object balls hit a cushion or a ball is pocketed. If this requirement isn’t met, it’s an illegal break, and the incoming player may accept the table, re-rack and break, or have the original breaker re-break.</li>
-  <li>Fouls Before the Rack is Struck: No fouls can be called until the cue ball contacts the rack on the break. (Tournament director may still address etiquette or sportsmanship issues at any time.)</li>
-      <li>8 on the break: If the 8-ball is pocketed <strong>and no foul occurs</strong>, the breaker may spot the 8-ball and continue shooting OR re-rack and break again. If the 8-ball is pocketed <strong>and a foul occurs</strong>, the incoming player may spot the 8-ball and take ball in hand behind the headstring or re-rack and break again.</li>
-      <li>Scratch on the break: If the cue ball is scratched or jumped on a legal break, it’s a foul. The incoming player gets ball in hand behind the head string (2nd diamond, aka the kitchen).</li>
-      <li>Open Table: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a rail. Failure to do so is a foul, your opponent gets ball in hand.</li>
-      <li>Call Pocket: You must call the ball and intended pocket for each shot (except on the break):
-        <ul type="a">
-          <li>You do not need to call details like banks, kisses, or caroms, unless the shot is not obvious.</li>
-          <li>If it’s clear what ball and pocket you’re aiming for, no verbal call is required — it’s understood.</li>
-          <li>If there’s any doubt, you must verbally call or point to make your intended ball and pocket clear.</li>
-          <li>Any obvious pocketed ball counts as legal; but if a called ball goes into an unintended pocket, the turn ends and the opponent takes over (no foul unless the cue ball is scratched).</li>
-        </ul>
-      </li>
-      <li>Legal Shot: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a cushion. Failure to do so is a foul, your opponent gets ball in hand.</li>
+      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
+      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
+      <li>Fouls cannot occur before the rack is struck.</li>
+      <li>8 on the break: If you make the 8-ball on the break, it’s an automatic win for that rack.</li>
+      <li>Scratch on the break: Incoming player must shoot from behind the head string (“kitchen”).</li>
+      <li>Open table after break until a called shot legally pockets a ball.</li>
       <li>Groups (solids or stripes) assigned by first legal shot after the break. If both are made on the break, table remains open.</li>
-      <li>8-Ball Shot: You must clearly call the pocket for the 8-ball. The 8-ball may not be the first ball contacted except on a legal combination. Pocketing the 8-ball in an uncalled pocket, or scratching while pocketing it, results in loss of game.</li>
-      <li>Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
-      <li>General Fouls: All fouls result in ball in hand anywhere on the table (except after the break, when it’s behind the head string aka in the kitchen). Fouls include (but are not limited to):
-        <ul type="a">
-          <li>Failure to contact your object ball first</li>
-          <li>Failure to drive any ball to a rail after the cue ball contacts the object ball.</li>
-          <li>Scratch or cue ball off the table</li>
-          <li>Jumping any ball off the table (except 8-ball, which is a loss of game).</li>
-        </ul>
-      </li>
-      <li>Races (general guidelines):
-        <ul type="a">
-          <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
-          <li>13–16 players: race to 1 on both winners and losers sides.</li>
-          <li>All tournaments: 100+ FargoRate gap on the front — the higher-rated player must win 1 extra game.</li>
-        </ul>
-      </li>
+      <li>8-ball pocket must be marked (or called verbally if agreed upon before the match). Making the 8-ball without marking/calling a pocket, or making it in a different pocket than marked/called is a loss for that rack. </li>
+      <li>8-ball scratch is loss of game.</li>
+      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
+      <li>You must hit your ball first and at least one ball (any group) or the cue ball must hit a rail. Otherwise it’s a foul.</li>
+      <li>Timeouts: None allowed.</li>
+	  <li>Races:</li>
+	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
 
@@ -203,12 +177,9 @@ permalink: /rules/
       <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
       <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
       <li>Timeouts: None allowed.</li>
-      <li>Races:
-        <ul>
-          <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
-          <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
-        </ul>
-      </li>
+	  <li>Races:</li>
+	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
     </ul>
   </div>
 
