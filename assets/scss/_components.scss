@@ -289,7 +289,15 @@ body.ladies .site-title {
   padding-left: 1rem;
 }
 
-/* numbering removed — lists should render with bullets */
+.numbered-1 {
+  counter-increment: list-item;
+}
+
+.numbered-1::before {
+  content: counter(list-item) ". ";
+  font-weight: bold;
+  color: #0071a4;
+}
 
 .format-rules {
   margin-top: 1rem;
