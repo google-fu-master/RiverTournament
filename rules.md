@@ -86,16 +86,22 @@ permalink: /rules/
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-  <li>Race lengths vary by format, number of players, and Fargo gaps:</li>
-    <li><strong>8 & 9 Ball:</strong>
+  <li>Race lengths vary by format, number of players, and Fargo gaps. See <a href="/faq/#how-do-player-ratings-work">FAQs on player ratings</a>:</li>
+    <li><strong>8 Ball:</strong>
       <ul>
-        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
+        <li>8–12 players: race to 2 on the front, 1 on the back.</li>
         <li>13-16 players: race to 1, both sides.</li>
-        <li>All Brackets, All Sides: 100+ FargoRate gap, the higher-rated player must win 1 extra game. (For more information see [How do player ratings work?](/faq/#how-do-player-ratings-work))</li>
+        <li>All Brackets, Front Only: 100+ FargoRate gap, the higher-rated player must win 1 extra game.</li>
+      </ul>
+    </li>
+    <li><strong>9 Ball:</strong>
+      <ul>
+        <li>8–12 players: race to 3 on the front, 2 on the back.</li>
+        <li>13-16 players: race to 2, both sides.</li>
+        <li>All Brackets, Front Only: 100+ FargoRate gap, the higher-rated player must win 1 extra game.</li>
       </ul>
     </li>
   <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
-    <li><strong>Definition: A Bye means an automatic advancement to the next round for a player without an opponent that round.</strong></li>
   </ul>
 </section>
 
