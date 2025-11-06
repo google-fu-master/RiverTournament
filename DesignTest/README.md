@@ -17,13 +17,13 @@ This project is an experimental playground for building modern, accessible glass
 npm install
 ```
 
-2. Start the dev server:
+1. Start the dev server:
 
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:5173](http://localhost:5173) to view the landing page.
+1. Open [http://localhost:5173](http://localhost:5173) to view the landing page.
 
 ## File Structure
 
