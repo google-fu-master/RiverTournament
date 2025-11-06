@@ -196,7 +196,7 @@ permalink: /rules/
           <li>The cue ball does not need to contact the lowest ball or any cushion.</li>
           <li>Any object balls (except the 9-ball) pocketed on a push remain down.</li>
           <li>After the push, the opponent may either shoot from the new position or pass the shot back.</li>
-          <li>If a foul occurs on the push, the opponent receives ball in hand.</li>
+          <li>If a foul occurs on the shot after the push, the opponent receives ball in hand.</li>
         </ul>
       </li>
       <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. If you pocket any ball legally, you continue shooting. If you foul or fail to pocket a ball legally, your inning ends. The game is won when the 9-ball is legally pocketed on any legal shot.</li>
