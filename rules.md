@@ -68,7 +68,7 @@ permalink: /rules/
 <section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
   <h2 id="player-eligibility-title">Player Eligibility & Registration</h2>
   <ul>
-    <li>Players with Fargo ratings of &lt;445 in 8-ball, &lt;430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
+  <li>Players with Fargo ratings of &lt;445 in 8-Ball, &lt;430 in 9-Ball are welcome at River Tournaments (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
     <li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, your <strong>Fargo and/or APA rating will be converted</strong> to a comparable FargoRate for tournament eligibility.</li>
     <li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball)</strong> and monitored for future eligibility.</li>
@@ -86,7 +86,7 @@ permalink: /rules/
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
+  <li class="numbered-1">Race lengths vary by format, number of players, and Fargo gaps:</li>
     <li><strong>8 & 9 Ball:</strong>
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
@@ -103,10 +103,10 @@ permalink: /rules/
   <h2 id="equipment-title">Equipment & Gameplay</h2>
   <ul>
     <li class="numbered-1">Racks are Fargo Reported.</li>
-    <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
-    <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
-    <li>Timeouts are not allowed. If you’re unsure about a rule, refer to this page, or ask your opponent or another player not currently in a match. Bring all disagreements to the tournament director immediately.</li>
-    <li>If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</li>
+    <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; rack your own.</li>
+    <li>Racking: Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight and positioned with the apex ball on the foot spot.</li>
+    <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
+    <li>If you need a shot witnessed, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</li>
   </ul>
 </section>
 
