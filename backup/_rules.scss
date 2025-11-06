@@ -1,0 +1,185 @@
+/* ===== RULES & FAQ SECTION STYLES ===== */
+
+.rules-section {
+  background: var(--dark-navy);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.rules-note {
+  background-color: #ffeeba;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rules-section h1,
+.rules-section h2 {
+  border-bottom: 2px solid #0071a4;
+  padding-bottom: 0.5rem;
+}
+
+.rules-section ul {
+  line-height: 1.8;
+  padding-left: 1rem;
+}
+
+.faq-search,
+.rules-search {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.1rem;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  border: 1.5px solid var(--accent-blue);
+  background: var(--dark-navy);
+  color: var(--off-white);
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  &:focus {
+    outline: 2px solid var(--accent-blue);
+    background: var(--mid-navy);
+  }
+}
+
+.numbered-1 {
+  counter-increment: list-item;
+}
+
+.numbered-1::before {
+  content: counter(list-item) ". ";
+  font-weight: bold;
+  color: #0071a4;
+}
+
+.format-rules {
+  margin-top: 1rem;
+}
+
+#formatSelect {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #0071a4;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+}
+
+// Sticky FAQ section navigation styles
+.faq-sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dark-navy);
+  padding: 0.5rem 0 0.5rem 0;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    color: var(--neon-cyan, #00eafd);
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.08rem;
+    padding: 0.3em 0.7em;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    &:hover, &:focus {
+      background: var(--mid-navy);
+      color: var(--cool-link-hover);
+      outline: none;
+    }
+  }
+}
+
+// Sticky Rules section navigation styles (reuse FAQ styles)
+.faq-sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dark-navy);
+  padding: 0.5rem 0 0.5rem 0;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    color: var(--neon-cyan, #00eafd);
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.08rem;
+    padding: 0.3em 0.7em;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    &:hover, &:focus {
+      background: var(--mid-navy);
+      color: var(--cool-link-hover);
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .digitalpool-section {
+    padding: 0.5rem 0.2rem !important;
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+  .status-legend.index-bar {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    padding: 1.1em 0.7em 1.1em 0.7em;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.7em;
+    margin-bottom: 0.8em;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 32, 38, 0.97);
+    text-align: left;
+  }
+  .status-legend.index-bar small {
+    font-size: 0.93em;
+    line-height: 1.55;
+    display: block;
+    padding: 0 0.2em;
+    letter-spacing: 0;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 700px) {
+  .faq-sticky-nav ul {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq-sticky-nav a {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}

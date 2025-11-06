@@ -1,0 +1,9 @@
+# Git Backup Information
+Commit Hash: 766d7c6ac0f5e1fea9546a54fca701f400db6576
+Commit Date: 2025-11-06 23:28:01 +0000
+Branch: main
+Author: google-fu-master <g00glefumaster@gmail.com>
+Message: Restore website from backup commit 29496ea and fix missing CSS color variables
+
+# To restore to this exact state:
+git reset --hard 766d7c6ac0f5e1fea9546a54fca701f400db6576
