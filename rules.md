@@ -224,18 +224,30 @@ permalink: /rules/
   <div id="tenBallRules" class="format-rules" style="display:none;">
     <h3>10-Ball</h3>
     <ul>
-      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
-      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
-      <li>Fouls cannot occur before the rack is struck.</li>
-      <li>Three-point break rule: At least three object balls must be either pocketed or touch the head string line on the break.</li>
-      <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
-      <li>10-ball on the break: If the 10-ball is pocketed on the break, it is spotted and play continues. It is still the breaker's turn unless a foul has occurred.</li>
-      <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-      <li>Rotation game: You must hit the lowest numbered ball first.</li>
-      <li>Call every shot. If the called ball goes in another pocket, it’s not a foul but the turn ends.</li>
-      <li>Other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-      <li>You must hit the lowest numbered ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
-      <li>Timeouts: None allowed.</li>
+      <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; rack your own.</li>
+      <li>Racking: Balls are racked in a triangle with the 1-ball at the apex on the foot spot and the 10-ball in the center. All other balls are placed randomly. Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight.</li>
+      <li>Legal Break: The cue ball starts behind the head string (the kitchen). On the break, the cue ball must contact the 1-ball first and either pocket a ball or cause at least four object balls to contact a cushion, or it’s a foul. Jumped object balls (other than the 10-ball) are not returned to the table; if the 10-ball is jumped, it is spotted.</li>
+      <li>10 on the Break: If the 10-ball is pocketed on a legal break, it is spotted and play continues. If the 10-ball is pocketed on a foul break, it is also spotted and the incoming player has ball in hand anywhere on the table.</li>
+      <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it’s a foul. The incoming player gets ball in hand anywhere on the table.</li>
+      <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare “push” before the shot, and your opponent must acknowledge. Key points:
+        <ul type="a">
+          <li>The cue ball does not need to contact the lowest-numbered ball or a cushion.</li>
+          <li>Any balls (except the 10-ball) pocketed during a push stay down; the 10-ball is spotted.</li>
+          <li>After the push, the opponent may shoot from the new position or pass the shot back.</li>
+          <li>If a foul occurs on the push, the opponent receives ball in hand.</li>
+        </ul>
+      </li>
+      <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. You must call every shot. If the called ball is legally pocketed, your inning continues. Balls pocketed incidentally stay down (except the 10-ball, which is spotted if not legally pocketed). The game is won when the 10-ball is legally pocketed on a called shot.</li>
+      <li>Illegally Pocketed Balls: A ball is illegally pocketed if it is made in a pocket other than the one called, or if no called ball is made on the shot. The 10-ball is spotted, and all other illegally pocketed balls remain down.</li>
+      <li>Opponent’s Option: If you illegally pocket a ball, your opponent may:
+        <ul type="a">
+          <li>Accept the table as it lies, or</li>
+          <li>Require you to shoot again from that position.</li>
+        </ul>
+      </li>
+      <li>Three-Foul Rule: A player loses the game after committing three consecutive fouls in the same game.</li>
+      <li>Stalemate Rule: If neither player makes progress after three consecutive innings each, the game is replayed with the original breaker breaking again.</li>
+      <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
     </ul>
   </div>
 </section>
