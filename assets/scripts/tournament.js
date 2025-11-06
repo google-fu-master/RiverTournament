@@ -54,7 +54,7 @@
 
   // Find the next tournament Thursday from today (or today if today is Thursday)
   const today = new Date();
-  
+
   let upcomingThursday = new Date(today);
   let daysUntilThursday = (4 - today.getDay() + 7) % 7;
   if (daysUntilThursday !== 0) {
@@ -134,7 +134,7 @@
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
   const tournamentUrl = `${signupLink}/players?navigation=false`;
-  const overviewUrl = `${signupLink}/overview`; // Remove navigation=false for sign up
+  const overviewUrl = `${signupLink}/overview?navigation=false`;
 
   // Set main tournament title
   var titleEl = document.getElementById("tournament-title");
@@ -155,7 +155,8 @@
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
     var iframe = document.createElement("iframe");
-    iframe.src = tournamentUrl; // Use players URL for the embed
+    iframe.id = "digitalpool-embed";
+    iframe.src = tournamentUrl;
     iframe.style.width = "100%";
     iframe.style.height = "600px";
     iframe.style.border = "none";
@@ -164,13 +165,9 @@
     iframe.style.margin = "0 auto";
     iframe.style.boxSizing = "border-box";
     
-    // Add attributes to match DigitalPool's embed format
+    // Add responsive attributes
     iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("scrolling", "yes");
-    iframe.setAttribute("marginheight", "0px");
-    iframe.setAttribute("marginwidth", "0px");
-    iframe.setAttribute("allowfullscreen", "");
-    iframe.setAttribute("name", eventTitle);
+    iframe.setAttribute("scrolling", "auto");
     
     tableDiv.appendChild(iframe);
   }

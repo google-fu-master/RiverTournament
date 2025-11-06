@@ -106,13 +106,12 @@ body.ladies .cta-button {
 }
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
-  /* Enhanced shadow effect for Ladies Night - no bright color change */
+  background: var(--neon-cyan);
+  color: #141414;
+  border-color: var(--neon-green);
   box-shadow:
-    0 0 24px 4px #fff,
-    0 4px 16px rgba(255, 255, 255, 0.3);
-  text-shadow:
-    0 0 14px #fff,
-    0 0 28px #fff;
+    0 0 32px var(--neon-green),
+    0 0 40px #ff79c7;
 }
 
 body.ladies .note,
