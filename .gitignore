@@ -1,1 +1,22 @@
 desktop.ini
+
+# Jekyll build output
+_site/
+
+# Ruby/Bundle
+vendor/
+.bundle/
+Gemfile.lock
+
+# Node.js (if using npm for any assets)
+node_modules/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
