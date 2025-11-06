@@ -1,8 +1,8 @@
+@charset "UTF-8";
 :root {
   --darkest: #141414;
   --dark-navy: #0d1b2a;
   --mid-navy: #002b3a;
-  --deep-navy: #0d1b2a;
   --accent-blue: #0071a4;
   --accent-pink: #cc6699;
   --darkest-pink: #1c0f1c;
@@ -10,18 +10,15 @@
   --mid-pink: #3a003a;
   --ladies-purple: #3a003a;
   --ladies-panel: rgba(20, 0, 30, 0.78);
-  --cool-link: #00eafd;             /* formerly --link-yellow */
-  --cool-link-hover: #30baff;       /* formerly --link-gold */
-  --off-white: #f5f5f5;             /* formerly --white */
   --slate: #151d23;
-  --table-green: #00cc66;
+  --pot-green: #00cc66;
   --neon-green: #39ff14;
   --neon-cyan: #00eafd;
   --neon-blue: #30baff;
   --neon-pink: #ff79c7;
-  --neon-white: #f5f5f5;
+  --deep-navy: #0d1b2a;
+  --table-green: #00cc66;
 }
-
 
 /* ====== BASE ELEMENT STYLES ====== */
 html,
@@ -92,8 +89,7 @@ header {
   gap: 0.75rem;
 }
 
-header h1,
-.site-title {
+header h1 {
   margin: 0;
   font-size: 1.85rem;
   font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
@@ -112,7 +108,8 @@ header h1,
 }
 
 header p,
-.site-address {
+.site-address,
+.site-info {
   font-weight: bold;
   font-size: 1.15rem;
   line-height: 1.45;
@@ -122,11 +119,12 @@ header p,
   word-break: break-word;
   display: block;
   max-width: 98vw;
+  text-align: center;
 }
 
 .site-address-block {
   font-family: "Oswald", sans-serif;
-  color: var(--neon-white);
+  color: var(--cool-link);
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
@@ -324,8 +322,7 @@ a:hover {
     align-items: flex-start;
     gap: 0.2rem;
   }
-  header h1,
-  .site-title {
+  header h1 {
     font-size: 1.25rem;
     font-family: "Montserrat", "Oswald", "Arial Black", sans-serif;
     color: var(--neon-blue, #30baff);
@@ -334,7 +331,7 @@ a:hover {
     letter-spacing: 0.05em;
     margin: 0 0 0.15rem 0;
     line-height: 1.15;
-    text-shadow: 0 0 8px #30baff, 0 0 24px #00eafd, 0 0 32px #008ecc, 2px 2px 0 #000;
+    text-shadow: 0 0 4px #30baff, 0 0 10px #00eafd, 2px 2px 0 #000;
     max-width: 98vw;
     overflow-wrap: break-word;
     display: block;
@@ -639,10 +636,9 @@ body.ladies .cta-button {
 
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
-  background: var(--neon-cyan);
-  color: #141414;
-  border-color: var(--neon-green);
-  box-shadow: 0 0 32px var(--neon-green), 0 0 40px #ff79c7;
+  /* Enhanced shadow effect for Ladies Night - no bright color change */
+  box-shadow: 0 0 24px 4px #fff, 0 4px 16px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 14px #fff, 0 0 28px #fff;
 }
 
 body.ladies .note,
@@ -1180,11 +1176,9 @@ iframe {
 
 .btn-signup:hover,
 .btn-signup:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+  /* Enhanced shadow effect instead of bright color change */
+  box-shadow: 0 0 24px 4px #fff, 0 4px 16px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 14px #fff, 0 0 28px #fff;
 }
 
 .cta-button {
@@ -1207,11 +1201,9 @@ iframe {
 
 .cta-button:hover,
 .cta-button:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+  /* Enhanced shadow effect instead of bright color change */
+  box-shadow: 0 0 24px 4px #fff, 0 4px 16px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 14px #fff, 0 0 28px #fff;
 }
 
 .cta-button:focus {
@@ -1278,8 +1270,9 @@ iframe {
   letter-spacing: 2px;
   text-align: center;
   margin: 1.2rem 0 0.5rem 0;
-  color: var(--neon-blue, #30baff);
-  text-shadow: 0 0 8px var(--neon-blue, #30baff), 0 0 24px var(--neon-blue, #30baff), 0 0 32px #008ecc, 2px 2px 0 #000;
+  color: #f5f5f5; /* Clean off-white for readability */
+  /* Minimal modern shadow for depth without neon glow */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
   max-width: 98vw;
   overflow-wrap: break-word;
   display: block;
@@ -1288,8 +1281,8 @@ iframe {
 }
 
 body.ladies .site-title {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow: 0 0 8px var(--neon-pink, #ff79c7), 0 0 24px var(--neon-pink, #ff79c7), 0 0 32px #ff79c7, 2px 2px 0 #000;
+  color: #f5f5f5; /* Keep consistent minimal modern style */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .flyer-detail {
@@ -1320,14 +1313,14 @@ body.ladies .site-title {
 }
 
 .flyer-gold {
-  color: var(--neon-gold, #d4af37);
-  text-shadow: 0 0 8px var(--neon-gold, #d4af37);
+  color: var(--cool-link-hover);
+  text-shadow: 0 0 8px var(--cool-link-hover);
 }
 
 .flyer-section {
   margin: 1.5rem 0;
   font-size: 1.1rem;
-  color: var(--neon-white, #f5f5f5);
+  color: var(--off-white);
   text-align: center;
   font-family: "Oswald", Arial, sans-serif;
   letter-spacing: 1.5px;
@@ -1373,7 +1366,7 @@ body.ladies .site-title {
   box-sizing: border-box;
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  color: var(--link-yellow);
+  color: var(--cool-link);
   font-size: 1.1rem;
   border-radius: 12px;
   padding: 1.2rem 1rem 0.8rem 1rem;
@@ -1420,10 +1413,7 @@ body.ladies .site-title {
   padding-left: 1rem;
 }
 
-.numbered-1::before {
-  display: none;
-}
-
+/* numbering removed — lists should render with bullets */
 .format-rules {
   margin-top: 1rem;
 }
@@ -1468,7 +1458,7 @@ body.ladies .site-title {
   box-sizing: border-box;
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  color: var(--link-yellow);
+  color: var(--cool-link);
   font-size: 1rem;
   border-radius: 0 0 12px 12px;
   padding: 0.5rem 0;
@@ -1504,7 +1494,7 @@ body.ladies .site-title {
 /* --- FOOTER --- */
 footer {
   background-color: var(--slate);
-  color: var(--white);
+  color: var(--off-white);
   text-align: center;
   padding: 1rem 0;
   font-weight: bold;
@@ -1554,7 +1544,7 @@ footer .footer-social a:focus img {
   margin: 0;
   border-radius: 0 0 8px 8px;
   background: rgba(21, 29, 35, 0.98);
-  color: var(--white);
+  color: var(--off-white);
   font-size: 1rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -1578,12 +1568,12 @@ footer .footer-social a:focus img {
   padding: 0;
   text-align: center;
   font-size: 0.95rem;
-  color: var(--white);
+  color: var(--off-white);
 }
 
 .status-legend.compact small {
   font-size: 0.92rem;
-  color: var(--white);
+  color: var(--off-white);
   font-family: inherit;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -1794,11 +1784,9 @@ textarea:focus {
 
 .cta-button:hover,
 .cta-button:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
-  box-shadow: 0 0 24px 4px #39ff14, 0 2px 14px rgba(57, 255, 20, 0.18);
-  text-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
+  /* Enhanced shadow effect instead of bright color change */
+  box-shadow: 0 0 24px 4px #fff, 0 4px 16px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 14px #fff, 0 0 28px #fff;
 }
 
 .cta-button:focus {
@@ -1868,7 +1856,7 @@ textarea:focus {
   border-radius: 8px;
   border: 1.5px solid var(--accent-blue);
   background: var(--dark-navy);
-  color: var(--white);
+  color: var(--off-white);
   margin-bottom: 2rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
@@ -1878,10 +1866,7 @@ textarea:focus {
   background: var(--mid-navy);
 }
 
-.numbered-1::before {
-  display: none;
-}
-
+/* Previously used to prefix certain list items with numbers. Removed to use bullets only. */
 .format-rules {
   margin-top: 1rem;
 }
@@ -1924,7 +1909,7 @@ textarea:focus {
 }
 .faq-sticky-nav a:hover, .faq-sticky-nav a:focus {
   background: var(--mid-navy);
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
   outline: none;
 }
 
@@ -1957,7 +1942,7 @@ textarea:focus {
 }
 .faq-sticky-nav a:hover, .faq-sticky-nav a:focus {
   background: var(--mid-navy);
-  color: var(--link-gold);
+  color: var(--cool-link-hover);
   outline: none;
 }
 
@@ -2545,7 +2530,7 @@ textarea:focus {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--white);
+    color: var(--off-white);
     z-index: 1100;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
     border: none;
