@@ -186,19 +186,38 @@ permalink: /rules/
   <div id="nineBallRules" class="format-rules" style="display:none;">
     <h3>9-Ball</h3>
     <ul>
-      <li>Players lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Breaks alternate after that.</li>
-      <li>Racks: Players can use Magic Racks or Triangles, but it must be agreed upon by both players and used for the entire match. If players don’t agree, Triangle is the default.</li>
-      <li>Fouls cannot occur before the rack is struck.</li>
-      <li>Three-point break rule: At least three object balls must be either pocketed or touch the rail on the break.</li>
-      <li>Push Option: If the breaker didn't make anything, the opponent can either take the current table layout and shoot, or pass it back to the player who broke to let them shoot instead.</li>
-      <li>9 on the snap: If the 9-ball is pocketed on the break, it’s an automatic win for that rack, except if it goes into the two foot-string pockets (the corner pockets closest to the rack). Then it’s spotted and play continues. The breaker continues shooting unless there was a foul.</li>
-      <li>Scratch on the break: Ball-in-hand for the incoming player anywhere on the table.</li>
-      <li>Table scratch and other fouls: Ball-in-hand for the opponent anywhere on the table.</li>
-      <li>You must hit the lowest ball on the table first and any ball (including the cue ball) must hit a rail after. Otherwise it’s a foul.</li>
-      <li>Timeouts: None allowed.</li>
-	  <li>Races:</li>
-	  <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+      <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; because a 9-ball break can result in an immediate win, your opponent must rack for you.</li>
+      <li>Racking: Balls are racked in a diamond with the 1-ball at the apex on the foot spot and the 9-ball in the center. All other balls are placed randomly. Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight.</li>
+      <li>Legal Break: The cue ball starts behind the head string (the kitchen). On the break the cue ball must contact the 1-ball first, and at least four object balls must hit a cushion or a ball must be pocketed, or it’s a foul. Jumped object balls (except the 9-ball) are not returned. If the 9-ball is jumped, it is spotted. If a ball is made on the break, the breaker continues shooting.</li>
+      <li>9 on the Break: If the 9-ball is pocketed on a legal break, the breaker wins the game. If the 9-ball is pocketed on a foul break, it is spotted and play continues.</li>
+      <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it’s a foul. The incoming player gets ball in hand anywhere on the table.</li>
+      <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare “push” before shooting, and your opponent must acknowledge. How a push-out works:
+        <ul type="a">
+          <li>The cue ball does not need to contact the lowest ball or any cushion.</li>
+          <li>Any object balls (except the 9-ball) pocketed on a push remain down.</li>
+          <li>After the push, the opponent may either shoot from the new position or pass the shot back.</li>
+          <li>If a foul occurs on the push, the opponent receives ball in hand.</li>
+        </ul>
+      </li>
+      <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. If you pocket any ball legally, you continue shooting. If you foul or fail to pocket a ball legally, your inning ends. The game is won when the 9-ball is legally pocketed on any legal shot.</li>
+      <li>General Fouls: All fouls result in ball in hand anywhere on the table. Fouls include (but aren’t limited to):
+        <ul type="a">
+          <li>Failing to contact the lowest-numbered ball first</li>
+          <li>Failing to drive any ball to a cushion after contact</li>
+          <li>Scratch or cue ball off the table</li>
+          <li>Jumping any ball off the table (except the 9-ball, which is spotted)</li>
+        </ul>
+      </li>
+      <li>Three-Foul Rule: This rule is not enforced at River Tournaments.</li>
+      <li>Stalemate Rule: If the tournament director determines the table is locked up (no progress through three turns by each player), the game is replayed with the original breaker breaking again.</li>
+      <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
+      <li>Races (general guidelines):
+        <ul type="a">
+          <li>8–12 players: race to 3 on the front, 2 on the back</li>
+          <li>13–16 players: race to 2 on the front, 2 on the back</li>
+          <li>All Tournaments: 100+ Fargo gap, higher player must win 1+ game on the front only.</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
