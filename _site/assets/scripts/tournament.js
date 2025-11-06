@@ -54,7 +54,7 @@
 
   // Find the next tournament Thursday from today (or today if today is Thursday)
   const today = new Date();
-  
+
   let upcomingThursday = new Date(today);
   let daysUntilThursday = (4 - today.getDay() + 7) % 7;
   if (daysUntilThursday !== 0) {
@@ -70,15 +70,8 @@
   const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
   const mmddyyyy = `${monthNum}${day}${year}`;
 
-  // 1. Check if this is Ladies Night period (Friday before 3rd Thursday through end of 3rd Thursday)
-  const thirdThursday = getThirdThursday(today.getFullYear(), today.getMonth());
-  const fridayBefore = new Date(thirdThursday);
-  fridayBefore.setDate(thirdThursday.getDate() - 6); // Friday before (Thursday - 6 days = Friday)
-  const thursdayEnd = new Date(thirdThursday);
-  thursdayEnd.setHours(23, 59, 59, 999); // End of Thursday
-  
-  const ladiesNight = today >= fridayBefore && today <= thursdayEnd;
-  const ladiesNightTournament = isThirdThursday(upcomingThursday);
+  // 1. Check if this is Ladies Night (3rd Thursday)
+  const ladiesNight = isThirdThursday(upcomingThursday);
 
   // 2. If not Ladies Night, count the number of open (non-Ladies) Thursdays since June 5, 2025 (inclusive)
   // June 5, 2025 is the base, and is a 9-ball open event
@@ -110,7 +103,7 @@
 
   // For Ladies Night: alternate monthly, starting with 9-ball for June 2025
   let format, formatNum, formatLabel, eventTitle, signupSlug;
-  if (ladiesNightTournament) {
+  if (ladiesNight) {
     const baseLadiesYear = 2025,
       baseLadiesMonth = 5,
       baseLadiesFormat = 0; // 0=9-ball
@@ -141,7 +134,7 @@
 
   const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
   const tournamentUrl = `${signupLink}/players?navigation=false`;
-  const overviewUrl = `${signupLink}/overview`; // Remove navigation=false for sign up
+  const overviewUrl = `${signupLink}/overview?navigation=false`;
 
   // Set main tournament title
   var titleEl = document.getElementById("tournament-title");
@@ -162,21 +155,19 @@
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
     var iframe = document.createElement("iframe");
-    iframe.src = tournamentUrl; // Use players URL for the embed
+    iframe.id = "digitalpool-embed";
+    iframe.src = tournamentUrl;
+    iframe.style.width = "100%";
+    iframe.style.height = "600px";
+    iframe.style.border = "none";
+    iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
+    iframe.style.display = "block";
+    iframe.style.margin = "0 auto";
+    iframe.style.boxSizing = "border-box";
     
-    // Create iframe name in DigitalPool's expected format
-    var iframeName = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
-    
-    // Set attributes to exactly match DigitalPool's embed format
-    iframe.setAttribute("style", "border: none;");
-    iframe.setAttribute("name", iframeName);
-    iframe.setAttribute("scrolling", "yes");
+    // Add responsive attributes
     iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("marginheight", "0px");
-    iframe.setAttribute("marginwidth", "0px");
-    iframe.setAttribute("height", "600px");
-    iframe.setAttribute("width", "600px");
-    iframe.setAttribute("allowfullscreen", "");
+    iframe.setAttribute("scrolling", "auto");
     
     tableDiv.appendChild(iframe);
   }
