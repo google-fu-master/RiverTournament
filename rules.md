@@ -31,7 +31,8 @@ permalink: /rules/
   var searchInput = document.getElementById('rules-search');
   if (!searchInput) return;
   var sections = Array.from(document.querySelectorAll('.rules-section'));
-  var highlight = (text, term) => text.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
+  // avoid template-literal/backtick usage here so kramdown doesn't mis-parse the script block
+  var highlight = function(text, term) { return text.replace(new RegExp('(' + term + ')', 'gi'), '<mark>$1</mark>'); };
   searchInput.addEventListener('input', function() {
     var val = this.value.trim().toLowerCase();
     if (!val) {
@@ -113,13 +114,11 @@ permalink: /rules/
 <details id="equipment" class="rules-section rules-collapsible" aria-labelledby="equipment-title" open>
   <summary id="equipment-title">Equipment &amp; Gameplay</summary>
   <div class="rules-body">
-    <ul>
-      <li class="numbered-1">Racks are Fargo Reported.</li>
-      <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
-      <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
-      <li>Timeouts are not allowed. If you’re unsure about a rule, refer to this page, or ask your opponent or another player not currently in a match. Bring all disagreements to the tournament director immediately.</li>
-      <li>If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.
-    </ul>
+    <p><strong>Racks:</strong> Racks are Fargo reported.</p>
+    <p><strong>Break order:</strong> Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</p>
+    <p><strong>Racks &amp; equipment:</strong> Magic Racks are fine if both players agree; otherwise, use a triangle by default.</p>
+    <p><strong>Timeouts:</strong> Timeouts are not allowed. If you’re unsure about a rule, refer to this page or ask your opponent or another non-playing player. Bring all disagreements to the tournament director immediately.</p>
+    <p><strong>Watching shots:</strong> If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</p>
   </div>
 </details>
 
@@ -323,49 +322,4 @@ permalink: /rules/
 })();
 </script>
 
-  <!-- Accessibility helpers: sync aria-expanded and aria-controls on summary elements -->
-  <script>
-  (function(){
-    // Ensure summaries have aria-expanded and aria-controls, and update on toggle
-    function ensureAria(){
-      document.querySelectorAll('details.rules-collapsible').forEach((d, idx) => {
-        const summary = d.querySelector('summary');
-        if (!summary) return;
-
-        // add id to body container for aria-controls
-        let body = d.querySelector('.rules-body');
-        if (!body) {
-          body = document.createElement('div');
-          // move children into body
-          while (summary.nextSibling) body.appendChild(summary.nextSibling);
-          d.appendChild(body);
-        }
-        if (!body.id) body.id = 'rules-body-' + (idx + 1);
-
-        // set aria attributes on summary
-        summary.setAttribute('role', 'button');
-        summary.setAttribute('aria-controls', body.id);
-        summary.setAttribute('aria-expanded', d.hasAttribute('open') ? 'true' : 'false');
-
-        // keep aria-expanded in sync when details toggles
-        d.addEventListener('toggle', function(){
-          const expanded = d.hasAttribute('open');
-          summary.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        });
-
-        // ensure Enter/Space also toggles (some browsers handle this, but ensure consistency)
-        summary.addEventListener('keydown', function(e){
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            d.open = !d.open;
-            const expanded = d.hasAttribute('open');
-            summary.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-          }
-        });
-      });
-    }
-
-    window.addEventListener('load', ensureAria);
-    window.addEventListener('resize', function(){ setTimeout(ensureAria, 120); });
-  })();
-  </script>
+<script src="/assets/scripts/rules-a11y.js"></script>
