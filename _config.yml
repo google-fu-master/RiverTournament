@@ -7,3 +7,9 @@ url: "https://rivertournaments.com"
 
 plugins:
   - jekyll-sitemap
+
+exclude:
+  - backup/
+  - vendor/
+  - node_modules/
+  - .git/
