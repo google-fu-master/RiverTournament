@@ -204,7 +204,6 @@
 </script>
 
 <div class="contact-wrapper">
-  <h1 class="contact-heading">Contact Us</h1>
   <p class="contact-intro">
     If your question isn't answered in the <a href="/rules/">Rules</a> or
     <a href="/faq/">FAQs</a>, please reach out to our tournament director.
@@ -218,79 +217,6 @@
     </p>
   </div>
 </div>
-
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime"></script>
-<script>
-  // Set timestamp on form load
-  document.getElementById("timestamp").value = new Date().toISOString();
-
-  // Format phone as user types
-  const phoneInput = document.getElementById("phoneNumber");
-  phoneInput.addEventListener("input", function () {
-    let digits = this.value.replace(/\D/g, "");
-    if (digits.length <= 3) {
-      this.value = digits;
-    } else if (digits.length <= 6) {
-      this.value = digits.slice(0, 3) + "-" + digits.slice(3);
-    } else {
-      this.value =
-        digits.slice(0, 3) +
-        "-" +
-        digits.slice(3, 6) +
-        "-" +
-        digits.slice(6, 10);
-    }
-  });
-
-  // Form submission with reCAPTCHA and AJAX
-  document
-    .getElementById("contactForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      var form = this;
-      var statusDiv = document.getElementById("form-status");
-      statusDiv.textContent = "";
-
-      grecaptcha.enterprise.ready(function () {
-        grecaptcha.enterprise
-          .execute("6LeqGlQrAAAAAA-BM6K52xbv9L_mjy2_Zkvgiime", {
-            action: "USER_ACTION",
-          })
-          .then(function (token) {
-            document.getElementById("g-recaptcha-response").value = token;
-
-            // re-set timestamp at time of submit
-            document.getElementById("timestamp").value =
-              new Date().toISOString();
-
-            // Prepare form data
-            var formData = new FormData(form);
-
-            // Make AJAX POST request
-            fetch(form.action, {
-              method: "POST",
-              body: formData,
-            })
-              .then((response) => response.text())
-              .then((result) => {
-                if (result.indexOf("Success") !== -1) {
-                  statusDiv.style.color = "limegreen";
-                  statusDiv.textContent =
-                    "Thank you! Your message was sent successfully.";
-                  form.reset();
-                } else {
-                  statusDiv.style.color = "red";
-                  statusDiv.textContent = "Submission error: " + result;
-                }
-              })
-              .catch((error) => {
-                statusDiv.style.color = "red";
-                statusDiv.textContent = "Submission failed: " + error;
-              });
-          });
-      });
-    });
-</script>
 </main>
 
     <footer role="contentinfo">
