@@ -79,8 +79,7 @@ header h1,
   margin-right: auto;
 }
 header p,
-.site-address,
-.site-info {
+.site-address {
   font-weight: bold;
   font-size: 1.15rem;
   line-height: 1.45;
@@ -90,7 +89,6 @@ header p,
   word-break: break-word;
   display: block;
   max-width: 98vw;
-  text-align: center;
 }
 
 .site-address-block {
