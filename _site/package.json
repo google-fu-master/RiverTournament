@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "markdownlint-cli": "^0.32.0",
     "sass": "^1.89.2"
   },
   "dependencies": {

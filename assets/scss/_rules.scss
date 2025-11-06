@@ -52,9 +52,9 @@
 }
 
 .numbered-1::before {
-  /* hide generated numbering; keep class available for semantic use */
-  content: "";
-  display: none;
+  content: counter(list-item) ". ";
+  font-weight: bold;
+  color: #0071a4;
 }
 
 .format-rules {
