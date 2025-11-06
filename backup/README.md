@@ -10,6 +10,7 @@
 ## 🎯 What This Backup Contains
 
 This backup contains a fully working version of the River Tournament website with:
+
 - ✅ Proper off-white text coloring (no more dark text issues)
 - ✅ All CSS color variables properly defined
 - ✅ Clean, formatted HTML structure
@@ -19,6 +20,7 @@ This backup contains a fully working version of the River Tournament website wit
 ## 🚨 Emergency Restoration Instructions
 
 ### Quick Restore (Git Method)
+
 If the website breaks and you need to quickly restore to this working state:
 
 ```bash
@@ -42,6 +44,7 @@ bundle exec jekyll build
 ```
 
 ### File-by-File Restoration
+
 If you need to restore specific files only, use the backup files in this directory:
 
 ```bash
@@ -57,7 +60,9 @@ bundle exec jekyll build
 These files are essential for proper website appearance:
 
 ### `/assets/scss/_variables.scss`
+
 **CRITICAL:** Contains color variable definitions. Must include:
+
 ```scss
 --off-white: #f5f5f5;
 --cool-link: #d4af37;
@@ -65,12 +70,15 @@ These files are essential for proper website appearance:
 ```
 
 ### `/assets/scss/_components.scss`
+
 Contains button styles, layout components, and general styling rules.
 
 ### `/assets/scss/_rules.scss`
+
 Contains tournament rules page specific styling.
 
 ### `/faq.html`
+
 FAQ page with proper formatting and structure.
 
 ## 🏗️ Rebuild Process
@@ -91,15 +99,19 @@ bundle exec jekyll serve
 ## ⚠️ Common Issues & Solutions
 
 ### Issue: Dark text instead of off-white
+
 **Cause:** Missing CSS color variables  
 **Solution:** Restore `_variables.scss` and ensure these variables exist:
+
 - `--off-white: #f5f5f5;`
 - `--cool-link: #d4af37;`
 - `--cool-link-hover: #a47f00;`
 
 ### Issue: Jekyll build fails
+
 **Cause:** Missing dependencies or corrupted files  
-**Solution:** 
+**Solution:**
+
 ```bash
 bundle install
 bundle exec jekyll clean
@@ -107,12 +119,14 @@ bundle exec jekyll build
 ```
 
 ### Issue: Styling completely broken
+
 **Cause:** Corrupted SCSS files  
 **Solution:** Restore all files from this backup directory
 
 ## 📋 File Manifest
 
 This backup includes these critical files:
+
 - `_variables.scss` - Color definitions and CSS variables
 - `_components.scss` - Component styling
 - `_rules.scss` - Rules page styling  
@@ -134,6 +148,7 @@ After restoration, verify the website works by:
 ## 📞 Emergency Contacts
 
 If you need help with restoration:
+
 - Check git log for working commits: `git log --oneline`
 - Compare with this working commit: `git diff 766d7c6`
 - This backup was created after resolving the major styling crisis of November 6, 2025
