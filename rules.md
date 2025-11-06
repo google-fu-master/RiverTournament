@@ -173,10 +173,13 @@ permalink: /rules/
           <li>Jumping any ball off the table (except 8-ball, which is a loss of game)</li>
         </ul>
       </li>
-      <li>Races (general guidelines):</li>
-      <li>8–12 players: race to 2 on the winners side, 1 on the losers side</li>
-      <li>13–16 players: race to 1, both sides</li>
-      <li>All Tournaments: 100+ Fargo gap, higher player must win +1 game on the front only.</li>
+      <li>Races (general guidelines):
+        <ul type="a">
+          <li>8–12 players: race to 2 on the winners side, 1 on the losers side</li>
+          <li>13–16 players: race to 1, both sides</li>
+          <li>All Tournaments: 100+ Fargo gap, higher player must win +1 game on the front only.</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
