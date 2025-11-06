@@ -62,7 +62,7 @@ permalink: /rules/
 <h1 class="visually-hidden">River Tournament Rules and House Guidelines</h1>
 
 <p class="rules-note">
-  Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
+  Note: Eligibility, race lengths, and conduct rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule.
 </p>
 
 <section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
