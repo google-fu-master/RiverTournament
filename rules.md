@@ -86,7 +86,7 @@ permalink: /rules/
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-  <li class="numbered-1">Race lengths vary by format, number of players, and Fargo gaps:</li>
+  <li>Race lengths vary by format, number of players, and Fargo gaps:</li>
     <li><strong>8 & 9 Ball:</strong>
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
@@ -102,7 +102,7 @@ permalink: /rules/
 <section id="equipment" class="rules-section" role="region" aria-labelledby="equipment-title">
   <h2 id="equipment-title">Equipment & Gameplay</h2>
   <ul>
-    <li class="numbered-1">Racks are Fargo Reported.</li>
+  <li>Racks are Fargo Reported.</li>
     <li>Lag or Flip, then alternate: Players may lag or flip a coin for the first break. If there’s no agreement, lagging is the default. Players alternate breaking; rack your own.</li>
     <li>Racking: Players may use a Magic Rack or Triangle if both agree; if not, the Triangle is the default. The rack must be tight and positioned with the apex ball on the foot spot.</li>
     <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
@@ -113,7 +113,7 @@ permalink: /rules/
 <section id="conduct" class="rules-section" role="region" aria-labelledby="conduct-title">
   <h2 id="conduct-title">Conduct & House Rules</h2>
   <ul>
-    <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
+  <li>The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
         <li>Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
         <li>Signs of substance impairment.</li>
