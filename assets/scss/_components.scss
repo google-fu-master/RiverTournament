@@ -28,15 +28,13 @@
 }
 .btn-signup:hover,
 .btn-signup:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
+  /* Enhanced shadow effect instead of bright color change */
   box-shadow:
-    0 0 24px 4px #39ff14,
-    0 2px 14px rgba(57, 255, 20, 0.18);
+    0 0 24px 4px #fff,
+    0 4px 16px rgba(255, 255, 255, 0.3);
   text-shadow:
-    0 0 12px #39ff14,
-    0 0 24px #39ff14;
+    0 0 14px #fff,
+    0 0 28px #fff;
 }
 
 .cta-button {
@@ -66,15 +64,13 @@
 }
 .cta-button:hover,
 .cta-button:focus {
-  background: #39ff14;
-  color: #141414;
-  border-color: #39ff14;
+  /* Enhanced shadow effect instead of bright color change */
   box-shadow:
-    0 0 24px 4px #39ff14,
-    0 2px 14px rgba(57, 255, 20, 0.18);
+    0 0 24px 4px #fff,
+    0 4px 16px rgba(255, 255, 255, 0.3);
   text-shadow:
-    0 0 12px #39ff14,
-    0 0 24px #39ff14;
+    0 0 14px #fff,
+    0 0 28px #fff;
 }
 .cta-button:focus {
   outline: 2px solid var(--neon-green);
