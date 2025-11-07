@@ -1,62 +1,56 @@
 ---
-layout: default
-title: "DigitalPool Embed Test"
+layout: null
 permalink: /testpage/
 ---
-
-<div style="text-align: center; padding: 20px;">
-    <h1 style="color: white; margin-bottom: 30px;">DigitalPool Iframe Test Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DigitalPool Iframe Test - No CSS</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>DigitalPool Iframe Test Page (No Styling)</h1>
     
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #cccccc;">Test 1: DigitalPool's JavaScript Embed Code</h3>
-        <div id="js-embed-container" style="border: 2px solid #333; padding: 10px; margin: 10px 0;">
-            <script type='text/javascript'>
-                var iframe = document.createElement('iframe');       
-                iframe.src = 'https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false';
-                iframe.style.border = 'none';
-                iframe.width = '600';
-                iframe.height = '600';
-                document.getElementById('js-embed-container').appendChild(iframe);
-            </script>
-        </div>
+    <h2>Test 1: DigitalPool's JavaScript Embed Code</h2>
+    <div id="js-embed-container">
+        <script type='text/javascript'>
+            var iframe = document.createElement('iframe');       
+            iframe.src = 'https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false';
+            iframe.style.border = 'none';
+            iframe.width = '600';
+            iframe.height = '600';
+            document.getElementById('js-embed-container').appendChild(iframe);
+        </script>
     </div>
 
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #cccccc;">Test 2: Direct HTML Iframe</h3>
-        <div style="border: 2px solid #333; padding: 10px; margin: 10px 0;">
-            <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" 
-                    style="border: none;" 
-                    name="River Thursday 8 Ball 11/6/2025" 
-                    scrolling="yes" 
-                    frameborder="0" 
-                    marginheight="0px" 
-                    marginwidth="0px" 
-                    height="600px" 
-                    width="600px" 
-                    allowfullscreen>
-            </iframe>
-        </div>
-    </div>
+    <hr>
 
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #cccccc;">Test 3: Minimal Iframe</h3>
-        <div style="border: 2px solid #333; padding: 10px; margin: 10px 0;">
-            <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" 
-                    width="600" 
-                    height="600">
-            </iframe>
-        </div>
-    </div>
+    <h2>Test 2: Direct HTML Iframe (Full Attributes)</h2>
+    <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" 
+            style="border: none;" 
+            name="River Thursday 8 Ball 11/6/2025" 
+            scrolling="yes" 
+            frameborder="0" 
+            marginheight="0px" 
+            marginwidth="0px" 
+            height="600px" 
+            width="600px" 
+            allowfullscreen>
+    </iframe>
 
-    <div style="margin-top: 30px;">
-        <p style="color: #999; font-size: 14px;">
-            This page tests different iframe embedding methods to determine if DigitalPool allows any form of embedding.
-            <br>
-            Expected result: All three should either work or all show "refused to connect"
-        </p>
-        
-        <p style="margin-top: 20px;">
-            <a href="/" style="color: #007acc;">← Back to Homepage</a>
-        </p>
-    </div>
-</div>
+    <hr>
+
+    <h2>Test 3: Minimal Iframe (Bare Minimum)</h2>
+    <iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" 
+            width="600" 
+            height="600">
+    </iframe>
+
+    <hr>
+
+    <p>This page has NO CSS, NO layout, NO styling - just raw HTML and iframe tests.</p>
+    <p>All external stylesheets, JavaScript frameworks, and CSS interference eliminated.</p>
+    <p><a href="/">← Back to Homepage</a></p>
+
+</body>
+</html>
