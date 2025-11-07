@@ -149,88 +149,25 @@
     signupBtnEl.innerHTML = signupBtnHtml;
   }
 
-  // Try to load DigitalPool content via fetch instead of iframe
+  // Inject the DigitalPool table above the note paragraph
   var tableDiv = document.getElementById("digitalpool-table");
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
-    
-    // Show loading state
-    tableDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #778da9;">Loading tournament data...</div>';
-    
-    // Try to fetch content directly, fallback to link if blocked
-    async function loadDigitalPoolContent() {
-      try {
-        const response = await fetch(tournamentUrl, {
-          mode: 'cors',
-          credentials: 'omit'
-        });
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-        
-        const html = await response.text();
-        
-        // Parse the HTML and try to extract the player list content
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        
-        // Look for common player list selectors
-        const playerContent = doc.querySelector('.players-container, .tournament-players, .player-list, main, .content');
-        
-        if (playerContent) {
-          // Create a container div with DigitalPool styling
-          const contentDiv = document.createElement('div');
-          contentDiv.className = 'digitalpool-content';
-          contentDiv.style.width = '100%';
-          contentDiv.style.height = '600px';
-          contentDiv.style.overflow = 'auto';
-          contentDiv.style.border = '1px solid #333';
-          contentDiv.style.background = '#fff';
-          contentDiv.innerHTML = playerContent.innerHTML;
-          
-          tableDiv.innerHTML = '';
-          tableDiv.appendChild(contentDiv);
-          console.log('Successfully loaded DigitalPool content via fetch');
-        } else {
-          throw new Error('Could not find player content in response');
-        }
-        
-      } catch (error) {
-        console.log('Fetch failed:', error.message, '- showing fallback link');
-        showFallbackLink();
-      }
-    }
 
-    function showFallbackLink() {
-      const fallbackDiv = document.createElement('div');
-      fallbackDiv.className = 'digitalpool-fallback';
-      fallbackDiv.style.textAlign = 'center';
-      fallbackDiv.style.padding = '40px 20px';
-      fallbackDiv.style.background = '#0d1b2a';
-      fallbackDiv.style.border = '2px solid #415a77';
-      fallbackDiv.style.borderRadius = '8px';
-      fallbackDiv.style.margin = '20px 0';
-      
-      fallbackDiv.innerHTML = `
-        <h3 style="color: #e0e1dd; margin-bottom: 15px;">View Current Tournament Players</h3>
-        <p style="color: #778da9; margin-bottom: 20px;">Click below to view the live player list and tournament bracket</p>
-        <a href="${tournamentUrl}" target="_blank" rel="noopener" 
-           style="display: inline-block; background: #1b263b; color: #e0e1dd; padding: 12px 24px; 
-                  text-decoration: none; border-radius: 5px; border: 2px solid #415a77; 
-                  transition: all 0.3s ease;"
-           onmouseover="this.style.background='#415a77'; this.style.transform='translateY(-2px)';"
-           onmouseout="this.style.background='#1b263b'; this.style.transform='translateY(0)';">
-          View Players & Bracket
-        </a>
-      `;
-      
-      tableDiv.innerHTML = '';
-      tableDiv.appendChild(fallbackDiv);
-    }
+    // HARDCODED TEST: Use DigitalPool's exact JavaScript embed code
+    var iframe = document.createElement('iframe');       
+    iframe.src = 'https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false';
+    iframe.style.border = 'none';
+    iframe.width = '600';
+    iframe.height = '600';
     
-    // Attempt to load content via fetch
-    loadDigitalPoolContent();
+    // Add some responsive styling while keeping their approach
+    iframe.style.display = 'block';
+    iframe.style.margin = '0 auto';
+    
+    tableDiv.appendChild(iframe);
+    
+    console.log('Applied DigitalPool JavaScript embed code (hardcoded test)');
   }
 
   // Update nav sign up link if present
