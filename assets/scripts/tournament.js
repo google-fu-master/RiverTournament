@@ -154,12 +154,10 @@
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
-    // TEMPORARY: Hardcoded iframe for testing
-    var hardcodedIframeHTML = `<iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" style="border: none;" name="River Thursday 8 Ball 11/6/2025" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>`;
-    
-    tableDiv.innerHTML = hardcodedIframeHTML;
+    var iframe = document.createElement("iframe");
+    iframe.id = "digitalpool-embed";
+    iframe.src = tournamentUrl;
 
-    /* COMMENTED OUT: Dynamic iframe generation logic
     // Build a name attribute that matches DigitalPool's embed naming convention
     var nameAttr;
     if (ladiesNight) {
@@ -167,49 +165,28 @@
     } else {
       nameAttr = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
     }
+    iframe.setAttribute("name", nameAttr);
 
-    // Try iframe first, with fallback to styled link if embedding fails
-    var iframeHTML = `
-      <div class="digitalpool-embed-container">
-        <iframe id="digitalpool-iframe" src="${tournamentUrl}" style="border: none;" name="${nameAttr}" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="100%" allowfullscreen></iframe>
-        <div id="digitalpool-fallback" style="display: none; text-align: center; padding: 40px; background: #0d1b2a; border-radius: 8px; margin: 20px 0;">
-          <h3 style="color: #ffffff; margin-bottom: 20px;">View Current Tournament Players</h3>
-          <p style="color: #cccccc; margin-bottom: 25px;">Click below to view the live player list and tournament bracket:</p>
-          <a href="${tournamentUrl}" target="_blank" rel="noopener" style="display: inline-block; background: #007acc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 0 10px;">View Players & Bracket</a>
-        </div>
-      </div>
-    `;
-    
-    tableDiv.innerHTML = iframeHTML;
+    // Use DigitalPool's expected attributes
+    iframe.setAttribute("scrolling", "yes");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("marginheight", "0px");
+    iframe.setAttribute("marginwidth", "0px");
+    iframe.setAttribute("allowfullscreen", "");
+    // Provide explicit size attributes (DigitalPool embed uses 600x600)
+    iframe.setAttribute("width", "600px");
+    iframe.setAttribute("height", "600px");
 
-    // Check if iframe loads, show fallback if it fails
-    setTimeout(function() {
-      var iframe = document.getElementById('digitalpool-iframe');
-      var fallback = document.getElementById('digitalpool-fallback');
-      
-      if (iframe) {
-        iframe.onerror = function() {
-          iframe.style.display = 'none';
-          fallback.style.display = 'block';
-        };
-        
-        // Also check for refused connection after a delay
-        setTimeout(function() {
-          try {
-            // If we can't access the iframe content, it likely failed to load
-            iframe.contentDocument;
-          } catch (e) {
-            // Cross-origin error means iframe loaded but is blocked from access (good)
-            // Other errors likely mean connection refused
-            if (e.message.includes('refused') || iframe.clientHeight === 0) {
-              iframe.style.display = 'none';
-              fallback.style.display = 'block';
-            }
-          }
-        }, 3000);
-      }
-    }, 100);
-    */
+    // Keep responsive styling while giving a fixed embed height
+    iframe.style.width = "100%";
+    iframe.style.height = "600px";
+    iframe.style.border = "none";
+    iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
+    iframe.style.display = "block";
+    iframe.style.margin = "0 auto";
+    iframe.style.boxSizing = "border-box";
+
+    tableDiv.appendChild(iframe);
   }
 
   // Update nav sign up link if present
