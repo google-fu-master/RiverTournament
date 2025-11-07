@@ -88,7 +88,7 @@ permalink: /rules/
 <section id="match-format" class="rules-section" role="region" aria-labelledby="match-format-title">
   <h2 id="match-format-title">Match Format & Races</h2>
   <ul>
-    <li class="numbered-1">Race lengths vary by format, the number of players, and Fargo gaps:</li>
+    <li>Race lengths vary by format, the number of players, and Fargo gaps:</li>
     <li><strong>8 & 9 Ball:</strong>
       <ul>
         <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
@@ -104,8 +104,8 @@ permalink: /rules/
 <section id="equipment" class="rules-section" role="region" aria-labelledby="equipment-title">
   <h2 id="equipment-title">Equipment & Gameplay</h2>
   <ul>
-    <li class="numbered-1">Racks are Fargo Reported.</li>
-    <li>Players lag or flip a coin for the first break, then alternate breaks. If there’s no agreement, lagging is the default.</li>
+    <li>Racks are Fargo Reported.</li>
+    <li>Players lag or flip a coin for the first break, then alternate breaks. If there's no agreement, lagging is the default.</li>
     <li>Magic Racks are fine if both players agree; otherwise, triangle by default.</li>
     <li>Timeouts are not allowed. If you’re unsure about a rule, refer to this page, or ask your opponent or another player not currently in a match. Bring all disagreements to the tournament director immediately.</li>
     <li>If you need a shot watched, ask anyone not currently playing in a match. If no one is available, ask the tournament director.</li>
@@ -115,7 +115,7 @@ permalink: /rules/
 <section id="conduct" class="rules-section" role="region" aria-labelledby="conduct-title">
   <h2 id="conduct-title">Conduct & House Rules</h2>
   <ul>
-    <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
+    <li>The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul type="a">
         <li>Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
         <li>Signs of substance impairment.</li>
