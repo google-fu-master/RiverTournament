@@ -162,10 +162,47 @@
       nameAttr = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
     }
 
-    // Generate iframe HTML exactly as DigitalPool provides it
-    var iframeHTML = `<iframe src="${tournamentUrl}" style="border: none;" name="${nameAttr}" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>`;
+    // Try iframe first, with fallback to styled link if embedding fails
+    var iframeHTML = `
+      <div class="digitalpool-embed-container">
+        <iframe id="digitalpool-iframe" src="${tournamentUrl}" style="border: none;" name="${nameAttr}" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="100%" allowfullscreen></iframe>
+        <div id="digitalpool-fallback" style="display: none; text-align: center; padding: 40px; background: #0d1b2a; border-radius: 8px; margin: 20px 0;">
+          <h3 style="color: #ffffff; margin-bottom: 20px;">View Current Tournament Players</h3>
+          <p style="color: #cccccc; margin-bottom: 25px;">Click below to view the live player list and tournament bracket:</p>
+          <a href="${tournamentUrl}" target="_blank" rel="noopener" style="display: inline-block; background: #007acc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 0 10px;">View Players & Bracket</a>
+        </div>
+      </div>
+    `;
     
     tableDiv.innerHTML = iframeHTML;
+
+    // Check if iframe loads, show fallback if it fails
+    setTimeout(function() {
+      var iframe = document.getElementById('digitalpool-iframe');
+      var fallback = document.getElementById('digitalpool-fallback');
+      
+      if (iframe) {
+        iframe.onerror = function() {
+          iframe.style.display = 'none';
+          fallback.style.display = 'block';
+        };
+        
+        // Also check for refused connection after a delay
+        setTimeout(function() {
+          try {
+            // If we can't access the iframe content, it likely failed to load
+            iframe.contentDocument;
+          } catch (e) {
+            // Cross-origin error means iframe loaded but is blocked from access (good)
+            // Other errors likely mean connection refused
+            if (e.message.includes('refused') || iframe.clientHeight === 0) {
+              iframe.style.display = 'none';
+              fallback.style.display = 'block';
+            }
+          }
+        }, 3000);
+      }
+    }, 100);
   }
 
   // Update nav sign up link if present
