@@ -154,10 +154,6 @@
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
-    var iframe = document.createElement("iframe");
-    iframe.id = "digitalpool-embed";
-    iframe.src = tournamentUrl;
-
     // Build a name attribute that matches DigitalPool's embed naming convention
     var nameAttr;
     if (ladiesNight) {
@@ -165,28 +161,11 @@
     } else {
       nameAttr = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
     }
-    iframe.setAttribute("name", nameAttr);
 
-    // Use DigitalPool's expected attributes
-    iframe.setAttribute("scrolling", "yes");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("marginheight", "0px");
-    iframe.setAttribute("marginwidth", "0px");
-    iframe.setAttribute("allowfullscreen", "");
-    // Provide explicit size attributes (DigitalPool embed uses 600x600)
-    iframe.setAttribute("width", "600px");
-    iframe.setAttribute("height", "600px");
-
-    // Keep responsive styling while giving a fixed embed height
-    iframe.style.width = "100%";
-    iframe.style.height = "600px";
-    iframe.style.border = "none";
-    iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
-    iframe.style.display = "block";
-    iframe.style.margin = "0 auto";
-    iframe.style.boxSizing = "border-box";
-
-    tableDiv.appendChild(iframe);
+    // Generate iframe HTML exactly as DigitalPool provides it
+    var iframeHTML = `<iframe src="${tournamentUrl}" style="border: none;" name="${nameAttr}" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>`;
+    
+    tableDiv.innerHTML = iframeHTML;
   }
 
   // Update nav sign up link if present
