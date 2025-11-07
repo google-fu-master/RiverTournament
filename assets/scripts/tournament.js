@@ -154,20 +154,39 @@
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
-    // HARDCODED TEST: Use DigitalPool's exact JavaScript embed code
-    var iframe = document.createElement('iframe');       
-    iframe.src = 'https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false';
-    iframe.style.border = 'none';
-    iframe.width = '600';
-    iframe.height = '600';
-    
-    // Add some responsive styling while keeping their approach
-    iframe.style.display = 'block';
-    iframe.style.margin = '0 auto';
-    
+    var iframe = document.createElement("iframe");
+    iframe.id = "digitalpool-embed";
+    iframe.src = tournamentUrl;
+
+    // Build a name attribute that matches DigitalPool's embed naming convention
+    var nameAttr;
+    if (ladiesNight) {
+      nameAttr = `River Thursday Ladies Night ${formatNum} Ball ${monthNum}/${day}/${year}`;
+    } else {
+      nameAttr = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
+    }
+    iframe.setAttribute("name", nameAttr);
+
+    // Use DigitalPool's expected attributes
+    iframe.setAttribute("scrolling", "yes");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("marginheight", "0px");
+    iframe.setAttribute("marginwidth", "0px");
+    iframe.setAttribute("allowfullscreen", "");
+    // Provide explicit size attributes (DigitalPool embed uses 600x600)
+    iframe.setAttribute("width", "600px");
+    iframe.setAttribute("height", "600px");
+
+    // Keep responsive styling while giving a fixed embed height
+    iframe.style.width = "100%";
+    iframe.style.height = "600px";
+    iframe.style.border = "none";
+    iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
+    iframe.style.display = "block";
+    iframe.style.margin = "0 auto";
+    iframe.style.boxSizing = "border-box";
+
     tableDiv.appendChild(iframe);
-    
-    console.log('Applied DigitalPool JavaScript embed code (hardcoded test)');
   }
 
   // Update nav sign up link if present
