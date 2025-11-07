@@ -154,6 +154,12 @@
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
+    // TEMPORARY: Hardcoded iframe for testing
+    var hardcodedIframeHTML = `<iframe src="https://digitalpool.com/tournaments/river-thursday-8-ball-1162025/players?navigation=false" style="border: none;" name="River Thursday 8 Ball 11/6/2025" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="600px" allowfullscreen></iframe>`;
+    
+    tableDiv.innerHTML = hardcodedIframeHTML;
+
+    /* COMMENTED OUT: Dynamic iframe generation logic
     // Build a name attribute that matches DigitalPool's embed naming convention
     var nameAttr;
     if (ladiesNight) {
@@ -203,6 +209,7 @@
         }, 3000);
       }
     }, 100);
+    */
   }
 
   // Update nav sign up link if present
