@@ -236,15 +236,15 @@ body.ladies .site-title {
 
 // Center and contain important notes and disclaimers on all screen sizes
 .tournament-note {
-  margin: 2rem auto 0 auto;
-  width: 90%;
-  max-width: 1100px;
+  margin: 2rem auto 0 auto !important;
+  width: 90% !important;
+  max-width: 1100px !important;
   box-sizing: border-box;
   text-align: center;
   background: rgba(0,0,0,0.4);
   color: var(--cool-link);
   font-size: 1.1rem;
-  border-radius: 12px;
+  border-radius: 12px !important;
   padding: 1.2rem 1rem 0.8rem 1rem;
   box-shadow: 0 0 12px 1px #0ff2, 0 2px 10px rgba(0,255,255,0.08);
   display: block;
