@@ -48,7 +48,16 @@ permalink: /calendar/
 
     // Format a date for display
     function formatDate(start) {
-      const date = new Date(start.dateTime || start.date);
+      let date;
+      if (start.date) {
+        // For all-day events, parse the date string directly to avoid timezone issues
+        const [year, month, day] = start.date.split('-');
+        date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+      } else if (start.dateTime) {
+        date = new Date(start.dateTime);
+      } else {
+        date = new Date();
+      }
       const options = { weekday: "short", month: "short", day: "numeric" };
       return date.toLocaleDateString(undefined, options);
     }
