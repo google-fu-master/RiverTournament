@@ -126,9 +126,11 @@ header p,
 
 .site-address-block {
   font-family: "Oswald", sans-serif;
-  color: var(--neon-white);
+  color: var(--cool-link);
   font-size: 1.1rem;
   margin-top: 0.5rem;
+  text-align: center !important;
+  width: 100%;
 }
 
 /* ====== TYPOGRAPHY ====== */
