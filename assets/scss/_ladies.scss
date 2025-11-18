@@ -1,20 +1,22 @@
-/* ========== LADIES NIGHT THEME (GLASSMORPHISM ENHANCED) ========== */
+/* ========== LADIES NIGHT THEME (ELEGANT PROFESSIONAL) ========== */
 body.ladies {
-  /* Ladies Night Custom Properties */
-  --ladies-primary-bg: linear-gradient(135deg, #3a003a 0%, #2b102b 100%);
-  --ladies-accent-pink: #ff79c7;
-  --ladies-accent-cyan: #00eafd;
-  --ladies-accent-green: #39ff14;
-  --ladies-soft-pink: rgba(255, 121, 199, 0.6);
-  --ladies-soft-cyan: rgba(0, 234, 253, 0.6);
-  --ladies-glow-pink: rgba(255, 121, 199, 0.3);
-  --ladies-glow-cyan: rgba(0, 234, 253, 0.25);
-  --ladies-container-bg: rgba(40, 0, 40, 0.35);
-  --ladies-header-bg: rgba(204, 102, 153, 0.18);
+  /* Ladies Night Custom Properties - Elegant & Sophisticated */
+  --ladies-primary-bg: linear-gradient(135deg, #1a0b2e 0%, #16213e 50%, #0f3460 100%);
+  --ladies-accent-rose: #e91e63;
+  --ladies-accent-lavender: #9c27b0;
+  --ladies-accent-teal: #26a69a;
+  --ladies-soft-rose: rgba(233, 30, 99, 0.7);
+  --ladies-soft-lavender: rgba(156, 39, 176, 0.6);
+  --ladies-soft-teal: rgba(38, 166, 154, 0.6);
+  --ladies-glow-rose: rgba(233, 30, 99, 0.2);
+  --ladies-glow-lavender: rgba(156, 39, 176, 0.15);
+  --ladies-container-bg: rgba(26, 11, 46, 0.4);
+  --ladies-header-bg: rgba(26, 11, 46, 0.25);
   --ladies-text-white: #ffffff;
-  --ladies-text-light: #f5f5f5;
-  --ladies-text-shadow: rgba(32, 26, 46, 0.4);
-  --ladies-border-color: rgba(255, 121, 199, 0.25);
+  --ladies-text-light: #f8f9fa;
+  --ladies-text-muted: #b8c5d1;
+  --ladies-text-shadow: rgba(0, 0, 0, 0.3);
+  --ladies-border-color: rgba(156, 39, 176, 0.3);
   --ladies-navy: #0d1b2a;
   
   /* Spacing Scale */
@@ -38,9 +40,9 @@ body.ladies .content-wrapper,
 body.ladies section {
   background: var(--ladies-container-bg);
   border-radius: var(--ladies-radius-lg);
-  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.12);
-  backdrop-filter: blur(8px) saturate(110%);
-  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
   border: 1px solid var(--ladies-border-color);
   padding: var(--ladies-space-lg);
   margin-bottom: var(--ladies-space-lg);
@@ -57,10 +59,10 @@ body.ladies header,
 body.ladies #tournament-title {
   background: var(--ladies-header-bg);
   border-radius: 0 0 var(--ladies-radius-xl) var(--ladies-radius-xl);
-  box-shadow: 0 2px 12px 0 var(--ladies-glow-cyan);
-  border-bottom: 2px solid var(--ladies-accent-cyan);
-  backdrop-filter: blur(6px) saturate(110%);
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  box-shadow: 0 4px 20px rgba(156, 39, 176, 0.1);
+  border-bottom: 2px solid var(--ladies-accent-lavender);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
   color: var(--ladies-text-white) !important;
   padding: var(--ladies-space-lg) var(--ladies-space-md) var(--ladies-space-md) var(--ladies-space-md) !important;
   margin-bottom: var(--ladies-space-lg);
@@ -70,8 +72,8 @@ body.ladies h1,
 body.ladies .player-header,
 body.ladies #tournament-title,
 body.ladies .event-banner h1 {
-  color: var(--ladies-accent-pink) !important;
-  text-shadow: 0 2px 6px var(--ladies-text-shadow);
+  color: var(--ladies-accent-rose) !important;
+  text-shadow: 0 2px 4px var(--ladies-text-shadow);
   font-weight: 600;
   letter-spacing: 0.5px;
   background: none !important;
@@ -89,71 +91,71 @@ body.ladies .event-banner h1::after {
   height: 3px;
   margin: var(--ladies-space-sm) auto 0 auto;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--ladies-accent-green), var(--ladies-accent-cyan));
+  background: linear-gradient(90deg, var(--ladies-accent-lavender), var(--ladies-accent-teal));
 }
 
 body.ladies .neon-callout,
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  background: rgba(20, 20, 40, 0.25);
+  background: rgba(26, 11, 46, 0.3);
   border-radius: var(--ladies-radius-md);
-  box-shadow: 0 2px 8px 0 var(--ladies-glow-cyan);
-  backdrop-filter: blur(6px) saturate(105%);
+  box-shadow: 0 4px 16px rgba(156, 39, 176, 0.1);
+  backdrop-filter: blur(8px) saturate(110%);
 }
 
-/* Buttons: Modern styling with subtle glow effects */
+/* Buttons: Professional styling with subtle hover effects */
 body.ladies .btn-signup,
 body.ladies .cta-button {
-  background: var(--ladies-accent-pink);
+  background: linear-gradient(135deg, var(--ladies-accent-rose), var(--ladies-accent-lavender));
   color: var(--ladies-text-white);
-  border: 2px solid var(--ladies-accent-cyan);
+  border: 2px solid var(--ladies-accent-teal);
   font-weight: 600;
   font-size: 1.1rem;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 0.9em 2.4em;
-  box-shadow: 0 0 12px var(--ladies-glow-cyan);
-  text-shadow: none;
+  box-shadow: 0 4px 16px rgba(156, 39, 176, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-top: var(--ladies-space-sm);
   margin-bottom: var(--ladies-space-sm);
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
-  background: var(--ladies-accent-cyan);
-  color: #141414;
-  border-color: var(--ladies-accent-green);
-  box-shadow: 0 0 20px var(--ladies-glow-pink);
+  background: linear-gradient(135deg, var(--ladies-accent-teal), var(--ladies-accent-lavender));
+  color: var(--ladies-text-white);
+  border-color: var(--ladies-accent-rose);
+  box-shadow: 0 8px 24px rgba(156, 39, 176, 0.3);
   transform: translateY(-2px);
 }
 
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  color: var(--ladies-soft-cyan);
-  border-left: 4px solid var(--ladies-accent-cyan);
-  background: rgba(0, 20, 40, 0.15);
+  color: var(--ladies-text-light);
+  border-left: 4px solid var(--ladies-accent-teal);
+  background: rgba(26, 11, 46, 0.2);
   font-size: 1rem;
-  box-shadow: 0 0 6px var(--ladies-glow-cyan);
+  box-shadow: 0 2px 8px rgba(38, 166, 154, 0.1);
   padding-left: var(--ladies-space-sm);
 }
 
 body.ladies a {
-  color: var(--ladies-accent-cyan);
+  color: var(--ladies-accent-teal);
   text-decoration: underline;
   font-weight: 500;
-  text-shadow: 0 1px 2px var(--ladies-glow-cyan);
+  text-shadow: none;
   transition: all 0.2s ease;
 }
 body.ladies a:hover {
-  color: var(--ladies-soft-pink);
-  text-shadow: 0 0 6px var(--ladies-glow-pink);
+  color: var(--ladies-accent-lavender);
+  text-shadow: none;
 }
 
 body.ladies h2,
 body.ladies h3 {
-  color: var(--ladies-accent-cyan) !important;
-  border-left: 3px solid var(--ladies-accent-green);
+  color: var(--ladies-accent-lavender) !important;
+  border-left: 3px solid var(--ladies-accent-teal);
   padding-left: var(--ladies-space-sm);
   font-weight: 600;
   margin-bottom: var(--ladies-space-sm);
@@ -162,10 +164,10 @@ body.ladies h3 {
 
 body.ladies .iframe-wrapper,
 body.ladies table {
-  border: 2px solid var(--ladies-accent-cyan);
+  border: 2px solid var(--ladies-accent-teal);
   border-radius: var(--ladies-radius-md);
-  background: rgba(20, 40, 60, 0.8);
-  box-shadow: 0 2px 8px var(--ladies-glow-cyan);
+  background: rgba(26, 11, 46, 0.4);
+  box-shadow: 0 4px 16px rgba(38, 166, 154, 0.1);
 }
 
 body.ladies,
@@ -178,26 +180,26 @@ body.ladies section {
 body.ladies .menu a,
 body.ladies .menu a:visited {
   color: var(--ladies-text-light);
-  text-shadow: 0 1px 2px var(--ladies-glow-pink);
+  text-shadow: none;
 }
 body.ladies .menu a:hover,
 body.ladies .menu a:focus {
-  color: var(--ladies-accent-pink);
-  text-shadow: 0 0 6px var(--ladies-glow-pink);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--ladies-accent-rose);
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--ladies-radius-sm);
 }
 
 .event-banner.ladies,
 body.ladies .event-banner {
-  background: linear-gradient(90deg, var(--ladies-accent-pink) 0%, var(--ladies-navy) 100%);
+  background: linear-gradient(135deg, var(--ladies-accent-rose) 0%, var(--ladies-accent-lavender) 50%, var(--ladies-navy) 100%);
   color: var(--ladies-text-light);
-  box-shadow: 0 0 20px 4px var(--ladies-glow-pink);
+  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.2);
 }
 body.ladies .player-header,
 .event-banner.ladies .player-header {
-  color: var(--ladies-accent-pink) !important;
-  text-shadow: 0 2px 4px var(--ladies-glow-pink);
+  color: var(--ladies-text-white) !important;
+  text-shadow: 0 2px 4px var(--ladies-text-shadow);
 }
 
 /* Ladies Night Tournament Note Styling */
@@ -207,9 +209,9 @@ body.ladies .tournament-note {
   border-radius: var(--ladies-radius-lg);
   padding: var(--ladies-space-lg);
   margin: var(--ladies-space-lg) auto 0 auto;
-  box-shadow: 0 4px 12px var(--ladies-glow-cyan);
-  backdrop-filter: blur(8px) saturate(110%);
-  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  box-shadow: 0 8px 24px rgba(156, 39, 176, 0.15);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
   color: var(--ladies-text-white);
   text-align: left;
   font-family: 'Montserrat', 'Oswald', sans-serif;
@@ -226,28 +228,28 @@ body.ladies .tournament-note p:last-child {
 }
 
 body.ladies .tournament-note strong {
-  color: var(--ladies-accent-pink);
+  color: var(--ladies-accent-rose);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 body.ladies .tournament-note em {
-  color: var(--ladies-accent-cyan);
+  color: var(--ladies-accent-lavender);
   font-style: italic;
   font-weight: 500;
 }
 
 body.ladies .tournament-note a {
-  color: var(--ladies-accent-cyan);
+  color: var(--ladies-accent-teal);
   text-decoration: underline;
   font-weight: 500;
-  text-shadow: 0 1px 2px var(--ladies-glow-cyan);
+  text-shadow: none;
   transition: all 0.2s ease;
 }
 
 body.ladies .tournament-note a:hover {
-  color: var(--ladies-soft-pink);
+  color: var(--ladies-accent-lavender);
   text-shadow: 0 0 6px var(--ladies-glow-pink);
 }
 
@@ -401,24 +403,24 @@ body.ladies td {
 
 body.ladies th {
   background: var(--ladies-header-bg);
-  color: var(--ladies-accent-pink);
+  color: var(--ladies-accent-rose);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 body.ladies td {
-  background: rgba(20, 20, 40, 0.2);
+  background: rgba(26, 11, 46, 0.2);
   color: var(--ladies-text-white);
 }
 
 body.ladies tr:hover td {
-  background: rgba(255, 121, 199, 0.05);
+  background: rgba(156, 39, 176, 0.1);
 }
 
 /* Status Legend Specific */
 body.ladies .status-legend {
-  background: rgba(20, 20, 40, 0.3);
+  background: rgba(26, 11, 46, 0.3);
   border: 1px solid var(--ladies-border-color);
   border-radius: var(--ladies-radius-md);
   padding: var(--ladies-space-sm);
@@ -427,7 +429,7 @@ body.ladies .status-legend {
 }
 
 body.ladies .status-legend small {
-  color: var(--ladies-soft-cyan);
+  color: var(--ladies-text-muted);
   font-size: 0.9rem;
   line-height: 1.4;
 }
@@ -508,13 +510,13 @@ body.ladies .status-legend small {
 /* Accessibility: High Contrast Mode */
 @media (prefers-contrast: high) {
   body.ladies {
-    --ladies-glow-pink: transparent;
-    --ladies-glow-cyan: transparent;
-    --ladies-border-color: var(--ladies-accent-pink);
+    --ladies-glow-rose: transparent;
+    --ladies-glow-lavender: transparent;
+    --ladies-border-color: var(--ladies-accent-rose);
   }
   
   body.ladies *:focus {
-    outline: 3px solid var(--ladies-accent-cyan) !important;
+    outline: 3px solid var(--ladies-accent-teal) !important;
     outline-offset: 2px !important;
   }
   
@@ -522,7 +524,7 @@ body.ladies .status-legend small {
   body.ladies main,
   body.ladies .content-wrapper,
   body.ladies section {
-    border: 2px solid var(--ladies-accent-cyan);
+    border: 2px solid var(--ladies-accent-teal);
   }
 }
 
