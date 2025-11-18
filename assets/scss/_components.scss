@@ -155,12 +155,8 @@
 }
 
 body.ladies .site-title {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow:
-    0 0 8px var(--neon-pink, #ff79c7),
-    0 0 24px var(--neon-pink, #ff79c7),
-    0 0 32px #ff79c7,
-    2px 2px 0 #000;
+  color: var(--ladies-accent-pink, #ff79c7);
+  text-shadow: 0 2px 6px rgba(255, 121, 199, 0.4);
 }
 .flyer-detail {
   color: var(--neon-cyan, #00eafd);

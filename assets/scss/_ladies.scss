@@ -1,58 +1,82 @@
 /* ========== LADIES NIGHT THEME (GLASSMORPHISM ENHANCED) ========== */
 body.ladies {
-  background: linear-gradient(135deg, #3a003a 0%, #2b102b 100%) !important;
+  /* Ladies Night Custom Properties */
+  --ladies-primary-bg: linear-gradient(135deg, #3a003a 0%, #2b102b 100%);
+  --ladies-accent-pink: #ff79c7;
+  --ladies-accent-cyan: #00eafd;
+  --ladies-accent-green: #39ff14;
+  --ladies-soft-pink: rgba(255, 121, 199, 0.6);
+  --ladies-soft-cyan: rgba(0, 234, 253, 0.6);
+  --ladies-glow-pink: rgba(255, 121, 199, 0.3);
+  --ladies-glow-cyan: rgba(0, 234, 253, 0.25);
+  --ladies-container-bg: rgba(40, 0, 40, 0.35);
+  --ladies-header-bg: rgba(204, 102, 153, 0.18);
+  --ladies-text-white: #ffffff;
+  --ladies-text-light: #f5f5f5;
+  --ladies-text-shadow: rgba(32, 26, 46, 0.4);
+  --ladies-border-color: rgba(255, 121, 199, 0.25);
+  --ladies-navy: #0d1b2a;
+  
+  /* Spacing Scale */
+  --ladies-space-xs: 0.5rem;
+  --ladies-space-sm: 1rem;
+  --ladies-space-md: 1.5rem;
+  --ladies-space-lg: 2rem;
+  --ladies-space-xl: 3rem;
+  
+  /* Border Radius Scale */
+  --ladies-radius-sm: 8px;
+  --ladies-radius-md: 12px;
+  --ladies-radius-lg: 16px;
+  --ladies-radius-xl: 20px;
+  
+  background: var(--ladies-primary-bg) !important;
 }
 
 body.ladies main,
 body.ladies .content-wrapper,
 body.ladies section {
-  background: rgba(40, 0, 40, 0.32);
-  border-radius: 24px;
-  box-shadow:
-    0 8px 32px 0 rgba(31, 38, 135, 0.18),
-    0 2px 12px 0 #ff79c7;
-  backdrop-filter: blur(24px) saturate(120%);
-  -webkit-backdrop-filter: blur(24px) saturate(120%);
-  border: 1.5px solid rgba(0, 234, 253, 0.18);
-  padding: 2.2rem 2.5vw;
-  margin-bottom: 2.7rem;
-  max-width: 1300px;
-  width: 98vw;
+  background: var(--ladies-container-bg);
+  border-radius: var(--ladies-radius-lg);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.12);
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  border: 1px solid var(--ladies-border-color);
+  padding: var(--ladies-space-lg);
+  margin-bottom: var(--ladies-space-lg);
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  color: #fff;
+  color: var(--ladies-text-white);
 }
 
 body.ladies .event-banner,
 body.ladies header,
 body.ladies #tournament-title {
-  background: rgba(204, 102, 153, 0.13);
-  border-radius: 0 0 32px 32px;
-  box-shadow:
-    0 4px 32px 0 #30baffcc,
-    0 -6px 24px 0 #d4af3760;
-  border-bottom: 4px solid var(--neon-cyan, #00eafd);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  color: #fff !important;
-  padding: 2.2rem 1.5rem 1.3rem 1.5rem !important;
-  margin-bottom: 2.2rem;
+  background: var(--ladies-header-bg);
+  border-radius: 0 0 var(--ladies-radius-xl) var(--ladies-radius-xl);
+  box-shadow: 0 2px 12px 0 var(--ladies-glow-cyan);
+  border-bottom: 2px solid var(--ladies-accent-cyan);
+  backdrop-filter: blur(6px) saturate(110%);
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  color: var(--ladies-text-white) !important;
+  padding: var(--ladies-space-lg) var(--ladies-space-md) var(--ladies-space-md) var(--ladies-space-md) !important;
+  margin-bottom: var(--ladies-space-lg);
 }
 
 body.ladies h1,
 body.ladies .player-header,
 body.ladies #tournament-title,
 body.ladies .event-banner h1 {
-  color: #ff79c7 !important;
-  text-shadow:
-    0 2px 10px #201a2e,
-    0 0 15px #ff79c7,
-    0 0 8px #fff;
-  font-weight: 900;
-  letter-spacing: 3px;
+  color: var(--ladies-accent-pink) !important;
+  text-shadow: 0 2px 6px var(--ladies-text-shadow);
+  font-weight: 600;
+  letter-spacing: 0.5px;
   background: none !important;
   border: none !important;
-  margin-bottom: 1.2rem !important;
+  margin-bottom: var(--ladies-space-sm) !important;
   position: relative;
 }
 body.ladies h1::after,
@@ -61,158 +85,465 @@ body.ladies #tournament-title::after,
 body.ladies .event-banner h1::after {
   content: "";
   display: block;
-  width: 90px;
-  height: 4px;
-  margin: 12px auto 0 auto;
+  width: 80px;
+  height: 3px;
+  margin: var(--ladies-space-sm) auto 0 auto;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
+  background: linear-gradient(90deg, var(--ladies-accent-green), var(--ladies-accent-cyan));
 }
 
 body.ladies .neon-callout,
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  background: rgba(20, 20, 40, 0.32);
-  border-radius: 18px;
-  box-shadow:
-    0 2px 18px 0 var(--neon-cyan, #00eafd),
-    0 0 8px #ff79c7;
-  backdrop-filter: blur(12px) saturate(110%);
+  background: rgba(20, 20, 40, 0.25);
+  border-radius: var(--ladies-radius-md);
+  box-shadow: 0 2px 8px 0 var(--ladies-glow-cyan);
+  backdrop-filter: blur(6px) saturate(105%);
 }
 
-/* Buttons: neon pink with cyan border, green glow on hover */
+/* Buttons: Modern styling with subtle glow effects */
 body.ladies .btn-signup,
 body.ladies .cta-button {
-  background: #ff79c7;
-  color: #fff;
-  border: 2.5px solid var(--neon-cyan);
-  font-weight: 700;
-  font-size: 1.2rem;
-  border-radius: 100px;
-  padding: 0.95em 2.9em;
-  box-shadow:
-    0 0 18px #30baff,
-    0 0 24px #ff79c7;
-  text-shadow:
-    0 0 10px #fff,
-    0 0 22px #ff79c7;
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
-  transition:
-    background 0.18s,
-    color 0.18s,
-    border-color 0.18s,
-    box-shadow 0.2s;
+  background: var(--ladies-accent-pink);
+  color: var(--ladies-text-white);
+  border: 2px solid var(--ladies-accent-cyan);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  padding: 0.9em 2.4em;
+  box-shadow: 0 0 12px var(--ladies-glow-cyan);
+  text-shadow: none;
+  margin-top: var(--ladies-space-sm);
+  margin-bottom: var(--ladies-space-sm);
+  transition: all 0.25s ease;
 }
 body.ladies .btn-signup:hover,
 body.ladies .cta-button:hover {
-  background: var(--neon-cyan);
+  background: var(--ladies-accent-cyan);
   color: #141414;
-  border-color: var(--neon-green);
-  box-shadow:
-    0 0 32px var(--neon-green),
-    0 0 40px #ff79c7;
+  border-color: var(--ladies-accent-green);
+  box-shadow: 0 0 20px var(--ladies-glow-pink);
+  transform: translateY(-2px);
 }
 
 body.ladies .note,
 body.ladies .disclaimer,
 body.ladies .status-legend {
-  color: var(--cool-link-hover);
-  border-left: 6px solid var(--neon-cyan);
-  background: rgba(0, 20, 40, 0.22);
-  font-size: 1.07rem;
-  box-shadow: 0 0 8px var(--neon-cyan);
-  padding-left: 1.4em;
+  color: var(--ladies-soft-cyan);
+  border-left: 4px solid var(--ladies-accent-cyan);
+  background: rgba(0, 20, 40, 0.15);
+  font-size: 1rem;
+  box-shadow: 0 0 6px var(--ladies-glow-cyan);
+  padding-left: var(--ladies-space-sm);
 }
 
 body.ladies a {
-  color: var(--neon-cyan);
+  color: var(--ladies-accent-cyan);
   text-decoration: underline;
-  font-weight: bold;
-  text-shadow:
-    0 0 8px var(--neon-cyan),
-    0 0 4px #fff;
-  transition:
-    color 0.15s,
-    background 0.15s,
-    box-shadow 0.15s;
+  font-weight: 500;
+  text-shadow: 0 1px 2px var(--ladies-glow-cyan);
+  transition: all 0.2s ease;
 }
 body.ladies a:hover {
-  color: var(--cool-link-hover);
-  background: #30baff;
-  border-radius: 5px;
-  box-shadow: 0 0 18px var(--neon-cyan);
+  color: var(--ladies-soft-pink);
+  text-shadow: 0 0 6px var(--ladies-glow-pink);
 }
 
 body.ladies h2,
 body.ladies h3 {
-  color: var(--neon-cyan) !important;
-  border-left: 8px solid var(--neon-green);
-  padding-left: 0.5em;
-  font-weight: 800;
-  margin-bottom: 0.9em;
-  text-shadow:
-    0 0 8px var(--neon-cyan),
-    0 0 3px #000;
+  color: var(--ladies-accent-cyan) !important;
+  border-left: 3px solid var(--ladies-accent-green);
+  padding-left: var(--ladies-space-sm);
+  font-weight: 600;
+  margin-bottom: var(--ladies-space-sm);
+  text-shadow: 0 1px 2px var(--ladies-text-shadow);
 }
 
 body.ladies .iframe-wrapper,
 body.ladies table {
-  border: 2px solid var(--neon-cyan);
-  border-radius: 14px;
-  background: rgba(20, 40, 60, 0.85);
-  box-shadow: 0 2px 12px var(--neon-cyan, #00eafd);
+  border: 2px solid var(--ladies-accent-cyan);
+  border-radius: var(--ladies-radius-md);
+  background: rgba(20, 40, 60, 0.8);
+  box-shadow: 0 2px 8px var(--ladies-glow-cyan);
 }
 
 body.ladies,
 body.ladies main,
 body.ladies .content-wrapper,
 body.ladies section {
-  color: #fff;
+  color: var(--ladies-text-white);
 }
 
 body.ladies .menu a,
 body.ladies .menu a:visited {
-  color: var(--off-white);
-  text-shadow:
-    0 0 7px var(--neon-pink),
-    0 0 12px var(--ladies-purple);
+  color: var(--ladies-text-light);
+  text-shadow: 0 1px 2px var(--ladies-glow-pink);
 }
 body.ladies .menu a:hover,
 body.ladies .menu a:focus {
-  color: var(--neon-pink, #ff79c7);
-  text-shadow:
-    0 0 16px var(--neon-pink, #ff79c7),
-    0 0 32px var(--neon-pink, #ff79c7),
-    0 0 4px var(--neon-pink, #ff79c7);
+  color: var(--ladies-accent-pink);
+  text-shadow: 0 0 6px var(--ladies-glow-pink);
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  border-radius: var(--ladies-radius-sm);
 }
 
 .event-banner.ladies,
 body.ladies .event-banner {
-  background: linear-gradient(
-    90deg,
-    var(--neon-pink, #ff79c7) 0%,
-    var(--deep-navy, #0d1b2a) 100%
-  );
-  color: var(--off-white);
-  box-shadow: 0 0 32px 8px var(--neon-pink, #ff79c7);
+  background: linear-gradient(90deg, var(--ladies-accent-pink) 0%, var(--ladies-navy) 100%);
+  color: var(--ladies-text-light);
+  box-shadow: 0 0 20px 4px var(--ladies-glow-pink);
 }
 body.ladies .player-header,
 .event-banner.ladies .player-header {
-  color: var(--neon-pink, #ff79c7) !important;
-  text-shadow:
-    0 0 24px var(--neon-pink, #ff79c7),
-    0 0 8px #fff,
-    2px 2px 0 #000;
+  color: var(--ladies-accent-pink) !important;
+  text-shadow: 0 2px 4px var(--ladies-glow-pink);
+}
+
+/* Ladies Night Tournament Note Styling */
+body.ladies .tournament-note {
+  background: var(--ladies-container-bg);
+  border: 1px solid var(--ladies-border-color);
+  border-radius: var(--ladies-radius-lg);
+  padding: var(--ladies-space-lg);
+  margin: var(--ladies-space-lg) auto 0 auto;
+  box-shadow: 0 4px 12px var(--ladies-glow-cyan);
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  color: var(--ladies-text-white);
+  text-align: left;
+  font-family: 'Montserrat', 'Oswald', sans-serif;
+  line-height: 1.6;
+}
+
+body.ladies .tournament-note p {
+  margin-bottom: var(--ladies-space-sm);
+  color: var(--ladies-text-white);
+}
+
+body.ladies .tournament-note p:last-child {
+  margin-bottom: 0;
+}
+
+body.ladies .tournament-note strong {
+  color: var(--ladies-accent-pink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+body.ladies .tournament-note em {
+  color: var(--ladies-accent-cyan);
+  font-style: italic;
+  font-weight: 500;
+}
+
+body.ladies .tournament-note a {
+  color: var(--ladies-accent-cyan);
+  text-decoration: underline;
+  font-weight: 500;
+  text-shadow: 0 1px 2px var(--ladies-glow-cyan);
+  transition: all 0.2s ease;
+}
+
+body.ladies .tournament-note a:hover {
+  color: var(--ladies-soft-pink);
+  text-shadow: 0 0 6px var(--ladies-glow-pink);
+}
+
+/* Complete Typography System */
+body.ladies h4,
+body.ladies h5,
+body.ladies h6 {
+  color: var(--ladies-soft-cyan) !important;
+  font-weight: 600;
+  margin-bottom: var(--ladies-space-xs);
+  text-shadow: 0 1px 2px var(--ladies-text-shadow);
+}
+
+body.ladies h4 {
+  border-left: 2px solid var(--ladies-accent-green);
+  padding-left: var(--ladies-space-xs);
+}
+
+body.ladies blockquote {
+  border-left: 4px solid var(--ladies-accent-pink);
+  padding-left: var(--ladies-space-sm);
+  margin: var(--ladies-space-sm) 0;
+  background: rgba(255, 121, 199, 0.05);
+  border-radius: var(--ladies-radius-sm);
+  padding: var(--ladies-space-sm);
+  font-style: italic;
+  color: var(--ladies-soft-pink);
+}
+
+body.ladies ul,
+body.ladies ol {
+  color: var(--ladies-text-white);
+  padding-left: var(--ladies-space-lg);
+}
+
+body.ladies li {
+  margin-bottom: var(--ladies-space-xs);
+  color: var(--ladies-text-white);
+}
+
+body.ladies mark {
+  background: var(--ladies-glow-pink);
+  color: var(--ladies-text-white);
+  padding: 0.2em 0.4em;
+  border-radius: var(--ladies-radius-sm);
+}
+
+body.ladies code {
+  background: rgba(0, 234, 253, 0.1);
+  color: var(--ladies-accent-cyan);
+  padding: 0.2em 0.4em;
+  border-radius: var(--ladies-radius-sm);
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+body.ladies pre {
+  background: rgba(20, 20, 40, 0.4);
+  border: 1px solid var(--ladies-border-color);
+  border-radius: var(--ladies-radius-md);
+  padding: var(--ladies-space-sm);
+  overflow-x: auto;
+  color: var(--ladies-text-white);
+}
+
+/* Accessibility Focus States */
+body.ladies *:focus {
+  outline: 2px solid var(--ladies-accent-cyan);
+  outline-offset: 2px;
+  border-radius: var(--ladies-radius-sm);
+}
+
+body.ladies .btn-signup:focus,
+body.ladies .cta-button:focus {
+  outline: 3px solid var(--ladies-accent-pink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 1px var(--ladies-accent-cyan), 0 0 20px var(--ladies-glow-pink);
+}
+
+body.ladies a:focus {
+  outline: 2px solid var(--ladies-accent-cyan);
+  outline-offset: 1px;
+  background: rgba(0, 234, 253, 0.1);
+  border-radius: var(--ladies-radius-sm);
+  padding: 0.1em 0.2em;
+}
+
+/* Button States */
+body.ladies .btn-signup:disabled,
+body.ladies .cta-button:disabled {
+  background: rgba(255, 121, 199, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 234, 253, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+body.ladies .btn-signup:active,
+body.ladies .cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 8px var(--ladies-glow-cyan);
+}
+
+/* Form Elements */
+body.ladies input,
+body.ladies textarea,
+body.ladies select {
+  background: rgba(20, 20, 40, 0.6);
+  border: 2px solid var(--ladies-border-color);
+  border-radius: var(--ladies-radius-md);
+  padding: var(--ladies-space-xs) var(--ladies-space-sm);
+  color: var(--ladies-text-white);
+  font-family: 'Montserrat', 'Oswald', sans-serif;
+  transition: all 0.2s ease;
+}
+
+body.ladies input:focus,
+body.ladies textarea:focus,
+body.ladies select:focus {
+  border-color: var(--ladies-accent-cyan);
+  box-shadow: 0 0 8px var(--ladies-glow-cyan);
+  outline: none;
+}
+
+body.ladies input::placeholder,
+body.ladies textarea::placeholder {
+  color: var(--ladies-soft-cyan);
+  opacity: 0.7;
+}
+
+body.ladies label {
+  color: var(--ladies-soft-pink);
+  font-weight: 500;
+  margin-bottom: var(--ladies-space-xs);
+  display: block;
+}
+
+/* Table Elements */
+body.ladies table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--ladies-space-sm) 0;
+}
+
+body.ladies th,
+body.ladies td {
+  padding: var(--ladies-space-xs) var(--ladies-space-sm);
+  border: 1px solid var(--ladies-border-color);
+  text-align: left;
+}
+
+body.ladies th {
+  background: var(--ladies-header-bg);
+  color: var(--ladies-accent-pink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+body.ladies td {
+  background: rgba(20, 20, 40, 0.2);
+  color: var(--ladies-text-white);
+}
+
+body.ladies tr:hover td {
+  background: rgba(255, 121, 199, 0.05);
+}
+
+/* Status Legend Specific */
+body.ladies .status-legend {
+  background: rgba(20, 20, 40, 0.3);
+  border: 1px solid var(--ladies-border-color);
+  border-radius: var(--ladies-radius-md);
+  padding: var(--ladies-space-sm);
+  margin-top: var(--ladies-space-sm);
+  text-align: center;
+}
+
+body.ladies .status-legend small {
+  color: var(--ladies-soft-cyan);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  body.ladies {
+    --ladies-space-xs: 0.4rem;
+    --ladies-space-sm: 0.8rem;
+    --ladies-space-md: 1.2rem;
+    --ladies-space-lg: 1.6rem;
+  }
+  
+  body.ladies main,
+  body.ladies .content-wrapper,
+  body.ladies section {
+    padding: var(--ladies-space-md) var(--ladies-space-sm);
+    margin-bottom: var(--ladies-space-md);
+  }
+  
+  body.ladies .tournament-note {
+    padding: var(--ladies-space-md) var(--ladies-space-sm);
+    margin: var(--ladies-space-md) auto 0 auto;
+    border-radius: var(--ladies-radius-md);
+  }
+}
+
+@media (max-width: 768px) {
+  body.ladies main,
+  body.ladies .content-wrapper,
+  body.ladies section {
+    padding: var(--ladies-space-md) var(--ladies-space-sm);
+    margin-bottom: var(--ladies-space-md);
+    border-radius: var(--ladies-radius-md);
+  }
+  
+  body.ladies .event-banner,
+  body.ladies header {
+    padding: var(--ladies-space-md) var(--ladies-space-sm) !important;
+    border-radius: 0 0 var(--ladies-radius-md) var(--ladies-radius-md);
+  }
+  
+  body.ladies h1,
+  body.ladies .player-header {
+    font-size: 1.8rem;
+    letter-spacing: 0.3px;
+  }
+  
+  body.ladies .btn-signup,
+  body.ladies .cta-button {
+    font-size: 1rem;
+    padding: 0.8em 2em;
+    width: 100%;
+    margin: var(--ladies-space-sm) 0;
+  }
+  
+  body.ladies .tournament-note {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.ladies main,
+  body.ladies .content-wrapper {
+    max-width: 750px;
+  }
 }
 
 @media (min-width: 1025px) {
   body.ladies main,
   body.ladies .content-wrapper {
-    max-width: 1200px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* Accessibility: High Contrast Mode */
+@media (prefers-contrast: high) {
+  body.ladies {
+    --ladies-glow-pink: transparent;
+    --ladies-glow-cyan: transparent;
+    --ladies-border-color: var(--ladies-accent-pink);
+  }
+  
+  body.ladies *:focus {
+    outline: 3px solid var(--ladies-accent-cyan) !important;
+    outline-offset: 2px !important;
+  }
+  
+  body.ladies .tournament-note,
+  body.ladies main,
+  body.ladies .content-wrapper,
+  body.ladies section {
+    border: 2px solid var(--ladies-accent-cyan);
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  body.ladies *,
+  body.ladies *::before,
+  body.ladies *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  body.ladies .btn-signup,
+  body.ladies .cta-button {
+    transform: none !important;
+  }
+  
+  body.ladies .btn-signup:hover,
+  body.ladies .cta-button:hover {
+    transform: none !important;
   }
 }
