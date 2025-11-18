@@ -9,8 +9,8 @@
   --mid-pink: #3a003a;
   --ladies-purple: #3a003a;
   --ladies-panel: rgba(20, 0, 30, 0.78);
-  --cool-link: #d4af37;
-  --cool-link-hover: #a47f00;
+  --cool-link: #00eafd;
+  --cool-link-hover: #30baff;
   --slate: #151d23;
   --off-white: #f5f5f5;
   --pot-green: #00cc66;
@@ -1436,7 +1436,7 @@ iframe {
 }
 
 .tournament-date {
-  color: #ffd700;
+  color: var(--neon-cyan);
   text-shadow: none;
   font-weight: bold;
   font-size: 1.06em;
@@ -1672,8 +1672,8 @@ body.ladies .site-title {
 }
 
 .flyer-gold {
-  color: var(--cool-link-hover);
-  text-shadow: 0 0 8px var(--cool-link-hover);
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
 }
 
 .flyer-section {
@@ -2039,12 +2039,12 @@ footer .footer-social a:focus img {
 }
 
 .note a:hover {
-  color: var(--link-gold);
+  color: var(--neon-cyan);
 }
 
 .note strong,
 .disclaimer strong {
-  color: #d4af37;
+  color: var(--neon-cyan);
 }
 
 .disclaimer {
