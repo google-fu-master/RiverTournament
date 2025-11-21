@@ -185,6 +185,9 @@
   if (tableDiv) {
     while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
 
+    // TEMPORARY: Comment out DigitalPool embed due to technical issues
+    // Will restore once DigitalPool fixes their embedded player list feature
+    /*
     var iframe = document.createElement("iframe");
     iframe.id = "digitalpool-embed";
     iframe.src = tournamentUrl;
@@ -218,6 +221,42 @@
     iframe.style.boxSizing = "border-box";
 
     tableDiv.appendChild(iframe);
+    */
+
+    // Temporary notice while DigitalPool embed is unavailable
+    var noticeDiv = document.createElement("div");
+    noticeDiv.className = "digitalpool-notice";
+    noticeDiv.style.cssText = `
+      background: rgba(0, 32, 48, 0.4);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      color: var(--off-white);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    `;
+    noticeDiv.innerHTML = `
+      <div style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--neon-cyan);">
+        📋 Player List Temporarily Unavailable
+      </div>
+      <p style="margin: 0; max-width: 500px;">
+        The DigitalPool embedded player list feature is currently experiencing technical issues. 
+        Please use the <strong>Sign Up Now</strong> button above to visit the tournament page 
+        and view this week's player list in real time.
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+        We'll restore the embedded list once DigitalPool resolves the issue.
+      </p>
+    `;
+    
+    tableDiv.appendChild(noticeDiv);
   }
 
   // Update nav sign up link if present
