@@ -61,6 +61,23 @@
     upcomingThursday.setDate(today.getDate() + daysUntilThursday);
   }
 
+  // TEMPORARY FIX: Skip Thanksgiving Nov 27, 2025 (REMOVE AFTER DEC 2025)
+  // Show Dec 4th tournament from Nov 21-27, then resume normal calculations
+  const now = new Date();
+  console.log('DEBUG: Current date/time:', now);
+  console.log('DEBUG: Original upcomingThursday:', upcomingThursday);
+  console.log('DEBUG: Date check - now >= Nov 21:', now >= new Date(2025, 10, 21));
+  console.log('DEBUG: Date check - now < Nov 28:', now < new Date(2025, 10, 28));
+  if (now >= new Date(2025, 10, 21) && now < new Date(2025, 10, 28)) { // Nov 21-27, 2025
+    console.log('DEBUG: Inside Thanksgiving skip condition!');
+    // During this week, always show December 4th instead of Nov 21 or Nov 27
+    upcomingThursday = new Date(2025, 11, 4); // December 4, 2025 (maintains 8-ball format)
+    console.log('DEBUG: Modified upcomingThursday to:', upcomingThursday);
+  } else {
+    console.log('DEBUG: NOT in Thanksgiving skip window');
+  }
+  // END TEMPORARY FIX
+
   // Format info
   const day = upcomingThursday.getDate();
   const month = upcomingThursday.toLocaleString("default", { month: "long" });
