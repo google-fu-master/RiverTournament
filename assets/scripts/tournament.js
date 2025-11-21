@@ -68,10 +68,14 @@
   console.log('DEBUG: Original upcomingThursday:', upcomingThursday);
   console.log('DEBUG: Date check - now >= Nov 21:', now >= new Date(2025, 10, 21));
   console.log('DEBUG: Date check - now < Nov 28:', now < new Date(2025, 10, 28));
+  
+  let isThankgivingSkip = false;
   if (now >= new Date(2025, 10, 21) && now < new Date(2025, 10, 28)) { // Nov 21-27, 2025
     console.log('DEBUG: Inside Thanksgiving skip condition!');
     // During this week, always show December 4th instead of Nov 21 or Nov 27
-    upcomingThursday = new Date(2025, 11, 4); // December 4, 2025 (maintains 8-ball format)
+    // But calculate format as if it were November 27th to maintain proper rotation
+    isThankgivingSkip = true;
+    upcomingThursday = new Date(2025, 11, 4); // December 4, 2025
     console.log('DEBUG: Modified upcomingThursday to:', upcomingThursday);
   } else {
     console.log('DEBUG: NOT in Thanksgiving skip window');
@@ -96,18 +100,26 @@
   let openCount = 0;
   let cursor = new Date(baseOpen);
 
+  // TEMPORARY FIX: For Thanksgiving skip, count to Nov 27th instead of Dec 4th (REMOVE AFTER DEC 2025)
+  let countTarget = upcomingThursday;
+  if (isThankgivingSkip) {
+    countTarget = new Date(2025, 10, 27); // Count as if it were Nov 27th for proper format rotation
+    console.log('DEBUG: Using Nov 27th for format calculation instead of Dec 4th');
+  }
+  // END TEMPORARY FIX
+
   while (
-    cursor < upcomingThursday ||
-    (cursor.getDate() === upcomingThursday.getDate() &&
-      cursor.getMonth() === upcomingThursday.getMonth() &&
-      cursor.getFullYear() === upcomingThursday.getFullYear())
+    cursor < countTarget ||
+    (cursor.getDate() === countTarget.getDate() &&
+      cursor.getMonth() === countTarget.getMonth() &&
+      cursor.getFullYear() === countTarget.getFullYear())
   ) {
     if (!isThirdThursday(cursor)) {
       if (
-        cursor < upcomingThursday ||
-        (cursor.getDate() === upcomingThursday.getDate() &&
-          cursor.getMonth() === upcomingThursday.getMonth() &&
-          cursor.getFullYear() === upcomingThursday.getFullYear())
+        cursor < countTarget ||
+        (cursor.getDate() === countTarget.getDate() &&
+          cursor.getMonth() === countTarget.getMonth() &&
+          cursor.getFullYear() === countTarget.getFullYear())
       ) {
         openCount++;
       }
@@ -117,9 +129,11 @@
 
   // openCount includes June 5 as #1. So for June 5, openCount = 1 (odd, 9-ball), June 12 = 2 (even, 8-ball), etc.
   // We'll use (openCount % 2): odd = 9-ball, even = 8-ball
+  console.log('DEBUG: Final openCount:', openCount, 'isOdd:', openCount % 2 === 1);
 
   // For Ladies Night: alternate monthly, starting with 9-ball for June 2025
   let format, formatNum, formatLabel, eventTitle, signupSlug;
+  
   if (ladiesNight) {
     const baseLadiesYear = 2025,
       baseLadiesMonth = 5,
