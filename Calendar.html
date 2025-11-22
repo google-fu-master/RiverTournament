@@ -8,9 +8,10 @@ permalink: /calendar/
 <main class="content-wrapper page-location">
   <h1 class="visually-hidden">River Tournament Calendar</h1>
 
-  <div class="iframe-wrapper" style="margin-top: 2em">
+  <div class="iframe-wrapper calendar-embed" style="margin-top: 2em">
+    <!-- Desktop/tablet view -->
     <iframe
-      src="https://calendar.google.com/calendar/embed?src=198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA"
+      src="https://calendar.google.com/calendar/embed?src=198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA&showTitle=0&showPrint=0&showTabs=0&showCalendars=0"
       style="border: 0; background: transparent"
       width="100%"
       height="700"
@@ -18,7 +19,21 @@ permalink: /calendar/
       scrolling="no"
       title="River Tournaments Google Calendar"
       loading="lazy"
+      class="desktop-calendar"
     >
     </iframe>
+    
+    <!-- Mobile fallback link -->
+    <div class="mobile-calendar-link">
+      <a href="https://calendar.google.com/calendar/u/0?cid=MTk4ZWRlZDQxOTVhODk5NWQxYTE0ODZlZDZhOTI2NTdhMGM3NmJjOWFhZjEyOTFjNzRhNDc2M2QxYzc5MWY3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="btn-signup calendar-btn">
+        📅 View Full Calendar
+      </a>
+      <p style="font-size: 0.9rem; color: var(--off-white); opacity: 0.8; margin-top: 0.5rem;">
+        For the best mobile experience, tap above to open in your Google Calendar app
+      </p>
+    </div>
   </div>
 </main>

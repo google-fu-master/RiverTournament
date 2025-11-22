@@ -526,7 +526,7 @@
     margin: 0 auto !important;
     box-sizing: border-box !important;
     display: block !important;
-    padding: 0 !important;
+    padding: 0.5rem !important;
   }
   .iframe-wrapper iframe {
     width: 100% !important;
@@ -534,5 +534,56 @@
     display: block !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
+  }
+  
+  /* Calendar-specific mobile optimizations */
+  .calendar-embed {
+    margin: 1rem 0 !important;
+    padding: 0.25rem !important;
+  }
+  
+  .calendar-embed iframe {
+    height: 400px !important; /* Shorter height for mobile */
+    min-height: 350px !important;
+  }
+  
+  /* Mobile calendar link - show on small screens */
+  .mobile-calendar-link {
+    display: block !important;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 32, 48, 0.4);
+    border-radius: 8px;
+    border: 1px solid var(--neon-cyan);
+  }
+  
+  .calendar-btn {
+    display: inline-block !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Tablet optimization */
+@media (max-width: 900px) and (min-width: 701px) {
+  .calendar-embed iframe {
+    height: 600px !important;
+  }
+  
+  .mobile-calendar-link {
+    display: none;
+  }
+}
+
+/* Hide mobile calendar link on desktop */
+@media (min-width: 901px) {
+  .mobile-calendar-link {
+    display: none;
+  }
+  
+  .calendar-embed iframe {
+    height: 700px;
   }
 }
