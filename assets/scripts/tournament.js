@@ -61,27 +61,9 @@
     upcomingThursday.setDate(today.getDate() + daysUntilThursday);
   }
 
-  // TEMPORARY FIX: Skip Thanksgiving Nov 27, 2025 (REMOVE AFTER DEC 2025)
-  // Show Dec 4th tournament from Nov 21-27, then resume normal calculations
-  const now = new Date();
-  console.log('DEBUG: Current date/time:', now);
-  console.log('DEBUG: Original upcomingThursday:', upcomingThursday);
-  console.log('DEBUG: Date check - now >= Nov 21:', now >= new Date(2025, 10, 21));
-  console.log('DEBUG: Date check - now < Nov 28:', now < new Date(2025, 10, 28));
+  // CLEANUP: Remove expired Thanksgiving skip logic (was Nov 21-27, 2025 only)
+  // The permanent fix is now in the counting loop below to exclude Nov 27, 2025
   
-  let isThankgivingSkip = false;
-  if (now >= new Date(2025, 10, 21) && now < new Date(2025, 10, 28)) { // Nov 21-27, 2025
-    console.log('DEBUG: Inside Thanksgiving skip condition!');
-    // During this week, always show December 4th instead of Nov 21 or Nov 27
-    // But calculate format as if it were November 27th to maintain proper rotation
-    isThankgivingSkip = true;
-    upcomingThursday = new Date(2025, 11, 4); // December 4, 2025
-    console.log('DEBUG: Modified upcomingThursday to:', upcomingThursday);
-  } else {
-    console.log('DEBUG: NOT in Thanksgiving skip window');
-  }
-  // END TEMPORARY FIX
-
   // Format info
   const day = upcomingThursday.getDate();
   const month = upcomingThursday.toLocaleString("default", { month: "long" });
@@ -100,13 +82,9 @@
   let openCount = 0;
   let cursor = new Date(baseOpen);
 
-  // TEMPORARY FIX: For Thanksgiving skip, count to Nov 27th instead of Dec 4th (REMOVE AFTER DEC 2025)
+  // PERMANENT FIX: November 27, 2025 was skipped (Thanksgiving), exclude from format count
   let countTarget = upcomingThursday;
-  if (isThankgivingSkip) {
-    countTarget = new Date(2025, 10, 27); // Count as if it were Nov 27th for proper format rotation
-    console.log('DEBUG: Using Nov 27th for format calculation instead of Dec 4th');
-  }
-  // END TEMPORARY FIX
+  console.log('DEBUG: Counting tournaments to:', countTarget, 'excluding Nov 27, 2025');
 
   while (
     cursor < countTarget ||
@@ -114,7 +92,12 @@
       cursor.getMonth() === countTarget.getMonth() &&
       cursor.getFullYear() === countTarget.getFullYear())
   ) {
-    if (!isThirdThursday(cursor)) {
+    // Skip November 27, 2025 (Thanksgiving - no tournament that week)
+    const isThanksgiving2025 = cursor.getFullYear() === 2025 && 
+                               cursor.getMonth() === 10 && 
+                               cursor.getDate() === 27;
+    
+    if (!isThirdThursday(cursor) && !isThanksgiving2025) {
       if (
         cursor < countTarget ||
         (cursor.getDate() === countTarget.getDate() &&
