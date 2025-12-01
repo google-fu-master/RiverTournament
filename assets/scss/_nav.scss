@@ -18,7 +18,9 @@ nav {
   background-color: var(--dark-navy);
   margin: 0;
   padding: 0 0 0.5rem 0;
-  position: relative;
+  position: -webkit-sticky; /* Safari fallback */
+  position: sticky;
+  top: 0;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   border-bottom: 2px solid var(--mid-navy);
