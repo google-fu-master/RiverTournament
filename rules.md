@@ -64,7 +64,7 @@ permalink: /rules/
 <h1 class="visually-hidden">River Tournament Rules and House Guidelines</h1>
 
 <p class="rules-note">
-  Note: Eligibility, Race lengths, and sportsmanship rules/enforcement are at the tournament director's discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule. For clarification on BCA rules, please see refer to the <a href="https://wpapool.com/rules/#rulesofplay" target="_blank">World Pool Association Rule Book</a>
+  Note: Rules are subject to change at the tournament director’s discretion to encourage fair gameplay and equal competition for lower-rated players. The spirit of the rule will take priority over the letter of the rule. If you have any questions, comments or concerns, the TD's proverbial door is always open!
 </p>
 
 <section id="player-eligibility" class="rules-section" role="region" aria-labelledby="player-eligibility-title">
@@ -72,9 +72,19 @@ permalink: /rules/
   <ul>
     <li>Players with Fargo ratings of &lt;445 in 8-ball, &lt;430 in 9-Ball are welcome at River Tournaments. For Ladies Night tournaments, the caps are &lt;475 for both formats (10-Ball TBD).</li>
     <li>Players with a FargoRate or APA account may need to present a <strong>photo ID</strong> at registration.</li>
-    <li>If you <strong>do not have a FargoRate account</strong> and/or less than 50 robustness, you can request a <strong>rating review/conversion</strong> where we will assess your current FargoRate and APA profiles to calculate and assign you a more accurate Fargo rating. Conversions are at the Tournament Director's discretion.</li>
+    <li>If a player <strong>does not have a FargoRate account</strong> and/or less than 50 robustness, and has played a minimum of 12 APA matches within the last 2 years, they can <em>request</em> a conversion review. <strong>Conversions are at the Tournament Director's discretion.</strong></li>
+    <li>If a player has a FargoRate profile with more than 50 robustness, they are not eligible for a conversion review and River Tournaments will use their existing Fargo for tournament eligibility/entry.</li>
+    <li>If a player has a FargoRate profile with less than 50 robustness, but they have not played 12+ APA matches within the last two years, they are not eligible for a conversion review.</li>
+    <li>If the player has a FargoRate profile with less than 50 robustness, and a Fargo no more than 100 points higher than the cap, the player can request to be entered at the FargoRate cap for that tournament. Requests will be considered at the discretion of the TD.</li>
+    <li><strong>A note on conversions:</strong> River Tournaments are primarily geared toward players that are new to Fargo reported events. As such, it is expected that many players will be "unestablished" (less than 200 robustness). Conversions are intended to help bridge the gap between unestablished players and "default/starter" Fargo ratings that have been assigned and not earned.
+      <p>Conversions are meant to more accurately rate new players who, for example, may have been assigned a starter rating of 500+ at their first Fargo reported event. 50 robustness is the cap for requesting a conversion because we believe this is a reasonable number of games to "even out" the Fargo of an <em>unestablished</em> player in this position enough that it can be considered the source of truth of their ability and eligibility for River Tournament.</p>
+      <p>Additionally, a conversion request requires 12 APA matches played within the last 2 years. This indicates the bare minimum of 4 matches per APA session; the requirement to be eligible for APA playoffs, regionals, etc. This provides enough recent player data to build a realistic conversion of their ability into a comparable Fargo rating for initial tournament use. Without the minimum quality and quality of player data, the conversion is impractical and impossible, respectively.</p>
+      <p>If the TD accepts a conversion review request, the player's APA profile and FargoRate Profile (if available) are run through an AI engine specifically designed for realistic rating conversions to standardize the process for all players and remove any ambiguity or bias from the TD. The player's APA data can include but is not limited to: lifetime stats for all available formats including matches played/won, Defensive shot average, Championship lowest attainable rank, Break-and-Runs, 8-on-the-Break, 9-on-the-snap, Mini Slams, Rackless, Shutouts, Session stats, Active/Consecutive Years Played etc. The player's FargoRate data can include but is not limited to: current rank, robustness, public matches/stats, etc. You are welcome to request the data used and the conversion analysis report of your conversion review.</p>
+      <p>The conversion is done by analyzing the player's available profiles/stats in comparison with the Billiard University Rating Comparison chart (found at https://billiarduniversity.org/testing/ratings/).</p>
+      <p><strong>Conversions DO NOT alter a player's Fargo rating.</strong> Conversions cannot be used to manipulate a player's rate up or down.  If a Fargo rate is manually assigned to a player within a tournament bracket, it is taken into account by FargoRate's algorithm along with other factors such as handicaps (e.g. +1 game for 100 point Fargo differences), race lengths, per-rack wins/losses, etc. and used to adjust an existing player's rate or create the rate of a new player profile when FargoRate process the tournament scores from DigitalPool.
+      </li>
     <li>If you have <strong>no APA and no FargoRate</strong>, you will be entered at the <strong>maximum eligible rating (445 for 8-ball, 430 for 9-Ball in Coed tournaments; 475 for both formats in Ladies Night tournaments)</strong> and monitored for future eligibility.</li>
-    <li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible for Coed tournaments; players rated &gt;475 in either format are not eligible for Ladies Night tournaments — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge accounts beforehand.</li>
+    <li>If you have <strong>multiple Fargo accounts</strong>, the <strong>highest rating will be used</strong>. Players rated above &gt;430 in 9-Ball and &gt;445 in 8-Ball are not eligible for Coed tournaments; players rated &gt;475 in either format are not eligible for Ladies Night tournaments — please email <a href="mailto:support@fargorate.com">support@fargorate.com</a> to merge accounts beforehand.</li>
     <li>DigitalPool syncs with the FargoRate system. Your rating will be available to the tournament director immediately upon your registration (if you have one). If you are in the OPAL APA system, the tournament director may find your profile and convert your rank. Please bring your APA app/account and have it ready at registration if you only have an APA rating and no Fargo.</li>
     <li>All River Tournaments are <strong>reported to FargoRate</strong>. FargoRate estimates 2-3 weeks to process scores and create new player profiles; once processed, you will be able to <strong>claim your profile via the FargoRate mobile app.</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
@@ -91,15 +101,15 @@ permalink: /rules/
     <li>Race lengths vary by format, the number of players, and Fargo gaps. The tournament director may adjust races based on attendance; the items below are general guidelines.</li>
     <li><strong>8-Ball</strong>
       <ul>
-        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>13–16 players: race to 1 on both winners and losers sides.</li>
+        <li>8–12 players: race to 2 on the front, 2 on the back.</li>
+        <li>13–16 players: race to 2 on the front, 1 back.</li>
       </ul>
     </li>
     <li><strong>9-Ball</strong>
       <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
-        <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>All formats/tournaments: 100+ FargoRate gap on the front — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
+        <li>8–12 players: race to 3 on the front, 2 on the back.</li>
+        <li>13–16 players: race to 2 on both the front and back.</li>
+        <li>All formats/tournaments: 100+ FargoRate gap on the front only — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
       </ul>
     </li>
     <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
@@ -121,16 +131,16 @@ permalink: /rules/
 <section id="conduct" class="rules-section" role="region" aria-labelledby="conduct-title">
   <h2 id="conduct-title">Conduct & House Rules</h2>
   <ul>
-    <li class="numbered-1">The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
-      <ul type="a">
-        <li>Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
-        <li>Signs of substance impairment.</li>
-        <li>Ineligible Fargo rating.</li>
-        <li>Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
-        <li>Repeated intentional distraction of opponents (sharking).</li>
-        <li>Verbal abuse or threats.</li>
-        <li>Repeated failure to follow tournament rules or etiquette.</li>
-        <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
+    <li>1. The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
+      <ul>
+        <li>a. Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
+        <li>b. Signs of substance impairment.</li>
+        <li>c. Ineligible Fargo rating.</li>
+        <li>d. Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
+        <li>e. Repeated intentional distraction of opponents (sharking).</li>
+        <li>f. Verbal abuse or threats.</li>
+        <li>g. Repeated failure to follow tournament rules or etiquette.</li>
+        <li>h. Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
       </ul>
     </li>
     <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament, and possible fees and/or ban from the establishment itself (as River management sees fit).</li>
@@ -162,11 +172,11 @@ permalink: /rules/
       <li>Scratch on the break: If the cue ball is scratched or jumped on a legal break, it's a foul. The incoming player gets ball in hand behind the head string (2nd diamond, aka the kitchen).</li>
       <li>Open Table: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a rail. Failure to do so is a foul, your opponent gets ball in hand.</li>
       <li>Call Pocket: You must call the ball and intended pocket for each shot (except on the break):
-        <ul type="a">
-          <li>You do not need to call details like banks, kisses, or caroms, unless the shot is not obvious.</li>
-          <li>If it's clear what ball and pocket you're aiming for, no verbal call is required — it's understood.</li>
-          <li>If there's any doubt, you must verbally call or point to make your intended ball and pocket clear.</li>
-          <li>Any obvious pocketed ball counts as legal; but if a called ball goes into an unintended pocket, the turn ends and the opponent takes over (no foul unless the cue ball is scratched).</li>
+        <ul>
+          <li>a. You do not need to call details like banks, kisses, or caroms, unless the shot is not obvious.</li>
+          <li>b. If it's clear what ball and pocket you're aiming for, no verbal call is required — it's understood.</li>
+          <li>c. If there's any doubt, you must verbally call or point to make your intended ball and pocket clear.</li>
+          <li>d. Any obvious pocketed ball counts as legal; but if a called ball goes into an unintended pocket, the turn ends and the opponent takes over (no foul unless the cue ball is scratched).</li>
         </ul>
       </li>
       <li>Legal Shot: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a cushion. Failure to do so is a foul; your opponent gets ball in hand.</li>
@@ -174,17 +184,20 @@ permalink: /rules/
       <li>8-Ball Shot: You must clearly call the pocket for the 8-ball. The 8-ball may not be the first ball contacted except on a legal combination. Pocketing the 8-ball in an uncalled pocket, or scratching while pocketing it, results in loss of game.</li>
       <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
       <li>General Fouls: All fouls result in ball in hand anywhere on the table (except after the break, when it's behind the head string aka in the kitchen). Fouls include (but are not limited to):
-        <ul type="a">
-          <li>Failure to contact your object ball first</li>
-          <li>Failure to drive any ball to a rail after the cue ball contacts the object ball</li>
-          <li>Scratch or cue ball off the table</li>
-          <li>Jumping any ball off the table (except 8-ball, which is a loss of game)</li>
+        <ul>
+          <li>a. Failure to contact your object ball first</li>
+          <li>b. Failure to drive any ball to a rail after the cue ball contacts the object ball</li>
+          <li>c. Scratch or cue ball off the table</li>
+          <li>d. Jumping any ball off the table (except 8-ball, which is a loss of game)</li>
         </ul>
       </li>
-      <li>Races (general guidelines):</li>
-      <li>8–12 players: race to 2 on the winners side, 1 on the losers side</li>
-      <li>13–16 players: race to 1, both sides</li>
-      <li>All Tournaments: 100+ Fargo gap, higher player must win +1 game on the front only.</li>
+      <li>Race Guidelines:
+        <ul>
+          <li>8–12 players: race to 2 on the winners side, 1 on the losers side</li>
+          <li>13–16 players: race to 1, both sides</li>
+          <li>All Tournaments: 100+ Fargo gap, higher player must win +1 game on the front only.</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
@@ -197,18 +210,21 @@ permalink: /rules/
       <li>9 on the Break: If the 9-ball is pocketed on a legal break, the game is won. If the 9-ball is pocketed on a foul break, it is spotted and the incoming player has ball in hand anywhere on the table.</li>
       <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it's a foul. The incoming player gets ball in hand anywhere on the table.</li>
       <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare "push" before the shot, and your opponent must acknowledge. Key points:
-        <ul type="a">
-          <li>The cue ball does not need to contact the lowest ball or any cushion.</li>
-          <li>Any object balls (except the 9-ball) pocketed on a push remain down.</li>
-          <li>After the push, the opponent may either shoot from the new position or pass the shot back.</li>
-          <li>If a foul occurs on the shot after the push, the opponent receives ball in hand.</li>
+        <ul>
+          <li>a. The cue ball does not need to contact the lowest ball or any cushion.</li>
+          <li>b. Any object balls (except the 9-ball) pocketed on a push remain down.</li>
+          <li>c. After the push, the opponent may either shoot from the new position or pass the shot back.</li>
+          <li>d. If a foul occurs on the shot after the push, the opponent receives ball in hand.</li>
         </ul>
       </li>
       <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. If you pocket any ball legally, you continue shooting. If you foul or fail to pocket a ball legally, your inning ends. The game is won when the 9-ball is legally pocketed on any legal shot.</li>
       <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
-      <li>Races:</li>
-      <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-      <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+      <li>Race Guidelines:
+        <ul>
+          <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
+          <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
@@ -221,19 +237,19 @@ permalink: /rules/
       <li>10 on the Break: If the 10-ball is pocketed on a legal break, it is spotted and play continues. If the 10-ball is pocketed on a foul break, it is also spotted and the incoming player has ball in hand anywhere on the table.</li>
       <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it's a foul. The incoming player gets ball in hand anywhere on the table.</li>
       <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare "push" before the shot, and your opponent must acknowledge. Key points:
-        <ul type="a">
-          <li>The cue ball does not need to contact the lowest-numbered ball or a cushion.</li>
-          <li>Any balls (except the 10-ball) pocketed during a push stay down; the 10-ball is spotted.</li>
-          <li>After the push, the opponent may shoot from the new position or pass the shot back.</li>
-          <li>If a foul occurs on the push, the opponent receives ball in hand.</li>
+        <ul>
+          <li>a. The cue ball does not need to contact the lowest-numbered ball or a cushion.</li>
+          <li>b. Any balls (except the 10-ball) pocketed during a push stay down; the 10-ball is spotted.</li>
+          <li>c. After the push, the opponent may shoot from the new position or pass the shot back.</li>
+          <li>d. If a foul occurs on the push, the opponent receives ball in hand.</li>
         </ul>
       </li>
       <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. You must call every shot. If the called ball is legally pocketed, your inning continues. Balls pocketed incidentally stay down (except the 10-ball, which is spotted if not legally pocketed). The game is won when the 10-ball is legally pocketed on a called shot.</li>
       <li>Illegally Pocketed Balls: A ball is illegally pocketed if it is made in a pocket other than the one called, or if no called ball is made on the shot. The 10-ball is spotted, and all other illegally pocketed balls remain down.</li>
       <li>Opponent's Option: If you illegally pocket a ball, your opponent may:
-        <ul type="a">
-          <li>Accept the table as it lies, or</li>
-          <li>Require you to shoot again from that position.</li>
+        <ul>
+          <li>a. Accept the table as it lies, or</li>
+          <li>b. Require you to shoot again from that position.</li>
         </ul>
       </li>
       <li>Three-Foul Rule: A player loses the game after committing three consecutive fouls in the same game.</li>

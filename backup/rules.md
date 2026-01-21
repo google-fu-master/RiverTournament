@@ -101,15 +101,15 @@ permalink: /rules/
     <li>Race lengths vary by format, the number of players, and Fargo gaps. The tournament director may adjust races based on attendance; the items below are general guidelines.</li>
     <li><strong>8-Ball</strong>
       <ul>
-        <li>8–12 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>13–16 players: race to 1 on both winners and losers sides.</li>
+        <li>8–12 players: race to 2 on the front, 2 on the back.</li>
+        <li>13–16 players: race to 2 on the front, 1 back.</li>
       </ul>
     </li>
     <li><strong>9-Ball</strong>
       <ul>
-        <li>8–12 players: race to 3 on the winners side, 2 on the losers side.</li>
-        <li>13–16 players: race to 2 on the winners side, 1 on the losers side.</li>
-        <li>All formats/tournaments: 100+ FargoRate gap on the front — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
+        <li>8–12 players: race to 3 on the front, 2 on the back.</li>
+        <li>13–16 players: race to 2 on both the front and back.</li>
+        <li>All formats/tournaments: 100+ FargoRate gap on the front only — the higher-rated player must win 1 extra game. (See <a href="/faq/#faq-ratings">How do player ratings work?</a>)</li>
       </ul>
     </li>
     <li>We follow <a href="#bca-rules">BCA rules</a>.</li>
