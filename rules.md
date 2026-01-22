@@ -89,9 +89,9 @@ permalink: /rules/
     <li>All River Tournaments are <strong>reported to FargoRate</strong>. FargoRate estimates 2-3 weeks to process scores and create new player profiles; once processed, you will be able to <strong>claim your profile via the FargoRate mobile app.</strong>.</li>
     <li>All ratings and conversion assignments are subject to review and final approval by the tournament director.</li>
     <li>Your rating at registration on tournament night will decide eligibility and race lengths. DigitalPool syncs with FargoRate and pulls updated ranks in real time.</li>
-    <li>Entry fees must be paid at time of registration. Your spot will not be held without payment.</li>
+    <li><strong>Entry fees must be paid at time of registration. Your spot will not be held without payment.</strong></li>
     <li><strong>You do not have a spot in the bracket until your entry fee is paid, your Fargo rating has been verified/assigned, and your match requirements are confirmed.</strong></li>
-    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a <a href="#match-format">Bye</a>.</strong></li>
+    <li><strong>Any confirmed player who does not show up by the time matches are being assigned may be forfeited and replaced with a Bye.</strong></li>
   </ul>
 </section>
 
@@ -133,14 +133,14 @@ permalink: /rules/
   <ul>
     <li>1. The tournament director reserves the right to refuse entry to any player, or to immediately remove any player from an ongoing tournament, for any reason. This includes, but is not limited to:
       <ul>
-        <li>a. Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
-        <li>b. Signs of substance impairment.</li>
-        <li>c. Ineligible Fargo rating.</li>
-        <li>d. Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
-        <li>e. Repeated intentional distraction of opponents (sharking).</li>
-        <li>f. Verbal abuse or threats.</li>
-        <li>g. Repeated failure to follow tournament rules or etiquette.</li>
-        <li>h. Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
+        <li>Unsportsmanlike behavior of any kind at River or ANY other tournament, league, or pool event in the Oregon community (APA, BCA, APL, etc.).</li>
+        <li>Signs of substance impairment.</li>
+        <li>Ineligible Fargo rating.</li>
+        <li>Suspected or proven manipulation of Fargo ratings (sandbagging).</li>
+        <li>Repeated intentional distraction of opponents (sharking).</li>
+        <li>Verbal abuse or threats.</li>
+        <li>Repeated failure to follow tournament rules or etiquette.</li>
+        <li>Any behavior that jeopardizes the integrity of the River tournament or compromises River as a safe, fun, and inclusive space for low-level players.</li>
       </ul>
     </li>
     <li>No drinks on or near pool tables. Spills or damage will result in permanent disqualification from the River tournament, and possible fees and/or ban from the establishment itself (as River management sees fit).</li>
@@ -173,10 +173,10 @@ permalink: /rules/
       <li>Open Table: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a rail. Failure to do so is a foul, your opponent gets ball in hand.</li>
       <li>Call Pocket: You must call the ball and intended pocket for each shot (except on the break):
         <ul>
-          <li>a. You do not need to call details like banks, kisses, or caroms, unless the shot is not obvious.</li>
-          <li>b. If it's clear what ball and pocket you're aiming for, no verbal call is required — it's understood.</li>
-          <li>c. If there's any doubt, you must verbally call or point to make your intended ball and pocket clear.</li>
-          <li>d. Any obvious pocketed ball counts as legal; but if a called ball goes into an unintended pocket, the turn ends and the opponent takes over (no foul unless the cue ball is scratched).</li>
+          <li>You do not need to call details like banks, kisses, or caroms, unless the shot is not obvious.</li>
+          <li>If it's clear what ball and pocket you're aiming for, no verbal call is required — it's understood.</li>
+          <li>If there's any doubt, you must verbally call or point to make your intended ball and pocket clear.</li>
+          <li>Any obvious pocketed ball counts as legal; but if a called ball goes into an unintended pocket, the turn ends and the opponent takes over (no foul unless the cue ball is scratched).</li>
         </ul>
       </li>
       <li>Legal Shot: On all shots (except the break), the cue ball must first contact a ball of your group, and then either an object ball or the cue ball must contact a cushion. Failure to do so is a foul; your opponent gets ball in hand.</li>
@@ -185,15 +185,15 @@ permalink: /rules/
       <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
       <li>General Fouls: All fouls result in ball in hand anywhere on the table (except after the break, when it's behind the head string aka in the kitchen). Fouls include (but are not limited to):
         <ul>
-          <li>a. Failure to contact your object ball first</li>
-          <li>b. Failure to drive any ball to a rail after the cue ball contacts the object ball</li>
-          <li>c. Scratch or cue ball off the table</li>
-          <li>d. Jumping any ball off the table (except 8-ball, which is a loss of game)</li>
+          <li>Failure to contact your object ball first</li>
+          <li>Failure to drive any ball to a rail after the cue ball contacts the object ball</li>
+          <li>Scratch or cue ball off the table</li>
+          <li>Jumping any ball off the table (except 8-ball, which is a loss of game)</li>
         </ul>
       </li>
       <li>Race Guidelines:
         <ul>
-          <li>8–12 players: race to 2 on the winners side, 1 on the losers side</li>
+          <li>8–12 players: race to 2 on the front, 2 on the back</li>
           <li>13–16 players: race to 1, both sides</li>
           <li>All Tournaments: 100+ Fargo gap, higher player must win +1 game on the front only.</li>
         </ul>
@@ -211,18 +211,18 @@ permalink: /rules/
       <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it's a foul. The incoming player gets ball in hand anywhere on the table.</li>
       <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare "push" before the shot, and your opponent must acknowledge. Key points:
         <ul>
-          <li>a. The cue ball does not need to contact the lowest ball or any cushion.</li>
-          <li>b. Any object balls (except the 9-ball) pocketed on a push remain down.</li>
-          <li>c. After the push, the opponent may either shoot from the new position or pass the shot back.</li>
-          <li>d. If a foul occurs on the shot after the push, the opponent receives ball in hand.</li>
+          <li>The cue ball does not need to contact the lowest ball or any cushion.</li>
+          <li>Any object balls (except the 9-ball) pocketed on a push remain down.</li>
+          <li>After the push, the opponent may either shoot from the new position or pass the shot back.</li>
+          <li>If a foul occurs on the shot after the push, the opponent receives ball in hand.</li>
         </ul>
       </li>
       <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. If you pocket any ball legally, you continue shooting. If you foul or fail to pocket a ball legally, your inning ends. The game is won when the 9-ball is legally pocketed on any legal shot.</li>
       <li>Timeouts: Timeouts are not allowed during tournament play. Please direct rule questions to the tournament director.</li>
       <li>Race Guidelines:
         <ul>
-          <li>8–12 players: race to 3 on the winners side, 2 on the losers side</li>
-          <li>13–16 players: race to 2 on the winners side, 1 on the losers side</li>
+          <li>8–12 players: race to 3 on the front, 2 on the back</li>
+          <li>13–16 players: race to 2 on both the front and the back</li>
         </ul>
       </li>
     </ul>
@@ -238,18 +238,18 @@ permalink: /rules/
       <li>Scratch on the Break: If the cue ball is scratched or jumped on the break, it's a foul. The incoming player gets ball in hand anywhere on the table.</li>
       <li>Push-Out Option: If there was no foul on the break, the player taking the first shot after the break may call a push-out. You must declare "push" before the shot, and your opponent must acknowledge. Key points:
         <ul>
-          <li>a. The cue ball does not need to contact the lowest-numbered ball or a cushion.</li>
-          <li>b. Any balls (except the 10-ball) pocketed during a push stay down; the 10-ball is spotted.</li>
-          <li>c. After the push, the opponent may shoot from the new position or pass the shot back.</li>
-          <li>d. If a foul occurs on the push, the opponent receives ball in hand.</li>
+          <li>The cue ball does not need to contact the lowest-numbered ball or a cushion.</li>
+          <li>Any balls (except the 10-ball) pocketed during a push stay down; the 10-ball is spotted.</li>
+          <li>After the push, the opponent may shoot from the new position or pass the shot back.</li>
+          <li>If a foul occurs on the push, the opponent receives ball in hand.</li>
         </ul>
       </li>
       <li>Continuing Play: After the break (and any push-out), play continues by always contacting the lowest-numbered ball first. You must call every shot. If the called ball is legally pocketed, your inning continues. Balls pocketed incidentally stay down (except the 10-ball, which is spotted if not legally pocketed). The game is won when the 10-ball is legally pocketed on a called shot.</li>
       <li>Illegally Pocketed Balls: A ball is illegally pocketed if it is made in a pocket other than the one called, or if no called ball is made on the shot. The 10-ball is spotted, and all other illegally pocketed balls remain down.</li>
       <li>Opponent's Option: If you illegally pocket a ball, your opponent may:
         <ul>
-          <li>a. Accept the table as it lies, or</li>
-          <li>b. Require you to shoot again from that position.</li>
+          <li>Accept the table as it lies, or</li>
+          <li>Require you to shoot again from that position.</li>
         </ul>
       </li>
       <li>Three-Foul Rule: A player loses the game after committing three consecutive fouls in the same game.</li>
