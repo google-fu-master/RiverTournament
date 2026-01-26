@@ -1,213 +1,367 @@
 (function () {
+  // Helper functions
   function getOrdinalSuffix(n) {
     if (n >= 11 && n <= 13) return "th";
     switch (n % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
+      case 1: return "st";
+      case 2: return "nd";
+      case 3: return "rd";
+      default: return "th";
     }
   }
 
-  // Returns true if the date is the 3rd Thursday of its month
-  function isThirdThursday(date) {
-    let d = new Date(date.getFullYear(), date.getMonth(), 1);
-    let thursdays = [];
-    while (d.getMonth() === date.getMonth()) {
-      if (d.getDay() === 4) {
-        // Thursday
-        thursdays.push(new Date(d));
-      }
-      d.setDate(d.getDate() + 1);
-    }
-    return date.getDate() === thursdays[2].getDate();
-  }
-
-  // Get the 3rd Thursday date of a given year/month
-  function getThirdThursday(year, month) {
-    let d = new Date(year, month, 1);
-    let thursdays = [];
-    while (d.getMonth() === month) {
-      if (d.getDay() === 4) {
-        thursdays.push(new Date(d));
-      }
-      d.setDate(d.getDate() + 1);
-    }
-    return thursdays[2];
-  }
-
-  // For Ladies Night: returns 0 if starting month (June 2025) is 9-ball, then alternates monthly
-  function getLadiesNightFormatNumber(
-    baseYear,
-    baseMonth,
-    baseFormat,
-    targetYear,
-    targetMonth,
-  ) {
-    let monthsSince = (targetYear - baseYear) * 12 + (targetMonth - baseMonth);
-    return (baseFormat + (monthsSince % 2)) % 2;
-  }
-
-  // Find the next tournament Thursday from today (or today if today is Thursday)
-  const today = new Date();
-
-  let upcomingThursday = new Date(today);
-  let daysUntilThursday = (4 - today.getDay() + 7) % 7;
-  if (daysUntilThursday !== 0) {
-    upcomingThursday.setDate(today.getDate() + daysUntilThursday);
-  }
-
-  // CLEANUP: Remove expired Thanksgiving skip logic (was Nov 21-27, 2025 only)
-  // The permanent fix is now in the counting loop below to exclude Nov 27, 2025
-  
-  // Format info
-  const day = upcomingThursday.getDate();
-  const month = upcomingThursday.toLocaleString("default", { month: "long" });
-  const monthNum = upcomingThursday.getMonth() + 1;
-  const year = upcomingThursday.getFullYear();
-
-  const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
-  const mmddyyyy = `${monthNum}${day}${year}`;
-
-  // 1. Check if this is Ladies Night (3rd Thursday)
-  const ladiesNight = isThirdThursday(upcomingThursday);
-
-  // 2. If not Ladies Night, count the number of open (non-Ladies) Thursdays since June 5, 2025 (inclusive)
-  // June 5, 2025 is the base, and is a 9-ball open event
-  const baseOpen = new Date(2025, 5, 5); // June 5, 2025 (months are 0-indexed)
-  let openCount = 0;
-  let cursor = new Date(baseOpen);
-
-  // PERMANENT FIX: November 27, 2025 was skipped (Thanksgiving), exclude from format count
-  let countTarget = upcomingThursday;
-  console.log('DEBUG: Counting tournaments to:', countTarget, 'excluding Nov 27, 2025');
-
-  while (
-    cursor < countTarget ||
-    (cursor.getDate() === countTarget.getDate() &&
-      cursor.getMonth() === countTarget.getMonth() &&
-      cursor.getFullYear() === countTarget.getFullYear())
-  ) {
-    // Skip November 27, 2025 (Thanksgiving - no tournament that week)
-    const isThanksgiving2025 = cursor.getFullYear() === 2025 && 
-                               cursor.getMonth() === 10 && 
-                               cursor.getDate() === 27;
+  // Parse event title to extract format and cap info
+  function parseEventTitle(title) {
+    // Expected formats:
+    // "9-Ball | 430 Fargo Cap" → { formatNum: "9", format: "9-Ball", cap: "430", isLadiesNight: false }
+    // "8-Ball Ladies Night | 475 Fargo Cap" → { formatNum: "8", format: "8-Ball", cap: "475", isLadiesNight: true }
     
-    if (!isThirdThursday(cursor) && !isThanksgiving2025) {
-      if (
-        cursor < countTarget ||
-        (cursor.getDate() === countTarget.getDate() &&
-          cursor.getMonth() === countTarget.getMonth() &&
-          cursor.getFullYear() === countTarget.getFullYear())
-      ) {
-        openCount++;
+    const isLadiesNight = title.toLowerCase().includes('ladies night');
+    let match;
+    
+    if (isLadiesNight) {
+      match = title.match(/(\d+)-Ball\s+Ladies\s+Night\s*\|\s*(\d+)\s*Fargo\s*Cap/i);
+    } else {
+      match = title.match(/(\d+)-Ball\s*\|\s*(\d+)\s*Fargo\s*Cap/i);
+    }
+    
+    if (match) {
+      const formatNum = match[1];
+      const cap = match[2];
+      return {
+        formatNum,
+        format: `${formatNum}-Ball`,
+        cap,
+        isLadiesNight
+      };
+    }
+    return null;
+  }
+
+  // Get tournament event for a specific Thursday
+  async function getTournamentForDate(targetDate) {
+    const API_KEY = "AIzaSyBLNdT-6xsYi3_lzSdEVMM3WSYT-X8PVy8";
+    const calendarId = "rivertournaments@gmail.com";
+    
+    // Set time range (start of day to end of day for target Thursday)
+    const timeMin = new Date(targetDate);
+    timeMin.setHours(0, 0, 0, 0);
+    const timeMax = new Date(targetDate);
+    timeMax.setHours(23, 59, 59, 999);
+    
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&timeMin=${timeMin.toISOString()}&timeMax=${timeMax.toISOString()}&singleEvents=true&orderBy=startTime`;
+    
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.items && data.items.length > 0) {
+        // Find the tournament event (should be at 6:30pm) or any event if no 6:30pm event
+        const tournamentEvent = data.items.find(event => {
+          const startTime = new Date(event.start.dateTime || event.start.date);
+          return startTime.getHours() === 18 && startTime.getMinutes() === 30;
+        }) || data.items[0]; // Fallback to first event
+        
+        return {
+          title: tournamentEvent.summary,
+          date: new Date(tournamentEvent.start.dateTime || tournamentEvent.start.date),
+          description: tournamentEvent.description || ""
+        };
+      }
+    } catch (error) {
+      console.error('Error fetching calendar event:', error);
+    }
+    
+    return null;
+  }
+
+  // Get next Thursday's tournament from Google Calendar, with holiday handling
+  async function getNextTournament() {
+    // Get current date and next Thursday
+    const now = new Date();
+    let nextThursday = new Date(now);
+    
+    // If it's Friday (day 5) after midnight, look for the upcoming Thursday
+    if (now.getDay() === 5) { // Friday
+      // Look for next Thursday (6 days ahead)
+      nextThursday.setDate(now.getDate() + 6);
+    } else {
+      // For all other days, find the next Thursday
+      const daysUntilThursday = (4 - now.getDay() + 7) % 7;
+      if (daysUntilThursday === 0 && now.getDay() === 4) {
+        // It's Thursday - look for next Thursday if we're past midnight
+        nextThursday.setDate(now.getDate() + 7);
+      } else if (daysUntilThursday !== 0) {
+        nextThursday.setDate(now.getDate() + daysUntilThursday);
       }
     }
-    cursor.setDate(cursor.getDate() + ((7 - cursor.getDay() + 4) % 7 || 7));
-  }
-
-  // openCount includes June 5 as #1. So for June 5, openCount = 1 (odd, 9-ball), June 12 = 2 (even, 8-ball), etc.
-  // We'll use (openCount % 2): odd = 9-ball, even = 8-ball
-  console.log('DEBUG: Final openCount:', openCount, 'isOdd:', openCount % 2 === 1);
-
-  // For Ladies Night: alternate monthly, starting with 9-ball for June 2025
-  let format, formatNum, formatLabel, eventTitle, signupSlug;
-  
-  if (ladiesNight) {
-    const baseLadiesYear = 2025,
-      baseLadiesMonth = 5,
-      baseLadiesFormat = 0; // 0=9-ball
-    const lnFormat = getLadiesNightFormatNumber(
-      baseLadiesYear,
-      baseLadiesMonth,
-      baseLadiesFormat,
-      upcomingThursday.getFullYear(),
-      upcomingThursday.getMonth(),
-    );
-    format = lnFormat === 0 ? "9-ball" : "8-ball";
-    formatNum = lnFormat === 0 ? "9" : "8";
-    formatLabel = format;
-    eventTitle = `${formattedDate} Ladies Night ${formatLabel} Players`;
-    signupSlug = `river-thursday-ladies-night-${formatNum}-ball-${mmddyyyy}`;
-  } else {
-    if (openCount % 2 === 1) {
-      format = "9-ball";
-      formatNum = "9";
-    } else {
-      format = "8-ball";
-      formatNum = "8";
+    
+    // Get the event for next Thursday
+    const thisWeekEvent = await getTournamentForDate(nextThursday);
+    
+    if (!thisWeekEvent) {
+      return null;
     }
-    formatLabel = format;
-    eventTitle = `${formattedDate} ${formatLabel} Players`;
-    signupSlug = `river-thursday-${formatNum}-ball-${mmddyyyy}`;
-  }
-
-  const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
-  const tournamentUrl = `${signupLink}/players?navigation=false`;
-  const overviewUrl = `${signupLink}/overview?navigation=false`;
-
-  // Set main tournament title
-  var titleEl = document.getElementById("tournament-title");
-  if (titleEl) {
-    titleEl.textContent = eventTitle;
-  }
-
-  // Set up the Sign Up button
-  var signupBtnHtml = `<a class="btn-signup" href="${overviewUrl}" target="_blank">Sign Up Now</a>`;
-  var signupBtnEl = document.getElementById("signup-button");
-  if (signupBtnEl) {
-    signupBtnEl.innerHTML = signupBtnHtml;
-  }
-
-  // Inject the DigitalPool table above the note paragraph
-  var tableDiv = document.getElementById("digitalpool-table");
-  if (tableDiv) {
-    while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
-
-    // TEMPORARY: Comment out DigitalPool embed due to technical issues
-    // Will restore once DigitalPool fixes their embedded player list feature
-    /*
-    var iframe = document.createElement("iframe");
-    iframe.id = "digitalpool-embed";
-    iframe.src = tournamentUrl;
-
-    // Build a name attribute that matches DigitalPool's embed naming convention
-    var nameAttr;
-    if (ladiesNight) {
-      nameAttr = `River Thursday Ladies Night ${formatNum} Ball ${monthNum}/${day}/${year}`;
+    
+    // Check if this week is a "No Tournament" event
+    const isNoTournament = thisWeekEvent.title.toLowerCase().includes('no tournament');
+    
+    if (isNoTournament) {
+      // Get the following Thursday's event
+      const followingThursday = new Date(nextThursday);
+      followingThursday.setDate(nextThursday.getDate() + 7);
+      const nextWeekEvent = await getTournamentForDate(followingThursday);
+      
+      return {
+        noTournamentEvent: thisWeekEvent,
+        actualTournament: nextWeekEvent,
+        isHolidayWeek: true
+      };
     } else {
-      nameAttr = `River Thursday ${formatNum} Ball ${monthNum}/${day}/${year}`;
+      return {
+        actualTournament: thisWeekEvent,
+        isHolidayWeek: false
+      };
     }
-    iframe.setAttribute("name", nameAttr);
+  }
 
-    // Use DigitalPool's expected attributes
-    iframe.setAttribute("scrolling", "yes");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("marginheight", "0px");
-    iframe.setAttribute("marginwidth", "0px");
-    iframe.setAttribute("allowfullscreen", "");
-    // Provide explicit size attributes (DigitalPool embed uses 600x600)
-    iframe.setAttribute("width", "600px");
-    iframe.setAttribute("height", "600px");
+  // Format date string
+  function formatEventDate(date) {
+    const month = date.toLocaleString("default", { month: "long" });
+    const day = date.getDate();
+    return `${month} ${day}${getOrdinalSuffix(day)}`;
+  }
 
-    // Keep responsive styling while giving a fixed embed height
-    iframe.style.width = "100%";
-    iframe.style.height = "600px";
-    iframe.style.border = "none";
-    iframe.style.background = "#0d1b2a"; // Ensure dark background for the embed area
-    iframe.style.display = "block";
-    iframe.style.margin = "0 auto";
-    iframe.style.boxSizing = "border-box";
+  // Generate DigitalPool URL
+  function generateSignupUrl(formatNum, date, isLadiesNight) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const mmddyyyy = `${month}${day}${year}`;
+    
+    if (isLadiesNight) {
+      return `https://digitalpool.com/tournaments/river-thursday-ladies-night-${formatNum.toLowerCase()}-ball-${mmddyyyy}`;
+    } else {
+      return `https://digitalpool.com/tournaments/river-thursday-${formatNum.toLowerCase()}-ball-${mmddyyyy}`;
+    }
+  }
 
-    tableDiv.appendChild(iframe);
-    */
+  // Fallback function using existing calculation logic
+  function fallbackToCalculatedTournament() {
+    console.log('Using fallback tournament calculation');
+    // Keep the existing tournament calculation logic here as backup
+    // Find the next tournament Thursday from today (or today if today is Thursday)
+    const today = new Date();
 
+    let upcomingThursday = new Date(today);
+    let daysUntilThursday = (4 - today.getDay() + 7) % 7;
+    if (daysUntilThursday !== 0) {
+      upcomingThursday.setDate(today.getDate() + daysUntilThursday);
+    }
+    
+    // Format info
+    const day = upcomingThursday.getDate();
+    const month = upcomingThursday.toLocaleString("default", { month: "long" });
+    const monthNum = upcomingThursday.getMonth() + 1;
+    const year = upcomingThursday.getFullYear();
+
+    const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
+    const mmddyyyy = `${monthNum}${day}${year}`;
+
+    // Simple alternating format based on week number
+    const startOfYear = new Date(year, 0, 1);
+    const weekNumber = Math.ceil(((upcomingThursday - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
+    const isNineBall = weekNumber % 2 === 1;
+    
+    const format = isNineBall ? "9-Ball" : "8-Ball";
+    const formatNum = isNineBall ? "9" : "8";
+    const cap = isNineBall ? "430" : "445";
+    const eventTitle = `${formattedDate} ${format} | ${cap} Fargo Cap`;
+    const signupSlug = `river-thursday-${formatNum.toLowerCase()}-ball-${mmddyyyy}`;
+    
+    const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
+    
+    // Update page elements
+    const titleEl = document.getElementById("tournament-title");
+    if (titleEl) {
+      titleEl.textContent = eventTitle;
+    }
+    
+    const signupBtnEl = document.getElementById("signup-button");
+    if (signupBtnEl) {
+      signupBtnEl.innerHTML = `<a class="btn-signup" href="${signupLink}" target="_blank">Sign Up Now</a>`;
+    }
+    
+    const navSignup = document.getElementById("nav-signup-link");
+    if (navSignup) {
+      navSignup.setAttribute("href", signupLink);
+    }
+  }
+
+  // Main function to update tournament info
+  async function updateTournamentInfo() {
+    const tournamentData = await getNextTournament();
+    
+    if (!tournamentData) {
+      console.warn('No tournament event found for next Thursday');
+      // Fallback to existing logic if calendar fails
+      fallbackToCalculatedTournament();
+      return;
+    }
+    
+    // Handle holiday weeks with "No Tournament" events
+    if (tournamentData.isHolidayWeek) {
+      const noTournamentEvent = tournamentData.noTournamentEvent;
+      const actualEvent = tournamentData.actualTournament;
+      
+      if (!actualEvent) {
+        console.warn('No tournament found for week after holiday');
+        fallbackToCalculatedTournament();
+        return;
+      }
+      
+      const parsedInfo = parseEventTitle(actualEvent.title);
+      if (!parsedInfo) {
+        console.warn('Could not parse tournament format from next week event title:', actualEvent.title);
+        fallbackToCalculatedTournament();
+        return;
+      }
+      
+      const noTournamentDate = formatEventDate(noTournamentEvent.date);
+      const tournamentDate = formatEventDate(actualEvent.date);
+      
+      // Create holiday message and tournament title
+      const holidayText = `${noTournamentDate} ${noTournamentEvent.title}`;
+      const tournamentText = parsedInfo.isLadiesNight 
+        ? `${tournamentDate} Ladies Night ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`
+        : `${tournamentDate} ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`;
+      
+      const signupUrl = generateSignupUrl(parsedInfo.formatNum, actualEvent.date, parsedInfo.isLadiesNight);
+      
+      // Update page elements with holiday display
+      const titleEl = document.getElementById("tournament-title");
+      if (titleEl) {
+        // Create the two-line display
+        titleEl.innerHTML = `
+          <div style="margin-bottom: 0.5rem; color: #ff6b6b; font-weight: bold;">${holidayText}</div>
+          <div>${tournamentText}</div>
+        `;
+      }
+      
+      const signupBtnEl = document.getElementById("signup-button");
+      if (signupBtnEl) {
+        signupBtnEl.innerHTML = `<a class="btn-signup" href="${signupUrl}" target="_blank">Sign Up Now</a>`;
+      }
+      
+      // Update nav signup link
+      const navSignup = document.getElementById("nav-signup-link");
+      if (navSignup) {
+        navSignup.setAttribute("href", signupUrl);
+      }
+      
+      // Add Ladies Night styling if applicable
+      if (parsedInfo.isLadiesNight) {
+        document.body.classList.add("ladies");
+        const eventBanner = document.getElementById("event-banner");
+        if (eventBanner) {
+          eventBanner.classList.add("ladies");
+        }
+        if (titleEl) {
+          titleEl.classList.add("ladies");
+        }
+        const signupBtn = signupBtnEl?.querySelector('.btn-signup');
+        if (signupBtn) {
+          signupBtn.classList.add("ladies");
+        }
+        if (navSignup) {
+          navSignup.classList.add("ladies");
+        }
+      }
+      
+      // Update DigitalPool embed
+      updateDigitalPoolEmbed(signupUrl, actualEvent.date, parsedInfo);
+      
+      // Update JSON-LD structured data for the actual tournament
+      updateStructuredData(actualEvent, parsedInfo, tournamentDate);
+      
+    } else {
+      // Normal week - no holiday
+      const event = tournamentData.actualTournament;
+      const parsedInfo = parseEventTitle(event.title);
+      
+      if (!parsedInfo) {
+        console.warn('Could not parse tournament format from event title:', event.title);
+        // Fallback to existing logic if parsing fails
+        fallbackToCalculatedTournament();
+        return;
+      }
+      
+      const formattedDate = formatEventDate(event.date);
+      
+      // Format title according to examples:
+      // "January 29th 9-Ball | 430 Fargo Cap"
+      // "February 19th Ladies Night 9-Ball | 475 Fargo Cap"
+      const titleText = parsedInfo.isLadiesNight 
+        ? `${formattedDate} Ladies Night ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`
+        : `${formattedDate} ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`;
+      
+      const signupUrl = generateSignupUrl(parsedInfo.formatNum, event.date, parsedInfo.isLadiesNight);
+      
+      // Update page elements
+      const titleEl = document.getElementById("tournament-title");
+      if (titleEl) {
+        titleEl.textContent = titleText;
+      }
+      
+      const signupBtnEl = document.getElementById("signup-button");
+      if (signupBtnEl) {
+        signupBtnEl.innerHTML = `<a class="btn-signup" href="${signupUrl}" target="_blank">Sign Up Now</a>`;
+      }
+      
+      // Update nav signup link
+      const navSignup = document.getElementById("nav-signup-link");
+      if (navSignup) {
+        navSignup.setAttribute("href", signupUrl);
+      }
+      
+      // Add Ladies Night styling if applicable
+      if (parsedInfo.isLadiesNight) {
+        document.body.classList.add("ladies");
+        const eventBanner = document.getElementById("event-banner");
+        if (eventBanner) {
+          eventBanner.classList.add("ladies");
+        }
+        if (titleEl) {
+          titleEl.classList.add("ladies");
+        }
+        const signupBtn = signupBtnEl?.querySelector('.btn-signup');
+        if (signupBtn) {
+          signupBtn.classList.add("ladies");
+        }
+        if (navSignup) {
+          navSignup.classList.add("ladies");
+        }
+      }
+      
+      // Update DigitalPool embed
+      updateDigitalPoolEmbed(signupUrl, event.date, parsedInfo);
+      
+      // Update JSON-LD structured data
+      updateStructuredData(event, parsedInfo, formattedDate);
+    }
+  }
+
+  // Update DigitalPool embed (keeping the existing temporary notice for now)
+  function updateDigitalPoolEmbed(signupUrl, date, parsedInfo) {
+    const tableDiv = document.getElementById("digitalpool-table");
+    if (!tableDiv) return;
+    
+    while (tableDiv.firstChild) {
+      tableDiv.removeChild(tableDiv.firstChild);
+    }
+    
     // Temporary notice while DigitalPool embed is unavailable
-    var noticeDiv = document.createElement("div");
+    const noticeDiv = document.createElement("div");
     noticeDiv.className = "digitalpool-notice";
     noticeDiv.style.cssText = `
       background: rgba(0, 32, 48, 0.4);
@@ -242,62 +396,40 @@
     tableDiv.appendChild(noticeDiv);
   }
 
-  // Update nav sign up link if present
-  var navSignup = document.getElementById("nav-signup-link");
-  if (navSignup) {
-    navSignup.setAttribute("href", overviewUrl);
-  }
-
-  // Add Ladies Night classes for styling only
-  if (ladiesNight) {
-    document.body.classList.add("ladies");
-    var eventBanner = document.getElementById("event-banner");
-    if (eventBanner) {
-      eventBanner.classList.add("ladies");
-    }
-    if (titleEl) {
-      titleEl.classList.add("ladies");
-    }
-    if (signupBtnEl) {
-      signupBtnEl.classList.add("ladies");
-    }
-    if (navSignup) {
-      navSignup.classList.add("ladies");
-    }
-  }
-
-  // --- DYNAMIC JSON-LD STRUCTURED DATA ---
-  var calendarJsonLdDiv = document.getElementById("calendar-jsonld");
-  if (calendarJsonLdDiv) {
-    var existingJsonLd = calendarJsonLdDiv.querySelector(
-      'script[type="application/ld+json"].tournament-event',
+  // Update JSON-LD structured data
+  function updateStructuredData(event, parsedInfo, formattedDate) {
+    const calendarJsonLdDiv = document.getElementById("calendar-jsonld");
+    if (!calendarJsonLdDiv) return;
+    
+    const existingJsonLd = calendarJsonLdDiv.querySelector(
+      'script[type="application/ld+json"].tournament-event'
     );
     if (existingJsonLd) existingJsonLd.remove();
-
-    var eventJsonLd = {
+    
+    const eventJsonLd = {
       "@context": "https://schema.org",
       "@type": "Event",
-      name: ladiesNight
-        ? `River Tournaments - Ladies Night Tournament (${formatLabel})`
-        : `River Tournaments - ${formatLabel} Tournament`,
+      name: parsedInfo.isLadiesNight 
+        ? `River Tournaments - Ladies Night Tournament (${parsedInfo.format})`
+        : `River Tournaments - ${parsedInfo.format} Tournament`,
       startDate: (function () {
-        var local = new Date(upcomingThursday);
+        const local = new Date(event.date);
         local.setHours(18, 30, 0, 0);
-        var tzOffset = -local.getTimezoneOffset();
-        var sign = tzOffset >= 0 ? "+" : "-";
-        var pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
-        var hours = pad(tzOffset / 60);
-        var minutes = pad(tzOffset % 60);
+        const tzOffset = -local.getTimezoneOffset();
+        const sign = tzOffset >= 0 ? "+" : "-";
+        const pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        const hours = pad(tzOffset / 60);
+        const minutes = pad(tzOffset % 60);
         return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
       })(),
       endDate: (function () {
-        var local = new Date(upcomingThursday);
+        const local = new Date(event.date);
         local.setHours(23, 0, 0, 0);
-        var tzOffset = -local.getTimezoneOffset();
-        var sign = tzOffset >= 0 ? "+" : "-";
-        var pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
-        var hours = pad(tzOffset / 60);
-        var minutes = pad(tzOffset % 60);
+        const tzOffset = -local.getTimezoneOffset();
+        const sign = tzOffset >= 0 ? "+" : "-";
+        const pad = (n) => String(Math.floor(Math.abs(n))).padStart(2, "0");
+        const hours = pad(tzOffset / 60);
+        const minutes = pad(tzOffset % 60);
         return local.toISOString().replace("Z", `${sign}${hours}:${minutes}`);
       })(),
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -315,25 +447,24 @@
         },
       },
       image: ["https://rivertournaments.com/assets/og-image.png"],
-      description: ladiesNight
-        ? "Ladies Night! Special event for women pool players on the third Thursday of every month. Format alternates with the main schedule."
-        : `${formatLabel} pool tournament. Every other Thursday at 6:30pm.`,
+      description: parsedInfo.isLadiesNight
+        ? `Ladies Night! Special event for women pool players. ${parsedInfo.format} pool tournament. Fargo rating cap: ${parsedInfo.cap} and under.`
+        : `${parsedInfo.format} pool tournament. Fargo rating cap: ${parsedInfo.cap} and under.`,
       organizer: {
         "@type": "Organization",
         name: "River Tournaments",
         email: "rivertournaments@gmail.com",
       },
     };
-
-    var jsonLdScript = document.createElement("script");
+    
+    const jsonLdScript = document.createElement("script");
     jsonLdScript.type = "application/ld+json";
     jsonLdScript.className = "tournament-event";
     jsonLdScript.textContent = JSON.stringify(eventJsonLd, null, 2);
     calendarJsonLdDiv.appendChild(jsonLdScript);
   }
 
-  // --- NEW: Desktop/mobile event card grid & minimal info ---
-  // This part is for the Calendar.html page ONLY
+  // Keep existing calendar card functionality for Calendar.html page
   if (document.getElementById("upcoming-tournament-cards")) {
     function getMaxResults() {
       return window.innerWidth < 900 ? 2 : 4;
@@ -451,4 +582,7 @@
     window.addEventListener("resize", fetchAndRenderEvents);
     window.addEventListener("DOMContentLoaded", fetchAndRenderEvents);
   }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', updateTournamentInfo);
 })();
