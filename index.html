@@ -4,26 +4,6 @@ title: River Tournaments
 bodyClass: home
 ---
 
-<!-- TEMPORARY: Thanksgiving notice (REMOVE AFTER DEC 2025) -->
-<script>
-  (function() {
-    const now = new Date();
-    if (now >= new Date(2025, 10, 21) && now < new Date(2025, 10, 28)) { // Nov 21-27, 2025
-      document.addEventListener('DOMContentLoaded', function() {
-        const titleEl = document.getElementById('tournament-title');
-        if (titleEl) {
-          const notice = document.createElement('div');
-          notice.className = 'holiday-notice';
-          notice.style.cssText = 'background: rgba(255, 107, 107, 0.15); border: 1px solid #ff6b6b; border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; text-align: center; color: #ff6b6b; font-weight: bold;';
-          notice.innerHTML = '🦃 No Tournament November 27th (Thanksgiving) 🦃';
-          titleEl.parentNode.insertBefore(notice, titleEl);
-        }
-      });
-    }
-  })();
-</script>
-<!-- END TEMPORARY -->
-
 <h1 class="player-header" id="tournament-title">
   This Thursday's Tournament
 </h1>
