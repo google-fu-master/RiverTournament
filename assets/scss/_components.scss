@@ -2,7 +2,9 @@
 
 /* --- BUTTONS --- */
 .btn-signup {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
@@ -25,6 +27,7 @@
     color 0.2s,
     border-color 0.2s;
   cursor: pointer;
+  line-height: 1.2;
 }
 .btn-signup:hover,
 .btn-signup:focus {

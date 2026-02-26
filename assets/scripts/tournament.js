@@ -75,41 +75,40 @@
     return null;
   }
 
+  function getTargetThursdayFromPacificNow() {
+    const now = new Date();
+    const pacificTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+    const targetThursday = new Date(pacificTime);
+    const currentDay = pacificTime.getDay();
+
+    if (currentDay === 5) targetThursday.setDate(pacificTime.getDate() + 6);
+    else if (currentDay === 6) targetThursday.setDate(pacificTime.getDate() + 5);
+    else if (currentDay === 0) targetThursday.setDate(pacificTime.getDate() + 4);
+    else if (currentDay === 1) targetThursday.setDate(pacificTime.getDate() + 3);
+    else if (currentDay === 2) targetThursday.setDate(pacificTime.getDate() + 2);
+    else if (currentDay === 3) targetThursday.setDate(pacificTime.getDate() + 1);
+
+    return targetThursday;
+  }
+
   // Get next Thursday's tournament from Google Calendar, with holiday handling
   async function getNextTournament() {
-    // Get current date and next Thursday
-    const now = new Date();
-    let nextThursday = new Date(now);
+    const targetThursday = getTargetThursdayFromPacificNow();
     
-    // If it's Friday (day 5) after midnight, look for the upcoming Thursday
-    if (now.getDay() === 5) { // Friday
-      // Look for next Thursday (6 days ahead)
-      nextThursday.setDate(now.getDate() + 6);
-    } else {
-      // For all other days, find the next Thursday
-      const daysUntilThursday = (4 - now.getDay() + 7) % 7;
-      if (daysUntilThursday === 0 && now.getDay() === 4) {
-        // It's Thursday - look for next Thursday if we're past midnight
-        nextThursday.setDate(now.getDate() + 7);
-      } else if (daysUntilThursday !== 0) {
-        nextThursday.setDate(now.getDate() + daysUntilThursday);
-      }
-    }
-    
-    // Get the event for next Thursday
-    const thisWeekEvent = await getTournamentForDate(nextThursday);
+    // Get the event for target Thursday
+    const thisWeekEvent = await getTournamentForDate(targetThursday);
     
     if (!thisWeekEvent) {
       return null;
     }
     
-    // Check if this week is a "No Tournament" event
-    const isNoTournament = thisWeekEvent.title.toLowerCase().includes('no tournament');
+    // Trigger holiday logic only when title starts with "NO TOURNAMENT"
+    const isNoTournament = thisWeekEvent.title.toUpperCase().startsWith('NO TOURNAMENT');
     
     if (isNoTournament) {
       // Get the following Thursday's event
-      const followingThursday = new Date(nextThursday);
-      followingThursday.setDate(nextThursday.getDate() + 7);
+      const followingThursday = new Date(targetThursday);
+      followingThursday.setDate(targetThursday.getDate() + 7);
       const nextWeekEvent = await getTournamentForDate(followingThursday);
       
       return {
@@ -150,17 +149,8 @@
   function showCalendarError() {
     console.error('Google Calendar API failed - no tournament data available');
     
-    // Calculate upcoming Thursday date
-    const today = new Date();
-    let upcomingThursday = new Date(today);
-    const daysUntilThursday = (4 - today.getDay() + 7) % 7;
-    
-    if (daysUntilThursday === 0 && today.getDay() === 4) {
-      // Today IS Thursday
-      upcomingThursday = today;
-    } else if (daysUntilThursday !== 0) {
-      upcomingThursday.setDate(today.getDate() + daysUntilThursday);
-    }
+    // Calculate target Thursday in Pacific time window
+    const upcomingThursday = getTargetThursdayFromPacificNow();
     
     // Format the date
     const month = upcomingThursday.toLocaleString("default", { month: "long" }).toUpperCase();
@@ -225,11 +215,9 @@
       const noTournamentDate = formatEventDate(noTournamentEvent.date);
       const tournamentDate = formatEventDate(actualEvent.date);
       
-      // Create holiday message and tournament title
+      // Create holiday message and tournament title using calendar event title verbatim
       const holidayText = `${noTournamentDate} ${noTournamentEvent.title}`;
-      const tournamentText = parsedInfo.isLadiesNight 
-        ? `${tournamentDate} Ladies Night ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`
-        : `${tournamentDate} ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`;
+      const tournamentText = `${tournamentDate} ${actualEvent.title}`;
       
       const signupUrl = generateSignupUrl(parsedInfo.formatNum, actualEvent.date, parsedInfo.isLadiesNight);
       
@@ -293,12 +281,8 @@
       
       const formattedDate = formatEventDate(event.date);
       
-      // Format title according to examples:
-      // "January 29th 9-Ball | 430 Fargo Cap"
-      // "February 19th Ladies Night 9-Ball | 475 Fargo Cap"
-      const titleText = parsedInfo.isLadiesNight 
-        ? `${formattedDate} Ladies Night ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`
-        : `${formattedDate} ${parsedInfo.format} | ${parsedInfo.cap} Fargo Cap`;
+      // Use calendar event title verbatim after the date
+      const titleText = `${formattedDate} ${event.title}`;
       
       const signupUrl = generateSignupUrl(parsedInfo.formatNum, event.date, parsedInfo.isLadiesNight);
       

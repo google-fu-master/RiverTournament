@@ -32,8 +32,7 @@ body.page-faq,
 body.page-location {
   text-align: left;
 }
-img,
-iframe {
+img {
   max-width: 100%;
   height: auto;
 }
@@ -89,6 +88,14 @@ header p,
   word-break: break-word;
   display: block;
   max-width: 98vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-address a {
+  display: inline-block;
+  text-align: center;
 }
 
 .site-address-block {
@@ -245,10 +252,10 @@ a:hover {
   height: 48px;
   width: auto;
   border-radius: 8px;
-  background: #fff;
-  padding: 4px 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  border: 1px solid #eee;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 .parking-warning {
   margin-top: 1rem;

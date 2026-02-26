@@ -61,8 +61,7 @@ body.page-location {
   text-align: left;
 }
 
-img,
-iframe {
+img {
   max-width: 100%;
   height: auto;
 }
@@ -121,6 +120,14 @@ header p,
   word-break: break-word;
   display: block;
   max-width: 98vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-address a {
+  display: inline-block;
+  text-align: center;
 }
 
 .site-address-block {
@@ -281,10 +288,10 @@ a:hover {
   height: 48px;
   width: auto;
   border-radius: 8px;
-  background: #fff;
-  padding: 4px 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  border: 1px solid #eee;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .parking-warning {
@@ -1118,6 +1125,18 @@ body.page-location .rideshare-buttons {
   text-align: left !important;
 }
 
+body.page-location #other-options .other-options-content,
+body.page-location #other-options p,
+body.page-location #other-options .rideshare-buttons {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+body.page-location .mobile-calendar-link,
+body.page-location .mobile-calendar-link .calendar-link-note {
+  text-align: center !important;
+}
+
 /* --- MAPS, MAX LINES AND RIDESHARE BUTTONS (used on location page and maps) --- */
 .max-lines-row,
 .map-lines-row,
@@ -1169,9 +1188,8 @@ body.page-location .rideshare-buttons {
     margin: 0 auto;
   }
 }
-/* Make all images/iframes scale by default (for location and maps) */
-img,
-iframe {
+/* Make images scale by default */
+img {
   max-width: 100%;
   height: auto;
 }
@@ -1533,7 +1551,9 @@ iframe {
 /* ===== COMPONENTS, BUTTONS, FLYER, CALENDAR, UTILITY ===== */
 /* --- BUTTONS --- */
 .btn-signup {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
@@ -1548,6 +1568,7 @@ iframe {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff;
   transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
+  line-height: 1.2;
 }
 
 .btn-signup:hover,
@@ -2994,18 +3015,20 @@ textarea:focus {
     height: 400px !important; /* Shorter height for mobile */
     min-height: 350px !important;
   }
-  /* Mobile calendar link - show on small screens */
+  /* Calendar link */
   .mobile-calendar-link {
     display: block !important;
     text-align: center;
     margin-top: 1rem;
-    padding: 1rem;
-    background: rgba(0, 32, 48, 0.4);
-    border-radius: 8px;
-    border: 1px solid var(--neon-cyan);
+    padding: 0;
+    background: transparent;
+    border: none;
   }
   .calendar-btn {
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
     padding: 0.75rem 1.5rem !important;
     font-size: 1rem !important;
     margin-bottom: 0.5rem;
@@ -3017,16 +3040,28 @@ textarea:focus {
     height: 600px !important;
   }
   .mobile-calendar-link {
-    display: none;
+    display: block !important;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0;
   }
 }
-/* Hide mobile calendar link on desktop */
+/* Show calendar link on desktop */
 @media (min-width: 901px) {
   .mobile-calendar-link {
-    display: none;
+    display: block !important;
+    text-align: center;
+    margin-top: 1.25rem;
+    padding: 0;
   }
   .calendar-embed iframe {
     height: 700px;
+  }
+  .calendar-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
   }
 }
 /* Ultra-small devices (320px - 480px) - older phones and small screens */

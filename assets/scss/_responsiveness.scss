@@ -582,19 +582,21 @@
     min-height: 350px !important;
   }
   
-  /* Mobile calendar link - show on small screens */
+  /* Calendar link */
   .mobile-calendar-link {
     display: block !important;
     text-align: center;
     margin-top: 1rem;
-    padding: 1rem;
-    background: rgba(0, 32, 48, 0.4);
-    border-radius: 8px;
-    border: 1px solid var(--neon-cyan);
+    padding: 0;
+    background: transparent;
+    border: none;
   }
   
   .calendar-btn {
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
     padding: 0.75rem 1.5rem !important;
     font-size: 1rem !important;
     margin-bottom: 0.5rem;
@@ -608,18 +610,31 @@
   }
   
   .mobile-calendar-link {
-    display: none;
+    display: block !important;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0;
   }
 }
 
-/* Hide mobile calendar link on desktop */
+/* Show calendar link on desktop */
 @media (min-width: 901px) {
   .mobile-calendar-link {
-    display: none;
+    display: block !important;
+    text-align: center;
+    margin-top: 1.25rem;
+    padding: 0;
   }
   
   .calendar-embed iframe {
     height: 700px;
+  }
+
+  .calendar-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
   }
 }
 

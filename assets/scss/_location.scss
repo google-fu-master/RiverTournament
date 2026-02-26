@@ -30,6 +30,18 @@ body.page-location .rideshare-buttons {
   text-align: left !important;
 }
 
+body.page-location #other-options .other-options-content,
+body.page-location #other-options p,
+body.page-location #other-options .rideshare-buttons {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+body.page-location .mobile-calendar-link,
+body.page-location .mobile-calendar-link .calendar-link-note {
+  text-align: center !important;
+}
+
 /* --- MAPS, MAX LINES AND RIDESHARE BUTTONS (used on location page and maps) --- */
 .max-lines-row,
 .map-lines-row,
@@ -82,9 +94,8 @@ body.page-location .rideshare-buttons {
   }
 }
 
-/* Make all images/iframes scale by default (for location and maps) */
-img,
-iframe {
+/* Make images scale by default */
+img {
   max-width: 100%;
   height: auto;
 }
