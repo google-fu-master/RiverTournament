@@ -95,6 +95,26 @@ iframe {
   cursor: pointer;
 }
 
+/* Center rideshare buttons on desktop */
+@media (min-width: 601px) {
+  .rideshare-buttons {
+    justify-content: center !important;
+  }
+}
+
+/* Mobile calendar responsiveness */
+@media (max-width: 700px) {
+  .calendar-embed iframe {
+    height: 400px !important;
+    width: 100% !important;
+  }
+  
+  .mobile-calendar-link {
+    text-align: center !important;
+    margin-top: 1rem !important;
+  }
+}
+
 /* Slightly reduce padding on content-wrapper for mobile */
 @media (max-width: 600px) {
   .content-wrapper {

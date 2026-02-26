@@ -41,7 +41,7 @@
   // Get tournament event for a specific Thursday
   async function getTournamentForDate(targetDate) {
     const API_KEY = "AIzaSyBLNdT-6xsYi3_lzSdEVMM3WSYT-X8PVy8";
-    const calendarId = "rivertournaments@gmail.com";
+    const calendarId = "198eded4195a8995d1a1486ed6a92657a0c76bc9aaf1291c74a4763d1c791f7f@group.calendar.google.com";
     
     // Set time range (start of day to end of day for target Thursday)
     const timeMin = new Date(targetDate);
@@ -146,55 +146,50 @@
     }
   }
 
-  // Fallback function using existing calculation logic
-  function fallbackToCalculatedTournament() {
-    console.log('Using fallback tournament calculation');
-    // Keep the existing tournament calculation logic here as backup
-    // Find the next tournament Thursday from today (or today if today is Thursday)
+  // Show error when Google Calendar is inaccessible
+  function showCalendarError() {
+    console.error('Google Calendar API failed - no tournament data available');
+    
+    // Calculate upcoming Thursday date
     const today = new Date();
-
     let upcomingThursday = new Date(today);
-    let daysUntilThursday = (4 - today.getDay() + 7) % 7;
-    if (daysUntilThursday !== 0) {
+    const daysUntilThursday = (4 - today.getDay() + 7) % 7;
+    
+    if (daysUntilThursday === 0 && today.getDay() === 4) {
+      // Today IS Thursday
+      upcomingThursday = today;
+    } else if (daysUntilThursday !== 0) {
       upcomingThursday.setDate(today.getDate() + daysUntilThursday);
     }
     
-    // Format info
+    // Format the date
+    const month = upcomingThursday.toLocaleString("default", { month: "long" }).toUpperCase();
     const day = upcomingThursday.getDate();
-    const month = upcomingThursday.toLocaleString("default", { month: "long" });
-    const monthNum = upcomingThursday.getMonth() + 1;
-    const year = upcomingThursday.getFullYear();
-
-    const formattedDate = `${month} ${day}${getOrdinalSuffix(day)}`;
-    const mmddyyyy = `${monthNum}${day}${year}`;
-
-    // Simple alternating format based on week number
-    const startOfYear = new Date(year, 0, 1);
-    const weekNumber = Math.ceil(((upcomingThursday - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
-    const isNineBall = weekNumber % 2 === 1;
+    const ordinalSuffix = getOrdinalSuffix(day);
     
-    const format = isNineBall ? "9-Ball" : "8-Ball";
-    const formatNum = isNineBall ? "9" : "8";
-    const cap = isNineBall ? "430" : "445";
-    const eventTitle = `${formattedDate} ${format} | ${cap} Fargo Cap`;
-    const signupSlug = `river-thursday-${formatNum.toLowerCase()}-ball-${mmddyyyy}`;
+    const errorTitle = `${month} ${day}${ordinalSuffix} THURSDAY TOURNAMENT | Check <a href="/calendar/" style="color: inherit; text-decoration: underline;">Calendar</a> page for Format and Fargo Cap`;
     
-    const signupLink = `https://digitalpool.com/tournaments/${signupSlug}`;
-    
-    // Update page elements
+    // Update page elements with error message
     const titleEl = document.getElementById("tournament-title");
     if (titleEl) {
-      titleEl.textContent = eventTitle;
+      titleEl.innerHTML = errorTitle;
     }
     
     const signupBtnEl = document.getElementById("signup-button");
     if (signupBtnEl) {
-      signupBtnEl.innerHTML = `<a class="btn-signup" href="${signupLink}" target="_blank">Sign Up Now</a>`;
+      signupBtnEl.innerHTML = `
+        <div style="text-align: center; padding: 1rem; background: rgba(255, 107, 107, 0.1); border: 1px solid #ff6b6b; border-radius: 8px; color: #ff6b6b;">
+          Sign-up temporarily unavailable - Check Calendar page for details
+        </div>
+      `;
     }
     
+    // Remove nav signup link
     const navSignup = document.getElementById("nav-signup-link");
     if (navSignup) {
-      navSignup.setAttribute("href", signupLink);
+      navSignup.removeAttribute("href");
+      navSignup.style.pointerEvents = "none";
+      navSignup.style.opacity = "0.5";
     }
   }
 
@@ -203,9 +198,9 @@
     const tournamentData = await getNextTournament();
     
     if (!tournamentData) {
-      console.warn('No tournament event found for next Thursday');
-      // Fallback to existing logic if calendar fails
-      fallbackToCalculatedTournament();
+      console.warn('No tournament event found in Google Calendar');
+      // Show error instead of fallback calculation
+      showCalendarError();
       return;
     }
     
@@ -216,14 +211,14 @@
       
       if (!actualEvent) {
         console.warn('No tournament found for week after holiday');
-        fallbackToCalculatedTournament();
+        showCalendarError();
         return;
       }
       
       const parsedInfo = parseEventTitle(actualEvent.title);
       if (!parsedInfo) {
         console.warn('Could not parse tournament format from next week event title:', actualEvent.title);
-        fallbackToCalculatedTournament();
+        showCalendarError();
         return;
       }
       
@@ -291,8 +286,8 @@
       
       if (!parsedInfo) {
         console.warn('Could not parse tournament format from event title:', event.title);
-        // Fallback to existing logic if parsing fails
-        fallbackToCalculatedTournament();
+        // Show error instead of fallback calculation
+        showCalendarError();
         return;
       }
       

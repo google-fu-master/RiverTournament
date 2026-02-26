@@ -1,14 +1,38 @@
 /* ===== RESPONSIVE & MEDIA QUERIES ===== */
 
 /* 1. Header and Navigation */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .menu {
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--dark-navy, #111d26);
+    padding-top: 4rem;
+    gap: 2.2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  .hamburger {
+    display: block;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
     height: 100vh;
     background-color: var(--dark-navy, #111d26);
     padding-top: 4rem;
@@ -52,11 +76,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 240px;
     height: 100vh;
     background-color: var(--dark-navy, #111d26);
     padding-top: 4rem;
-    gap: 2rem;
+    gap: 1.8rem;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
@@ -191,7 +215,11 @@
     box-sizing: border-box;
   }
   .form-block {
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
+  }
+  .contact-form-wrapper {
+    padding: 1.5rem 1rem !important;
+    margin: 1rem auto !important;
   }
   .contact-form-wrapper input,
   .contact-form-wrapper select,
@@ -199,11 +227,18 @@
     width: 100% !important;
     box-sizing: border-box;
     font-size: 1em;
+    padding: 0.75rem 0.7rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .contact-form-wrapper label {
+    margin-bottom: 0.4rem !important;
+    font-size: 1rem;
   }
   .checkbox-group-inline {
     flex-direction: column !important;
-    gap: 0.5rem;
+    gap: 0.7rem;
     align-items: flex-start;
+    margin-top: 0.6rem;
   }
 }
 
@@ -284,7 +319,7 @@
 /* Status legend and legend bar */
 @media (max-width: 600px) {
   .status-legend.index-bar {
-    font-size: 0.89rem;
+    font-size: 0.95rem;
     padding: 1.1em 0.7em 1.1em 0.7em;
     line-height: 1.55;
     word-break: break-word;
@@ -296,7 +331,7 @@
     background: rgba(26, 32, 38, 0.97);
   }
   .status-legend.index-bar small {
-    font-size: 0.93em;
+    font-size: 0.96em;
     line-height: 1.55;
     display: block;
     padding: 0 0.2em;
@@ -434,7 +469,7 @@
   }
   .tournament-card-link {
     font-size: 0.92rem;
-    padding: 0.45em 1em;
+    padding: 0.6em 1em;
   }
 }
 
@@ -585,5 +620,140 @@
   
   .calendar-embed iframe {
     height: 700px;
+  }
+}
+
+/* Ultra-small devices (320px - 480px) - older phones and small screens */
+@media (max-width: 480px) {
+  /* Header and title adjustments */
+  .site-title,
+  header h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+    padding: 0 0.3rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .site-address-block {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    padding: 0 0.3rem;
+  }
+  
+  /* Main content spacing */
+  main, .content-wrapper {
+    padding: 0.4rem 0.3rem !important;
+    margin: 0;
+  }
+  
+  /* Navigation improvements */
+  .hamburger {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.8rem !important;
+    top: 12px !important;
+    left: 12px !important;
+  }
+  
+  .menu {
+    width: 180px;
+    padding-top: 3.5rem;
+    gap: 1.2rem;
+  }
+  
+  .menu a {
+    font-size: 1rem !important;
+    padding: 0.8rem 1.5rem !important;
+    line-height: 1.3;
+  }
+  
+  /* Button and touch target improvements */
+  .btn-signup, .cta-button {
+    font-size: 1rem !important;
+    padding: 0.85em 1.5em !important;
+    margin: 1rem 0.2rem !important;
+    border-radius: 1.5em;
+    min-height: 44px;
+  }
+  
+  /* Tournament cards for ultra-small screens */
+  .tournament-card {
+    padding: 0.8rem 0.5rem !important;
+    margin: 0 0.1rem;
+    min-width: 280px;
+    max-width: 95vw !important;
+  }
+  
+  .tournament-card-title {
+    font-size: 1rem !important;
+    line-height: 1.2;
+  }
+  
+  .tournament-card-date {
+    font-size: 0.9rem !important;
+  }
+  
+  .tournament-card-link {
+    font-size: 0.85rem !important;
+    padding: 0.7em 1.2em !important;
+    min-height: 40px;
+  }
+  
+  /* Status legend ultra-small */
+  .status-legend.index-bar {
+    font-size: 0.85rem !important;
+    padding: 0.9em 0.5em !important;
+    line-height: 1.4;
+  }
+  
+  .status-legend.index-bar small {
+    font-size: 0.9em !important;
+    line-height: 1.4;
+  }
+  
+  /* Form improvements for ultra-small */
+  .contact-form-wrapper {
+    padding: 0.8rem 0.4rem !important;
+    margin: 0.5rem auto !important;
+    font-size: 0.95rem;
+  }
+  
+  input[type="text"],
+  input[type="email"], 
+  input[type="tel"],
+  textarea {
+    padding: 0.7rem 0.5rem !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Footer improvements */
+  footer {
+    padding: 0.8rem 0.4rem !important;
+    font-size: 0.85rem;
+  }
+  
+  .footer-social {
+    gap: 0.4em;
+  }
+  
+  /* Player header */
+  .player-header, #tournament-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem;
+    padding: 0 0.2rem;
+  }
+  
+  /* Calendar adjustments */
+  .calendar-embed iframe {
+    height: 300px !important;
+    min-height: 280px !important;
+  }
+  
+  .calendar-btn {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.3rem;
   }
 }

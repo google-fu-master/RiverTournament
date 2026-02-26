@@ -407,3 +407,34 @@ body.ladies .site-title {
     padding: 0.5rem 0.2rem;
   }
 }
+
+/* --- APP STORE BADGES --- */
+.app-store-badge {
+  width: 150px;
+  height: auto;
+  max-width: 45vw;
+  min-width: 120px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .app-store-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+  }
+  
+  .app-store-badge {
+    width: 140px !important;
+    max-width: 80vw !important;
+    min-width: 110px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-store-badge {
+    width: 130px !important;
+    max-width: 85vw !important;
+    min-width: 100px !important;
+  }
+}
