@@ -1,73 +1,335 @@
----
-layout: default
-title: River Tournaments
-bodyClass: home
----
-
-<h1 class="player-header" id="tournament-title">
-  This Thursday's Tournament
-</h1>
-
-
-<div id="signup-button" class="signup-button-container"></div>
-
-<div class="tournament-note">
-  <p>
-    <strong>Important:</strong> Signing up is a bracket spot reservation <em>request</em>. Bracket is not final until player FargoRate verification/assignment and payment are completed in-person with the Tournament Director at Check-In.
-  </p>
-  <p>
-    If the bracket is full, sign up to automatically be added to the Waitlist or <a href="sms:7607938319">Text Brittany Posey</a> (the Tournament Director) to see if a spot is open.
-  </p>
-  <p>*Actual pot size and payouts are contingent on player attendance and discretionary House donation.</p>
-</div>
-
-<!-- DigitalPool embed and status legend below -->
-<div
-  class="digitalpool-section"
-  role="region"
-  aria-labelledby="tournament-title"
->
-  <!-- Inject table/embed here -->
-  <div id="digitalpool-table"></div>
-  <div class="status-legend index-bar">
-    <small>
-      Unconfirmed: Awaiting FargoRate check by the Tournament Director (TD)
-      &nbsp; | &nbsp; RSVP: You've been invited, message TD to confirm &nbsp; |
-      &nbsp; Confirmed: Your spot is secured! &nbsp; | &nbsp; Waiting_List:
-      Bracket is Full, TD will contact you if a spot opens up &nbsp; | &nbsp;
-      Entry_Paid: Checked in, Paid, Ready to Play!
-    </small>
-  </div>
-</div>
-
-<!-- Place JSON-LD here -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "River Tournaments - Weekly Pool Tournament",
-    "startDate": "2025-06-12T19:00:00-07:00",
-    "endDate": "2025-06-12T23:00:00-07:00",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "River Tournaments Venue",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "19 NW 5th Ave",
-        "addressLocality": "Portland",
-        "addressRegion": "OR",
-        "postalCode": "97209",
-        "addressCountry": "US"
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>River Tournaments PDX — We'll Be Right Back!</title>
+    <meta
+      name="description"
+      content="River Tournaments is on a short break April 1–May 31, 2026. We're moving to a new venue and may be updating our schedule. Stay tuned for updates!"
+    />
+    <meta name="robots" content="index,follow" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="River Tournaments PDX — We'll Be Right Back!" />
+    <meta
+      property="og:description"
+      content="River Tournaments is on a short break April 1–May 31, 2026. New venue coming soon — stay tuned on Facebook and Instagram!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rivertournaments.com/" />
+    <meta property="og:site_name" content="River Tournaments" />
+    <meta property="og:image" content="https://rivertournaments.com/assets/images/logos/RT_logowebsitetest.png" />
+    <meta property="fb:page_id" content="61577340925686" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Oswald:400,700|Dancing+Script:700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
       }
-    },
-    "image": ["https://rivertournaments.com/assets/og-image.png"],
-    "description": "Weekly pool tournaments every Thursday. Sign up, check brackets, and see results.",
-    "organizer": {
-      "@type": "Organization",
-      "name": "River Tournaments",
-      "email": "rivertournaments@gmail.com"
-    }
-  }
-</script>
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        background-color: #141414;
+        color: #f5f5f5;
+        font-family: "Montserrat", "Oswald", Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* ── HEADER ── */
+      header {
+        text-align: center;
+        background-color: #002b3a;
+        padding: 1.25rem 2rem 1rem;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .home-logo {
+        width: 100%;
+        max-width: 220px;
+        min-width: 80px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* ── MAIN ── */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        background-color: #141414;
+      }
+
+      .placeholder-box {
+        text-align: center;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .placeholder-box h1 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 3rem;
+        color: #ffffff;
+        margin: 0 0 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.15;
+      }
+
+      .placeholder-box p {
+        font-size: 1.15rem;
+        color: #f5f5f5;
+        line-height: 1.75;
+        margin: 0 0 1.1rem;
+      }
+
+      .placeholder-box a {
+        color: #30baff;
+        text-decoration: underline;
+      }
+
+      .placeholder-box a:hover,
+      .placeholder-box a:focus {
+        color: #00eafd;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: #151d23;
+        color: #f5f5f5;
+        text-align: center;
+        padding: 1rem 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        font-size: 0.95rem;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8em;
+        margin-top: 0.7em;
+      }
+
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border-radius: 50%;
+        transition: background 0.2s;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        margin: 0 0.2em;
+        text-decoration: none;
+      }
+
+      .footer-social a:hover,
+      .footer-social a:focus {
+        background: rgba(52, 186, 255, 0.13);
+      }
+
+      .footer-social img {
+        display: block;
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 4px rgba(48, 186, 255, 0.8));
+        transition: filter 0.2s;
+      }
+
+      .footer-social a:hover img,
+      .footer-social a:focus img {
+        filter: drop-shadow(0 0 8px #30baff) brightness(1.15);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 600px) {
+        header {
+          padding: 0.75rem 1rem 0.65rem;
+        }
+        main {
+          padding: 1.25rem 1rem;
+        }
+        .placeholder-box h1 {
+          font-size: 2rem;
+        }
+        .placeholder-box p {
+          font-size: 1rem;
+        }
+        .home-logo {
+          max-width: 140px;
+        }
+      }
+      .signoff {
+        margin-top: 1.65rem;
+        text-align: right;
+        padding-right: 1.5rem;
+      }
+
+      /* Signature size presets: choose one class on .signoff */
+      .signoff.preset-balanced {
+        --sig-size: 1.8rem;
+      }
+
+      .signoff.preset-large {
+        --sig-size: 1.9rem;
+      }
+
+      .signoff.preset-compact {
+        --sig-size: 1.7rem;
+      }
+
+      .signoff-block {
+        display: inline-block;
+        text-align: left;
+      }
+
+      .signoff-name {
+        display: block;
+        font-family: "Dancing Script", cursive;
+        font-size: var(--sig-size, 1.8rem);
+        font-weight: 700;
+        line-height: 1.15;
+        color: #ffffff;
+      }
+
+      .signoff-title {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 400;
+        line-height: 1.75;
+        color: #f5f5f5;
+      }
+
+      @media (max-width: 600px) {
+        .signoff {
+          padding-right: 0.25rem;
+        }
+
+        .signoff-name {
+          font-size: calc(var(--sig-size, 1.8rem) - 0.2rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        class="home-logo"
+        src="/assets/images/logos/RT_logowebsitetest.png"
+        alt="River Tournaments Logo"
+      />
+    </header>
+
+    <main>
+      <div class="placeholder-box">
+        <h1>We'll Be Right Back!</h1>
+        <p>
+          River Tournaments is taking a short break from
+          <strong>April 1&nbsp;&ndash;&nbsp;May 31, 2026</strong>.
+          We're in the process of finding a <strong>new venue (location TBD)</strong>
+          and may also be updating our scheduled day, start time, and Fargo rate caps.
+        </p>
+        <p>
+          Stay tuned right here on this website and follow us on
+          <a
+            href="https://www.facebook.com/profile.php?id=61577340925686"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Facebook</a>
+          and
+          <a
+            href="https://www.instagram.com/rivertournamentspdx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Instagram</a>
+          &mdash; we'll post updates as soon as details become available.
+          We can't wait to see everyone back on the tables!
+        </p>
+          <div class="signoff preset-balanced">
+            <div class="signoff-block">
+              <span class="signoff-name">Britt Posey</span>
+              <span class="signoff-title">Tournament Director</span>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="yr"></span> River Tournaments<br />
+      <br />Site and content created by Brittany Posey<br />
+      <div class="footer-social">
+        <a
+          href="https://www.facebook.com/profile.php?id=61577340925686"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook Page"
+        >
+          <img
+            src="/assets/images/logos/icons8-facebook-48.png"
+            alt="Facebook"
+            width="32"
+            height="32"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/rivertournamentspdx"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram Profile"
+        >
+          <img
+            src="/assets/images/logos/Instagram_icon.png"
+            alt="Instagram"
+            width="32"
+            height="32"
+          />
+        </a>
+        <a
+          href="mailto:rivertournaments@gmail.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Email River Tournaments"
+        >
+          <img
+            src="/assets/images/logos/gmail_logo.png"
+            alt="Gmail"
+            width="32"
+            height="32"
+          />
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("yr").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
