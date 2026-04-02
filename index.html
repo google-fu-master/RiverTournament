@@ -262,6 +262,7 @@
           Stay tuned right here on this website and follow us on
           <a
             href="https://www.facebook.com/profile.php?id=61577340925686"
+            class="fb-link"
             target="_blank"
             rel="noopener noreferrer"
           >Facebook</a>
@@ -289,6 +290,7 @@
       <div class="footer-social">
         <a
           href="https://www.facebook.com/profile.php?id=61577340925686"
+          class="fb-link"
           target="_blank"
           rel="noopener"
           aria-label="Facebook Page"
@@ -331,6 +333,24 @@
 
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Open Facebook in the mobile app if available, fall back to web
+      document.querySelectorAll(".fb-link").forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
+          e.preventDefault();
+          var webUrl = "https://www.facebook.com/profile.php?id=61577340925686";
+          var appUrl = "fb://profile/61577340925686";
+          var start = Date.now();
+          window.location.href = appUrl;
+          setTimeout(function () {
+            // Only redirect to web if the app didn't take over
+            if (Date.now() - start < 1500) {
+              window.open(webUrl, "_blank");
+            }
+          }, 1000);
+        });
+      });
     </script>
   </body>
 </html>
